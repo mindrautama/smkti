@@ -3986,6 +3986,196 @@ function SlideVSM() {
   );
 }
 
+/* =============================
+   SECTION DIVIDER: BAGIAN 3 — EXISTING VS 2026
+   ============================= */
+function SlideSectionExistingVs2026() {
+  return (
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+      <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "#1a5276" }}>
+        <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
+        <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
+          <div style={{ background: "#fff", padding: "10px", borderRadius: "8px", width: "fit-content", marginBottom: "2rem" }}>
+            <div style={{ color: "#1a5276", fontWeight: 900, fontSize: "1.2rem", letterSpacing: "1px" }}>PTPN GROUP</div>
+          </div>
+          <h2 style={{ fontSize: "5rem", fontWeight: 900, lineHeight: 1, textTransform: "uppercase", letterSpacing: "-2px" }}>
+            Evaluasi <br />
+            <span style={{ color: "#f1c40f" }}>Regulasi &</span> <br />
+            Perubahan <br />
+            Paradigma
+          </h2>
+        </div>
+        <div style={{ position: "absolute", bottom: "10%", right: "5%", opacity: 0.1 }}>
+          <FileText size={400} />
+        </div>
+      </div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1a5276", marginBottom: "1rem", letterSpacing: "2px" }}>BAGIAN 03 :</div>
+          <h1 style={{ fontSize: "3rem", fontWeight: 900, color: "#1e293b", marginBottom: "2rem", lineHeight: 1.1 }}>Evaluasi Existing & Perubahan Regulasi</h1>
+          <div style={{ width: "80px", height: "8px", background: "#1a5276", borderRadius: "4px", marginBottom: "2rem" }}></div>
+          <p style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600, lineHeight: 1.6 }}>
+            Mengevaluasi kerangka PMS 2022–2025 yang berjalan, mengidentifikasi gap dan kelemahan, serta memahami perubahan kunci pada draft Perdir SMKTI 2026 yang memperkuat governance, fairness, dan legal defensibility.
+          </p>
+        </motion.div>
+      </div>
+      <div style={{ position: "absolute", bottom: "2rem", right: "2rem", display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{ textAlign: "right", borderRight: "2px solid #1a5276", paddingRight: "15px" }}>
+          <div style={{ fontWeight: 900, fontSize: "0.8rem", color: "#1e293b" }}>ONE PTPN</div>
+          <div style={{ fontWeight: 700, fontSize: "0.6rem", color: "#64748b" }}>CULTURE</div>
+        </div>
+        <Award size={32} color="#1a5276" />
+      </div>
+    </div>
+  );
+}
+
+/* =============================
+   SECTION DIVIDER: BAGIAN 4 — DESIGN 2026
+   ============================= */
+function SlideSectionDesign2026() {
+  return (
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+      <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #064e3b 0%, #0e6655 100%)" }}>
+        <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
+        <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
+          <div style={{ background: "#fff", padding: "10px", borderRadius: "8px", width: "fit-content", marginBottom: "2rem" }}>
+            <div style={{ color: "#0e6655", fontWeight: 900, fontSize: "1.2rem", letterSpacing: "1px" }}>PTPN GROUP</div>
+          </div>
+          <h2 style={{ fontSize: "5rem", fontWeight: 900, lineHeight: 1, textTransform: "uppercase", letterSpacing: "-2px" }}>
+            Desain <br />
+            <span style={{ color: "#fbbf24" }}>Arsitektur</span> <br />
+            SMKTI <br />
+            2026
+          </h2>
+        </div>
+        <div style={{ position: "absolute", bottom: "10%", right: "5%", opacity: 0.1 }}>
+          <Layers size={400} />
+        </div>
+      </div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#0e6655", marginBottom: "1rem", letterSpacing: "2px" }}>BAGIAN 04 :</div>
+          <h1 style={{ fontSize: "3rem", fontWeight: 900, color: "#1e293b", marginBottom: "2rem", lineHeight: 1.1 }}>Desain Arsitektur & Opsi Rating</h1>
+          <div style={{ width: "80px", height: "8px", background: "#0e6655", borderRadius: "4px", marginBottom: "2rem" }}></div>
+          <p style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600, lineHeight: 1.6 }}>
+            Menyajikan dua opsi arsitektur SMKTI 2026 (dengan dan tanpa distribusi rating), analisis pro-contra, serta mekanisme pembobotan dan dampak terhadap reward. Bagian ini memberikan landasan pengambilan keputusan bagi Direksi.
+          </p>
+        </motion.div>
+      </div>
+      <div style={{ position: "absolute", bottom: "2rem", right: "2rem", display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{ textAlign: "right", borderRight: "2px solid #0e6655", paddingRight: "15px" }}>
+          <div style={{ fontWeight: 900, fontSize: "0.8rem", color: "#1e293b" }}>ONE PTPN</div>
+          <div style={{ fontWeight: 700, fontSize: "0.6rem", color: "#64748b" }}>CULTURE</div>
+        </div>
+        <Award size={32} color="#0e6655" />
+      </div>
+    </div>
+  );
+}
+
+/* =============================
+   SECTION DIVIDER: BAGIAN 5 — IMPLEMENTATION
+   ============================= */
+function SlideSectionImplementation() {
+  return (
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+      <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "#e67e22" }}>
+        <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
+        <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
+          <div style={{ background: "#fff", padding: "10px", borderRadius: "8px", width: "fit-content", marginBottom: "2rem" }}>
+            <div style={{ color: "#e67e22", fontWeight: 900, fontSize: "1.2rem", letterSpacing: "1px" }}>PTPN GROUP</div>
+          </div>
+          <h2 style={{ fontSize: "5rem", fontWeight: 900, lineHeight: 1, textTransform: "uppercase", letterSpacing: "-2px" }}>
+            Implementasi <br />
+            <span style={{ color: "#fff598" }}>&</span> <br />
+            Roadmap
+          </h2>
+        </div>
+        <div style={{ position: "absolute", bottom: "10%", right: "5%", opacity: 0.1 }}>
+          <Calendar size={400} />
+        </div>
+      </div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#e67e22", marginBottom: "1rem", letterSpacing: "2px" }}>BAGIAN 05 :</div>
+          <h1 style={{ fontSize: "3rem", fontWeight: 900, color: "#1e293b", marginBottom: "2rem", lineHeight: 1.1 }}>Implementasi, Timeline & Monitoring</h1>
+          <div style={{ width: "80px", height: "8px", background: "#e67e22", borderRadius: "4px", marginBottom: "2rem" }}></div>
+          <p style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600, lineHeight: 1.6 }}>
+            Rencana implementasi bertahap, project charter, serta update progress pengisian kinerja dan matriks KPI per entitas PTPN Group per Maret 2026. Memastikan transisi dari desain ke eksekusi berjalan terukur.
+          </p>
+        </motion.div>
+      </div>
+      <div style={{ position: "absolute", bottom: "2rem", right: "2rem", display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{ textAlign: "right", borderRight: "2px solid #e67e22", paddingRight: "15px" }}>
+          <div style={{ fontWeight: 900, fontSize: "0.8rem", color: "#1e293b" }}>ONE PTPN</div>
+          <div style={{ fontWeight: 700, fontSize: "0.6rem", color: "#64748b" }}>CULTURE</div>
+        </div>
+        <Award size={32} color="#e67e22" />
+      </div>
+    </div>
+  );
+}
+
+/* =============================
+   SECTION DIVIDER: CLOSING & APPENDIX
+   ============================= */
+function SlideSectionClosing() {
+  return (
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+      <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)" }}>
+        <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
+        <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
+          <div style={{ background: "#fff", padding: "10px", borderRadius: "8px", width: "fit-content", marginBottom: "2rem" }}>
+            <div style={{ color: "#1e293b", fontWeight: 900, fontSize: "1.2rem", letterSpacing: "1px" }}>PTPN GROUP</div>
+          </div>
+          <h2 style={{ fontSize: "5rem", fontWeight: 900, lineHeight: 1, textTransform: "uppercase", letterSpacing: "-2px" }}>
+            Penutup <br />
+            <span style={{ color: "#f1c40f" }}>&</span> <br />
+            Lampiran
+          </h2>
+        </div>
+        <div style={{ position: "absolute", bottom: "10%", right: "5%", opacity: 0.1 }}>
+          <FileText size={400} />
+        </div>
+      </div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#475569", marginBottom: "1rem", letterSpacing: "2px" }}>BAGIAN 07 :</div>
+          <h1 style={{ fontSize: "3rem", fontWeight: 900, color: "#1e293b", marginBottom: "2rem", lineHeight: 1.1 }}>Penutup, FAQ & Lampiran Referensi</h1>
+          <div style={{ width: "80px", height: "8px", background: "#475569", borderRadius: "4px", marginBottom: "2rem" }}></div>
+          <p style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600, lineHeight: 1.6 }}>
+            Menjawab pertanyaan umum terkait draft Perdir SMKTI 2026, dilengkapi lampiran terminologi, model penilaian historis, dan referensi rating global sebagai bahan pertimbangan tambahan bagi Direksi.
+          </p>
+        </motion.div>
+      </div>
+      <div style={{ position: "absolute", bottom: "2rem", right: "2rem", display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{ textAlign: "right", borderRight: "2px solid #475569", paddingRight: "15px" }}>
+          <div style={{ fontWeight: 900, fontSize: "0.8rem", color: "#1e293b" }}>ONE PTPN</div>
+          <div style={{ fontWeight: 700, fontSize: "0.6rem", color: "#64748b" }}>CULTURE</div>
+        </div>
+        <Award size={32} color="#475569" />
+      </div>
+    </div>
+  );
+}
+
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   { title: "Cover", component: SlideCover },
@@ -3995,8 +4185,7 @@ const slides = [
   { title: "Gap Analysis — Why Change?", component: SlideWhyChange },
 
   // BAGIAN 2 — PMS DESIGN PRINCIPLES
-  { title: "Concept — Section Divider", component: SlideSectionConcept },
-  { title: "Update PM Mar 2026", component: SlidePerformanceUpdate2026 },
+  { title: "§ Fondasi Konseptual & Strategis", component: SlideSectionConcept },
   { title: "BSC Principles", component: SlideBSCFoundation },
   { title: "PDCA & Improvement", component: SlidePDCACycle },
   { title: "Strategic Cascading", component: SlideStrategicAlignment },
@@ -4006,6 +4195,7 @@ const slides = [
   { title: "Model Kinerja APMS", component: SlideModelKinerja },
 
   // BAGIAN 3 — EXISTING VS 2026
+  { title: "§ Evaluasi & Perubahan Regulasi", component: SlideSectionExistingVs2026 },
   { title: "Existing PMS 2022–2025", component: SlideFramework2022 },
   { title: "Perubahan Kunci Paradigma", component: SlidePerubahanKunci },
   { title: "Konsep SMKTI 2026", component: SlideSMKTIKonsep },
@@ -4013,32 +4203,34 @@ const slides = [
   { title: "Komparasi Perdir #2", component: SlideSMKTIKomparasi2 },
 
   // BAGIAN 4 — DESIGN 2026
+  { title: "§ Desain Arsitektur SMKTI 2026", component: SlideSectionDesign2026 },
   { title: "Arsitektur Opsi A", component: SlideFramework2026A },
   { title: "Arsitektur Opsi B", component: SlideFramework2026B },
   { title: "Pro Con Opsi A vs B", component: SlideProConOptions },
   { title: "Pro Con Rating Distribusi", component: SlideProConRating },
   { title: "Rating Model 2026", component: SlideRatingKinerja },
   { title: "Priority Pool & Talent", component: SlidePriorityPool },
-
-  // BAGIAN 5 — IMPACT
   { title: "Weighting & Reward Impact", component: SlideWeighting },
 
-  // BAGIAN 6 — IMPLEMENTATION
+  // BAGIAN 5 — IMPLEMENTATION & ROADMAP
+  { title: "§ Implementasi & Roadmap", component: SlideSectionImplementation },
+  { title: "Update PM Mar 2026", component: SlidePerformanceUpdate2026 },
   { title: "Timeline", component: SlideTimeline },
   { title: "Project Charter", component: SlideProjectCharter },
 
-  // BAGIAN 7 — BUSINESS PROCESS IMPROVEMENT (LEAN)
-  { title: "BPI — Section Divider", component: SlideBPIConcept },
+  // BAGIAN 6 — BUSINESS PROCESS IMPROVEMENT (LEAN)
+  { title: "§ Business Process Improvement", component: SlideBPIConcept },
   { title: "What is Lean?", component: SlideWhatIsLean },
   { title: "Lean Philosophy", component: SlideLeanPhilosophy },
   { title: "Muda or Waste Klasifikasi", component: SlideMudaWaste },
   { title: "Value Stream Mapping (VSM)", component: SlideVSM },
 
-  // CLOSING & APPENDIX
-  { title: "Appendix — Terminologi", component: SlideSMKTITerminologi },
-  { title: "Appendix — Appraisal Model", component: SlideAppraisalReference },
+  // BAGIAN 7 — CLOSING & APPENDIX
+  { title: "§ Penutup & Lampiran", component: SlideSectionClosing },
   { title: "FAQ — Perdir SMKTI 2026", component: SlideSMKTIFAQ },
   { title: "Terima Kasih", component: SlideThankYou },
+  { title: "Appendix — Terminologi", component: SlideSMKTITerminologi },
+  { title: "Appendix — Appraisal Model", component: SlideAppraisalReference },
   { title: "Appendix — Referensi Global", component: SlideRatingReference },
 ];
 
