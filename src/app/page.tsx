@@ -79,7 +79,7 @@ function AccentShapes() {
 function SlideAgenda() {
   const sections = [
     { num: "01", title: "Strategic Context", desc: "Visi besar, DNA PCS, HC Strategic Initiatives, dan Gap Analysis", color: "#0e6655", slides: 6, targetTitle: "Strategic Drivers" },
-    { num: "02", title: "Fondasi Konseptual & Strategis", desc: "Prinsip KPI, BSC, PDCA, Cascading, dan Model Kinerja", color: "#0e6655", slides: 9, targetTitle: "§ Fondasi Konseptual & Strategis" },
+    { num: "02", title: "Fondasi Konseptual & Strategis", desc: "Prinsip KPI, BSC, PDCA, Cascading, dan Model Kinerja", color: "#0e6655", slides: 10, targetTitle: "§ Fondasi Konseptual & Strategis" },
     { num: "03", title: "Evaluasi & Perubahan Regulasi", desc: "Review PMS existing, perubahan paradigma, dan komparasi Perdir", color: "#1a5276", slides: 6, targetTitle: "§ Evaluasi & Perubahan Regulasi" },
     { num: "04", title: "Desain Arsitektur SMKTI 2026", desc: "Opsi arsitektur, pro-contra, rating model, dan reward impact", color: "#064e3b", slides: 8, targetTitle: "§ Desain Arsitektur SMKTI 2026" },
     { num: "05", title: "Implementasi & Roadmap", desc: "Monitoring progress, timeline, dan project charter", color: "#e67e22", slides: 4, targetTitle: "§ Implementasi & Roadmap" },
@@ -1792,6 +1792,186 @@ function SlideBAPerformance() {
           </motion.div>
         </div>
       </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   SLIDE: PROGRAM KERJA & HUBUNGAN KPI
+   ============================= */
+function SlideProgramKerja() {
+  const cascadeLevels = [
+    {
+      level: "01",
+      title: "Strategic Objective",
+      subtitle: "Tujuan strategis organisasi",
+      desc: "Sasaran besar yang ditetapkan dalam RJPP & RKAP — menjadi arah utama seluruh aktivitas perusahaan.",
+      color: "#1a5276",
+      examples: ["Revenue Growth 15%", "Cost Efficiency 10%", "Market Expansion"],
+      icon: <Target size={28} />
+    },
+    {
+      level: "02",
+      title: "KPI Individu",
+      subtitle: "Indikator kinerja terukur",
+      desc: "Turunan langsung dari Strategic Objective yang dipecah ke level individu melalui proses cascading. Bersifat SMART dan terukur.",
+      color: "#0e6655",
+      examples: ["Produktivitas TBS/Ha", "% Pengisian ERP", "Skor Engagement"],
+      icon: <BarChart3 size={28} />
+    },
+    {
+      level: "03",
+      title: "Program Kerja",
+      subtitle: "Rencana aksi konkret",
+      desc: "Serangkaian aktivitas kerja terstruktur yang dirancang untuk mencapai target KPI Individu. Memuat timeline, output, dan penanggung jawab.",
+      color: "#e67e22",
+      examples: ["Replanting 500 Ha", "Workshop BSC Q2", "Audit Internal"],
+      icon: <FileText size={28} />
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276", marginBottom: "0.5rem" }}>
+          <em>Program Kerja & Hubungannya dengan KPI</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.3rem", color: "#64748b", fontWeight: 600 }}>
+          Dari Strategi Organisasi hingga Aksi Individu
+        </p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        {/* Cascade Flow */}
+        <div style={{ display: "flex", gap: "1.5rem", alignItems: "stretch" }}>
+          {cascadeLevels.map((item, i) => (
+            <React.Fragment key={i}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 + i * 0.15 }}
+                style={{
+                  flex: 1,
+                  background: "#fff",
+                  borderRadius: "22px",
+                  padding: "2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxShadow: "0 10px 35px rgba(0,0,0,0.04)",
+                  border: "1px solid #f1f5f9",
+                  position: "relative",
+                  overflow: "hidden"
+                }}
+              >
+                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: item.color }} />
+
+                {/* Level Badge */}
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+                  <div style={{
+                    background: `${item.color}12`,
+                    color: item.color,
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "16px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    boxShadow: `0 6px 15px ${item.color}15`
+                  }}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: "0.85rem", fontWeight: 900, color: item.color, letterSpacing: "2px", textTransform: "uppercase" }}>LEVEL {item.level}</div>
+                    <h3 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>{item.title}</h3>
+                  </div>
+                </div>
+
+                <p style={{ fontSize: "0.95rem", color: "#64748b", fontWeight: 600, fontStyle: "italic", marginBottom: "1rem" }}>{item.subtitle}</p>
+                <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.6, margin: 0, marginBottom: "1.5rem" }}>{item.desc}</p>
+
+                {/* Examples */}
+                <div style={{ marginTop: "auto" }}>
+                  <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "0.8rem" }}>Contoh</div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                    {item.examples.map((ex, j) => (
+                      <div key={j} style={{
+                        background: `${item.color}08`,
+                        border: `1px solid ${item.color}20`,
+                        padding: "8px 14px",
+                        borderRadius: "10px",
+                        fontSize: "0.95rem",
+                        color: item.color,
+                        fontWeight: 700,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px"
+                      }}>
+                        <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />
+                        {ex}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Arrow connector */}
+              {i < cascadeLevels.length - 1 && (
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", flexShrink: 0, width: "50px" }}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4 + i * 0.2 }}
+                    style={{
+                      width: "48px",
+                      height: "48px",
+                      borderRadius: "50%",
+                      background: "linear-gradient(135deg, #f1f5f9, #e2e8f0)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
+                    }}
+                  >
+                    <ArrowRight size={22} color="#1a5276" strokeWidth={2.5} />
+                  </motion.div>
+                  <span style={{ fontSize: "0.7rem", color: "#94a3b8", fontWeight: 700, textTransform: "uppercase" }}>Cascade</span>
+                </div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+
+        {/* Bottom Insight Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+          style={{
+            background: "linear-gradient(135deg, #1a5276 0%, #0e6655 100%)",
+            color: "#fff",
+            padding: "1.2rem 2.5rem",
+            borderRadius: "18px",
+            display: "flex",
+            alignItems: "center",
+            gap: "2rem",
+            boxShadow: "0 10px 30px rgba(14, 102, 85, 0.2)"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
+            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <TrendingUp size={24} />
+            </div>
+            <div style={{ fontSize: "1.1rem", fontWeight: 800 }}>Prinsip Utama</div>
+          </div>
+          <div style={{ height: "40px", width: "1px", background: "rgba(255,255,255,0.2)" }} />
+          <div style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.5 }}>
+            Program Kerja <strong>bukan daftar tugas harian</strong>, melainkan <strong>rencana aksi terstruktur</strong> yang dirancang khusus untuk memastikan setiap KPI Individu tercapai dan berkontribusi langsung terhadap Strategic Objective organisasi.
+          </div>
+        </motion.div>
+      </div>
+
       <SlideFooter />
     </div>
   );
@@ -4857,6 +5037,7 @@ const slides = [
   { title: "Kenapa Perlu Business Architecture?", component: SlideWhyBusinessArchitecture },
   { title: "Hubungan BA & Kinerja", component: SlideBAPerformance },
   { title: "Model Kinerja APMS", component: SlideModelKinerja },
+  { title: "Program Kerja & KPI", component: SlideProgramKerja },
 
   // BAGIAN 3 — EXISTING VS 2026
   { title: "§ Evaluasi & Perubahan Regulasi", component: SlideSectionExistingVs2026 },
