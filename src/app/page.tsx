@@ -1889,7 +1889,7 @@ function SlideProgramKerja() {
             >
               <span style={{ fontSize: "0.75rem", color: "#e67e22", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>Cara</span>
               <div style={{ width: "50px", height: "50px", borderRadius: "50%", background: "linear-gradient(135deg, #fef3c7, #fde68a)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(230, 126, 34, 0.15)" }}>
-                <ArrowRight size={22} color="#e67e22" strokeWidth={2.5} />
+                <ArrowRight size={22} color="#e67e22" strokeWidth={2.5} style={{ transform: "rotate(180deg)" }} />
               </div>
             </motion.div>
           </div>
