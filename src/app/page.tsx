@@ -3427,6 +3427,280 @@ function SlideSMKTIFAQ() {
   );
 }
 
+function SlideBPIConcept() {
+  return (
+    <div className="slide" style={{ padding: 0, background: "#fff", display: "flex" }}>
+      <div style={{ flex: 1.2, position: "relative", overflow: "hidden" }}>
+        <img
+          src="file:///Users/muhammadindrautama/.gemini/antigravity/brain/a60d33b5-9c20-4b51-91e4-883ecc888d7f/bpi_divider_landscape_1772337587330.png"
+          alt="BPI Landscape"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, transparent 70%, #fff 100%)" }} />
+      </div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "4rem" }}>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          style={{ borderLeft: "12px solid #10b981", paddingLeft: "2rem" }}
+        >
+          <h1 style={{ fontSize: "4rem", color: "#1a5276", fontWeight: 900, lineHeight: 1, margin: 0, textTransform: "uppercase", letterSpacing: "-0.02em" }}>
+            CONCEPT OF<br />
+            <span style={{ color: "#10b981" }}>BUSINESS PROCESS</span><br />
+            IMPROVEMENT
+          </h1>
+          <div style={{ width: "100px", height: "6px", background: "#f97316", marginTop: "2rem", borderRadius: "3px" }} />
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+function SlideWhatIsLean() {
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <div>
+          <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655" }}>WHAT'S LEAN ?</h1>
+          <div style={{ width: "60px", height: "4px", background: "#f97316", marginTop: "8px" }} />
+        </div>
+        <div style={{ background: "#0e6655", color: "#fff", padding: "4px 12px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900 }}>PAGE 15</div>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", position: "relative", zIndex: 1 }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <h2 style={{ fontSize: "1.6rem", color: "#10b981", fontWeight: 900, marginBottom: "1.5rem" }}>DEFINITION</h2>
+          <ul style={{ display: "flex", flexDirection: "column", gap: "1.2rem", padding: 0, listStyle: "none" }}>
+            {[
+              "An overall methodology that seeks to minimize the resources required for operation by eliminating 8 waste",
+              "Principles of lean include zero waiting time, zero inventory, scheduling (internal customer pull instead of push system), batch to flow (reduce batch sizes), line balancing and reduce actual process times."
+            ].map((text, i) => (
+              <li key={i} style={{ display: "flex", gap: "15px", fontSize: "1.1rem", color: "#475569", lineHeight: 1.5 }}>
+                <span style={{ color: "#10b981", fontWeight: 900 }}>{i + 1}.</span>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+          <h2 style={{ fontSize: "1.6rem", color: "#10b981", fontWeight: 900, marginBottom: "1.5rem" }}>EXPECTATION</h2>
+          <ul style={{ display: "flex", flexDirection: "column", gap: "1.2rem", padding: 0, listStyle: "none" }}>
+            {[
+              "Change 'Push' Mindset into 'Pull' Mindset",
+              "Meet customer needed",
+              "Right from the first time",
+              "Continuous Improvement"
+            ].map((text, i) => (
+              <li key={i} style={{ display: "flex", gap: "15px", fontSize: "1.1rem", color: "#475569", lineHeight: 1.5 }}>
+                <span style={{ color: "#10b981", fontWeight: 900 }}>{i + 1}.</span>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
+
+      <div style={{ position: "absolute", bottom: "4rem", right: "2rem", opacity: 0.1 }}>
+        <Layers size={150} color="#0e6655" />
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+function SlideLeanPhilosophy() {
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <div>
+          <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655" }}>PHILOSOPHY OF LEAN</h1>
+          <div style={{ width: "60px", height: "4px", background: "#f97316", marginTop: "8px" }} />
+        </div>
+        <div style={{ background: "#0e6655", color: "#fff", padding: "4px 12px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900 }}>PAGE 16</div>
+      </div>
+
+      <div style={{ display: "flex", gap: "4rem", alignItems: "center", justifyContent: "center", flex: 1 }}>
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          style={{
+            background: "#fff",
+            border: "1px solid #e2e8f0",
+            padding: "2rem",
+            borderRadius: "12px",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+            textAlign: "center"
+          }}
+        >
+          <img
+            src="file:///Users/muhammadindrautama/.gemini/antigravity/brain/a60d33b5-9c20-4b51-91e4-883ecc888d7f/da_character_big_1772337613874.png"
+            alt="Da character"
+            style={{ width: "300px", height: "300px", objectFit: "contain" }}
+          />
+          <p style={{ marginTop: "1rem", fontSize: "1.5rem", fontWeight: 900, color: "#1a5276" }}>Da means <span style={{ color: "#0e6655" }}>BIG</span></p>
+        </motion.div>
+
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          style={{ flex: 1 }}
+        >
+          <div style={{ marginBottom: "2.5rem" }}>
+            <h2 style={{ fontSize: "2rem", color: "#475569", fontWeight: 400 }}>
+              Think <span style={{ fontWeight: 900, color: "#0e6655" }}>BIG</span> but Act <span style={{ fontWeight: 900, color: "#10b981" }}>SPEED</span>
+            </h2>
+          </div>
+
+          <div style={{ background: "rgba(16, 185, 129, 0.05)", borderLeft: "6px solid #10b981", padding: "2rem", borderRadius: "0 12px 12px 0" }}>
+            <h3 style={{ fontSize: "1.4rem", color: "#0e6655", fontWeight: 900, marginBottom: "1rem" }}>How to SPEED :</h3>
+            <p style={{ fontSize: "1.2rem", color: "#475569", lineHeight: 1.6, margin: 0 }}>
+              Eliminate <span style={{ fontWeight: 900, color: "#f97316" }}>&ldquo;MUDA&rdquo;</span>. Muda is Japanese word which means everything that add cost without adding any value from customer perspective (Internal & external customer). Founded by Toyota (Taiichi Ohno)
+            </p>
+          </div>
+        </motion.div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+function SlideMudaWaste() {
+  const mudaList = [
+    { t: "Over production", d: "Make report that no body or no section use / need it" },
+    { t: "Transportation", d: "Movement of paper work that does not add value" },
+    { t: "Motion", d: "Movement of people that does not add value" },
+    { t: "Waiting", d: "Idle time created when material, information, people, or equipment is not ready" },
+    { t: "Over processing", d: "Effort that adds no value from the customer's viewpoint" },
+    { t: "Inventory", d: "More paper work on hand than customer needed right now" },
+    { t: "Defects", d: "Work that contains errors, rework, or lacks something necessary" },
+    { t: "Knowledge disconnect", d: "Miscommunication between each section that make problem happen" }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <div>
+          <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655" }}>MUDA OR WASTE</h1>
+          <div style={{ width: "60px", height: "4px", background: "#f97316", marginTop: "8px" }} />
+        </div>
+        <div style={{ background: "#0e6655", color: "#fff", padding: "4px 12px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900 }}>PAGE 17</div>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div style={{ background: "#0e6655", color: "#fff", borderRadius: "12px 12px 0 0", overflow: "hidden" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 2.5fr", padding: "1rem 2rem", fontWeight: 900, fontSize: "1.1rem" }}>
+            <div>8 MUDA OR WASTE</div>
+            <div>DEFINITION</div>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "4px", flex: 1 }}>
+          {mudaList.map((m, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.05 }}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 2.5fr",
+                padding: "1rem 2rem",
+                background: i % 2 === 0 ? "rgba(16, 185, 129, 0.05)" : "#fff",
+                border: "1px solid #e2e8f0",
+                borderRadius: "8px",
+                fontSize: "1.05rem"
+              }}
+            >
+              <div style={{ fontWeight: 900, color: "#0e6655", display: "flex", gap: "10px", alignItems: "center" }}>
+                <span style={{ fontSize: "0.8rem", background: "#0e6655", color: "#fff", width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "4px" }}>{i + 1}</span>
+                {m.t}
+              </div>
+              <div style={{ color: "#475569", fontWeight: 500 }}>{m.d}</div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+function SlideVSM() {
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <div>
+          <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655" }}>VSM (Value Stream Mapping)</h1>
+          <div style={{ width: "60px", height: "4px", background: "#f97316", marginTop: "8px" }} />
+        </div>
+        <div style={{ background: "#0e6655", color: "#fff", padding: "4px 12px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900 }}>PAGE 18</div>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} style={{ textAlign: "center" }}>
+          <h2 style={{ fontSize: "1.8rem", color: "#10b981", fontWeight: 900, marginBottom: "1rem" }}>What&rsquo;s VSM ?</h2>
+          <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "#475569" }}>VSM is Lean&rsquo;s tool to improve:</p>
+          <div style={{ display: "flex", justifyContent: "center", gap: "2rem", marginTop: "1rem" }}>
+            {[
+              { l: "Value Added Ratio", v: "(PRODUCTIVITY)" },
+              { l: "Efficiency", v: "(COST)" },
+              { l: "Lead Time", v: "(SPEED)" }
+            ].map((item, i) => (
+              <div key={i} style={{ background: "#1a5276", color: "#fff", padding: "1rem 2rem", borderRadius: "12px", boxShadow: "0 4px 12px rgba(26,82,118,0.2)" }}>
+                <span style={{ fontWeight: 400 }}>{i + 1}. {item.l} </span>
+                <span style={{ fontWeight: 900, color: "#f97316" }}>{item.v}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
+          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+            <h3 style={{ fontSize: "1.5rem", color: "#0e6655", fontWeight: 900, marginBottom: "1.5rem", textTransform: "uppercase", textAlign: "center" }}>FROM : MAPPING</h3>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: 0, listStyle: "none" }}>
+              {[
+                "Just creating maps",
+                "Just holding kaizen (improvement) events and expecting results",
+                "Having only the lean coordinators responsible for improvements",
+                "Forming teams"
+              ].map((text, i) => (
+                <li key={i} style={{ display: "flex", gap: "15px", fontSize: "1rem", color: "#475569", fontWeight: 600 }}>
+                  <X size={20} color="#dc2626" style={{ marginTop: "3px", flexShrink: 0 }} />
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
+            <h3 style={{ fontSize: "1.5rem", color: "#10b981", fontWeight: 900, marginBottom: "1.5rem", textTransform: "uppercase", textAlign: "center" }}>TO : MINDSET</h3>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: 0, listStyle: "none" }}>
+              {[
+                "A method for linking all areas and people to create a lean enterprise",
+                "An approach to using a process to sustain lean",
+                "A way for everyone to understand lean",
+                "An opportunity for creating an actual implementation plan"
+              ].map((text, i) => (
+                <li key={i} style={{ display: "flex", gap: "15px", fontSize: "1rem", color: "#475569", fontWeight: 700 }}>
+                  <Check size={20} color="#10b981" style={{ marginTop: "3px", flexShrink: 0 }} />
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   { title: "Cover", component: SlideCover },
@@ -3464,6 +3738,13 @@ const slides = [
   // BAGIAN 6 — IMPLEMENTATION
   { title: "Timeline", component: SlideTimeline },
   { title: "Project Charter", component: SlideProjectCharter },
+
+  // BAGIAN 7 — BUSINESS PROCESS IMPROVEMENT (LEAN)
+  { title: "BPI — Section Divider", component: SlideBPIConcept },
+  { title: "What is Lean?", component: SlideWhatIsLean },
+  { title: "Lean Philosophy", component: SlideLeanPhilosophy },
+  { title: "Muda or Waste Klasifikasi", component: SlideMudaWaste },
+  { title: "Value Stream Mapping (VSM)", component: SlideVSM },
 
   // CLOSING & APPENDIX
   { title: "Appendix — Terminologi", component: SlideSMKTITerminologi },
