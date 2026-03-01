@@ -1250,7 +1250,7 @@ function SlidePrinsipKPI() {
 
 function SlideSectionConcept() {
   return (
-    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex", flexDirection: "row" }}>
       <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "#0e6655" }}>
         {/* Abstract Farm/Sugar Cane Illustration Mockup */}
         <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
@@ -5227,7 +5227,7 @@ function SlideVSM() {
    ============================= */
 function SlideSectionExistingVs2026() {
   return (
-    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex", flexDirection: "row" }}>
       <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "#1a5276" }}>
         <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
         <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
@@ -5275,7 +5275,7 @@ function SlideSectionExistingVs2026() {
    ============================= */
 function SlideSectionDesign2026() {
   return (
-    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex", flexDirection: "row" }}>
       <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #064e3b 0%, #0e6655 100%)" }}>
         <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
         <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
@@ -5323,7 +5323,7 @@ function SlideSectionDesign2026() {
    ============================= */
 function SlideSectionImplementation() {
   return (
-    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex", flexDirection: "row" }}>
       <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "#e67e22" }}>
         <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
         <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
@@ -5789,7 +5789,7 @@ function SlideNextSteps() {
    ============================= */
 function SlideSectionClosing() {
   return (
-    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex", flexDirection: "row" }}>
       <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)" }}>
         <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
         <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
