@@ -5124,22 +5124,23 @@ function SlideMudaWaste() {
 
 function SlideVSM() {
   const benefits = [
-    { label: "Value Added Ratio", metric: "PRODUKTIVITAS", icon: <BarChart3 size={24} />, color: "#0e6655" },
-    { label: "Efisiensi", metric: "BIAYA", icon: <Wallet size={24} />, color: "#f97316" },
-    { label: "Lead Time", metric: "KECEPATAN", icon: <TrendingUp size={24} />, color: "#1a5276" },
+    { label: "Value Added Ratio", metric: "PRODUKTIVITAS SDM", icon: <BarChart3 size={24} />, color: "#0e6655" },
+    { label: "Biaya per Layanan HR", metric: "EFISIENSI BIAYA SDM", icon: <Wallet size={24} />, color: "#f97316" },
+    { label: "Lead Time Layanan SDM", metric: "KECEPATAN LAYANAN SDM", icon: <TrendingUp size={24} />, color: "#1a5276" },
   ];
 
-  const fromItems = ["Peta proses tanpa tindak lanjut", "Kaizen event tanpa ukur hasil", "Hanya andalkan koordinator Lean", "Tim tanpa kejelasan peran & target"];
-  const toItems = ["Koneksi seluruh area & orang", "Pendekatan proses berkelanjutan", "Lean dipahami seluruh karyawan", "Rencana implementasi terukur"];
+  const fromItems = ["Proses SDM per fungsi terpisah", "Fokus administrasi, bukan journey pegawai", "Banyak handover & approval", "Waktu layanan tidak terukur", "Perbaikan parsial"];
+  const toItems = ["Alur layanan SDM end-to-end terlihat", "Journey pegawai dipetakan", "Bottleneck teridentifikasi", "Target waktu layanan jelas", "Roadmap perbaikan terukur"];
+  const measureItems = ["Lead time rekrutmen", "Waktu onboarding", "Siklus kinerja", "Layanan administrasi HR", "Handover HR"];
 
   return (
     <div className="slide" style={{ padding: "1.5rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #fff 100%)" }}>
       <AccentShapes />
       <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
         <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.2rem" }}>
-          <em>Mengapa VSM (Value Stream Mapping)?</em>
+          <em>Mengapa VSM dalam Pengelolaan SDM?</em>
         </h1>
-        <p style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Menghubungkan Proses Menuju Arsitektur Lean</p>
+        <p style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Menghubungkan Proses SDM End-to-End menuju HR Lean & Agile</p>
       </div>
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -5159,13 +5160,13 @@ function SlideVSM() {
           ))}
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", flex: 1 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
           <div style={{ background: "#fef2f2", padding: "1.2rem", borderRadius: "18px", border: "1px solid #fee2e2" }}>
             <h3 style={{ fontSize: "1.1rem", color: "#991b1b", fontWeight: 800, marginBottom: "0.8rem", display: "flex", alignItems: "center", gap: "8px" }}><X size={18} /> Traditional Approach</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               {fromItems.map((item, i) => (
                 <div key={i} style={{ fontSize: "0.85rem", color: "#7f1d1d", fontWeight: 600, display: "flex", gap: "8px" }}>
-                  <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#ef4444", marginTop: "8px" }} />
+                  <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#ef4444", marginTop: "8px", flexShrink: 0 }} />
                   {item}
                 </div>
               ))}
@@ -5173,15 +5174,33 @@ function SlideVSM() {
           </div>
 
           <div style={{ background: "#f0fdf4", padding: "1.2rem", borderRadius: "18px", border: "1px solid #dcfce7" }}>
-            <h3 style={{ fontSize: "1.1rem", color: "#166534", fontWeight: 800, marginBottom: "0.8rem", display: "flex", alignItems: "center", gap: "8px" }}><Check size={18} /> VSM / Lean Journey</h3>
+            <h3 style={{ fontSize: "1.1rem", color: "#166534", fontWeight: 800, marginBottom: "0.8rem", display: "flex", alignItems: "center", gap: "8px" }}><Check size={18} /> VSM / Lean HR Journey</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               {toItems.map((item, i) => (
                 <div key={i} style={{ fontSize: "0.85rem", color: "#14532d", fontWeight: 600, display: "flex", gap: "8px" }}>
-                  <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#22c55e", marginTop: "8px" }} />
+                  <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#22c55e", marginTop: "8px", flexShrink: 0 }} />
                   {item}
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", gap: "1.5rem", flex: 1 }}>
+          <div style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "18px", padding: "1.2rem" }}>
+            <h4 style={{ fontSize: "0.95rem", color: "#1e293b", fontWeight: 800, marginBottom: "0.8rem" }}>VSM SDM Mengukur:</h4>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
+              {measureItems.map((item, i) => (
+                <div key={i} style={{ fontSize: "0.8rem", color: "#475569", fontWeight: 600, display: "flex", alignItems: "center", gap: "6px" }}>
+                  <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#cbd5e1" }} />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={{ flex: 1.5, background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "1.2rem", borderRadius: "18px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <p style={{ margin: "0 0 0.5rem 0", fontSize: "0.95rem", fontWeight: 800 }}>Tanpa VSM: <span style={{ fontWeight: 500, opacity: 0.9 }}>Layanan SDM lambat & terfragmentasi</span></p>
+            <p style={{ margin: 0, fontSize: "0.95rem", fontWeight: 800 }}>Dengan VSM: <span style={{ fontWeight: 500, color: "#fbbf24" }}>Layanan SDM cepat, terukur & berorientasi pengalaman pegawai</span></p>
           </div>
         </div>
       </div>
