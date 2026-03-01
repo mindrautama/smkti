@@ -38,7 +38,6 @@ function SlideFooter() {
   return (
     <div className="slide-footer">
       <span className="footer-text">
-        AKHLAK · Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif
       </span>
       <div className="footer-bar">
         <div
