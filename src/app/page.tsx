@@ -689,54 +689,54 @@ function SlideBigDream() {
         <img src="/images/bpi_landscape.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
 
-      <div style={{ position: "relative", zIndex: 2, padding: "3rem 4rem", height: "100%", display: "flex", flexDirection: "column" }}>
-        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <h1 style={{ fontSize: "3.5rem", fontWeight: 800, color: "#fff", margin: 0 }}>
-            Our (PTPN) <span style={{ color: "#fbbf24" }}>Big Dream</span> as Strategic
+      <div style={{ position: "relative", zIndex: 2, padding: "2rem 4rem", height: "100%", display: "flex", flexDirection: "column" }}>
+        <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+          <h1 style={{ fontSize: "3rem", fontWeight: 800, color: "#fff", margin: 0 }}>
+            Our (PTPN) <span style={{ color: "#fbbf24" }}>Big Dream</span> 2026-2030
           </h1>
-          <p style={{ fontSize: "1.4rem", color: "#6ee7b7", margin: "0.5rem 0 0", fontWeight: 600 }}>Statement of RJPP 2026-2030</p>
+          <p style={{ fontSize: "1.2rem", color: "#6ee7b7", margin: "0.4rem 0 0", fontWeight: 600 }}>Statement of RJPP - Strategic Pillars</p>
         </div>
 
-        <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "3rem", alignItems: "center" }}>
+        <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "2.5rem", alignItems: "center" }}>
           {/* Left Side: Main Vision */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            style={{ padding: "2.5rem", borderRight: "1px solid rgba(255,255,255,0.1)" }}
+            style={{ padding: "1.5rem", borderRight: "1px solid rgba(255,255,255,0.1)" }}
           >
-            <h2 style={{ fontSize: "2.2rem", color: "#fff", fontWeight: 800, lineHeight: 1.2, marginBottom: "2rem" }}>
+            <h2 style={{ fontSize: "1.8rem", color: "#fff", fontWeight: 800, lineHeight: 1.2, marginBottom: "1.5rem" }}>
               World-Class Smart Agri Company, Empowering Indonesia’s High Impact EntrePlanters for Food & Energy Security
             </h2>
-            <div style={{ width: "80px", height: "4px", background: "#fbbf24", marginBottom: "2rem" }} />
-            <p style={{ fontSize: "1.6rem", color: "#fbbf24", fontWeight: 700, lineHeight: 1.3, fontStyle: "italic" }}>
+            <div style={{ width: "60px", height: "4px", background: "#fbbf24", marginBottom: "1.5rem" }} />
+            <p style={{ fontSize: "1.3rem", color: "#fbbf24", fontWeight: 700, lineHeight: 1.3, fontStyle: "italic" }}>
               Perusahaan Perkebunan Berbasis Teknologi Kelas Dunia, Melalui Penguatan SDM EntrePlanters di Indonesia (PTPN) yang Berdampak Terhadap Ketahanan Pangan & Energi
             </p>
           </motion.div>
 
           {/* Right Side: Pillars Cards */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
             {pillars.map((p, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
+                transition={{ delay: i * 0.15 }}
                 style={{
                   background: "rgba(255, 255, 255, 0.08)",
                   backdropFilter: "blur(12px)",
-                  padding: "1.5rem 2rem",
-                  borderRadius: "16px",
+                  padding: "1.2rem 1.6rem",
+                  borderRadius: "14px",
                   border: "1px solid rgba(255, 255, 255, 0.1)",
                   position: "relative"
                 }}
               >
-                <div style={{ borderBottom: "2px solid rgba(251, 191, 36, 0.3)", paddingBottom: "0.5rem", marginBottom: "0.8rem" }}>
-                  <h3 style={{ fontSize: "1.1rem", fontWeight: 900, color: "#6ee7b7", margin: 0, textTransform: "uppercase" }}>{p.title}</h3>
+                <div style={{ borderBottom: "2px solid rgba(251, 191, 36, 0.3)", paddingBottom: "0.4rem", marginBottom: "0.6rem" }}>
+                  <h3 style={{ fontSize: "1rem", fontWeight: 900, color: "#6ee7b7", margin: 0, textTransform: "uppercase" }}>{p.title}</h3>
                 </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                  <p style={{ fontSize: "0.85rem", color: "#fff", margin: 0, lineHeight: 1.4, fontWeight: 500, opacity: 0.9 }}>&ldquo;{p.en}&rdquo;</p>
-                  <div style={{ height: "1px", background: "rgba(255,255,255,0.1)", borderStyle: "dashed" }} />
-                  <p style={{ fontSize: "0.8rem", color: "#6ee7b7", margin: 0, lineHeight: 1.4, fontWeight: 500, fontStyle: "italic" }}>{p.id}</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                  <p style={{ fontSize: "0.8rem", color: "#fff", margin: 0, lineHeight: 1.4, fontWeight: 500, opacity: 0.9 }}>&ldquo;{p.en}&rdquo;</p>
+                  <div style={{ height: "1px", background: "rgba(255,255,255,0.05)", borderStyle: "dashed" }} />
+                  <p style={{ fontSize: "0.75rem", color: "#6ee7b7", margin: 0, lineHeight: 1.4, fontWeight: 500, fontStyle: "italic" }}>{p.id}</p>
                 </div>
               </motion.div>
             ))}
@@ -6666,7 +6666,7 @@ export default function PresentationPage() {
         )}
 
         {/* Slide Display Area */}
-        <div style={{ flex: 1, position: "relative", height: "100%", display: "flex", flexDirection: "column" }}>
+        <div style={{ flex: 1, position: "relative", height: "100%", display: "flex", flexDirection: "column", paddingBottom: "5rem" }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
