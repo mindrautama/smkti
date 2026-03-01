@@ -3360,47 +3360,47 @@ function SlideAppraisalReference() {
 
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
-  SlideCover,                // 1: Cover
-  SlideLatar,                // 2: Strategic Drivers
-  SlideWhyChange,            // 3: Why Change? — Gap Analysis ⭐ NEW
+  { title: "Cover", component: SlideCover },
+  { title: "Strategic Drivers", component: SlideLatar },
+  { title: "Gap Analysis — Why Change?", component: SlideWhyChange },
 
   // BAGIAN 2 — PMS DESIGN PRINCIPLES
-  SlideSectionConcept,       // ⭐ NEW: Section Divider
-  SlideBSCFoundation,        // ⭐ NEW: BSC Principles
-  SlidePDCACycle,            // ⭐ NEW: PDCA & Improvement
-  SlideStrategicAlignment,   // ⭐ NEW: Cascading
-  SlideUnitIndividualPerformance, // ⭐ NEW: Unit vs Individual
-  SlidePrinsipKPI,           // 4: Prinsip KPI
-  SlideBAPerformance,        // 5: Hubungan BA & Kinerja
-  SlideModelKinerja,         // 6: Model Kinerja APMS
+  { title: "Concept — Section Divider", component: SlideSectionConcept },
+  { title: "BSC Principles", component: SlideBSCFoundation },
+  { title: "PDCA & Improvement", component: SlidePDCACycle },
+  { title: "Strategic Cascading", component: SlideStrategicAlignment },
+  { title: "Unit vs Individual Performance", component: SlideUnitIndividualPerformance },
+  { title: "Prinsip Dasar KPI", component: SlidePrinsipKPI },
+  { title: "Hubungan BA & Kinerja", component: SlideBAPerformance },
+  { title: "Model Kinerja APMS", component: SlideModelKinerja },
 
   // BAGIAN 3 — EXISTING VS 2026
-  SlideFramework2022,        // 6: Existing PMS 2022–2025
-  SlidePerubahanKunci,       // 7: Perubahan Kunci
-  SlideSMKTIKonsep,          // 8: Konsep SMKTI 2026 ⭐ NEW
-  SlideSMKTIKomparasi1,      // 9: Komparasi Perdir #1 ⭐ NEW
-  SlideSMKTIKomparasi2,      // 10: Komparasi Perdir #2 ⭐ NEW
+  { title: "Existing PMS 2022–2025", component: SlideFramework2022 },
+  { title: "Perubahan Kunci Paradigma", component: SlidePerubahanKunci },
+  { title: "Konsep SMKTI 2026", component: SlideSMKTIKonsep },
+  { title: "Komparasi Perdir #1", component: SlideSMKTIKomparasi1 },
+  { title: "Komparasi Perdir #2", component: SlideSMKTIKomparasi2 },
 
   // BAGIAN 4 — DESIGN 2026
-  SlideFramework2026A,       // 11: Arsitektur Opsi A
-  SlideFramework2026B,       // 12: Arsitektur Opsi B
-  SlideProConOptions,        // 13: Pro Con Opsi A vs B
-  SlideProConRating,         // 14: Pro Con Rating Distribusi
-  SlideRatingKinerja,        // 15: Rating Model 2026
-  SlidePriorityPool,         // 16: Priority Pool & Talent
+  { title: "Arsitektur Opsi A", component: SlideFramework2026A },
+  { title: "Arsitektur Opsi B", component: SlideFramework2026B },
+  { title: "Pro Con Opsi A vs B", component: SlideProConOptions },
+  { title: "Pro Con Rating Distribusi", component: SlideProConRating },
+  { title: "Rating Model 2026", component: SlideRatingKinerja },
+  { title: "Priority Pool & Talent", component: SlidePriorityPool },
 
   // BAGIAN 5 — IMPACT
-  SlideWeighting,            // 17: Pembobotan & Dampak Reward
+  { title: "Weighting & Reward Impact", component: SlideWeighting },
 
   // BAGIAN 6 — IMPLEMENTATION
-  SlideTimeline,             // 18: Timeline
-  SlideProjectCharter,       // 19: Project Charter
+  { title: "Timeline", component: SlideTimeline },
+  { title: "Project Charter", component: SlideProjectCharter },
 
   // CLOSING & APPENDIX
-  SlideSMKTITerminologi,     // 20: Appendix — Terminologi ⭐ NEW
-  SlideAppraisalReference,   // ⭐ NEW: Appendix — Appraisal Model
-  SlideThankYou,             // 21: Terima Kasih
-  SlideRatingReference,      // 22: Appendix — Referensi Global
+  { title: "Appendix — Terminologi", component: SlideSMKTITerminologi },
+  { title: "Appendix — Appraisal Model", component: SlideAppraisalReference },
+  { title: "Terima Kasih", component: SlideThankYou },
+  { title: "Appendix — Referensi Global", component: SlideRatingReference },
 ];
 
 export default function PresentationPage() {
@@ -3447,7 +3447,7 @@ export default function PresentationPage() {
     }
   }, [currentSlide, isSidebarOpen]);
 
-  const CurrentSlideComponent = slides[currentSlide];
+  const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
     <div style={{ display: "flex", width: "100%", height: "100vh", background: "#f1f5f9", overflow: "hidden" }}>
@@ -3516,7 +3516,7 @@ export default function PresentationPage() {
                 >
                   <span style={{ fontSize: "0.75rem", fontWeight: 900, opacity: 0.5, minWidth: "20px" }}>{String(i + 1).padStart(2, '0')}</span>
                   <span style={{ fontSize: "0.8rem", fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                    {slide.name.replace('Slide', '')}
+                    {slide.title}
                   </span>
                 </button>
               ))}
