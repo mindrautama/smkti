@@ -577,6 +577,149 @@ function SlideWaysOfWorking() {
 }
 
 /* =============================
+   HC STRATEGIC INITIATIVES — PILAR 4
+   ============================= */
+function SlideHCStrategicPilar4() {
+  const initiatives = [
+    {
+      id: "4.1",
+      title: "Integrated Performance Management System",
+      cols: [
+        "KPI growth & revenue-based",
+        "KPI yield: productivity & cost/unit",
+        "KPI recovery: cost reduction"
+      ]
+    },
+    {
+      id: "4.2",
+      title: "Excellence Performance-Driven Culture",
+      cols: [
+        "Target growth",
+        "Target achievement",
+        "Execution speed & ownership"
+      ]
+    },
+    {
+      id: "4.3",
+      title: "Competitive Remuneration & Total Reward",
+      cols: [
+        "Attraction & retention talent kritikal",
+        "Reward berbasis output & produktivitas",
+        "Variable pay & control fixed cost"
+      ]
+    }
+  ];
+
+  const otherPillars = [
+    { n: "PILAR 1", t: "HC Strategy & Corporate Culture", color: "#dc2626" },
+    { n: "PILAR 2", t: "Learning & Leadership Development", color: "#ea580c" },
+    { n: "PILAR 3", t: "Talent Management", color: "#ca8a04" },
+    { n: "PILAR 5", t: "HC Governance, IR & Policy", color: "#7c3aed" }
+  ];
+
+  const bizHeaders = [
+    { t: "Value Creation", s: "(Downstream)", color: "#0e6655" },
+    { t: "Business Expansion", s: "(On & off-farm Excellence)", color: "#1a5276" },
+    { t: "Business Turnaround", s: "", color: "#dc2626" }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.4rem", color: "#1a5276" }}>HC Strategic Initiatives to Business Priorities</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Focus: PILAR 4 — Performance Management & Reward</p>
+      </div>
+
+      {/* Business Priority Headers */}
+      <div style={{ display: "grid", gridTemplateColumns: "280px 1fr 1fr 1fr", gap: "8px", marginBottom: "8px" }}>
+        <div />
+        {bizHeaders.map((h, i) => (
+          <motion.div key={i} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+            style={{ background: h.color, color: "#fff", padding: "12px 16px", borderRadius: "12px", textAlign: "center" }}
+          >
+            <div style={{ fontWeight: 900, fontSize: "0.9rem" }}>{h.t}</div>
+            {h.s && <div style={{ fontSize: "0.7rem", opacity: 0.8 }}>{h.s}</div>}
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Other Pillars (dimmed) */}
+      {otherPillars.slice(0, 3).map((p, i) => (
+        <div key={i} style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "8px", marginBottom: "4px", opacity: 0.25 }}>
+          <div style={{ background: p.color, color: "#fff", padding: "10px 14px", borderRadius: "8px", display: "flex", alignItems: "center", gap: "10px" }}>
+            <span style={{ fontWeight: 900, fontSize: "0.75rem" }}>{p.n}</span>
+            <span style={{ fontSize: "0.7rem", fontWeight: 600 }}>{p.t}</span>
+          </div>
+          <div style={{ background: "#f1f5f9", borderRadius: "8px", padding: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ fontSize: "0.7rem", color: "#94a3b8", fontStyle: "italic" }}>...</span>
+          </div>
+        </div>
+      ))}
+
+      {/* PILAR 4 — HIGHLIGHTED */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        style={{
+          border: "3px solid #0e6655",
+          borderRadius: "16px",
+          padding: "1rem",
+          background: "rgba(16, 185, 129, 0.03)",
+          marginBottom: "8px",
+          boxShadow: "0 8px 25px rgba(14,102,85,0.1)"
+        }}
+      >
+        <div style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: "12px" }}>
+          <div style={{ background: "linear-gradient(135deg, #0e6655, #064e3b)", color: "#fff", padding: "16px", borderRadius: "12px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <div style={{ fontWeight: 900, fontSize: "1.1rem", marginBottom: "4px" }}>PILAR 4</div>
+            <div style={{ fontSize: "0.85rem", fontWeight: 700, lineHeight: 1.3 }}>Performance Management & Reward</div>
+            <div style={{ marginTop: "10px", width: "40px", height: "3px", background: "#fbbf24" }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+            {initiatives.map((init, i) => (
+              <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
+                {init.cols.map((col, j) => (
+                  <motion.div key={j} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.1 + j * 0.05 }}
+                    style={{ background: "#f8fafc", border: "1px solid #e2e8f0", padding: "10px 12px", borderRadius: "10px", fontSize: "0.8rem", color: "#334155", fontWeight: 600, lineHeight: 1.3 }}
+                  >
+                    {col}
+                  </motion.div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Initiative Labels */}
+        <div style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: "12px", marginTop: "10px" }}>
+          <div />
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            {initiatives.map((init, i) => (
+              <div key={i} style={{ fontSize: "0.75rem", fontWeight: 800, color: "#0e6655" }}>
+                <span style={{ color: "#f97316" }}>{init.id}</span> {init.title}
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Pilar 5 dimmed */}
+      <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "8px", opacity: 0.25 }}>
+        <div style={{ background: otherPillars[3].color, color: "#fff", padding: "10px 14px", borderRadius: "8px", display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontWeight: 900, fontSize: "0.75rem" }}>{otherPillars[3].n}</span>
+          <span style={{ fontSize: "0.7rem", fontWeight: 600 }}>{otherPillars[3].t}</span>
+        </div>
+        <div style={{ background: "#f1f5f9", borderRadius: "8px", padding: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <span style={{ fontSize: "0.7rem", color: "#94a3b8", fontStyle: "italic" }}>...</span>
+        </div>
+      </div>
+
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
    SLIDE 1: LATAR BELAKANG
    ============================= */
 function SlideLatar() {
@@ -4182,6 +4325,7 @@ const slides = [
   { title: "Strategic Drivers", component: SlideLatar },
   { title: "Our Big Dream RJPP 2026-2030", component: SlideBigDream },
   { title: "Ways of Working (PCS) Enhancement", component: SlideWaysOfWorking },
+  { title: "HC Initiatives — Pilar 4 PMS", component: SlideHCStrategicPilar4 },
   { title: "Gap Analysis — Why Change?", component: SlideWhyChange },
 
   // BAGIAN 2 — PMS DESIGN PRINCIPLES
