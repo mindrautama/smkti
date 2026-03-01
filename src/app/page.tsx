@@ -496,16 +496,6 @@ function SlideCover() {
           PTPN Group
         </motion.div>
 
-        <div style={{ marginTop: "3rem", display: "flex", justifyContent: "center", gap: "2rem" }}>
-          <div style={{ textAlign: "left", borderLeft: "2px solid rgba(255,255,255,0.2)", paddingLeft: "1rem" }}>
-            <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.6)", textTransform: "uppercase" }}>Version</div>
-            <div style={{ fontSize: "1rem", color: "#fff", fontWeight: 700 }}>2.0 EA-Performance</div>
-          </div>
-          <div style={{ textAlign: "left", borderLeft: "2px solid rgba(255,255,255,0.2)", paddingLeft: "1rem" }}>
-            <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.6)", textTransform: "uppercase" }}>Focus</div>
-            <div style={{ fontSize: "1rem", color: "#fff", fontWeight: 700 }}>Strategic & Operational Alignment</div>
-          </div>
-        </div>
       </motion.div>
 
       {/* Floating Decorative Elements */}
