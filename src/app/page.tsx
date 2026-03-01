@@ -292,6 +292,108 @@ function SlideCover() {
 }
 
 /* =============================
+   UPDATE PERFORMANCE MANAGEMENT SLIDE
+   ============================= */
+function SlidePerformanceUpdate2026() {
+  const tableData = [
+    {
+      no: 1,
+      uraian: "Monitoring Pengisian Kinerja 2025",
+      p3: "99,39%",
+      p1: "98,13%",
+      p4: "93,04%",
+      sgn: "98,26%",
+      keterangan: (
+        <ul style={{ paddingLeft: "1.2rem", margin: 0, fontSize: "0.85rem" }}>
+          <li>PTPN I: Proses cetak ERP</li>
+          <li>PTPN IV: Proses pengisian, rekapitulasi dan cetak ERP (proses dijalankan parallel dan fokus pada KSO yang masih rendah progress nya)</li>
+          <li>PT SGN : Proses rekapitulasi nilai dan cetak ERP</li>
+        </ul>
+      )
+    },
+    {
+      no: 2,
+      uraian: "Pengisian Matrix KPI Individu 2026",
+      p3: "90%",
+      p1: "10%",
+      p4: "20%",
+      sgn: "0%",
+      keterangan: (
+        <ul style={{ paddingLeft: "1.2rem", margin: 0, fontSize: "0.85rem" }}>
+          <li>PTPN III : Draft Matrix per Divisi telah dibuat, namun perlu dikroscek ulang</li>
+          <li>PTPN I : Draft Matrix per Divisi HO telah dibuat, Unit Komoditi Karet telah dibuat</li>
+          <li>PTPN IV : Draft Matrix per Divisi HO telah dibuat, Unit Komoditi Sawit dan Karet telah dibuat beserta simulasi sederhana</li>
+          <li>PT SGN : Draft Matrix belum dibuat</li>
+        </ul>
+      )
+    },
+    {
+      no: 3,
+      uraian: "Form Program Kerja Individu 2026",
+      p3: "50%",
+      p1: "-",
+      p4: "-",
+      sgn: "-",
+      keterangan: "Penyesuaian Form Program Kerja Individu untuk disebarkan ke Seluruh Divisi Holding masih dalam tahap drafting"
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3rem", background: "#f8fafc" }}>
+      <div style={{ position: "absolute", top: 0, right: 0, width: "100%", height: "80px", background: "linear-gradient(90deg, #fff 0%, #10b981 100%)", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 3rem" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <div style={{ width: "100px", height: "40px", background: "rgba(0,0,0,0.05)", borderRadius: "4px" }} /> {/* Placeholder Logo */}
+          <span style={{ fontSize: "1rem", fontWeight: 700, color: "#1a5276" }}>Perkebunan Nusantara</span>
+        </div>
+        <div style={{ textAlign: "right", borderRight: "100px solid #f97316", paddingRight: "1rem" }}>
+          <h2 style={{ fontSize: "2rem", color: "#1a5276", margin: 0, fontWeight: 800 }}>Update Performance Management</h2>
+          <p style={{ fontSize: "1.1rem", color: "#0e6655", margin: 0, fontWeight: 700 }}>per 1 Mar 2026, Pukul <span style={{ color: "#f97316" }}>09.00</span></p>
+        </div>
+      </div>
+
+      <div style={{ marginTop: "100px", flex: 1, overflow: "hidden" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", background: "#fff", borderRadius: "12px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.05)", tableLayout: "fixed" }}>
+          <thead>
+            <tr style={{ background: "#94a3b8", color: "#fff" }}>
+              <th rowSpan={2} style={{ width: "50px", border: "1px solid #e2e8f0", padding: "12px" }}>No</th>
+              <th rowSpan={2} style={{ width: "220px", border: "1px solid #e2e8f0", padding: "12px" }}>Uraian</th>
+              <th colSpan={4} style={{ border: "1px solid #e2e8f0", padding: "12px", background: "#64748b" }}>Progress (%)</th>
+              <th rowSpan={2} style={{ border: "1px solid #e2e8f0", padding: "12px" }}>Keterangan</th>
+            </tr>
+            <tr style={{ background: "#cbd5e1", color: "#1a5276" }}>
+              <th style={{ border: "1px solid #e2e8f0", padding: "10px", fontSize: "0.85rem" }}>PTPN III (Persero)</th>
+              <th style={{ border: "1px solid #e2e8f0", padding: "10px", fontSize: "0.85rem" }}>PTPN I</th>
+              <th style={{ border: "1px solid #e2e8f0", padding: "10px", fontSize: "0.85rem" }}>PTPN IV</th>
+              <th style={{ border: "1px solid #e2e8f0", padding: "10px", fontSize: "0.85rem" }}>PT SGN</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.map((row) => (
+              <tr key={row.no} style={{ borderBottom: "1px solid #e2e8f0" }}>
+                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0" }}>{row.no}</td>
+                <td style={{ padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#1a5276" }}>{row.uraian}</td>
+                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#10b981", fontSize: "1.1rem" }}>{row.p3}</td>
+                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#64748b" }}>{row.p1}</td>
+                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#64748b" }}>{row.p4}</td>
+                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#64748b" }}>{row.sgn}</td>
+                <td style={{ padding: "15px", border: "1px solid #e2e8f0", fontSize: "0.8rem", color: "#475569", lineHeight: 1.4 }}>{row.keterangan}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div style={{ position: "absolute", bottom: "4rem", right: "2rem", display: "flex", gap: "10px" }}>
+        <div style={{ width: "25px", height: "25px", background: "#0e6655", transform: "skew(-20deg)" }} />
+        <div style={{ width: "25px", height: "25px", background: "#f97316", transform: "skew(-20deg)" }} />
+        <div style={{ width: "25px", height: "25px", background: "#1a5276", transform: "skew(-20deg)" }} />
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
    SLIDE 1: LATAR BELAKANG
    ============================= */
 function SlideLatar() {
@@ -3709,6 +3811,7 @@ const slides = [
 
   // BAGIAN 2 — PMS DESIGN PRINCIPLES
   { title: "Concept — Section Divider", component: SlideSectionConcept },
+  { title: "Update PM Mar 2026", component: SlidePerformanceUpdate2026 },
   { title: "BSC Principles", component: SlideBSCFoundation },
   { title: "PDCA & Improvement", component: SlidePDCACycle },
   { title: "Strategic Cascading", component: SlideStrategicAlignment },
