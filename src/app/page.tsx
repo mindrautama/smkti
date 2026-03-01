@@ -4469,54 +4469,153 @@ function SlideBPIConcept() {
 }
 
 function SlideWhatIsLean() {
+  const principles = [
+    { icon: <Calendar size={24} />, title: "Zero Waiting Time", desc: "Menghilangkan waktu tunggu yang tidak produktif di setiap tahapan proses" },
+    { icon: <Layers size={24} />, title: "Zero Inventory", desc: "Meminimalkan stok berlebih yang mengikat modal dan ruang penyimpanan" },
+    { icon: <ArrowRight size={24} />, title: "Pull System", desc: "Produksi berdasarkan permintaan aktual pelanggan, bukan prediksi (push)" },
+    { icon: <TrendingUp size={24} />, title: "Batch to Flow", desc: "Mengubah proses batch besar menjadi aliran kontinu dengan ukuran lot kecil" },
+    { icon: <BarChart3 size={24} />, title: "Line Balancing", desc: "Menyeimbangkan beban kerja antar stasiun untuk mengurangi bottleneck" },
+  ];
+
+  const expectations = [
+    { num: "01", text: "Mengubah mindset dari 'Push' menjadi 'Pull' — bekerja berdasarkan kebutuhan, bukan asumsi" },
+    { num: "02", text: "Memenuhi kebutuhan pelanggan (internal & eksternal) secara tepat" },
+    { num: "03", text: "Right from the first time — mengerjakan dengan benar sejak awal" },
+    { num: "04", text: "Continuous Improvement — perbaikan berkelanjutan tanpa henti" },
+  ];
+
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-        <div>
-          <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655" }}>WHAT'S LEAN ?</h1>
-          <div style={{ width: "60px", height: "4px", background: "#f97316", marginTop: "8px" }} />
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>Apa itu Lean?</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Metodologi untuk memaksimalkan nilai dengan meminimalkan pemborosan
+        </p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        {/* Top Section: Definition + Expectations */}
+        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "1.5rem" }}>
+          {/* Definition Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            style={{
+              background: "linear-gradient(135deg, #064e3b 0%, #0e6655 100%)",
+              borderRadius: "24px",
+              padding: "2rem 2.5rem",
+              color: "#fff",
+              position: "relative",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center"
+            }}
+          >
+            <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "180px", height: "180px", borderRadius: "50%", background: "rgba(255,255,255,0.05)" }} />
+            <div style={{ fontSize: "0.85rem", fontWeight: 800, letterSpacing: "3px", textTransform: "uppercase", opacity: 0.6, marginBottom: "1rem" }}>DEFINISI</div>
+            <h2 style={{ fontSize: "1.8rem", fontWeight: 800, lineHeight: 1.3, margin: "0 0 1.2rem 0" }}>
+              Lean adalah metodologi menyeluruh yang bertujuan <span style={{ color: "#6ee7b7" }}>meminimalkan sumber daya</span> yang dibutuhkan untuk operasional dengan <span style={{ color: "#fbbf24" }}>mengeliminasi 8 jenis pemborosan</span> (waste/muda).
+            </h2>
+            <p style={{ fontSize: "1.05rem", lineHeight: 1.6, opacity: 0.85, margin: 0 }}>
+              Dikembangkan oleh <strong>Toyota Production System (TPS)</strong> oleh <strong>Taiichi Ohno</strong>, Lean berfokus pada penciptaan nilai maksimal bagi pelanggan dengan proses yang efisien dan tanpa pemborosan.
+            </p>
+          </motion.div>
+
+          {/* Expectations Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.15 }}
+            style={{
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "2rem",
+              border: "2px solid #0e6655",
+              boxShadow: "0 10px 35px rgba(14, 102, 85, 0.08)"
+            }}
+          >
+            <div style={{ fontSize: "0.85rem", fontWeight: 800, letterSpacing: "3px", textTransform: "uppercase", color: "#0e6655", marginBottom: "1.2rem" }}>HARAPAN & OUTCOME</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {expectations.map((e, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + i * 0.1 }}
+                  style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}
+                >
+                  <div style={{
+                    background: "linear-gradient(135deg, #0e6655, #10b981)",
+                    color: "#fff",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "0.8rem",
+                    fontWeight: 900,
+                    flexShrink: 0
+                  }}>
+                    {e.num}
+                  </div>
+                  <p style={{ fontSize: "1.05rem", color: "#334155", fontWeight: 600, lineHeight: 1.4, margin: 0 }}>{e.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
-        <div style={{ background: "#0e6655", color: "#fff", padding: "4px 12px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900 }}>PAGE 15</div>
-      </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", position: "relative", zIndex: 1 }}>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h2 style={{ fontSize: "1.6rem", color: "#10b981", fontWeight: 900, marginBottom: "1.5rem" }}>DEFINITION</h2>
-          <ul style={{ display: "flex", flexDirection: "column", gap: "1.2rem", padding: 0, listStyle: "none" }}>
-            {[
-              "An overall methodology that seeks to minimize the resources required for operation by eliminating 8 waste",
-              "Principles of lean include zero waiting time, zero inventory, scheduling (internal customer pull instead of push system), batch to flow (reduce batch sizes), line balancing and reduce actual process times."
-            ].map((text, i) => (
-              <li key={i} style={{ display: "flex", gap: "15px", fontSize: "1.1rem", color: "#475569", lineHeight: 1.5 }}>
-                <span style={{ color: "#10b981", fontWeight: 900 }}>{i + 1}.</span>
-                <span>{text}</span>
-              </li>
+        {/* Bottom: 5 Core Principles */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <div style={{ fontSize: "0.85rem", fontWeight: 800, letterSpacing: "3px", textTransform: "uppercase", color: "#94a3b8", marginBottom: "1rem" }}>5 PRINSIP UTAMA LEAN</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "1rem" }}>
+            {principles.map((p, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.08 }}
+                style={{
+                  background: "#fff",
+                  borderRadius: "18px",
+                  padding: "1.5rem",
+                  border: "1px solid #e2e8f0",
+                  boxShadow: "0 6px 20px rgba(0,0,0,0.03)",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.8rem",
+                  transition: "transform 0.2s, box-shadow 0.2s"
+                }}
+              >
+                <div style={{
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "14px",
+                  background: "rgba(14, 102, 85, 0.08)",
+                  color: "#0e6655",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}>
+                  {p.icon}
+                </div>
+                <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>{p.title}</h4>
+                <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: 1.4, margin: 0, fontWeight: 500 }}>{p.desc}</p>
+              </motion.div>
             ))}
-          </ul>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-          <h2 style={{ fontSize: "1.6rem", color: "#10b981", fontWeight: 900, marginBottom: "1.5rem" }}>EXPECTATION</h2>
-          <ul style={{ display: "flex", flexDirection: "column", gap: "1.2rem", padding: 0, listStyle: "none" }}>
-            {[
-              "Change 'Push' Mindset into 'Pull' Mindset",
-              "Meet customer needed",
-              "Right from the first time",
-              "Continuous Improvement"
-            ].map((text, i) => (
-              <li key={i} style={{ display: "flex", gap: "15px", fontSize: "1.1rem", color: "#475569", lineHeight: 1.5 }}>
-                <span style={{ color: "#10b981", fontWeight: 900 }}>{i + 1}.</span>
-                <span>{text}</span>
-              </li>
-            ))}
-          </ul>
+          </div>
         </motion.div>
       </div>
 
-      <div style={{ position: "absolute", bottom: "4rem", right: "2rem", opacity: 0.1 }}>
-        <Layers size={150} color="#0e6655" />
-      </div>
       <SlideFooter />
     </div>
   );
@@ -5038,7 +5137,6 @@ function SlideReviewCycleStrategy() {
       accent: "#3b82f6",
       status: "TARGET MATURITY",
       pros: [
-        "Scope entitas penuh untuk seluruh PTPN Group",
         "Early warning system — deviasi terdeteksi dalam 30 hari",
         "Continuous feedback meningkatkan employee engagement",
         "Koreksi cepat sebelum masalah membesar",
