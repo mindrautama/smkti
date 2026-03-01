@@ -24,7 +24,10 @@ import {
   PanelLeftClose,
   Factory,
   Wallet,
-  Gauge
+  Gauge,
+  Database,
+  Monitor,
+  ShieldCheck
 } from "lucide-react";
 
 /* =============================
@@ -76,7 +79,7 @@ function AccentShapes() {
 function SlideAgenda() {
   const sections = [
     { num: "01", title: "Strategic Context", desc: "Visi besar, DNA PCS, HC Strategic Initiatives, dan Gap Analysis", color: "#0e6655", slides: 6, targetTitle: "Strategic Drivers" },
-    { num: "02", title: "Fondasi Konseptual & Strategis", desc: "Prinsip KPI, BSC, PDCA, Cascading, dan Model Kinerja", color: "#0e6655", slides: 8, targetTitle: "§ Fondasi Konseptual & Strategis" },
+    { num: "02", title: "Fondasi Konseptual & Strategis", desc: "Prinsip KPI, BSC, PDCA, Cascading, dan Model Kinerja", color: "#0e6655", slides: 9, targetTitle: "§ Fondasi Konseptual & Strategis" },
     { num: "03", title: "Evaluasi & Perubahan Regulasi", desc: "Review PMS existing, perubahan paradigma, dan komparasi Perdir", color: "#1a5276", slides: 6, targetTitle: "§ Evaluasi & Perubahan Regulasi" },
     { num: "04", title: "Desain Arsitektur SMKTI 2026", desc: "Opsi arsitektur, pro-contra, rating model, dan reward impact", color: "#064e3b", slides: 8, targetTitle: "§ Desain Arsitektur SMKTI 2026" },
     { num: "05", title: "Implementasi & Roadmap", desc: "Monitoring progress, timeline, dan project charter", color: "#e67e22", slides: 4, targetTitle: "§ Implementasi & Roadmap" },
@@ -1514,6 +1517,158 @@ function SlideWhyChange() {
         >
           💡 Akselerasi APMS 2026 menjawab seluruh gap melalui standarisasi metrics, integrasi vertikal, dan digitalisasi end-to-end.
         </motion.div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   SLIDE: MENGAPA BUSINESS ARCHITECTURE (BA)
+   ============================= */
+function SlideWhyBusinessArchitecture() {
+  const eaLayers = [
+    { title: "Business Architecture", sub: "Strategi, Organisasi, Proses, Value Stream", active: true, color: "#1a5276", icon: <GitBranch size={20} /> },
+    { title: "Data Architecture", sub: "Aset Data, Struktur, Governance", active: false, color: "#64748b", icon: <Database size={20} /> },
+    { title: "Application Architecture", sub: "Sistem, Interaksi App, Layanan", active: false, color: "#64748b", icon: <Monitor size={20} /> },
+    { title: "Technology Architecture", sub: "Infrastruktur, Cloud, Network", active: false, color: "#64748b", icon: <Settings size={20} /> },
+  ];
+
+  const reasons = [
+    {
+      title: "Jembatan Strategi ke Eksekusi",
+      desc: "Menghubungkan impian strategis (Visi, Misi, RJPP) menjadi aktivitas operasional (Proses, Kapabilitas) yang nyata.",
+      icon: <GitBranch size={24} />,
+      color: "#0e6655",
+      bgc: "rgba(14, 102, 85, 0.08)"
+    },
+    {
+      title: "Mendobrak Silo Organisasi",
+      desc: "Memastikan semua unit kerja berjalan dalam satu alur (Value Stream) yang terintegrasi, bukan bekerja sendiri-sendiri.",
+      icon: <Users size={24} />,
+      color: "#c0392b",
+      bgc: "rgba(192, 57, 43, 0.08)"
+    },
+    {
+      title: "Fondasi Utama Struktur & KPI",
+      desc: "Organisasi dan KPI dibentuk berdasarkan struktur proses bisnis (BA) yang telah disepakati, bukan berdasarkan status quo atau interest individu.",
+      icon: <Target size={24} />,
+      color: "#f39c12",
+      bgc: "rgba(243, 156, 18, 0.08)"
+    },
+    {
+      title: "Prasyarat Sukses Digitalisasi",
+      desc: "Tidak ada otomasi atau digitalisasi (IT) yang sukses tanpa mendefinisikan dan merapikan proses bisnisnya terlebih dahulu.",
+      icon: <Monitor size={24} />,
+      color: "#2980b9",
+      bgc: "rgba(41, 128, 185, 0.08)"
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276", marginBottom: "0.5rem" }}>
+          <em>Enterprise Architecture</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.3rem", color: "#e67e22", fontWeight: 700 }}>
+          Mengapa Business Architecture (BA) Begitu Krusial?
+        </p>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.8fr", gap: "3rem", flex: 1 }}>
+        {/* Left Side: EA Tower */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+          <div>
+            <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#1e293b", marginBottom: "0.5rem" }}>Arsitektur Enterprise (EA)</h2>
+            <p style={{ fontSize: "1rem", color: "#64748b", margin: 0, lineHeight: 1.5 }}>
+              EA adalah blueprint utama perusahaan. <strong style={{ color: "#1a5276" }}>Business Architecture</strong> adalah lapisan tertinggi yang memandu seluruh keputusan desain di bawahnya.
+            </p>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginTop: "1rem" }}>
+            {eaLayers.map((layer, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 + i * 0.1 }}
+                style={{
+                  background: layer.active ? "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)" : "#fff",
+                  border: layer.active ? "none" : "1px solid #e2e8f0",
+                  padding: "1rem 1.5rem",
+                  borderRadius: "16px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1.2rem",
+                  boxShadow: layer.active ? "0 10px 25px rgba(26, 82, 118, 0.2)" : "0 4px 10px rgba(0,0,0,0.02)",
+                  transform: layer.active ? "scale(1.05) translateX(10px)" : "none",
+                  zIndex: layer.active ? 10 : 1,
+                  position: "relative"
+                }}
+              >
+                {layer.active && (
+                  <div style={{ position: "absolute", right: "-12px", top: "50%", transform: "translateY(-50%)", width: "24px", height: "24px", background: "#f8fafc", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "-4px 0 10px rgba(0,0,0,0.05)" }}>
+                    <ArrowRight size={14} color="#1a5276" strokeWidth={3} />
+                  </div>
+                )}
+                <div style={{ color: layer.active ? "#fff" : layer.color, opacity: layer.active ? 1 : 0.7 }}>
+                  {layer.icon}
+                </div>
+                <div>
+                  <div style={{ fontSize: layer.active ? "1.2rem" : "1.1rem", fontWeight: layer.active ? 800 : 700, color: layer.active ? "#fff" : "#334155" }}>
+                    {layer.title}
+                  </div>
+                  <div style={{ fontSize: layer.active ? "0.9rem" : "0.85rem", color: layer.active ? "rgba(255,255,255,0.8)" : "#94a3b8", marginTop: "4px" }}>
+                    {layer.sub}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Side: Reasons Grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+          {reasons.map((reason, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + i * 0.1 }}
+              style={{
+                background: "#fff",
+                borderRadius: "20px",
+                padding: "1.8rem",
+                boxShadow: "0 8px 30px rgba(0,0,0,0.04)",
+                border: "1px solid #f1f5f9",
+                display: "flex",
+                flexDirection: "column"
+              }}
+            >
+              <div style={{
+                background: reason.bgc,
+                width: "60px",
+                height: "60px",
+                borderRadius: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: reason.color,
+                marginBottom: "1.5rem"
+              }}>
+                {reason.icon}
+              </div>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1e293b", marginBottom: "0.8rem", lineHeight: 1.3 }}>
+                {reason.title}
+              </h3>
+              <p style={{ fontSize: "1rem", color: "#475569", lineHeight: 1.6, margin: 0 }}>
+                {reason.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
       <SlideFooter />
     </div>
@@ -4699,6 +4854,7 @@ const slides = [
   { title: "PDCA & Improvement", component: SlidePDCACycle },
   { title: "Strategic Cascading", component: SlideStrategicAlignment },
   { title: "Unit vs Individual Performance", component: SlideUnitIndividualPerformance },
+  { title: "Kenapa Perlu Business Architecture?", component: SlideWhyBusinessArchitecture },
   { title: "Hubungan BA & Kinerja", component: SlideBAPerformance },
   { title: "Model Kinerja APMS", component: SlideModelKinerja },
 
