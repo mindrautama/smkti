@@ -3432,7 +3432,7 @@ function SlideBPIConcept() {
     <div className="slide" style={{ padding: 0, background: "#fff", display: "flex" }}>
       <div style={{ flex: 1.2, position: "relative", overflow: "hidden" }}>
         <img
-          src="file:///Users/muhammadindrautama/.gemini/antigravity/brain/a60d33b5-9c20-4b51-91e4-883ecc888d7f/bpi_divider_landscape_1772337587330.png"
+          src="/images/bpi_landscape.png"
           alt="BPI Landscape"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
@@ -3536,7 +3536,7 @@ function SlideLeanPhilosophy() {
           }}
         >
           <img
-            src="file:///Users/muhammadindrautama/.gemini/antigravity/brain/a60d33b5-9c20-4b51-91e4-883ecc888d7f/da_character_big_1772337613874.png"
+            src="/images/da_big.png"
             alt="Da character"
             style={{ width: "300px", height: "300px", objectFit: "contain" }}
           />
