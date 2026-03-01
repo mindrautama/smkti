@@ -1431,65 +1431,65 @@ function SlideWhyChange() {
     { area: "Cascading KPI", existing: "Tidak terintegrasi dari Holding ke Individu", target: "Strategy Map → Scorecard → KPI Individu", icon: <GitBranch size={20} /> },
     { area: "Scoring Model", existing: "Hanya kuantitatif KPI, tanpa behavior score", target: "Multi-dimensional: Performance + Behavior + Corp", icon: <BarChart3 size={20} /> },
     { area: "Rating Scale", existing: "2 tier (≥90 & <90), tidak terdiferensiasi", target: "5 tier global (Outstanding → Poor)", icon: <Target size={20} /> },
-    { area: "Teknologi", existing: "Manual Spreadsheet, rawan error & delay", target: "APMS 2.0 — Fully digital, real-time analytics", icon: <Settings size={20} /> },
+    { area: "Teknologi", existing: "APMS 1.0, belum Support BSC", target: "APMS 2.0 — Fully digital, real-time analytics", icon: <Settings size={20} /> },
     { area: "Talent Linkage", existing: "Rating tidak terhubung ke karir / talent", target: "Rating → Priority Pool → IDP & Promotion", icon: <TrendingUp size={20} /> },
     { area: "Review Cycle", existing: "Annual review, feedback pasif", target: "Quarterly RBK + Monthly Performance Check", icon: <FileText size={20} /> }
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)" }}>
+    <div className="slide" style={{ padding: "1.5rem 3rem", background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
+      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276" }}>
           <em>Why Change? — Gap Analysis</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Identifikasi Kelemahan Sistem & Kebutuhan Transformasi</p>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>Identifikasi Kelemahan Sistem & Kebutuhan Transformasi</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
         {/* Header Row */}
-        <div style={{ display: "flex", gap: "1rem", padding: "0.5rem 0", alignItems: "center" }}>
-          <div style={{ width: "180px" }}></div>
-          <div style={{ flex: 1, background: "rgba(231, 76, 60, 0.1)", border: "1px solid rgba(231, 76, 60, 0.3)", color: "#c0392b", padding: "10px", borderRadius: "12px", textAlign: "center", fontSize: "0.85rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Current State (2022–2025)</div>
-          <div style={{ width: "40px" }}></div>
-          <div style={{ flex: 1, background: "rgba(14, 102, 85, 0.1)", border: "1px solid rgba(14, 102, 85, 0.3)", color: "#0e6655", padding: "10px", borderRadius: "12px", textAlign: "center", fontSize: "0.85rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Target State 2026</div>
+        <div style={{ display: "flex", gap: "1.2rem", padding: "0.5rem 0", alignItems: "center" }}>
+          <div style={{ width: "220px" }}></div>
+          <div style={{ flex: 1, background: "rgba(231, 76, 60, 0.1)", border: "1px solid rgba(231, 76, 60, 0.3)", color: "#c0392b", padding: "12px", borderRadius: "14px", textAlign: "center", fontSize: "1.05rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Current State (2022–2025)</div>
+          <div style={{ width: "45px" }}></div>
+          <div style={{ flex: 1, background: "rgba(14, 102, 85, 0.1)", border: "1px solid rgba(14, 102, 85, 0.3)", color: "#0e6655", padding: "12px", borderRadius: "14px", textAlign: "center", fontSize: "1.05rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Target State 2026</div>
         </div>
 
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
           {gaps.map((gap, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.08 }}
-              style={{ display: "flex", gap: "1rem", alignItems: "stretch" }}
+              style={{ display: "flex", gap: "1.2rem", alignItems: "stretch" }}
             >
               <div style={{
-                width: "180px",
+                width: "220px",
                 background: "#1a5276",
                 color: "#fff",
-                borderRadius: "14px",
-                padding: "12px 18px",
+                borderRadius: "16px",
+                padding: "16px 22px",
                 display: "flex",
                 alignItems: "center",
-                gap: "12px",
-                fontSize: "0.85rem",
+                gap: "14px",
+                fontSize: "1.1rem",
                 fontWeight: 800,
                 boxShadow: "0 4px 12px rgba(26, 82, 118, 0.1)"
               }}>
-                <div style={{ opacity: 0.8 }}>{gap.icon}</div>
+                <div style={{ opacity: 0.8 }}>{React.cloneElement(gap.icon as React.ReactElement<any>, { size: 24 })}</div>
                 {gap.area}
               </div>
-              <div style={{ flex: 1, background: "#fff", border: "1px solid #f1f5f9", borderRadius: "14px", padding: "12px 18px", fontSize: "0.85rem", color: "#c0392b", fontWeight: 600, display: "flex", alignItems: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
-                <X size={16} style={{ marginRight: "10px", flexShrink: 0, color: "#e74c3c" }} /> {gap.existing}
+              <div style={{ flex: 1, background: "#fff", border: "1px solid #f1f5f9", borderRadius: "16px", padding: "16px 22px", fontSize: "1.05rem", color: "#c0392b", fontWeight: 600, display: "flex", alignItems: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
+                <X size={20} style={{ marginRight: "12px", flexShrink: 0, color: "#e74c3c" }} /> {gap.existing}
               </div>
               <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <ArrowRight size={20} color="#1a5276" />
+                <div style={{ width: "45px", height: "45px", borderRadius: "50%", background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <ArrowRight size={24} color="#1a5276" />
                 </div>
               </div>
-              <div style={{ flex: 1, background: "#fff", border: "1px solid #f1f5f9", borderRadius: "14px", padding: "12px 18px", fontSize: "0.85rem", color: "#0e6655", fontWeight: 700, display: "flex", alignItems: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
-                <Check size={16} style={{ marginRight: "10px", flexShrink: 0, color: "#27ae60" }} /> {gap.target}
+              <div style={{ flex: 1, background: "#fff", border: "1px solid #f1f5f9", borderRadius: "16px", padding: "16px 22px", fontSize: "1.05rem", color: "#0e6655", fontWeight: 700, display: "flex", alignItems: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
+                <Check size={20} style={{ marginRight: "12px", flexShrink: 0, color: "#27ae60" }} /> {gap.target}
               </div>
             </motion.div>
           ))}
@@ -1500,13 +1500,13 @@ function SlideWhyChange() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
           style={{
-            marginTop: "1.5rem",
+            marginTop: "2rem",
             background: "linear-gradient(135deg, #1a5276 0%, #0e6655 100%)",
             color: "#fff",
-            padding: "1rem 2rem",
-            borderRadius: "16px",
+            padding: "1.2rem 2.5rem",
+            borderRadius: "18px",
             textAlign: "center",
-            fontSize: "1rem",
+            fontSize: "1.2rem",
             fontWeight: 700,
             boxShadow: "0 10px 30px rgba(14, 102, 85, 0.2)"
           }}
