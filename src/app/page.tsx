@@ -1295,68 +1295,142 @@ function SlideSectionConcept() {
 }
 
 function SlideBSCFoundation() {
+  const bscSteps = [
+    {
+      num: 1,
+      title: "MEASUREMENT",
+      subtitle: "Pengukuran Kinerja",
+      desc: "Mengukur pencapaian melalui KPI terukur di setiap level organisasi.",
+      icon: <BarChart3 size={28} />,
+      color: "#0e6655"
+    },
+    {
+      num: 2,
+      title: "MANAGEMENT",
+      subtitle: "Pengelolaan Kinerja",
+      desc: "Siklus PDCA untuk monitoring, coaching, dan perbaikan berkelanjutan.",
+      icon: <Settings size={28} />,
+      color: "#1a5276"
+    },
+    {
+      num: 3,
+      title: "DIRECTION",
+      subtitle: "Penerjemahan Strategi",
+      desc: "Menerjemahkan visi & RJPP menjadi target konkret di setiap unit kerja.",
+      icon: <Target size={28} />,
+      color: "#0e6655"
+    }
+  ];
+
+  const perspectives = [
+    { name: "Financial", label: "Keuangan", example: "Revenue, Cost Efficiency, EBITDA", color: "#0e6655" },
+    { name: "Customer", label: "Pelanggan", example: "Kepuasan Buyer, Kualitas Produk", color: "#1a5276" },
+    { name: "Internal Process", label: "Proses Internal", example: "Rendemen, OEE, Lead Time", color: "#f97316" },
+    { name: "Learning & Growth", label: "SDM & Inovasi", example: "Kompetensi, Training Hours, Engagement", color: "#7c3aed" }
+  ];
+
+  const strategyFlow = [
+    { num: "1", label: "Strategy Map", desc: "Peta Sasaran Strategis", color: "#0e6655" },
+    { num: "2", label: "Scorecard (KPI)", desc: "Indikator Terukur", color: "#f97316" },
+    { num: "3", label: "Program Kerja", desc: "Inisiatif & Aktivitas", color: "#1a5276" },
+    { num: "4", label: "Budget", desc: "Alokasi Anggaran", color: "#334155" }
+  ];
+
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Step of Balanced Scorecard</h1>
-        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Alur Eksekusi Strategi: Measurement, Management, & Direction</p>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>Balanced Scorecard (BSC)</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Kerangka Penerjemahan Strategi menjadi Kinerja Terukur
+        </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "3rem" }}>
-        {/* Top Concept Flow */}
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "4rem" }}>
-          {[
-            { n: 1, t: "MEASUREMENT", s: "REPORT", c: "#27ae60" },
-            { n: 2, t: "MANAGEMENT", s: "PDCA CYCLE", c: "#1a5276" },
-            { n: 3, t: "DIRECTION", s: "STRATEGY TRANSLATION", c: "#0e6655" }
-          ].map((step, i) => (
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+        {/* 3 BSC Steps */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr auto 1fr", gap: "0.8rem", alignItems: "center" }}>
+          {bscSteps.map((s, i) => (
             <React.Fragment key={i}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative" }}
-              >
-                <div style={{ display: "flex", gap: "10px", alignItems: "center", marginBottom: "15px" }}>
-                  <div style={{ background: step.c, color: "#fff", width: "24px", height: "24px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 900 }}>{step.n}</div>
-                  <div style={{ fontWeight: 900, fontSize: "1rem", color: step.c }}>{step.t}</div>
-                </div>
-                <div style={{
-                  width: "180px",
-                  height: "180px",
-                  borderRadius: "50%",
-                  border: `4px solid ${step.c}`,
+                transition={{ delay: i * 0.15 }}
+                style={{
+                  background: "#fff",
+                  borderRadius: "22px",
+                  padding: "1.8rem",
+                  border: `2px solid ${s.color}20`,
+                  boxShadow: `0 8px 25px ${s.color}08`,
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  textAlign: "center",
-                  padding: "20px",
-                  background: "#fff",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.05)"
-                }}>
-                  <div style={{ fontWeight: 900, fontSize: "1.1rem", color: "#1e293b", lineHeight: 1.1 }}>{step.s}</div>
+                  gap: "0.8rem"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  <div style={{ width: "50px", height: "50px", borderRadius: "14px", background: `${s.color}12`, color: s.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    {s.icon}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", letterSpacing: "1px" }}>STEP {s.num}</div>
+                    <div style={{ fontSize: "1.3rem", fontWeight: 900, color: s.color }}>{s.title}</div>
+                  </div>
                 </div>
+                <div style={{ fontSize: "1rem", fontWeight: 700, color: "#334155" }}>{s.subtitle}</div>
+                <p style={{ fontSize: "0.95rem", color: "#64748b", lineHeight: 1.4, margin: 0, fontWeight: 500 }}>{s.desc}</p>
               </motion.div>
-              {i < 2 && <ArrowRight size={32} color="#cbd5e1" />}
+              {i < 2 && (
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <ArrowRight size={24} color="#cbd5e1" />
+                </div>
+              )}
             </React.Fragment>
           ))}
         </div>
 
-        {/* Bottom Detailed Linkage */}
-        <div style={{ background: "#f8fafc", borderRadius: "24px", padding: "2rem", border: "1px solid #e2e8f0" }}>
-          <div style={{ textAlign: "center", marginBottom: "1.5rem", fontWeight: 900, color: "#1a5276" }}>STRATEGY vs PERFORMANCE MANAGEMENT</div>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem" }}>
-            <div style={{ background: "#27ae60", padding: "15px 30px", borderRadius: "12px", color: "#fff", fontWeight: 900 }}>1. STRATEGY MAP</div>
-            <ChevronRight color="#cbd5e1" />
-            <div style={{ background: "#e67e22", padding: "15px 30px", borderRadius: "12px", color: "#fff", fontWeight: 900 }}>2. SCORECARD (KPI)</div>
-            <ChevronRight color="#cbd5e1" />
-            <div style={{ background: "#1a5276", padding: "15px 30px", borderRadius: "12px", color: "#fff", fontWeight: 900 }}>3. PROGRAM KERJA</div>
-            <ChevronRight color="#cbd5e1" />
-            <div style={{ background: "#334155", padding: "15px 30px", borderRadius: "12px", color: "#fff", fontWeight: 900 }}>4. BUDGET</div>
+        {/* 4 BSC Perspectives */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          style={{ background: "#fff", borderRadius: "22px", padding: "1.5rem 2rem", border: "1px solid #e2e8f0" }}
+        >
+          <div style={{ fontSize: "1rem", fontWeight: 900, color: "#1a5276", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "1rem", textAlign: "center" }}>4 Perspektif BSC — Konteks PTPN</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem" }}>
+            {perspectives.map((p, i) => (
+              <div key={i} style={{ borderLeft: `4px solid ${p.color}`, paddingLeft: "1rem" }}>
+                <div style={{ fontSize: "1.1rem", fontWeight: 900, color: p.color }}>{p.name}</div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#475569", marginBottom: "4px" }}>{p.label}</div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 500, color: "#94a3b8", lineHeight: 1.3 }}>{p.example}</div>
+              </div>
+            ))}
           </div>
-        </div>
+        </motion.div>
+
+        {/* Strategy to Budget Flow */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          style={{ background: "linear-gradient(135deg, #1e293b, #0e6655)", borderRadius: "20px", padding: "1.5rem 2.5rem" }}
+        >
+          <div style={{ fontSize: "0.9rem", fontWeight: 900, color: "#6ee7b7", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "1rem", textAlign: "center" }}>Alur: Strategi → Kinerja → Anggaran</div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+            {strategyFlow.map((s, i) => (
+              <React.Fragment key={i}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", background: s.color, padding: "10px 20px", borderRadius: "14px", boxShadow: `0 6px 18px ${s.color}40` }}>
+                  <span style={{ color: "#fff", fontWeight: 900, fontSize: "1.1rem", opacity: 0.6 }}>{s.num}.</span>
+                  <div>
+                    <div style={{ color: "#fff", fontWeight: 900, fontSize: "1rem" }}>{s.label}</div>
+                    <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.75rem", fontWeight: 600 }}>{s.desc}</div>
+                  </div>
+                </div>
+                {i < 3 && <ChevronRight size={20} color="rgba(255,255,255,0.3)" />}
+              </React.Fragment>
+            ))}
+          </div>
+        </motion.div>
       </div>
       <SlideFooter />
     </div>
@@ -5752,17 +5826,17 @@ function SlideNextSteps() {
     },
     {
       num: "04",
-      title: "Pengembangan APMS 2.0",
+      title: "Pengembangan APMS 2.0 dan Pengujian",
       desc: "Mulai development sistem digital APMS 2.0 dengan fitur BSC, cascading KPI, dan dashboard real-time.",
-      deadline: "Mei — Okt 2026",
-      owner: "Tim IT & HC Analytics",
+      deadline: "Des '25 — Mar '26",
+      owner: "Subdiv Manajemen Kinerja & HCIS",
       color: "#0e6655"
     },
     {
       num: "05",
-      title: "Pilot Run & Evaluasi",
-      desc: "Uji coba di unit terpilih, pengumpulan feedback, dan penyesuaian sebelum full rollout.",
-      deadline: "Nov 2026 — Jan 2027",
+      title: "Implementasi",
+      desc: "Implementasi di holding dan subholding",
+      deadline: "April 2026",
       owner: "Entity PIC",
       color: "#1a5276"
     }
