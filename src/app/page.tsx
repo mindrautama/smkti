@@ -5888,22 +5888,22 @@ function SlideBPIImportance() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "1.2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.2rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#0e6655", marginBottom: "0.2rem" }}>
           <em>Mengapa BPI Penting bagi SMKTI?</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>
           Menghubungkan Target Kinerja dengan Realita Eksekusi di Lapangan
         </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
         {/* Connection Flow Section */}
-        <div style={{ background: "rgba(255,255,255,0.6)", borderRadius: "24px", padding: "1.5rem", border: "1px solid #e2e8f0", boxShadow: "0 15px 40px rgba(0,0,0,0.02)" }}>
+        <div style={{ background: "rgba(255,255,255,0.6)", borderRadius: "24px", padding: "1rem", border: "1px solid #e2e8f0", boxShadow: "0 15px 40px rgba(0,0,0,0.02)" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "0.8rem", alignItems: "center" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               {connections.map((item, i) => (
                 <motion.div
                   key={i}
@@ -5912,7 +5912,7 @@ function SlideBPIImportance() {
                   transition={{ delay: i * 0.15 }}
                   style={{
                     background: "#fff",
-                    padding: "1.2rem 1.8rem",
+                    padding: "1rem 1.8rem",
                     borderRadius: "18px",
                     border: `1px solid ${item.color}20`,
                     boxShadow: "0 4px 15px rgba(0,0,0,0.03)",
@@ -5922,27 +5922,27 @@ function SlideBPIImportance() {
                     position: "relative"
                   }}
                 >
-                  <div style={{ width: "45px", height: "45px", borderRadius: "12px", background: `${item.color}15`, color: item.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: `${item.color}15`, color: item.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {item.icon}
                   </div>
                   <div>
-                    <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px" }}>Langkah {i + 1}</div>
-                    <div style={{ fontSize: "1.2rem", fontWeight: 900, color: "#1e293b" }}>{item.from}</div>
+                    <div style={{ fontSize: "0.8rem", fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px" }}>Langkah {i + 1}</div>
+                    <div style={{ fontSize: "1.1rem", fontWeight: 900, color: "#1e293b" }}>{item.from}</div>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div style={{ padding: "0 1rem", display: "flex", flexDirection: "column", gap: "2.8rem", alignItems: "center" }}>
+            <div style={{ padding: "0 1rem", display: "flex", flexDirection: "column", gap: "2.4rem", alignItems: "center" }}>
               {[0, 1, 2].map(i => (
                 <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
                   <ArrowRight size={20} color={connections[i].color} />
-                  <span style={{ fontSize: "0.65rem", fontWeight: 800, color: "#94a3b8", whiteSpace: "nowrap", textTransform: "uppercase" }}>{connections[i].action}</span>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 800, color: "#94a3b8", whiteSpace: "nowrap", textTransform: "uppercase" }}>{connections[i].action}</span>
                 </div>
               ))}
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               {connections.map((item, i) => (
                 <motion.div
                   key={i}
@@ -5951,16 +5951,16 @@ function SlideBPIImportance() {
                   transition={{ delay: 0.3 + i * 0.15 }}
                   style={{
                     background: `linear-gradient(135deg, ${item.color} 0%, ${item.color}dd 100%)`,
-                    padding: "1.2rem 1.8rem",
+                    padding: "1rem 1.8rem",
                     borderRadius: "18px",
                     color: "#fff",
                     boxShadow: `0 8px 20px ${item.color}30`,
                     display: "flex",
                     alignItems: "center",
-                    minHeight: "75px"
+                    minHeight: "65px"
                   }}
                 >
-                  <div style={{ fontSize: "1.1rem", fontWeight: 700 }}>{item.to}</div>
+                  <div style={{ fontSize: "1.05rem", fontWeight: 700 }}>{item.to}</div>
                 </motion.div>
               ))}
             </div>
@@ -5968,7 +5968,7 @@ function SlideBPIImportance() {
         </div>
 
         {/* PCS Cards Section */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.8rem" }}>
           {pcsCards.map((card, i) => (
             <motion.div
               key={i}
@@ -5978,26 +5978,26 @@ function SlideBPIImportance() {
               style={{
                 background: "#fff",
                 borderRadius: "20px",
-                padding: "1.2rem",
+                padding: "1rem",
                 border: "1px solid #f1f5f9",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.8rem",
+                gap: "0.6rem",
                 position: "relative"
               }}
             >
               <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: card.color, borderRadius: "24px 24px 0 0" }} />
-              <div style={{ display: "flex", alignItems: "center", gap: "1.2rem" }}>
-                <div style={{ width: "60px", height: "60px", borderRadius: "16px", background: `${card.color}10`, color: card.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                <div style={{ width: "50px", height: "50px", borderRadius: "16px", background: `${card.color}10`, color: card.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
                   {card.icon}
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.8rem", fontWeight: 800, color: card.color, letterSpacing: "1px" }}>TARGET {card.metric}</div>
-                  <h3 style={{ fontSize: "1.4rem", fontWeight: 900, color: "#1e293b", margin: 0 }}>{card.title}</h3>
+                  <div style={{ fontSize: "0.75rem", fontWeight: 800, color: card.color, letterSpacing: "1px" }}>TARGET {card.metric}</div>
+                  <h3 style={{ fontSize: "1.2rem", fontWeight: 900, color: "#1e293b", margin: 0 }}>{card.title}</h3>
                 </div>
               </div>
-              <p style={{ fontSize: "1.05rem", color: "#64748b", lineHeight: 1.5, margin: 0, fontWeight: 500 }}>
+              <p style={{ fontSize: "0.95rem", color: "#64748b", lineHeight: 1.4, margin: 0, fontWeight: 500 }}>
                 {card.desc}
               </p>
             </motion.div>
@@ -6011,17 +6011,18 @@ function SlideBPIImportance() {
           transition={{ delay: 1.2 }}
           style={{
             background: "linear-gradient(135deg, #1e293b 0%, #0e6655 100%)",
-            borderRadius: "20px",
-            padding: "1.5rem 2.5rem",
+            borderRadius: "16px",
+            padding: "1.2rem 2rem",
             color: "#fff",
             display: "flex",
             alignItems: "center",
-            gap: "1.5rem",
-            boxShadow: "0 15px 35px rgba(0,0,0,0.15)"
+            gap: "1.2rem",
+            boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+            marginTop: "0.5rem"
           }}
         >
-          <div style={{ background: "#fbbf24", color: "#1e293b", padding: "10px 20px", borderRadius: "12px", fontWeight: 900, fontSize: "1rem", flexShrink: 0 }}>INSIGHT</div>
-          <p style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0, lineHeight: 1.4 }}>
+          <div style={{ background: "#fbbf24", color: "#1e293b", padding: "8px 16px", borderRadius: "10px", fontWeight: 900, fontSize: "0.9rem", flexShrink: 0 }}>INSIGHT</div>
+          <p style={{ fontSize: "1.05rem", fontWeight: 700, margin: 0, lineHeight: 1.4 }}>
             BPI bukan bagian terpisah — ia adalah <strong style={{ color: "#fbbf24" }}>mesin eksekusi</strong> yang memastikan target <span style={{ color: "#6ee7b7" }}>Productivity, Cost, & Speed (PCS)</span> dalam SMKTI benar-benar tercapai secara konkret.
           </p>
         </motion.div>
