@@ -394,6 +394,94 @@ function SlidePerformanceUpdate2026() {
 }
 
 /* =============================
+   BIG DREAM SLIDE (RJPP 2026-2030)
+   ============================= */
+function SlideBigDream() {
+  const pillars = [
+    {
+      title: "World-Class Smart Agri Company",
+      en: "As a World-Class Smart Agri Company, PTPN establishes integrated, technology-driven agribusiness platform anchored in global best practices to enhance productivity, cost effectiveness, and speed (PCS), in support of timely and data-driven decision making.",
+      id: "Sebagai World-Class Smart Agri Company, PTPN membangun agribisnis terintegrasi berbasis teknologi dan praktik terbaik global untuk meningkatkan produktivitas, efektifitas biaya, dan kecepatan (PCS) dalam pengambilan keputusan."
+    },
+    {
+      title: "Empowering Indonesia's High-Impact EntrePlanters",
+      en: "Empower EntrePlanters to lead global agribusiness transformation through strengthening future-ready workforce capabilities, focusing on high-tech operational excellence to enhance large-scale sustainable value creation.",
+      id: "Penguatan SDM EntrePlanters (PTPN) untuk memimpin transformasi bisnis agro secara global melalui penguatan kapabilitas sumber daya manusia (masa depan), berfokus pada operasional bisnis berbasis teknologi untuk mendorong penciptaan nilai tambah berskala besar yang berkelanjutan."
+    },
+    {
+      title: "Food & Energy Security",
+      en: "Strengthen food and energy security by increasing domestic productivity and production capacity through smart cultivation, data-driven planning, integrated commodity development, and strong partnerships with smallholders to build sustainable resilient supply and global stability.",
+      id: "Mendukung program ketahanan pangan dan energi dengan mendorong produktivitas dan kapasitas produksi dalam negeri melalui penerapan budidaya berbasis teknologi, perencanaan berbasis data, pengembangan komoditas terintegrasi (hilirisasi), serta kemitraan solid bersama plasma guna membangun ketahanan pangan secara berkelanjutan."
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: 0, background: "linear-gradient(135deg, #064e3b 0%, #065f46 100%)", position: "relative", overflow: "hidden" }}>
+      {/* Background patterns */}
+      <div style={{ position: "absolute", top: 0, right: 0, width: "100%", height: "100%", opacity: 0.05, pointerEvents: "none" }}>
+        <img src="/images/bpi_landscape.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </div>
+
+      <div style={{ position: "relative", zIndex: 2, padding: "3rem 4rem", height: "100%", display: "flex", flexDirection: "column" }}>
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <h1 style={{ fontSize: "3.5rem", fontWeight: 800, color: "#fff", margin: 0 }}>
+            Our (PTPN) <span style={{ color: "#fbbf24" }}>Big Dream</span> as Strategic
+          </h1>
+          <p style={{ fontSize: "1.4rem", color: "#6ee7b7", margin: "0.5rem 0 0", fontWeight: 600 }}>Statement of RJPP 2026-2030</p>
+        </div>
+
+        <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "3rem", alignItems: "center" }}>
+          {/* Left Side: Main Vision */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            style={{ padding: "2.5rem", borderRight: "1px solid rgba(255,255,255,0.1)" }}
+          >
+            <h2 style={{ fontSize: "2.2rem", color: "#fff", fontWeight: 800, lineHeight: 1.2, marginBottom: "2rem" }}>
+              World-Class Smart Agri Company, Empowering Indonesia’s High Impact EntrePlanters for Food & Energy Security
+            </h2>
+            <div style={{ width: "80px", height: "4px", background: "#fbbf24", marginBottom: "2rem" }} />
+            <p style={{ fontSize: "1.6rem", color: "#fbbf24", fontWeight: 700, lineHeight: 1.3, fontStyle: "italic" }}>
+              Perusahaan Perkebunan Berbasis Teknologi Kelas Dunia, Melalui Penguatan SDM EntrePlanters di Indonesia (PTPN) yang Berdampak Terhadap Ketahanan Pangan & Energi
+            </p>
+          </motion.div>
+
+          {/* Right Side: Pillars Cards */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {pillars.map((p, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2 }}
+                style={{
+                  background: "rgba(255, 255, 255, 0.08)",
+                  backdropFilter: "blur(12px)",
+                  padding: "1.5rem 2rem",
+                  borderRadius: "16px",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  position: "relative"
+                }}
+              >
+                <div style={{ borderBottom: "2px solid rgba(251, 191, 36, 0.3)", paddingBottom: "0.5rem", marginBottom: "0.8rem" }}>
+                  <h3 style={{ fontSize: "1.1rem", fontWeight: 900, color: "#6ee7b7", margin: 0, textTransform: "uppercase" }}>{p.title}</h3>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <p style={{ fontSize: "0.85rem", color: "#fff", margin: 0, lineHeight: 1.4, fontWeight: 500, opacity: 0.9 }}>&ldquo;{p.en}&rdquo;</p>
+                  <div style={{ height: "1px", background: "rgba(255,255,255,0.1)", borderStyle: "dashed" }} />
+                  <p style={{ fontSize: "0.8rem", color: "#6ee7b7", margin: 0, lineHeight: 1.4, fontWeight: 500, fontStyle: "italic" }}>{p.id}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
    SLIDE 1: LATAR BELAKANG
    ============================= */
 function SlideLatar() {
@@ -3807,6 +3895,7 @@ const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   { title: "Cover", component: SlideCover },
   { title: "Strategic Drivers", component: SlideLatar },
+  { title: "Our Big Dream RJPP 2026-2030", component: SlideBigDream },
   { title: "Gap Analysis — Why Change?", component: SlideWhyChange },
 
   // BAGIAN 2 — PMS DESIGN PRINCIPLES
