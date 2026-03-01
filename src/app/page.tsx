@@ -1989,21 +1989,25 @@ function SlideProgramKerja() {
               </div>
               <div>
                 <div style={{ fontSize: "0.85rem", fontWeight: 900, color: "#0e6655", letterSpacing: "2px", textTransform: "uppercase" }}>THE MEASURE</div>
-                <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>KPI</h3>
+                <h3 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>Scorecard & KPI</h3>
               </div>
             </div>
             <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.6, margin: "0 0 1.5rem 0" }}>
-              <strong>Ukuran keberhasilan</strong> dari pencapaian Strategic Objective. Bersifat SMART, terukur, dan menjadi basis evaluasi kinerja.
+              <strong>Ukuran keberhasilan</strong> pencapaian Strategic Objective. Disebut <strong style={{ color: "#1a5276" }}>Scorecard</strong> di tingkat Korporat, Direktorat & Divisi — dan <strong style={{ color: "#0e6655" }}>KPI</strong> di tingkat Individu.
             </p>
             <div style={{ marginTop: "auto" }}>
               <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "0.8rem" }}>Contoh</div>
-              {["Produktivitas TBS/Ha ≥ 20 Ton", "% Pengisian ERP ≥ 95%", "Skor Employee Engagement ≥ 80"].map((ex, j) => (
+              {[
+                { level: "Scorecard", ex: "Revenue Growth ≥ 15% (Korporat)" },
+                { level: "Scorecard", ex: "HPP/Ton ≤ Rp X Juta (Direktorat)" },
+                { level: "KPI", ex: "TBS/Ha ≥ 20 Ton (Individu)" }
+              ].map((item, j) => (
                 <div key={j} style={{
                   background: "rgba(14, 102, 85, 0.06)",
                   border: "1px solid rgba(14, 102, 85, 0.15)",
                   padding: "10px 14px",
                   borderRadius: "12px",
-                  fontSize: "1rem",
+                  fontSize: "0.95rem",
                   color: "#0e6655",
                   fontWeight: 700,
                   marginBottom: "0.5rem",
@@ -2011,8 +2015,8 @@ function SlideProgramKerja() {
                   alignItems: "center",
                   gap: "10px"
                 }}>
-                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#0e6655", flexShrink: 0 }} />
-                  {ex}
+                  <span style={{ fontSize: "0.7rem", fontWeight: 900, background: item.level === "KPI" ? "#0e6655" : "#1a5276", color: "#fff", padding: "2px 8px", borderRadius: "6px", flexShrink: 0 }}>{item.level}</span>
+                  {item.ex}
                 </div>
               ))}
             </div>
@@ -2043,7 +2047,7 @@ function SlideProgramKerja() {
           </div>
           <div style={{ height: "40px", width: "1px", background: "rgba(255,255,255,0.2)" }} />
           <div style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.5 }}>
-            <strong>Program Kerja</strong> adalah <em>cara</em> untuk mencapai Strategic Objective. <strong>KPI</strong> adalah <em>ukuran keberhasilan</em>. Keduanya harus selaras dan saling mendukung.
+            <strong>Program Kerja</strong> adalah <em>cara</em> untuk mencapai Strategic Objective. <strong>Scorecard</strong> (Korporat–Divisi) dan <strong>KPI</strong> (Individu) adalah <em>ukuran keberhasilannya</em>.
           </div>
         </motion.div>
       </div>
