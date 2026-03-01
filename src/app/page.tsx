@@ -4091,87 +4091,112 @@ function SlideRatingReference() {
    ============================= */
 function SlideProjectCharter() {
   const months = [
-    "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des",
+    "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nov", "Des",
     "Jan", "Feb", "Mar", "Apr"
   ];
+  // Total 14 months = 14 * 4 weeks = 56 weeks
 
   const milestones = [
-    { name: "Review Proker & Scorecard Holding", progress: "0%", startIdx: 0, duration: 4, color: "#1a5276" },
-    { name: "Review Scorecard & KPI Regional PalmCo", progress: "0%", startIdx: 2, duration: 4, color: "#065f46" },
-    { name: "Review Scorecard & KPI SupportCo", progress: "0%", startIdx: 4, duration: 4, color: "#1e293b" },
-    { name: "Review Scorecard & KPI Cluster SGN", progress: "0%", startIdx: 6, duration: 4, color: "#d97706" },
-    { name: "Tata Kelola Manajemen Kinerja Unit/Individu", progress: "0%", startIdx: 8, duration: 6, color: "#4a3399" },
-    { name: "Proses Bisnis Level 1-4 & FOP SGN", progress: "0%", startIdx: 10, duration: 16, color: "#2563eb" },
-    { name: "Struktur Organisasi SGN", progress: "0%", startIdx: 16, duration: 8, color: "#db2777" },
-    { name: "Pelatihan KPI Champion & BOD-1", progress: "0%", startIdx: 22, duration: 6, color: "#059669" },
-    { name: "Penyusunan Scorecard & KPI 2027", progress: "0%", startIdx: 28, duration: 16, color: "#1a5276" },
-    { name: "Scorecard & KPI Karpim Anper", progress: "0%", startIdx: 44, duration: 12, color: "#475569" },
+    { name: "1. Review Proker Div Holding", startIdx: 0, duration: 2, color: "#1a5276" },         // Mar W1-W2
+    { name: "2. Review Scorecard Div & KPI HO & Regional PalmCo", startIdx: 2, duration: 2, color: "#1a5276" }, // Mar W3-W4
+    { name: "3. Review Scorecard Div & KPI HO & Regional SuppCo", startIdx: 4, duration: 2, color: "#1a5276" }, // Apr W1-W2
+    { name: "4. Review Scorecard Div & KPI HO & Cluster SGN", startIdx: 6, duration: 2, color: "#1a5276" },     // Apr W3-W4
+    { name: "5. Tata Kelola Manajemen Kinerja Unit Kerja & Individu", startIdx: 8, duration: 3, color: "#1a5276" }, // Apr W4 - May W2 (starts slightly overlapping)
+    { name: "6. Proses Bisnis Level 1-3 SGN", startIdx: 10, duration: 4, color: "#1a5276" },                    // May W3 - Jun W2
+    { name: "7. Proses Bisnis Level 4 (FOP) SGN", startIdx: 14, duration: 12, color: "#1a5276" },               // Jun W3 - Sep W2
+    { name: "8. Struktur Organisasi SGN", startIdx: 14, duration: 6, color: "#1a5276" },                        // Jun W3 - Jul W4
+    { name: "9. Proses Bisnis Level 1-3 Holding", startIdx: 20, duration: 4, color: "#1a5276" },                // Aug W1 - Aug W4
+    { name: "10. Proses Bisnis Level 4 (FOP) Holding", startIdx: 24, duration: 12, color: "#1a5276" },          // Sep W1 - Nov W4
+    { name: "11. Matrix RACI Holding - Sub Holding", startIdx: 25, duration: 4, color: "#1a5276" },             // Sep W2 - Oct W1
+    { name: "12. Pelatihan Scorecard & KPI Champion & BOD-1 Holding...", startIdx: 28, duration: 4, color: "#1a5276" }, // Oct W1 - Oct W4
+    { name: "13. Review Scorecard & KPI Holding 2027", startIdx: 32, duration: 3, color: "#1a5276" },           // Nov W1 - Nov W3
+    { name: "14. Review Scorecard & KPI PalmCo 2027 (HO & Regional)", startIdx: 35, duration: 3, color: "#1a5276" },// Nov W4 - Dec W2
+    { name: "15. Review Scorecard & KPI SuppCo 2027 (HO & Regional)", startIdx: 38, duration: 3, color: "#1a5276" },// Dec W3 - Jan W1
+    { name: "16. Review Scorecard & KPI SGN 2027 (HO & Cluster)", startIdx: 41, duration: 3, color: "#1a5276" }, // Jan W2 - Jan W4
+    { name: "17. Penyusunan Scorecard & KPI Karpim Anper Non PTPN", startIdx: 44, duration: 12, color: "#1a5276" },// Feb W1 - Apr W4
+  ];
+
+  const deliverables = [
+    "1. Scorecard & KPI Regional 2026 - PalmCo, SuppCo & SugarCo",
+    "2. Tata Kelola Manajemen Kinerja Unit Kerja & Individu",
+    "3. Proses Bisnis Level 1-4 SGN",
+    "4. Struktur Organisasi SGN",
+    "5. Proses Bisnis Level 1-4 Holding",
+    "6. Matrix RACI Holding - Sub Holding",
+    "7. Pelatihan Balanced Scorecard",
+    "8. Scorecard & KPI 2027 (Holding, Sub Holding & Regional / Cluster)",
+    "9. Scorecard & KPI 2027 (Anper Non PTPN Holding)"
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)", display: "flex", flexDirection: "column" }}>
       <AccentShapes />
       <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "left" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
-          <em>Project Master Schedule</em>
+        <h1 className="slide-title" style={{ fontSize: "2.5rem", color: "#1a5276", marginBottom: "0.2rem" }}>
+          <em>Proyek Scorecard, KPI, Proses Bisnis & Struktur Organisasi</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 700 }}>Modernization of Scorecard, KPI, Business Process & Organization</p>
+        <p className="slide-subtitle" style={{ fontSize: "1.05rem", color: "#64748b", fontWeight: 700 }}>
+          Project Start Date: Maret 2026
+        </p>
       </div>
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem", overflow: "hidden" }}>
+
         {/* Gantt Container */}
         <div style={{
-          flex: 1,
           background: "#fff",
-          borderRadius: "24px",
+          borderRadius: "16px",
           border: "1px solid #e2e8f0",
           display: "flex",
           flexDirection: "column",
-          overflow: "hidden",
-          boxShadow: "0 20px 40px rgba(0,0,0,0.05)"
+          flexShrink: 0,
+          boxShadow: "0 10px 25px rgba(0,0,0,0.04)"
         }}>
-          {/* Calendar Header */}
-          <div style={{ display: "flex", borderBottom: "2px solid #1a5276", background: "#f8fafc" }}>
-            <div style={{ width: "300px", padding: "18px 24px", fontWeight: 900, fontSize: "0.85rem", borderRight: "1px solid #e2e8f0", color: "#1a5276", textTransform: "uppercase", letterSpacing: "1px" }}>
-              Work Stream / Milestone
+          {/* Header */}
+          <div style={{ display: "flex", background: "#f8fafc", borderBottom: "2px solid #1a5276" }}>
+            <div style={{ width: "350px", padding: "10px 20px", fontWeight: 900, fontSize: "0.8rem", color: "#1a5276", textTransform: "uppercase", display: "flex", alignItems: "center", borderRight: "1px solid #e2e8f0" }}>
+              Milestone Description
             </div>
-            <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", background: "#1a5276", color: "#fff" }}>
-                {months.map((m, i) => (
-                  <div key={i} style={{ flex: 1, textAlign: "center", padding: "10px", fontSize: "0.8rem", fontWeight: 900, borderRight: "1px solid rgba(255,255,255,0.1)" }}>
-                    {m}
+            <div style={{ flex: 1, display: "flex" }}>
+              {months.map((m, i) => (
+                <div key={i} style={{ flex: 1, textAlign: "center", borderRight: "1px solid #e2e8f0" }}>
+                  <div style={{ padding: "6px", background: "#f1f5f9", fontSize: "0.75rem", fontWeight: 800, color: "#475569", borderBottom: "1px solid #e2e8f0" }}>{m}</div>
+                  <div style={{ display: "flex" }}>
+                    {[1, 2, 3, 4].map(w => (
+                      <div key={w} style={{ flex: 1, fontSize: "0.6rem", padding: "3px 0", color: "#94a3b8", textAlign: "center", borderRight: w !== 4 ? "1px dashed #e2e8f0" : "none" }}>{w}</div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Table Rows */}
-          <div style={{ flex: 1, overflowY: "auto" }}>
+          {/* Table Body */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {milestones.map((m, idx) => (
-              <div key={idx} style={{ display: "flex", borderBottom: "1px solid #f1f5f9", minHeight: "45px", background: idx % 2 === 0 ? "#fff" : "#fcfdfe" }}>
-                <div style={{ width: "300px", padding: "10px 24px", fontSize: "0.85rem", fontWeight: 700, color: "#1e293b", borderRight: "1px solid #e2e8f0", display: "flex", alignItems: "center" }}>
+              <div key={idx} style={{ display: "flex", borderBottom: "1px solid #f1f5f9", minHeight: "28px" }}>
+                <div style={{ width: "350px", padding: "5px 20px", fontSize: "0.75rem", fontWeight: 600, color: "#334155", borderRight: "1px solid #e2e8f0", display: "flex", alignItems: "center" }}>
                   {m.name}
                 </div>
-                <div style={{ flex: 1, position: "relative", display: "flex", background: "rgba(248, 250, 252, 0.4)" }}>
-                  {/* Vertical Grid Lines */}
-                  {months.map((_, i) => (
-                    <div key={i} style={{ flex: 1, borderRight: "1px solid #f1f5f9", height: "100%" }} />
+                <div style={{ flex: 1, position: "relative", display: "flex" }}>
+                  {/* Grid Lines */}
+                  {Array.from({ length: 56 }).map((_, i) => (
+                    <div key={i} style={{ flex: 1, borderRight: (i + 1) % 4 === 0 ? "1px solid #e2e8f0" : "1px dashed #f1f5f9" }} />
                   ))}
-                  {/* Progress Bar */}
+
+                  {/* Progress Block */}
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${(m.duration / 56) * 100}%` }}
-                    transition={{ delay: 0.5 + idx * 0.1, duration: 1 }}
+                    transition={{ delay: 0.1 + idx * 0.05, duration: 0.8 }}
                     style={{
                       position: "absolute",
                       left: `${(m.startIdx / 56) * 100}%`,
-                      height: "14px",
-                      top: "15px",
-                      background: m.color,
-                      opacity: 0.85,
-                      borderRadius: "20px",
-                      boxShadow: `0 4px 12px ${m.color}30`
+                      top: "4px",
+                      bottom: "4px",
+                      background: "rgba(110, 142, 235, 0.8)", // close to the excel blue color
+                      borderRadius: "2px",
+                      border: "1px solid rgba(110, 142, 235, 1)"
                     }}
                   />
                 </div>
@@ -4180,32 +4205,47 @@ function SlideProjectCharter() {
           </div>
         </div>
 
-        {/* Deliverables Footer */}
+        {/* Delivery Output Container */}
         <div style={{
-          background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)",
-          borderRadius: "20px",
-          padding: "1.2rem 2.5rem",
+          flex: 1,
+          background: "#fff",
+          borderRadius: "16px",
+          border: "2px solid #0e6655",
+          padding: "1.2rem",
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          boxShadow: "0 15px 30px rgba(0,0,0,0.1)"
+          flexDirection: "column",
+          gap: "1rem",
+          boxShadow: "0 10px 25px rgba(14, 102, 85, 0.06)",
+          position: "relative"
         }}>
-          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-            <Award size={24} color="#f59e0b" />
-            <span style={{ color: "#fff", fontWeight: 900, fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "1px" }}>Core Execution Plan 2026</span>
+          <div style={{ fontSize: "1.1rem", fontWeight: 900, color: "#0e6655", display: "flex", alignItems: "center", gap: "8px" }}>
+            <Check size={20} />
+            Delivery Output :
           </div>
-          <div style={{ display: "flex", gap: "30px" }}>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", fontWeight: 600 }}>
-              <span style={{ color: "#fff", fontWeight: 900 }}>Phase 1:</span> Design & Governance
-            </div>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", fontWeight: 600 }}>
-              <span style={{ color: "#fff", fontWeight: 900 }}>Phase 2:</span> Process & Organization
-            </div>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", fontWeight: 600 }}>
-              <span style={{ color: "#fff", fontWeight: 900 }}>Phase 3:</span> Roll-out & 2027 Prep
-            </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "x 2rem", columnGap: "3rem", rowGap: "0.8rem" }}>
+            {deliverables.map((item, i) => {
+              // Highlight item #3 as seen in image2 (green box)
+              const isHighlighted = i === 2;
+              return (
+                <div key={i} style={{
+                  fontSize: "0.95rem",
+                  fontWeight: 700,
+                  color: "#1e293b",
+                  padding: isHighlighted ? "6px 12px" : "0",
+                  border: isHighlighted ? "2px solid #0e6655" : "none",
+                  borderRadius: isHighlighted ? "4px" : "0",
+                  background: isHighlighted ? "rgba(14, 102, 85, 0.04)" : "transparent",
+                  display: "flex",
+                  alignItems: "center"
+                }}>
+                  {item}
+                </div>
+              );
+            })}
           </div>
         </div>
+
       </div>
       <SlideFooter />
     </div>
