@@ -3358,6 +3358,74 @@ function SlideAppraisalReference() {
   );
 }
 
+function SlideSMKTIFAQ() {
+  const faqs = [
+    {
+      num: "#1",
+      question: "Apa perubahan paling signifikan dibandingkan dengan Perdir 5/2025?",
+      answer: "Struktur dasar (KPI, Nilai, Rating & Merit Increment) relatif sama. Perubahan difokuskan pada penguatan governance (process owner), fairness (mekanisme sanggahan), dan kontrol distribusi rating (guided distribution/grade ceiling) untuk legal defensibility."
+    },
+    {
+      num: "#2",
+      question: "Apabila karyawan merasa penilaiannya tidak adil, apa perlindungannya?",
+      answer: "Draft Perdir SMKTI 2026 mengatur mekanisme sanggahan dengan batas waktu yang jelas, berdasarkan data/evidence, dan terdokumentasi dalam berita acara. Mekanisme formal ini sebelumnya belum diatur secara detail di Perdir 5/2025."
+    },
+    {
+      num: "#3",
+      question: "Apakah draft Perdir ini mengubah/menurunkan peluang merit increment?",
+      answer: "Mekanisme merit increment tidak berubah. Namun, dilakukan pengetatan pada kategori skor dan kontrol distribusi rating. Tujuannya bukan menurunkan peluang, tapi menjaga agar merit increment benar-benar berbasis diferensiasi kinerja."
+    },
+    {
+      num: "#4",
+      question: "Bagaimana mekanisme penilaian bagi karyawan baru, mutasi, atau rangkap jabatan?",
+      answer: "Penilaian dilakukan minimal setelah 3 bulan menjabat definitif. Untuk mutasi/rangkap jabatan dilakukan secara proporsional sesuai masa efektif. Penugasan ke entitas Non-SMKTI diselaraskan melalui formulir khusus dari Perusahaan Induk."
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#051613" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.1, background: "radial-gradient(circle at 70% 30%, #10b981 0%, transparent 70%)" }} />
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2rem", borderLeft: "8px solid #f97316", paddingLeft: "1.5rem" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#fff", margin: 0 }}>
+          <em>Frequently Asked Questions (FAQ)</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#10b981", fontWeight: 700 }}>Draft Peraturan Direksi SMKTI 2026</p>
+      </div>
+
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", position: "relative" }}>
+        {faqs.map((faq, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1 }}
+            style={{
+              background: "rgba(255, 255, 255, 0.05)",
+              borderRadius: "20px",
+              padding: "1.5rem",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+              backdropFilter: "blur(10px)"
+            }}
+          >
+            <div style={{ display: "flex", gap: "15px", alignItems: "flex-start" }}>
+              <div style={{ background: "#f97316", color: "#000", fontWeight: 900, padding: "4px 8px", borderRadius: "4px", fontSize: "0.9rem" }}>{faq.num}</div>
+              <div style={{ fontSize: "0.95rem", fontWeight: 800, color: "#fff", lineHeight: 1.4 }}>{faq.question}</div>
+            </div>
+            <div style={{ fontSize: "0.85rem", color: "rgba(255, 255, 255, 0.7)", lineHeight: 1.6, marginLeft: "45px" }}>
+              {faq.answer}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   { title: "Cover", component: SlideCover },
@@ -3399,6 +3467,7 @@ const slides = [
   // CLOSING & APPENDIX
   { title: "Appendix — Terminologi", component: SlideSMKTITerminologi },
   { title: "Appendix — Appraisal Model", component: SlideAppraisalReference },
+  { title: "FAQ — Perdir SMKTI 2026", component: SlideSMKTIFAQ },
   { title: "Terima Kasih", component: SlideThankYou },
   { title: "Appendix — Referensi Global", component: SlideRatingReference },
 ];
