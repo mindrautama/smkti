@@ -19,6 +19,9 @@ import {
   FileText,
   Layers,
   GitBranch,
+  Calendar,
+  PanelLeftOpen,
+  PanelLeftClose,
 } from "lucide-react";
 
 /* =============================
@@ -74,144 +77,215 @@ function SlideCover() {
       style={{
         display: "flex",
         flexDirection: "column",
-        background: "radial-gradient(circle at 50% 50%, #f0f7f4 0%, #ffffff 100%)",
+        background: "radial-gradient(circle at 0% 0%, #0e6655 0%, #0a4f42 50%, #1a5276 100%)",
         overflow: "hidden",
-        padding: "2rem 4rem 1rem", // Added padding top/sides/bottom
+        padding: "0",
         height: "100%",
-        position: "relative"
+        position: "relative",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      {/* Dynamic Background Accents - Keep them absolute as they are deco */}
+      {/* Premium Mesh Gradient Accents */}
       <motion.div
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.08, 0.12, 0.08],
+          x: [0, 50, 0],
+          y: [0, -30, 0],
+          opacity: [0.15, 0.25, 0.15],
         }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
         style={{
-          width: "800px",
-          height: "800px",
-          top: "-300px",
-          left: "-200px",
-          background: "var(--color-primary)",
-          filter: "blur(100px)",
-          position: "absolute",
-          borderRadius: "50%",
-        }}
-      />
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.05, 0.08, 0.05],
-        }}
-        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-        style={{
-          width: "600px",
-          height: "600px",
-          bottom: "-200px",
-          right: "-100px",
-          background: "var(--color-secondary)",
+          width: "1200px",
+          height: "1200px",
+          top: "-500px",
+          left: "-400px",
+          background: "radial-gradient(circle, #27ae60 0%, transparent 70%)",
           filter: "blur(120px)",
           position: "absolute",
           borderRadius: "50%",
         }}
       />
+      <motion.div
+        animate={{
+          x: [0, -40, 0],
+          y: [0, 60, 0],
+          opacity: [0.1, 0.2, 0.1],
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+        style={{
+          width: "1000px",
+          height: "1000px",
+          bottom: "-400px",
+          right: "-300px",
+          background: "radial-gradient(circle, #2980b9 0%, transparent 70%)",
+          filter: "blur(150px)",
+          position: "absolute",
+          borderRadius: "50%",
+        }}
+      />
+      <div style={{
+        width: "150%",
+        height: "150%",
+        position: "absolute",
+        top: "-25%",
+        left: "-25%",
+        backgroundImage: "radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)",
+        backgroundSize: "40px 40px",
+        transform: "rotate(15deg)",
+        zIndex: 0,
+      }}
+      />
 
-      {/* Main Content Area - Flex Grow to push footer down */}
-      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1 }}>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          style={{ maxWidth: "1000px" }}
-        >
-          <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.2rem" }}>
-            <div style={{
+      {/* Main Content Area */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+        style={{
+          zIndex: 10,
+          textAlign: "center",
+          maxWidth: "1100px",
+          padding: "4rem",
+          background: "rgba(255, 255, 255, 0.03)",
+          backdropFilter: "blur(20px)",
+          borderRadius: "30px",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "2.5rem" }}>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", damping: 12, stiffness: 100, delay: 0.2 }}
+            style={{
               position: "relative",
-              width: "60px",
-              height: "60px",
+              width: "80px",
+              height: "80px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "#fff",
-              borderRadius: "50%",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.05)"
-            }}>
-              <Target size={30} color="var(--color-primary)" strokeWidth={1.5} />
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                style={{
-                  position: "absolute",
-                  inset: -5,
-                  border: "1px dashed var(--color-primary)",
-                  borderRadius: "50%",
-                  opacity: 0.3
-                }}
-              />
-            </div>
-          </div>
+              background: "linear-gradient(135deg, #27ae60 0%, #0e6655 100%)",
+              borderRadius: "22px",
+              boxShadow: "0 15px 35px rgba(14, 102, 85, 0.4)",
+              transform: "rotate(-10deg)"
+            }}
+          >
+            <Target size={42} color="#fff" strokeWidth={2} />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              style={{
+                position: "absolute",
+                inset: -6,
+                border: "2px dashed rgba(255,255,255,0.3)",
+                borderRadius: "24px",
+              }}
+            />
+          </motion.div>
+        </div>
 
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <span
             style={{
-              fontSize: "0.75rem",
-              fontWeight: 800,
-              color: "var(--color-primary)",
+              fontSize: "0.85rem",
+              fontWeight: 900,
+              color: "#e67e22",
               textTransform: "uppercase",
-              display: "block",
-              marginBottom: "1rem",
-              letterSpacing: "0.5em",
+              display: "inline-block",
+              padding: "6px 20px",
+              background: "rgba(230, 126, 34, 0.15)",
+              border: "1px solid rgba(230, 126, 34, 0.3)",
+              borderRadius: "50px",
+              marginBottom: "1.5rem",
+              letterSpacing: "0.4em",
             }}
           >
-            Strategic Initiative Presentation
-          </motion.span>
-
-          <h1
-            className="slide-title"
-            style={{
-              fontSize: "3.8rem",
-              lineHeight: 1.05,
-              marginBottom: "1.8rem",
-              fontStyle: "italic",
-              color: "#1a3a3a",
-              letterSpacing: "-0.01em",
-              fontWeight: 400,
-            }}
-          >
-            Framework <br />
-            Agro Performance <br />
-            <span style={{ color: "var(--color-secondary)" }}>Management System (APMS) 2026</span>
-          </h1>
-
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "80px" }}
-            transition={{ duration: 1.5, delay: 0.8, ease: "easeInOut" }}
-            style={{
-              height: "2px",
-              background: "linear-gradient(to right, transparent, var(--color-accent), transparent)",
-              margin: "0 auto 2rem",
-            }}
-          />
-
-          <p
-            style={{
-              fontSize: "1.5rem",
-              fontWeight: 600,
-              color: "#34495e",
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-            }}
-          >
-            PT Perkebunan Nusantara III (Persero)
-          </p>
+            High-Performance Strategic Framework
+          </span>
         </motion.div>
-      </div>
 
-      {/* Footer Info Section removed as requested */}
+        <h1
+          style={{
+            fontSize: "4.5rem",
+            lineHeight: 1,
+            marginBottom: "2rem",
+            color: "#fff",
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: 800,
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Sistem Manajemen <br />
+          <span style={{
+            background: "linear-gradient(90deg, #f1c40f, #e67e22)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontStyle: "italic"
+          }}>
+            Kinerja Karyawan Terintegrasi (SMKTI)
+          </span>
+        </h1>
+
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "120px" }}
+          transition={{ duration: 1.2, delay: 1, ease: "easeInOut" }}
+          style={{
+            height: "4px",
+            background: "linear-gradient(to right, #f1c40f, #e67e22)",
+            margin: "0 auto 2.5rem",
+            borderRadius: "2px"
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          style={{
+            fontSize: "1.8rem",
+            fontWeight: 700,
+            color: "rgba(255,255,255,0.9)",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+          }}
+        >
+          PTPN Group
+        </motion.div>
+
+        <div style={{ marginTop: "3rem", display: "flex", justifyContent: "center", gap: "2rem" }}>
+          <div style={{ textAlign: "left", borderLeft: "2px solid rgba(255,255,255,0.2)", paddingLeft: "1rem" }}>
+            <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.6)", textTransform: "uppercase" }}>Version</div>
+            <div style={{ fontSize: "1rem", color: "#fff", fontWeight: 700 }}>2.0 EA-Performance</div>
+          </div>
+          <div style={{ textAlign: "left", borderLeft: "2px solid rgba(255,255,255,0.2)", paddingLeft: "1rem" }}>
+            <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.6)", textTransform: "uppercase" }}>Focus</div>
+            <div style={{ fontSize: "1rem", color: "#fff", fontWeight: 700 }}>Strategic & Operational Alignment</div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Floating Decorative Elements */}
+      <motion.div
+        animate={{ y: [0, -20, 0], rotate: [0, 45, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        style={{ position: "absolute", top: "15%", right: "15%", opacity: 0.4 }}
+      >
+        <TrendingUp size={60} color="#fff" strokeWidth={1} />
+      </motion.div>
+      <motion.div
+        animate={{ y: [0, 20, 0], rotate: [0, -45, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        style={{ position: "absolute", bottom: "20%", left: "10%", opacity: 0.3 }}
+      >
+        <Award size={80} color="#fff" strokeWidth={0.5} />
+      </motion.div>
+
       <SlideFooter />
     </div>
   );
@@ -225,8 +299,9 @@ function SlideLatar() {
     {
       title: "EXTERNALLY DRIVEN",
       subtitle: "BUMN & DAM Directives",
-      icon: <Layers size={24} />,
-      color: "#e67e22",
+      icon: <Layers size={22} />,
+      color: "#0e6655",
+      accent: "#27ae60",
       items: [
         "Akselerasi produktivitas SDM melalui SMART Systems yang selaras dengan strategi bisnis.",
         "Adopsi People Analytics & Teknologi untuk pengambilan keputusan berbasis data akurat."
@@ -236,8 +311,9 @@ function SlideLatar() {
     {
       title: "STRATEGICALLY ALIGNED",
       subtitle: "Board of Commissioners",
-      icon: <GitBranch size={24} />,
-      color: "#0e6655",
+      icon: <GitBranch size={22} />,
+      color: "#1a5276",
+      accent: "#2980b9",
       items: [
         "Integrasi Sistem KPI (Cascading) dari Holding hingga Anak Perusahaan.",
         "Cakupan Dimensi Keuangan & Non-Keuangan (Digitalisasi, Efisiensi, Keberlanjutan).",
@@ -248,8 +324,9 @@ function SlideLatar() {
     {
       title: "INTERNALLY VERIFIED",
       subtitle: "Survey & Employee Feedback",
-      icon: <Users size={24} />,
-      color: "#1a5276",
+      icon: <Users size={22} />,
+      color: "#e67e22",
+      accent: "#f39c12",
       items: [
         "Peningkatan Transparansi & Evaluasi Sistem Kuota Penilaian.",
         "Sinkronisasi KPI secara Vertikal & Horizontal antar Departemen.",
@@ -260,62 +337,84 @@ function SlideLatar() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "0.8rem 3rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.3rem" }}>Latar Belakang</h1>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <div style={{ height: "1px", flex: 1, background: "linear-gradient(to right, transparent, rgba(26, 82, 118, 0.2), transparent)" }}></div>
-          <p className="slide-subtitle" style={{ fontSize: "1rem", opacity: 0.9, fontWeight: 600 }}>Pondasi Strategis & Arahan Perbaikan Sistem 2026</p>
-          <div style={{ height: "1px", flex: 1, background: "linear-gradient(to right, transparent, rgba(26, 82, 118, 0.2), transparent)" }}></div>
-        </div>
+      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="slide-title"
+          style={{ fontSize: "2.8rem", color: "#1a5276", marginBottom: "0.5rem" }}
+        >
+          Latar Belakang
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="slide-subtitle"
+          style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 500, letterSpacing: "1px" }}
+        >
+          Pondasi Strategis & Arahan Perbaikan Sistem 2026
+        </motion.p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", gap: "2rem" }}>
+      <div style={{ flex: 1, display: "flex", gap: "1.5rem", alignItems: "stretch" }}>
         {sections.map((sec, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 + idx * 0.1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 + idx * 0.15 }}
             style={{
               flex: 1,
               background: "#fff",
-              border: `1px solid ${sec.color}22`,
-              borderRadius: "20px",
-              padding: "1.2rem",
+              borderRadius: "24px",
+              padding: "2rem 1.5rem",
               display: "flex",
               flexDirection: "column",
-              boxShadow: "0 20px 50px rgba(0,0,0,0.05)",
+              boxShadow: "0 10px 40px rgba(0,0,0,0.04)",
+              border: "1px solid #f1f5f9",
               position: "relative",
               overflow: "hidden"
             }}
           >
-            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: sec.color }}></div>
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "8px", background: `linear-gradient(90deg, ${sec.color}, ${sec.accent})` }}></div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.2rem" }}>
-              <div style={{ background: `${sec.color}15`, color: sec.color, padding: "10px", borderRadius: "14px", boxShadow: `0 8px 20px ${sec.color}15`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ marginBottom: "1.5rem" }}>
+              <div style={{
+                background: `${sec.color}10`,
+                color: sec.color,
+                width: "54px",
+                height: "54px",
+                borderRadius: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: "1.2rem",
+                boxShadow: `0 8px 20px ${sec.color}15`
+              }}>
                 {sec.icon}
               </div>
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: "0.8rem", fontWeight: 900, color: sec.color, letterSpacing: "1.5px", marginBottom: "4px", textTransform: "uppercase" }}>{sec.title}</h3>
-                <h4 style={{ fontSize: "1rem", fontWeight: 850, color: "#1a202c", lineHeight: 1.2, letterSpacing: "-0.01em" }}>{sec.subtitle}</h4>
-              </div>
+              <h3 style={{ fontSize: "0.8rem", fontWeight: 900, color: sec.color, letterSpacing: "2px", marginBottom: "0.4rem", textTransform: "uppercase" }}>{sec.title}</h3>
+              <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1e293b", lineHeight: 1.2 }}>{sec.subtitle}</h4>
             </div>
 
             <div style={{ flex: 1 }}>
               <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                 {sec.items.map((item, i) => (
                   <li key={i} style={{
-                    fontSize: "0.88rem",
-                    lineHeight: 1.4,
-                    color: "#2d3748",
-                    marginBottom: "10px",
+                    fontSize: "0.95rem",
+                    lineHeight: 1.5,
+                    color: "#475569",
+                    marginBottom: "14px",
                     display: "flex",
-                    gap: "10px",
-                    fontWeight: 600
+                    gap: "12px",
+                    fontWeight: 500
                   }}>
-                    <span style={{ color: sec.color, fontWeight: 900, fontSize: "1.2rem", marginTop: "-4px" }}>•</span>
+                    <div style={{ marginTop: "6px" }}>
+                      <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: sec.accent }}></div>
+                    </div>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -325,25 +424,32 @@ function SlideLatar() {
             <div style={{
               marginTop: "auto",
               paddingTop: "1.5rem",
-              borderTop: "1px solid #f0f4f8",
-              fontSize: "0.85rem",
-              fontWeight: 800,
+              borderTop: "1px solid #f1f5f9",
+              fontSize: "0.75rem",
+              fontWeight: 700,
               color: "#94a3b8",
               fontStyle: "italic",
-              textAlign: "right"
+              display: "flex",
+              alignItems: "center",
+              gap: "8px"
             }}>
-              Source: {sec.source}
+              <FileText size={14} /> Source: {sec.source}
             </div>
           </motion.div>
         ))}
       </div>
 
-      <div style={{ marginTop: "1rem", marginBottom: "2.5rem", textAlign: "center", background: "linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(230, 126, 34, 0.05) 100%)", padding: "12px 30px", borderRadius: "14px", border: "2px dashed #e67e22", boxShadow: "0 10px 30px rgba(230,126,34,0.08)" }}>
-        <p style={{ fontSize: "1rem", color: "#d35400", fontWeight: 900, margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        style={{ marginTop: "1.5rem", textAlign: "center", background: "linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(230, 126, 34, 0.05) 100%)", padding: "12px 30px", borderRadius: "14px", border: "1px solid rgba(230, 126, 34, 0.2)", boxShadow: "0 10px 30px rgba(230,126,34,0.05)" }}
+      >
+        <p style={{ fontSize: "1rem", color: "#d35400", fontWeight: 700, margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
           <TrendingUp size={20} />
-          <span>Fokus Utama: SMART System, Integrasi Data, dan Adopsi Teknologi.</span>
+          <span>Fokus Utama: SMART System, Integrasi Data Vertikal, dan Digitalisasi Kinerja.</span>
         </p>
-      </div>
+      </motion.div>
 
       <SlideFooter />
     </div>
@@ -355,97 +461,426 @@ function SlideLatar() {
    ============================= */
 function SlidePrinsipKPI() {
   const efektif = [
-    { text: "Alat ukur OUTPUT/KINERJA (Bukan Sikap/Kompetensi)", icon: <Check size={18} /> },
-    { text: "Selaras dengan VISI & STRATEGI Perusahaan", icon: <Check size={18} /> },
-    { text: "Berbasis kriteria SMART (Objektif & Terukur)", icon: <Check size={18} /> },
-    { text: "Mendorong FAIRNESS antara Perusahaan & Karyawan", icon: <Check size={18} /> },
-    { text: "Identifikasi ruang PENGEMBANGAN yang nyata", icon: <Check size={18} /> },
+    { text: "Alat ukur OUTPUT/KINERJA (Bukan Sikap)", icon: <Check size={16} /> },
+    { text: "Selaras dengan VISI & STRATEGI Perusahaan", icon: <Check size={16} /> },
+    { text: "Berbasis kriteria SMART (Objektif & Terukur)", icon: <Check size={16} /> },
+    { text: "Mendorong FAIRNESS antara Perusahaan & Karyawan", icon: <Check size={16} /> },
+    { text: "Identifikasi ruang PENGEMBANGAN yang nyata", icon: <Check size={16} /> },
   ];
 
   const tidakEfektif = [
-    { text: "Mengukur AKTIVITAS yang ambigu (Process vs Result)", icon: <X size={18} /> },
-    { text: "Data sulit diambil, MANIPULATIF, atau tidak akurat", icon: <X size={18} /> },
-    { text: "Jumlah TERLALU BANYAK (Loss of Focus)", icon: <X size={18} /> },
-    { text: "Target tidak masuk akal (UNREALISTIC Goals)", icon: <X size={18} /> },
-    { text: "Tidak memiliki dampak SIGNIFIKAN terhadap bisnis", icon: <X size={18} /> },
+    { text: "Mengukur AKTIVITAS yang ambigu (Process vs Result)", icon: <X size={16} /> },
+    { text: "Data sulit diambil, MANIPULATIF, atau tidak akurat", icon: <X size={16} /> },
+    { text: "Jumlah TERLALU BANYAK (Loss of Focus)", icon: <X size={16} /> },
+    { text: "Target tidak masuk akal (UNREALISTIC Goals)", icon: <X size={16} /> },
+    { text: "Tidak memiliki dampak SIGNIFIKAN terhadap bisnis", icon: <X size={16} /> },
   ];
 
   return (
-    <div className="slide" style={{ padding: "1rem 4rem 1.5rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 4rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem" }}>Prinsip Dasar KPI</h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.1rem", fontWeight: 600 }}>Kunci Efektivitas Performance Management System</p>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>Prinsip Dasar KPI</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Esensi Performance Management yang Berkelanjutan</p>
       </div>
 
       {/* Philosophy Banner */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         style={{
-          background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)",
+          background: "linear-gradient(135deg, #0e6655 0%, #1a5276 100%)",
           color: "#fff",
-          padding: "15px 30px",
-          borderRadius: "15px",
+          padding: "1.2rem 2rem",
+          borderRadius: "20px",
           textAlign: "center",
-          marginBottom: "1.2rem",
-          boxShadow: "0 10px 25px rgba(26, 82, 118, 0.15)",
-          border: "2px solid rgba(255,255,255,0.1)"
+          marginBottom: "2rem",
+          boxShadow: "0 15px 35px rgba(14, 102, 85, 0.2)",
+          position: "relative",
+          overflow: "hidden"
         }}
       >
-        <p style={{ fontSize: "1.2rem", fontWeight: 800, margin: 0, lineHeight: 1.4 }}>
-          "KPI adalah alat ukur <span style={{ color: "#f1c40f", textDecoration: "underline" }}>HASIL (RESULT)</span>—bukan alat ukur kepribadian atau proses administratif."
+        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", opacity: 0.1, background: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83L.83 55.457l-.83-.83L54.627 0zM5.973 0l.83.83L0 6.803l-.83-.83L5.973 0zM59.17 54.027l.83.83L54.027 59.17l-.83-.83L59.17 54.027zM4.627 60l-.83-.83L59.17.83l.83.83L4.627 60zM0 53.197l.83.83L6.803 60l-.83-.83L0 53.197zM60 5.973l-.83-.83L53.197 0l.83.83L60 5.973z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E\")" }}></div>
+        <p style={{ fontSize: "1.3rem", fontWeight: 800, margin: 0, lineHeight: 1.4, position: "relative", zIndex: 1 }}>
+          <span style={{ color: "#f1c40f" }}>&ldquo;</span> KPI adalah alat ukur <span style={{ textDecoration: "underline", textUnderlineOffset: "4px", color: "#f1c40f" }}>HASIL (RESULT)</span> — bukan alat ukur kepribadian atau proses administratif. <span style={{ color: "#f1c40f" }}>&rdquo;</span>
         </p>
       </motion.div>
-
-      <div className="two-columns" style={{ flex: 1, gap: "1.5rem" }}>
+      <div style={{ flex: 1, display: "flex", gap: "2rem" }}>
         {/* IDEAL STATE */}
         <motion.div
-          className="column-card"
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          style={{ border: "1px solid rgba(39, 174, 96, 0.2)", background: "rgba(39, 174, 96, 0.03)", borderRadius: "20px", display: "flex", flexDirection: "column" }}
+          transition={{ delay: 0.3 }}
+          style={{ flex: 1, background: "#fff", borderRadius: "24px", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.03)", border: "1px solid #f1f5f9" }}
         >
-          <div className="column-header" style={{ background: "#27ae60", color: "#fff", border: "none", padding: "12px 25px", display: "flex", alignItems: "center", gap: "12px" }}>
-            <Check size={24} strokeWidth={3} />
-            <span style={{ fontSize: "1.1rem", fontWeight: 900, letterSpacing: "0.5px" }}>PRINSIP KPI EFEKTIF (THE DO&apos;S)</span>
+          <div style={{ background: "#0e6655", color: "#fff", padding: "1.2rem 2rem", display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ background: "rgba(255,255,255,0.2)", padding: "6px", borderRadius: "50%" }}><Check size={20} strokeWidth={3} /></div>
+            <span style={{ fontSize: "1.1rem", fontWeight: 900, letterSpacing: "1px" }}>OPTIMAL (THE DO&apos;S)</span>
           </div>
-          <div className="column-body" style={{ padding: "1.2rem", flex: 1 }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              {efektif.map((item, i) => (
-                <div key={i} style={{ display: "flex", gap: "12px", alignItems: "center", background: "#fff", padding: "12px", borderRadius: "12px", boxShadow: "0 4px 10px rgba(0,0,0,0.03)", border: "1px solid #f0f2f5" }}>
-                  <div style={{ background: "#27ae6015", color: "#27ae60", padding: "5px", borderRadius: "50%", display: "flex" }}>{item.icon}</div>
-                  <span style={{ fontSize: "0.95rem", color: "#2d3436", fontWeight: 700 }}>{item.text}</span>
-                </div>
-              ))}
-            </div>
+          <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "12px" }}>
+            {efektif.map((item, i) => (
+              <div key={i} style={{ display: "flex", gap: "14px", alignItems: "center", background: "#f8fafc", padding: "14px 18px", borderRadius: "16px", border: "1px solid #f1f5f9" }}>
+                <div style={{ color: "#0e6655" }}>{item.icon}</div>
+                <span style={{ fontSize: "1rem", color: "#1e293b", fontWeight: 600 }}>{item.text}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
 
         {/* PITFALLS */}
         <motion.div
-          className="column-card"
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          style={{ border: "1px solid rgba(231, 76, 60, 0.2)", background: "rgba(231, 76, 60, 0.03)", borderRadius: "20px", display: "flex", flexDirection: "column" }}
+          transition={{ delay: 0.4 }}
+          style={{ flex: 1, background: "#fff", borderRadius: "24px", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.03)", border: "1px solid #f1f5f9" }}
         >
-          <div className="column-header" style={{ background: "#e74c3c", color: "#fff", border: "none", padding: "12px 25px", display: "flex", alignItems: "center", gap: "12px" }}>
-            <X size={24} strokeWidth={3} />
-            <span style={{ fontSize: "1.1rem", fontWeight: 900, letterSpacing: "0.5px" }}>JEBAKAN KPI (THE DON&apos;TS)</span>
+          <div style={{ background: "#e67e22", color: "#fff", padding: "1.2rem 2rem", display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ background: "rgba(255,255,255,0.2)", padding: "6px", borderRadius: "50%" }}><X size={20} strokeWidth={3} /></div>
+            <span style={{ fontSize: "1.1rem", fontWeight: 900, letterSpacing: "1px" }}>PITFALLS (THE DON&apos;TS)</span>
           </div>
-          <div className="column-body" style={{ padding: "1.2rem", flex: 1 }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              {tidakEfektif.map((item, i) => (
-                <div key={i} style={{ display: "flex", gap: "12px", alignItems: "center", background: "#fff", padding: "12px", borderRadius: "12px", boxShadow: "0 4px 10px rgba(0,0,0,0.03)", border: "1px solid #f0f2f5" }}>
-                  <div style={{ background: "#e74c3c15", color: "#e74c3c", padding: "5px", borderRadius: "50%", display: "flex" }}>{item.icon}</div>
-                  <span style={{ fontSize: "0.95rem", color: "#2d3436", fontWeight: 700 }}>{item.text}</span>
-                </div>
-              ))}
-            </div>
+          <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "12px" }}>
+            {tidakEfektif.map((item, i) => (
+              <div key={i} style={{ display: "flex", gap: "14px", alignItems: "center", background: "#fff8f1", padding: "14px 18px", borderRadius: "16px", border: "1px solid #fef3c7" }}>
+                <div style={{ color: "#e67e22" }}>{item.icon}</div>
+                <span style={{ fontSize: "1rem", color: "#1e293b", fontWeight: 600 }}>{item.text}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
+      <SlideFooter />
+    </div>
+  );
+}
 
+// --- SECTION: CONCEPT & FOUNDATION (NEW) ---
+
+function SlideSectionConcept() {
+  return (
+    <div className="slide" style={{ padding: "0", background: "#fff", display: "flex" }}>
+      <div style={{ flex: 1.2, position: "relative", overflow: "hidden", background: "#0e6655" }}>
+        {/* Abstract Farm/Sugar Cane Illustration Mockup */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "80%", background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
+        <div style={{ padding: "4rem", position: "relative", zIndex: 1, color: "#fff" }}>
+          <div style={{ background: "#fff", padding: "10px", borderRadius: "8px", width: "fit-content", marginBottom: "2rem" }}>
+            <div style={{ color: "#0e6655", fontWeight: 900, fontSize: "1.2rem", letterSpacing: "1px" }}>PTPN GROUP</div>
+          </div>
+          <h2 style={{ fontSize: "5rem", fontWeight: 900, lineHeight: 1, textTransform: "uppercase", letterSpacing: "-2px" }}>
+            Concept of <br />
+            <span style={{ color: "#f1c40f" }}>Strategy &</span> <br />
+            Performance <br />
+            Management
+          </h2>
+        </div>
+        {/* Simple SVG Illustration placeholder */}
+        <div style={{ position: "absolute", bottom: "10%", right: "5%", opacity: 0.1 }}>
+          <Settings size={400} />
+        </div>
+      </div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1a5276", marginBottom: "1rem", letterSpacing: "2px" }}>BAGIAN 02 :</div>
+          <h1 style={{ fontSize: "3rem", fontWeight: 900, color: "#1e293b", marginBottom: "2rem", lineHeight: 1.1 }}>Fondasi Konseptual & Strategis</h1>
+          <div style={{ width: "80px", height: "8px", background: "#0e6655", borderRadius: "4px", marginBottom: "2rem" }}></div>
+          <p style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600, lineHeight: 1.6 }}>
+            Membangun pemahaman mengenai relasi antara visi korporasi, strategi, dan bagaimana hal tersebut diukur secara efektif melalui metode Balanced Scorecard & PDCA.
+          </p>
+        </motion.div>
+      </div>
+      <div style={{ position: "absolute", bottom: "2rem", right: "2rem", display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{ textAlign: "right", borderRight: "2px solid #0e6655", paddingRight: "15px" }}>
+          <div style={{ fontWeight: 900, fontSize: "0.8rem", color: "#1e293b" }}>ONE PTPN</div>
+          <div style={{ fontWeight: 700, fontSize: "0.6rem", color: "#64748b" }}>CULTURE</div>
+        </div>
+        <Award size={32} color="#0e6655" />
+      </div>
+    </div>
+  );
+}
+
+function SlideBSCFoundation() {
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Step of Balanced Scorecard</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Alur Eksekusi Strategi: Measurement, Management, & Direction</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "3rem" }}>
+        {/* Top Concept Flow */}
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "4rem" }}>
+          {[
+            { n: 1, t: "MEASUREMENT", s: "REPORT", c: "#27ae60" },
+            { n: 2, t: "MANAGEMENT", s: "PDCA CYCLE", c: "#1a5276" },
+            { n: 3, t: "DIRECTION", s: "STRATEGY TRANSLATION", c: "#0e6655" }
+          ].map((step, i) => (
+            <React.Fragment key={i}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2 }}
+                style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative" }}
+              >
+                <div style={{ display: "flex", gap: "10px", alignItems: "center", marginBottom: "15px" }}>
+                  <div style={{ background: step.c, color: "#fff", width: "24px", height: "24px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 900 }}>{step.n}</div>
+                  <div style={{ fontWeight: 900, fontSize: "1rem", color: step.c }}>{step.t}</div>
+                </div>
+                <div style={{
+                  width: "180px",
+                  height: "180px",
+                  borderRadius: "50%",
+                  border: `4px solid ${step.c}`,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  padding: "20px",
+                  background: "#fff",
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.05)"
+                }}>
+                  <div style={{ fontWeight: 900, fontSize: "1.1rem", color: "#1e293b", lineHeight: 1.1 }}>{step.s}</div>
+                </div>
+              </motion.div>
+              {i < 2 && <ArrowRight size={32} color="#cbd5e1" />}
+            </React.Fragment>
+          ))}
+        </div>
+
+        {/* Bottom Detailed Linkage */}
+        <div style={{ background: "#f8fafc", borderRadius: "24px", padding: "2rem", border: "1px solid #e2e8f0" }}>
+          <div style={{ textAlign: "center", marginBottom: "1.5rem", fontWeight: 900, color: "#1a5276" }}>STRATEGY vs PERFORMANCE MANAGEMENT</div>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem" }}>
+            <div style={{ background: "#27ae60", padding: "15px 30px", borderRadius: "12px", color: "#fff", fontWeight: 900 }}>1. STRATEGY MAP</div>
+            <ChevronRight color="#cbd5e1" />
+            <div style={{ background: "#e67e22", padding: "15px 30px", borderRadius: "12px", color: "#fff", fontWeight: 900 }}>2. SCORECARD (KPI)</div>
+            <ChevronRight color="#cbd5e1" />
+            <div style={{ background: "#1a5276", padding: "15px 30px", borderRadius: "12px", color: "#fff", fontWeight: 900 }}>3. PROGRAM KERJA</div>
+            <ChevronRight color="#cbd5e1" />
+            <div style={{ background: "#334155", padding: "15px 30px", borderRadius: "12px", color: "#fff", fontWeight: 900 }}>4. BUDGET</div>
+          </div>
+        </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+function SlidePDCACycle() {
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1rem" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>PDCA as Improvement & Learning Cycle</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Continuous Improvement Framework for Organizational Achievement</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ position: "relative", width: "600px", height: "600px" }}>
+          {/* Center RJPP */}
+          <div style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "120px",
+            height: "120px",
+            background: "#0e6655",
+            color: "#fff",
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 10,
+            boxShadow: "0 0 30px rgba(14,102,85,0.3)",
+            fontWeight: 900,
+            fontSize: "1.2rem"
+          }}>RJPP</div>
+
+          {/* Cycle Segments */}
+          {[
+            { t: "PLAN", s: "First Step", items: ["RKAP", "Scorecard & KPI", "Proker"], color: "#f1c40f", pos: { top: "5%", left: "50%", tx: "-50%" }, arrow: "top" },
+            { t: "DO", s: "Second Step", items: ["Program Kerja", "Execution"], color: "#e67e22", pos: { top: "50%", right: "5%", ty: "-50%" }, arrow: "right" },
+            { t: "CHECK", s: "Third Step", items: ["Performance", "Proker Monitoring (Monev)"], color: "#2980b9", pos: { bottom: "5%", left: "50%", tx: "-50%" }, arrow: "bottom" },
+            { t: "ACT", s: "Fourth Step", items: ["PICA", "Coaching & Mentoring", "NORM"], color: "#8e44ad", pos: { top: "50%", left: "5%", ty: "-50%" }, arrow: "left" }
+          ].map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: i * 0.1 }}
+              style={{
+                position: "absolute",
+                top: step.pos.top,
+                left: step.pos.left,
+                right: step.pos.right,
+                bottom: step.pos.bottom,
+                transform: `translate(${step.pos.tx || "0"}, ${step.pos.ty || "0"})`,
+                width: "220px",
+                background: "#fff",
+                borderRadius: "24px",
+                padding: "1.5rem",
+                border: `2px solid ${step.color}`,
+                boxShadow: `0 10px 25px ${step.color}15`,
+                textAlign: "center"
+              }}
+            >
+              <div style={{ color: step.color, fontWeight: 900, fontSize: "0.8rem", textTransform: "uppercase", marginBottom: "5px" }}>{step.s}</div>
+              <div style={{ background: step.color, color: "#fff", padding: "5px", borderRadius: "8px", fontWeight: 900, fontSize: "1.1rem", marginBottom: "15px" }}>{step.t}</div>
+              <ul style={{ listStyle: "none", padding: 0, textAlign: "left" }}>
+                {step.items.map((it, idx) => (
+                  <li key={idx} style={{ fontSize: "0.8rem", fontWeight: 700, color: "#1e293b", marginBottom: "4px", display: "flex", gap: "8px" }}>
+                    <span style={{ color: step.color }}>•</span> {it}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+
+          {/* Decorative Arrows SVG would go here, simplified to CSS for now */}
+          <div style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "100%", transform: "translate(-50%, -50%)", pointerEvents: "none" }}>
+            <svg width="100%" height="100%" viewBox="0 0 600 600" fill="none" stroke="#cbd5e1" strokeWidth="2" strokeDasharray="5 5">
+              <circle cx="300" cy="300" r="200" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+function SlideStrategicAlignment() {
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#f8fafc" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1rem" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Cascading & Strategic Alignment</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Menyelaraskan Target dari Level Korporasi hingga Unit Produksi</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
+        {/* Cascading Flow */}
+        <div style={{ background: "#fff", borderRadius: "24px", padding: "2rem", border: "1px solid #e2e8f0", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
+          <div style={{ fontSize: "0.9rem", fontWeight: 900, color: "#0e6655", marginBottom: "1.5rem", textTransform: "uppercase", textAlign: "center" }}>Proses Cascading Scorecard</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem" }}>
+            {[
+              { t1: "HOLDING", t2: "SCORECARD", color: "#0e6655" },
+              { t1: "DIREKTORAT", t2: "SCORECARD", color: "#117a65" },
+              { t1: "DIVISI", t2: "SCORECARD", color: "#148f77" },
+              { t1: "REGIONAL", t2: "SCORECARD", color: "#17a589" }
+            ].map((box, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <div style={{ flex: 1, background: box.color, color: "#fff", padding: "15px", borderRadius: "12px", textAlign: "center", fontWeight: 900, fontSize: "0.85rem" }}>
+                  <div>{box.t1}</div>
+                  <div style={{ fontSize: "0.7rem", opacity: 0.8 }}>{box.t2}</div>
+                </div>
+                {i < 3 && <ArrowRight size={20} color="#cbd5e1" />}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Alignment Diagram Mockup */}
+        <div style={{ display: "flex", gap: "2rem" }}>
+          <div style={{ flex: 1, background: "#fff", borderRadius: "24px", padding: "1.5rem", border: "1px solid #e2e8f0" }}>
+            <div style={{ fontSize: "0.85rem", fontWeight: 900, color: "#1a5276", marginBottom: "1rem" }}>Alignment Corporate & Business Unit</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <div style={{ border: "2px dashed #cbd5e1", borderRadius: "16px", padding: "1rem" }}>
+                <div style={{ fontSize: "0.7rem", fontWeight: 800, color: "#64748b", marginBottom: "8px" }}>CORPORATE LEVEL</div>
+                <div style={{ background: "#1a5276", color: "#fff", padding: "10px", borderRadius: "8px", fontSize: "0.75rem", fontWeight: 800 }}>Enterprise Strategy Map</div>
+              </div>
+              <div style={{ display: "flex", justifyContent: "center" }}><ArrowDown size={20} color="#cbd5e1" /></div>
+              <div style={{ border: "2px dashed #0e665550", borderRadius: "16px", padding: "1rem" }}>
+                <div style={{ fontSize: "0.7rem", fontWeight: 800, color: "#0e6655", marginBottom: "8px" }}>BUSINESS UNIT (SBU/REGIONAL)</div>
+                <div style={{ background: "#0e6655", color: "#fff", padding: "10px", borderRadius: "8px", fontSize: "0.75rem", fontWeight: 800 }}>SBU Strategy Map Update</div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem", justifyContent: "center" }}>
+            <div style={{ background: "rgba(241, 196, 15, 0.1)", border: "1px solid #f1c40f", padding: "1.5rem", borderRadius: "20px" }}>
+              <div style={{ fontWeight: 900, color: "#7d6608", fontSize: "0.9rem", marginBottom: "10px" }}>Synergy Checkpoint</div>
+              <p style={{ fontSize: "0.8rem", color: "#92760b", fontWeight: 600 }}>Tiap target unit dipastikan selaras dengan Key Performance Indicator (KPI) Holding secara berkala.</p>
+            </div>
+            <div style={{ background: "#1e293b", color: "#fff", padding: "1.5rem", borderRadius: "20px" }}>
+              <div style={{ fontWeight: 900, fontSize: "0.9rem", marginBottom: "10px" }}>Integrated Planning Process</div>
+              <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", fontWeight: 600 }}>Menjamin anggaran (Budgeting) mengikuti prioritas inisiatif yang telah ditetapkan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+function SlideUnitIndividualPerformance() {
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1rem" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Integrasi Kinerja Unit & Individu</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Strategy Management (Unit) vs Performance Management (Individual)</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
+        {/* Unit vs Individual Table */}
+        <div style={{ display: "flex", gap: "2rem" }}>
+          <div style={{ flex: 1, background: "#f8fafc", borderRadius: "24px", padding: "2rem", border: "1px solid #e2e8f0" }}>
+            <div style={{ background: "#1a5276", color: "#fff", width: "fit-content", padding: "8px 15px", borderRadius: "8px", fontWeight: 900, fontSize: "0.8rem", marginBottom: "1.5rem" }}>STRATEGY MANAGEMENT</div>
+            <div style={{ fontSize: "1.2rem", fontWeight: 900, color: "#1e293b", marginBottom: "1rem" }}>Unit Performance</div>
+            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+              {["Corporate Level", "Directorate Level", "Group Level"].map((l, i) => (
+                <li key={i} style={{ background: "#fff", padding: "10px 15px", borderRadius: "10px", border: "1px solid #e2e8f0", fontSize: "0.85rem", fontWeight: 700, color: "#475569", display: "flex", justifyContent: "space-between" }}>
+                  {l} <ChevronRight size={16} />
+                </li>
+              ))}
+            </ul>
+            <div style={{ marginTop: "1.5rem", fontSize: "0.75rem", fontWeight: 800, color: "#0e6655" }}>Managed by: Strategic Planning / Performance Unit</div>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center" }}><ArrowRight size={32} color="#cbd5e1" /></div>
+
+          <div style={{ flex: 1, background: "#f8fafc", borderRadius: "24px", padding: "2rem", border: "1px solid #e2e8f0" }}>
+            <div style={{ background: "#e67e22", color: "#fff", width: "fit-content", padding: "8px 15px", borderRadius: "8px", fontWeight: 900, fontSize: "0.8rem", marginBottom: "1.5rem" }}>PERFORMANCE MANAGEMENT</div>
+            <div style={{ fontSize: "1.2rem", fontWeight: 900, color: "#1e293b", marginBottom: "1rem" }}>Individual Performance</div>
+            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+              {["Director Level", "VP / GM Level", "Staff / Operational"].map((l, i) => (
+                <li key={i} style={{ background: "#fff", padding: "10px 15px", borderRadius: "10px", border: "1px solid #e2e8f0", fontSize: "0.85rem", fontWeight: 700, color: "#475569", display: "flex", justifyContent: "space-between" }}>
+                  {l} <ChevronRight size={16} />
+                </li>
+              ))}
+            </ul>
+            <div style={{ marginTop: "1.5rem", fontSize: "0.75rem", fontWeight: 800, color: "#e67e22" }}>Managed by: Human Capital / SDM</div>
+          </div>
+        </div>
+
+        {/* KPI Types Section */}
+        <div style={{ background: "#1e293b", borderRadius: "24px", padding: "2rem", color: "#fff" }}>
+          <div style={{ fontSize: "1rem", fontWeight: 900, marginBottom: "1.5rem", textAlign: "center", textTransform: "uppercase", letterSpacing: "1px" }}>Type of KPIs to Measure Objectives</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
+            {[
+              { t: "EXACT KPIs", d: "Semua aspek dari objektif terukur secara langsung.", dot: "#27ae60" },
+              { t: "PROXY KPIs", d: "Mengukur aspek terbatas sebagai indikator pengganti.", dot: "#f1c40f" },
+              { t: "ACTIVITY KPIs", d: "Menghitung input / aktivitas / usaha yang dilakukan.", dot: "#e67e22" }
+            ].map((kpi, i) => (
+              <div key={i} style={{ background: "rgba(255,255,255,0.05)", padding: "1.5rem", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.1)" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: kpi.dot }}></div>
+                  <div style={{ fontWeight: 900, fontSize: "0.9rem" }}>{kpi.t}</div>
+                </div>
+                <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.6)", fontWeight: 600, lineHeight: 1.5 }}>{kpi.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       <SlideFooter />
     </div>
   );
@@ -456,63 +891,213 @@ function SlidePrinsipKPI() {
    ============================= */
 function SlideWhyChange() {
   const gaps = [
-    { area: "Cascading KPI", existing: "Tidak terintegrasi dari Holding ke Individu", target: "Strategy Map → Scorecard → KPI Individu end-to-end", icon: <GitBranch size={20} /> },
-    { area: "Scoring Model", existing: "Hanya kuantitatif KPI, tanpa behavior & corporate score", target: "Multi-dimensional: Performance + Behavior + Corporate", icon: <BarChart3 size={20} /> },
-    { area: "Rating Scale", existing: "2 tier (≥90 & <90), tidak terdiferensiasi", target: "5 tier global (Outstanding → Poor) berbasis achievement %", icon: <Target size={20} /> },
-    { area: "Teknologi", existing: "AGHRIS + Excel manual, rawan error", target: "APMS 2.0 — fully digital, real-time dashboard", icon: <Settings size={20} /> },
-    { area: "Talent Linkage", existing: "Rating tidak terhubung ke talent pool & IDP", target: "Rating → Priority Pool → IDP & Career Development", icon: <TrendingUp size={20} /> },
-    { area: "Review Cycle", existing: "Annual review, feedback terlambat", target: "Quarterly RBK + Semester behavior assessment", icon: <FileText size={20} /> }
+    { area: "Cascading KPI", existing: "Tidak terintegrasi dari Holding ke Individu", target: "Strategy Map → Scorecard → KPI Individu", icon: <GitBranch size={20} /> },
+    { area: "Scoring Model", existing: "Hanya kuantitatif KPI, tanpa behavior score", target: "Multi-dimensional: Performance + Behavior + Corp", icon: <BarChart3 size={20} /> },
+    { area: "Rating Scale", existing: "2 tier (≥90 & <90), tidak terdiferensiasi", target: "5 tier global (Outstanding → Poor)", icon: <Target size={20} /> },
+    { area: "Teknologi", existing: "Manual Spreadsheet, rawan error & delay", target: "APMS 2.0 — Fully digital, real-time analytics", icon: <Settings size={20} /> },
+    { area: "Talent Linkage", existing: "Rating tidak terhubung ke karir / talent", target: "Rating → Priority Pool → IDP & Promotion", icon: <TrendingUp size={20} /> },
+    { area: "Review Cycle", existing: "Annual review, feedback pasif", target: "Quarterly RBK + Monthly Performance Check", icon: <FileText size={20} /> }
   ];
 
   return (
-    <div className="slide" style={{ padding: "0.8rem 3rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.2rem" }}>
-          <em>Why Change? — Gap Analysis PMS</em>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
+          <em>Why Change? — Gap Analysis</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "0.9rem", fontWeight: 600 }}>Identifikasi kelemahan sistem existing dan kebutuhan transformasi</p>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Identifikasi Kelemahan Sistem & Kebutuhan Transformasi</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
         {/* Header Row */}
-        <div style={{ display: "flex", gap: "0.8rem", padding: "0 0 0.3rem" }}>
+        <div style={{ display: "flex", gap: "1rem", padding: "0.5rem 0", alignItems: "center" }}>
           <div style={{ width: "180px" }}></div>
-          <div style={{ flex: 1, background: "#e74c3c", color: "#fff", padding: "8px", borderRadius: "8px", textAlign: "center", fontSize: "0.85rem", fontWeight: 900 }}>🔴 Existing PMS (2022–2025)</div>
-          <div style={{ width: "30px" }}></div>
-          <div style={{ flex: 1, background: "#27ae60", color: "#fff", padding: "8px", borderRadius: "8px", textAlign: "center", fontSize: "0.85rem", fontWeight: 900 }}>🟢 Target PMS 2026</div>
+          <div style={{ flex: 1, background: "rgba(231, 76, 60, 0.1)", border: "1px solid rgba(231, 76, 60, 0.3)", color: "#c0392b", padding: "10px", borderRadius: "12px", textAlign: "center", fontSize: "0.85rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Current State (2022–2025)</div>
+          <div style={{ width: "40px" }}></div>
+          <div style={{ flex: 1, background: "rgba(14, 102, 85, 0.1)", border: "1px solid rgba(14, 102, 85, 0.3)", color: "#0e6655", padding: "10px", borderRadius: "12px", textAlign: "center", fontSize: "0.85rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Target State 2026</div>
         </div>
 
-        {gaps.map((gap, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.08 }}
-            style={{ display: "flex", gap: "0.8rem", alignItems: "stretch" }}
-          >
-            <div style={{ width: "180px", background: "#1a5276", color: "#fff", borderRadius: "10px", padding: "10px 14px", display: "flex", alignItems: "center", gap: "10px", fontSize: "0.78rem", fontWeight: 800 }}>
-              <div style={{ opacity: 0.8 }}>{gap.icon}</div>
-              {gap.area}
-            </div>
-            <div style={{ flex: 1, background: "#fdf2f2", border: "1px solid #f5b7b1", borderRadius: "10px", padding: "10px 14px", fontSize: "0.78rem", color: "#922b21", fontWeight: 600, display: "flex", alignItems: "center" }}>
-              <X size={14} style={{ marginRight: "8px", flexShrink: 0 }} /> {gap.existing}
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}><ArrowRight size={18} color="#27ae60" /></div>
-            <div style={{ flex: 1, background: "#eafaf1", border: "1px solid #a9dfbf", borderRadius: "10px", padding: "10px 14px", fontSize: "0.78rem", color: "#1e8449", fontWeight: 600, display: "flex", alignItems: "center" }}>
-              <Check size={14} style={{ marginRight: "8px", flexShrink: 0 }} /> {gap.target}
-            </div>
-          </motion.div>
-        ))}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+          {gaps.map((gap, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.08 }}
+              style={{ display: "flex", gap: "1rem", alignItems: "stretch" }}
+            >
+              <div style={{
+                width: "180px",
+                background: "#1a5276",
+                color: "#fff",
+                borderRadius: "14px",
+                padding: "12px 18px",
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                fontSize: "0.85rem",
+                fontWeight: 800,
+                boxShadow: "0 4px 12px rgba(26, 82, 118, 0.1)"
+              }}>
+                <div style={{ opacity: 0.8 }}>{gap.icon}</div>
+                {gap.area}
+              </div>
+              <div style={{ flex: 1, background: "#fff", border: "1px solid #f1f5f9", borderRadius: "14px", padding: "12px 18px", fontSize: "0.85rem", color: "#c0392b", fontWeight: 600, display: "flex", alignItems: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
+                <X size={16} style={{ marginRight: "10px", flexShrink: 0, color: "#e74c3c" }} /> {gap.existing}
+              </div>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <ArrowRight size={20} color="#1a5276" />
+                </div>
+              </div>
+              <div style={{ flex: 1, background: "#fff", border: "1px solid #f1f5f9", borderRadius: "14px", padding: "12px 18px", fontSize: "0.85rem", color: "#0e6655", fontWeight: 700, display: "flex", alignItems: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
+                <Check size={16} style={{ marginRight: "10px", flexShrink: 0, color: "#27ae60" }} /> {gap.target}
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          style={{ marginTop: "auto", marginBottom: "1.5rem", background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "14px 25px", borderRadius: "12px", textAlign: "center", fontSize: "0.9rem", fontWeight: 800 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          style={{
+            marginTop: "1.5rem",
+            background: "linear-gradient(135deg, #1a5276 0%, #0e6655 100%)",
+            color: "#fff",
+            padding: "1rem 2rem",
+            borderRadius: "16px",
+            textAlign: "center",
+            fontSize: "1rem",
+            fontWeight: 700,
+            boxShadow: "0 10px 30px rgba(14, 102, 85, 0.2)"
+          }}
         >
-          💡 Transformasi PMS 2026 menjawab seluruh gap di atas secara sistematis melalui redesign arsitektur, scoring model, dan teknologi.
+          💡 Akselerasi APMS 2026 menjawab seluruh gap melalui standarisasi metrics, integrasi vertikal, dan digitalisasi end-to-end.
         </motion.div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   SLIDE: BA & PERFORMANCE MANAGEMENT
+   ============================= */
+function SlideBAPerformance() {
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
+          <em>Business Architecture & Manajemen Kinerja</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>BA sebagai fondasi struktural Corporate Performance Management</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+        {/* Core Premise */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ display: "flex", gap: "0", background: "linear-gradient(135deg, #1a5276 0%, #0e6655 100%)", borderRadius: "24px", padding: "1.5rem 3rem", color: "white", alignItems: "center", boxShadow: "0 15px 35px rgba(26, 82, 118, 0.2)", position: "relative", overflow: "hidden" }}
+        >
+          <div style={{ position: "absolute", top: 0, right: 0, width: "300px", height: "300px", background: "rgba(255,255,255,0.05)", borderRadius: "50%", transform: "translate(100px, -150px)" }}></div>
+          <div style={{ flex: 1, borderRight: "1px solid rgba(255,255,255,0.15)", paddingRight: "2.5rem" }}>
+            <div style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.6)", marginBottom: "0.6rem", fontWeight: 800 }}>Business Architecture (BA)</div>
+            <div style={{ fontSize: "1.3rem", fontWeight: 700, display: "flex", alignItems: "center", gap: "1rem" }}>
+              <div style={{ background: "rgba(255,255,255,0.1)", padding: "10px", borderRadius: "12px", display: "flex" }}><Layers size={24} /></div>
+              <span>Struktur bagaimana organisasi bekerja</span>
+            </div>
+          </div>
+          <div style={{ padding: "0 2rem", fontSize: "1.5rem", fontWeight: 300, color: "rgba(255,255,255,0.4)" }}>=</div>
+          <div style={{ flex: 1, paddingLeft: "1.5rem" }}>
+            <div style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.6)", marginBottom: "0.6rem", fontWeight: 800 }}>Manajemen Kinerja (BSC)</div>
+            <div style={{ fontSize: "1.3rem", fontWeight: 700, display: "flex", alignItems: "center", gap: "1rem" }}>
+              <div style={{ background: "rgba(255,255,255,0.1)", padding: "10px", borderRadius: "12px", display: "flex" }}><Target size={24} color="#facc15" /></div>
+              <span>Alat ukur apakah struktur menghasilkan nilai</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* 3 Columns for Details */}
+        <div style={{ display: "flex", gap: "1.5rem", flex: 1 }}>
+          {/* Kolom 1: Objek vs KPI */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            style={{ flex: 1, background: "#fff", borderRadius: "20px", padding: "1.5rem", border: "1px solid #f1f5f9", boxShadow: "0 4px 20px rgba(0,0,0,0.02)", display: "flex", flexDirection: "column" }}
+          >
+            <h3 style={{ fontSize: "1.1rem", color: "#1a5276", marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "10px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.8rem", fontWeight: 800 }}>
+              <GitBranch size={22} /> Objek Ukur (BA)
+            </h3>
+            <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+              {[
+                { obj: "Value Stream", kpi: "KPI End-to-end (Nilai)" },
+                { obj: "Capability", kpi: "KPI Kinerja & Maturity" },
+                { obj: "Proses", kpi: "KPI SLA / Quality / Speed" },
+                { obj: "Produk/Layanan", kpi: "KPI Customer Satisfaction" },
+              ].map((item, i) => (
+                <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.8rem 1rem", background: "#f8fafc", borderRadius: "12px", border: "1px solid #f1f5f9" }}>
+                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#334155" }}>{item.obj}</span>
+                  <ArrowRight size={14} color="#94a3b8" />
+                  <span style={{ fontSize: "0.8rem", color: "#1e293b", fontWeight: 800 }}>{item.kpi}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Kolom 2: Strategy Map & Execution */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            style={{ flex: 1, background: "#fff", borderRadius: "20px", padding: "1.5rem", border: "1px solid #f1f5f9", boxShadow: "0 4px 20px rgba(0,0,0,0.02)", display: "flex", flexDirection: "column" }}
+          >
+            <h3 style={{ fontSize: "1.1rem", color: "#1a5276", marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "10px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.8rem", fontWeight: 800 }}>
+              <TrendingUp size={22} /> Eksekusi Strategi
+            </h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem", flex: 1, justifyContent: "center" }}>
+              <div style={{ padding: "1rem", background: "#fff1f2", borderRadius: "14px", borderLeft: "5px solid #e11d48", boxShadow: "0 2px 8px rgba(225,29,72,0.05)" }}>
+                <strong style={{ color: "#334155", fontSize: "0.9rem" }}>Strategic Objective (BSC)</strong> <br />
+                <span style={{ color: "#64748b", fontSize: "0.8rem", fontWeight: 500 }}>Ditempatkan pada Capability terkait sebagai target capaian strategis.</span>
+              </div>
+              <div style={{ padding: "1rem", background: "#eff6ff", borderRadius: "14px", borderLeft: "5px solid #2563eb", boxShadow: "0 2px 8px rgba(37,99,235,0.05)" }}>
+                <strong style={{ color: "#334155", fontSize: "0.9rem" }}>Strategic Initiative (BSC)</strong> <br />
+                <span style={{ color: "#64748b", fontSize: "0.8rem", fontWeight: 500 }}>Program spesifik untuk meningkatkan atau membangun Capability baru.</span>
+              </div>
+              <div style={{ padding: "1rem", background: "#f0fdf4", borderRadius: "14px", borderLeft: "5px solid #16a34a", boxShadow: "0 2px 8px rgba(22,163,74,0.05)" }}>
+                <strong style={{ color: "#334155", fontSize: "0.9rem" }}>KPI & Target (BSC)</strong> <br />
+                <span style={{ color: "#64748b", fontSize: "0.8rem", fontWeight: 500 }}>Parameter ukur yang melekat langsung pada proses & Value Stream.</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Kolom 3: Menghindari Silo */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+            style={{ flex: 1, background: "#fff", borderRadius: "20px", padding: "1.5rem", border: "1px solid #f1f5f9", boxShadow: "0 4px 20px rgba(0,0,0,0.02)", display: "flex", flexDirection: "column" }}
+          >
+            <h3 style={{ fontSize: "1.1rem", color: "#1a5276", marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "10px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.8rem", fontWeight: 800 }}>
+              <Users size={22} /> Eliminasi Silo KPI
+            </h3>
+            <p style={{ fontSize: "0.85rem", color: "#475569", marginBottom: "1.2rem", lineHeight: 1.6, flex: 1 }}>
+              Tanpa pondasi BA, KPI sering terpusat pada unit kerja (Silo), memicu konflik antar departemen. BA memastikan KPI selaras dengan aliran nilai (Value Stream).
+            </p>
+            <div style={{ background: "#fef2f2", padding: "1rem", borderRadius: "14px", marginBottom: "0.8rem", border: "1px solid #fee2e2" }}>
+              <div style={{ fontWeight: 800, color: "#991b1b", marginBottom: "0.4rem", display: "flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", textTransform: "uppercase" }}><X size={14} strokeWidth={3} /> Tanpa EA/BA</div>
+              <div style={{ color: "#7f1d1d", fontSize: "0.8rem", fontWeight: 600 }}>Cenderung mengukur Fungsi Individu (Silo)</div>
+            </div>
+            <div style={{ background: "#f0fdf4", padding: "1rem", borderRadius: "14px", border: "1px solid #dcfce7" }}>
+              <div style={{ fontWeight: 800, color: "#166534", marginBottom: "0.4rem", display: "flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", textTransform: "uppercase" }}><Check size={14} strokeWidth={3} /> Dengan EA/BA</div>
+              <div style={{ color: "#14532d", fontSize: "0.8rem", fontWeight: 700 }}>Mengukur Kolaborasi Lintas Fungsi (Value)</div>
+            </div>
+          </motion.div>
+        </div>
       </div>
       <SlideFooter />
     </div>
@@ -524,83 +1109,101 @@ function SlideWhyChange() {
    ============================= */
 function SlideModelKinerja() {
   return (
-    <div className="slide" style={{ padding: "0.8rem 3rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.2rem" }}>
+      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
           <em>Model Kinerja APMS 2026</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "0.9rem", fontWeight: 600 }}>End-to-end: KPI → Score → Rating → Reward & Talent</p>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>End-to-end: KPI → Score → Rating → Outcomes</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem", justifyContent: "center" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.5rem", justifyContent: "center" }}>
         {/* STEP 1: Score Inputs */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ display: "flex", gap: "1rem", justifyContent: "center", alignItems: "center" }}>
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ display: "flex", gap: "1.2rem", justifyContent: "center", alignItems: "center" }}>
           {[
-            { label: "KPI Individu", sub: "Performance Score", pct: "70%", color: "#1a5276" },
-            { label: "ONE / Mission / Innovation", sub: "Behavior Score", pct: "20%", color: "#27ae60" },
-            { label: "KPI Bersama", sub: "Corporate Score", pct: "10%", color: "#e67e22" }
+            { label: "KPI Individu", sub: "Performance Score", pct: "70%", color: "#1a5276", grad: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)" },
+            { label: "ONE / Mission / Innovation", sub: "Behavior Score", pct: "20%", color: "#0e6655", grad: "linear-gradient(135deg, #0e6655 0%, #16a34a 100%)" },
+            { label: "KPI Bersama", sub: "Corporate Score", pct: "10%", color: "#d97706", grad: "linear-gradient(135deg, #d97706 0%, #f59e0b 100%)" }
           ].map((item, i) => (
             <React.Fragment key={i}>
-              {i > 0 && <Plus size={24} color="#7f8c8d" strokeWidth={3} />}
-              <div style={{ background: item.color, color: "#fff", borderRadius: "14px", padding: "18px 20px", textAlign: "center", minWidth: "200px", boxShadow: `0 8px 20px ${item.color}30` }}>
-                <div style={{ fontSize: "1rem", fontWeight: 900, marginBottom: "4px" }}>{item.label}</div>
-                <div style={{ fontSize: "0.75rem", opacity: 0.9, marginBottom: "6px" }}>{item.sub}</div>
-                <div style={{ background: "rgba(255,255,255,0.2)", padding: "4px 16px", borderRadius: "20px", display: "inline-block", fontSize: "1.1rem", fontWeight: 900 }}>{item.pct}</div>
+              {i > 0 && <Plus size={24} color="#94a3b8" strokeWidth={3} />}
+              <div style={{
+                background: item.grad,
+                color: "#fff",
+                borderRadius: "20px",
+                padding: "1.5rem 1.2rem",
+                textAlign: "center",
+                minWidth: "220px",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                border: "1px solid rgba(255,255,255,0.1)"
+              }}>
+                <div style={{ fontSize: "1rem", fontWeight: 800, marginBottom: "0.4rem" }}>{item.label}</div>
+                <div style={{ fontSize: "0.75rem", opacity: 0.8, marginBottom: "0.8rem", fontWeight: 600 }}>{item.sub}</div>
+                <div style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)", padding: "6px 20px", borderRadius: "12px", display: "inline-block", fontSize: "1.3rem", fontWeight: 900 }}>{item.pct}</div>
               </div>
             </React.Fragment>
           ))}
         </motion.div>
 
         {/* Arrow Down */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", border: "1px solid #dee2e6" }}>
-            <ArrowDown size={24} color="#1a5276" strokeWidth={3} />
-          </div>
+        <div style={{ display: "flex", justifyContent: "center", padding: "0.5rem 0" }}>
+          <motion.div initial={{ y: -5 }} animate={{ y: 5 }} transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }} style={{ background: "#fff", padding: "8px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
+            <ArrowDown size={20} color="#1a5276" strokeWidth={3} />
+          </motion.div>
         </div>
 
         {/* STEP 2: Individual Score */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "18px 60px", borderRadius: "14px", textAlign: "center", boxShadow: "0 10px 30px rgba(26,82,118,0.25)" }}>
-            <div style={{ fontSize: "1.3rem", fontWeight: 900 }}>Individual Score</div>
-            <div style={{ fontSize: "0.8rem", opacity: 0.9, marginTop: "4px" }}>(Performance 70% + Behavior 20% + Corporate 10%)</div>
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ background: "#fff", border: "2px solid #1a5276", color: "#1a5276", padding: "1.2rem 4rem", borderRadius: "24px", textAlign: "center", boxShadow: "0 15px 40px rgba(26,82,118,0.1)", position: "relative" }}>
+            <div style={{ fontSize: "1.5rem", fontWeight: 900, marginBottom: "0.4rem" }}>Individual Score (Final)</div>
+            <div style={{ fontSize: "0.85rem", color: "#64748b", fontWeight: 600 }}>Bobot Terkalibrasi (Sum of 3 Inputs)</div>
           </div>
         </motion.div>
 
         {/* Arrow Down */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", border: "1px solid #dee2e6" }}>
-            <ArrowDown size={24} color="#8e44ad" strokeWidth={3} />
+        <div style={{ display: "flex", justifyContent: "center", padding: "0.5rem 0" }}>
+          <div style={{ background: "#fff", padding: "8px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
+            <ArrowDown size={20} color="#7c3aed" strokeWidth={3} />
           </div>
         </div>
 
         {/* STEP 3: Rating Distribusi */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ background: "#8e44ad", color: "#fff", padding: "18px 50px", borderRadius: "14px", textAlign: "center", boxShadow: "0 10px 30px rgba(142,68,173,0.25)" }}>
-            <div style={{ fontSize: "1.2rem", fontWeight: 900 }}>Rating Distribusi → Performance Rating</div>
-            <div style={{ fontSize: "0.78rem", opacity: 0.9, marginTop: "4px" }}>Outstanding · Exceed · Meet · Below · Poor</div>
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ background: "linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%)", color: "#fff", padding: "1.2rem 3rem", borderRadius: "20px", textAlign: "center", boxShadow: "0 10px 30px rgba(109,40,217,0.2)" }}>
+            <div style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "0.4rem" }}>Rating Distribusi → Performance Grade</div>
+            <div style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.8)", fontWeight: 700, letterSpacing: "1px" }}>OUTSTANDING · EXCEED · MEET · BELOW · POOR</div>
           </div>
         </motion.div>
 
         {/* Arrow Down */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", border: "1px solid #dee2e6" }}>
-            <ArrowDown size={24} color="#e67e22" strokeWidth={3} />
+        <div style={{ display: "flex", justifyContent: "center", padding: "0.5rem 0" }}>
+          <div style={{ background: "#fff", padding: "8px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
+            <ArrowDown size={20} color="#0e6655" strokeWidth={3} />
           </div>
         </div>
 
         {/* STEP 4: Outcomes */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}>
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}>
           {[
-            { label: "Merit Increment", sub: "Kenaikan gaji berbasis rating", color: "#e67e22", icon: <Award size={24} /> },
-            { label: "Performance Bonus", sub: "Insentif berbasis capaian", color: "#f39c12", icon: <TrendingUp size={24} /> },
-            { label: "Talent Pool & IDP", sub: "Prioritas pengembangan karir", color: "#27ae60", icon: <Users size={24} /> }
+            { label: "Merit Increment", sub: "Salary Adjustment", color: "#0e6655", icon: <Award size={22} /> },
+            { label: "Performance Bonus", sub: "Annual Incentives", color: "#d97706", icon: <TrendingUp size={22} /> },
+            { label: "Talent Pool & IDP", sub: "Career Path", color: "#1a5276", icon: <Users size={22} /> }
           ].map((item, i) => (
-            <div key={i} style={{ background: `linear-gradient(135deg, ${item.color} 0%, ${item.color}dd 100%)`, color: "#fff", borderRadius: "14px", padding: "16px 24px", textAlign: "center", flex: 1, maxWidth: "260px", boxShadow: `0 8px 20px ${item.color}30`, display: "flex", alignItems: "center", gap: "14px" }}>
-              <div style={{ opacity: 0.9 }}>{item.icon}</div>
-              <div style={{ textAlign: "left" }}>
-                <div style={{ fontSize: "0.95rem", fontWeight: 900 }}>{item.label}</div>
-                <div style={{ fontSize: "0.7rem", opacity: 0.9 }}>{item.sub}</div>
+            <div key={i} style={{
+              background: "#fff",
+              borderRadius: "18px",
+              padding: "1rem 1.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.04)",
+              border: `1px solid ${item.color}22`
+            }}>
+              <div style={{ background: `${item.color}15`, color: item.color, padding: "10px", borderRadius: "12px", display: "flex" }}>{item.icon}</div>
+              <div>
+                <div style={{ fontSize: "0.9rem", fontWeight: 800, color: "#1e293b" }}>{item.label}</div>
+                <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 600 }}>{item.sub}</div>
               </div>
             </div>
           ))}
@@ -616,88 +1219,352 @@ function SlideModelKinerja() {
    ============================= */
 function SlidePerubahanKunci() {
   const changes = [
-    { aspek: "Cascading Strategy", y2025: "Parsial — tidak terintegrasi end-to-end", y2026: "Strategy Map → Scorecard → KPI Individu (full cascade)" },
-    { aspek: "Komponen Score", y2025: "KPI Bersama (30%) + KPI Utama (70%)", y2026: "Performance Score (70%) + Behavior Score (20%) + Corporate Score (10%)" },
-    { aspek: "Behavior Assessment", y2025: "Tidak ada", y2026: "ONE / Mission / Innovation — semester" },
-    { aspek: "Rating Scale", y2025: "2 tier: ≥90 dan <90", y2026: "5 tier: Outstanding, Exceed, Meet, Below, Poor" },
-    { aspek: "Rating Threshold", y2025: "Ambang ≥90 / <90", y2026: "≥110 / 100–109 / 90–99 / 70–89 / <70 (global standard)" },
-    { aspek: "Rating Distribusi", y2025: "Terbatas, manual", y2026: "Curve control via Priority Pool per level/direktorat" },
-    { aspek: "Teknologi", y2025: "AGHRIS + Excel", y2026: "APMS 2.0 — fully digital, integrated" },
-    { aspek: "Review Cycle", y2025: "Annual", y2026: "Quarterly RBK + Semester Behavior" },
-    { aspek: "Talent Linkage", y2025: "Tidak terintegrasi", y2026: "Rating → Talent Pool → IDP/Career Plan" }
+    { aspek: "Cascading Strategy", y2025: "Parsial — tidak terintegrasi end-to-end", y2026: "Strategy Map → Scorecard → KPI Individu (full cascade)", icon: <GitBranch size={16} /> },
+    { aspek: "Komponen Score", y2025: "KPI Bersama (30%) + KPI Utama (70%)", y2026: "Performance (70%) + Behavior (20%) + Corp (10%)", icon: <Layers size={16} /> },
+    { aspek: "Behavior Assess.", y2025: "Tidak ada secara sistemik", y2026: "ONE / Mission / Innovation — Semesterly", icon: <Users size={16} /> },
+    { aspek: "Rating Scale", y2025: "2 tier: ≥90 dan <90", y2026: "5 tier: Outstanding → Poor (Global Standard)", icon: <Target size={16} /> },
+    { aspek: "Rating Threshold", y2025: "Ambang Tunggal 90", y2026: "Diferensiasi: 110+ / 100 / 90 / 70 / <70", icon: <BarChart3 size={16} /> },
+    { aspek: "Rating Distribusi", y2025: "Terbatas & Manual", y2026: "Curve control via Priority Pool per Direktorat", icon: <Settings size={16} /> },
+    { aspek: "Teknologi", y2025: "AGHRIS", y2026: "APMS 2.0 — Fully Digital & Integrated", icon: <Settings size={16} /> },
+    { aspek: "Review Cycle", y2025: "Annual Review", y2026: "Quarterly RBK + Monthly Check-ins", icon: <FileText size={16} /> }
   ];
 
   return (
-    <div className="slide" style={{ padding: "0.8rem 2.5rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.6rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.1rem" }}>
-          <em>Perubahan Kunci: 2025 → 2026</em>
+      <div className="slide-header" style={{ marginBottom: "1.2rem", textAlign: "left" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", borderLeft: "8px solid #0e6655", paddingLeft: "1.5rem" }}>
+          Perubahan Kunci:
+          <span style={{ color: "#0e6655", fontSize: "2rem", display: "block" }}>Paradigma Manajemen Kinerja 2026</span>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "0.85rem", fontWeight: 600 }}>Perbandingan komprehensif transformasi PMS</p>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        style={{ flex: 1, background: "#fff", borderRadius: "14px", border: "1px solid #d1d9e0", overflow: "hidden", boxShadow: "0 15px 40px rgba(0,0,0,0.06)", marginBottom: "1.5rem" }}
-      >
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.82rem", color: "#2c3e50" }}>
-          <thead>
-            <tr style={{ background: "linear-gradient(90deg, #1a3a3a 0%, #2c5353 100%)", color: "#fff" }}>
-              <th style={{ padding: "10px 16px", textAlign: "left", width: "18%", fontSize: "0.85rem", fontWeight: 800, borderRight: "1px solid rgba(255,255,255,0.1)" }}>Aspek</th>
-              <th style={{ padding: "10px 16px", textAlign: "center", width: "38%", fontSize: "0.85rem", fontWeight: 800, borderRight: "1px solid rgba(255,255,255,0.1)" }}>
-                <span style={{ background: "rgba(231,76,60,0.3)", padding: "2px 10px", borderRadius: "10px" }}>PMS 2025</span>
-              </th>
-              <th style={{ padding: "10px 16px", textAlign: "center", width: "44%", fontSize: "0.85rem", fontWeight: 800 }}>
-                <span style={{ background: "rgba(39,174,96,0.3)", padding: "2px 10px", borderRadius: "10px" }}>PMS 2026</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {changes.map((row, i) => (
-              <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f8fafc" }}>
-                <td style={{ padding: "9px 16px", fontWeight: 900, borderRight: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0", color: "#1a5276", fontSize: "0.78rem" }}>{row.aspek}</td>
-                <td style={{ padding: "9px 16px", borderRight: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0", color: "#922b21", fontWeight: 600 }}>{row.y2025}</td>
-                <td style={{ padding: "9px 16px", borderBottom: "1px solid #e2e8f0", color: "#1e8449", fontWeight: 700 }}>{row.y2026}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </motion.div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#fff", borderRadius: "24px", overflow: "hidden", border: "1px solid #e2e8f0", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
+        <div style={{ display: "flex", background: "#1e293b", color: "#fff", padding: "15px 25px", fontSize: "0.85rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>
+          <div style={{ width: "200px" }}>Aspek Perubahan</div>
+          <div style={{ flex: 1 }}>Eksisting (2025)</div>
+          <div style={{ flex: 1, color: "#10b981" }}>Model APMS (2026)</div>
+        </div>
+        <div style={{ flex: 1, overflowY: "auto" }}>
+          {changes.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              style={{
+                display: "flex",
+                padding: "12px 25px",
+                borderBottom: "1px solid #f1f5f9",
+                background: i % 2 === 0 ? "#fff" : "#fafbfc",
+                alignItems: "center",
+                minHeight: "60px"
+              }}
+            >
+              <div style={{ width: "200px", display: "flex", alignItems: "center", gap: "10px", fontWeight: 800, color: "#1e293b", fontSize: "0.85rem" }}>
+                <span style={{ color: "#0e6655" }}>{item.icon}</span>
+                {item.aspek}
+              </div>
+              <div style={{ flex: 1, fontSize: "0.82rem", color: "#64748b", paddingRight: "20px", fontStyle: "italic" }}>{item.y2025}</div>
+              <div style={{ flex: 1, fontSize: "0.85rem", color: "#1a5276", fontWeight: 900, paddingRight: "10px" }}>{item.y2026}</div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
       <SlideFooter />
     </div>
   );
 }
 
 /* =============================
+   NEW: SMKTI KONSEP 2026
+   ============================= */
+function SlideSMKTIKonsep() {
+  const points = [
+    "Aplikasi SMKTI sebagai sistem manajemen kinerja karyawan terintegrasi dan single source of truth",
+    "Peralihan paradigma dari annual appraisal menjadi continuous & data-driven performance management",
+    "Sasaran kinerja individu berlandaskan RKAP Korporasi dan termonitor secara bulanan (monthly review)",
+    "Kontrol kualitas dan konsistensi penilaian kinerja diperkuat melalui skema verifikasi & validasi berjenjang",
+    "Hasil kinerja menjadi basis terintegrasi untuk rating distribusi, reward & merit increment, serta coaching"
+  ];
+
+  const prinsip = ["OBJEKTIF", "AKUNTABEL", "TRANSPARAN", "TERUKUR", "BERKEADILAN"];
+
+  const aspek = [
+    { n: "01", t: "Kinerja Keuangan", s: "(Finance)" },
+    { n: "02", t: "Kinerja Operasional", s: "(Internal Business Process)" },
+    { n: "03", t: "Layanan Pelanggan", s: "(Customer Focus)" },
+    { n: "04", t: "Pengembangan", s: "(Learning & Growth)" }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.2rem", textAlign: "left" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.4rem", color: "#1a5276", borderLeft: "8px solid #0e6655", paddingLeft: "1.5rem" }}>
+          Konsep Sistem Manajemen Kinerja Karyawan <br />
+          <span style={{ color: "#0e6655" }}>Terintegrasi (SMKTI) 2026</span>
+        </h1>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", gap: "1.5rem", overflow: "hidden" }}>
+        {/* Critical Points */}
+        <div style={{ flex: 1.2, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+          <div style={{ fontSize: "1rem", fontWeight: 900, color: "#0e6655", letterSpacing: "1px", marginBottom: "0.4rem", fontStyle: "italic" }}>CRITICAL POINTS :</div>
+          {points.map((p, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1 }}
+              style={{ display: "flex", gap: "12px", background: "#fff", padding: "12px 18px", borderRadius: "16px", border: "1px solid #e2e8f0", boxShadow: "0 4px 6px rgba(0,0,0,0.02)" }}
+            >
+              <div style={{ background: "#0e6655", color: "#fff", width: "24px", height: "24px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 900, flexShrink: 0 }}>{i + 1}</div>
+              <div style={{ fontSize: "0.82rem", color: "#334155", fontWeight: 700, lineHeight: 1.4 }}>{p}</div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Principles & Aspects */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
+          {/* Prinsip */}
+          <div style={{ background: "#1e293b", borderRadius: "24px", padding: "1.2rem", color: "#fff" }}>
+            <div style={{ fontSize: "0.9rem", fontWeight: 900, color: "#94a3b8", marginBottom: "1rem", textAlign: "center", textTransform: "uppercase" }}>Prinsip Kerja SMKTI</div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
+              {prinsip.map((p, i) => (
+                <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "10px 15px", borderRadius: "12px", fontSize: "0.75rem", fontWeight: 800 }}>{p}</div>
+              ))}
+            </div>
+          </div>
+
+          {/* Aspek */}
+          <div style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "24px", padding: "1.2rem" }}>
+            <div style={{ fontSize: "0.9rem", fontWeight: 900, color: "#0e6655", marginBottom: "1rem" }}>ASPEK SASARAN :</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem" }}>
+              {aspek.map((a, i) => (
+                <div key={i} style={{ background: "#f8fafc", padding: "12px", borderRadius: "16px", border: "1px solid #f1f5f9" }}>
+                  <div style={{ color: "#0e6655", fontWeight: 900, fontSize: "0.75rem", marginBottom: "4px" }}>#{a.n}</div>
+                  <div style={{ color: "#1e293b", fontWeight: 800, fontSize: "0.8rem" }}>{a.t}</div>
+                  <div style={{ color: "#64748b", fontWeight: 600, fontSize: "0.7rem" }}>{a.s}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Key Message Footer */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        style={{ marginTop: "1.5rem", background: "linear-gradient(90deg, #0e6655 0%, #1a5276 100%)", padding: "1rem 2rem", borderRadius: "18px", color: "#fff", textAlign: "center", boxShadow: "0 10px 25px rgba(14,102,85,0.15)" }}
+      >
+        <span style={{ fontSize: "1rem", fontWeight: 900, fontStyle: "italic" }}>
+          "Perdir SMKTI 2026 memposisikan manajemen kinerja sebagai instrument governance & value creation, bukan sekadar administrasi SDM."
+        </span>
+      </motion.div>
+
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   NEW: SMKTI KOMPARASI #1
+   ============================= */
+function SlideSMKTIKomparasi1() {
+  const data = [
+    { no: 1, k: "Adm", a: "Status Regulasi", d25: "Berlaku 28 Mei 2025", d26: "Akan menggantikan 2025", c: "Mencabut eksplisit DIR/PER/05/2025", imp: "low" },
+    { no: 2, k: "Adm", a: "Struktur Regulasi", d25: "Fokus operasional & teknis", d26: "Lebih sistematis: Umum s.d Peralihan", c: "Lebih terstruktur normatif", imp: "low" },
+    { no: 3, k: "Adm", a: "Timeline Pelaksanaan", d25: "Diatur dalam lampiran", d26: "Diatur + kewenangan perubahan Holding", c: "Lebih sentralistik", imp: "low" },
+    { no: 4, k: "Filo", a: "Filosofi Dasar", d25: "Performance control", d26: "Performance governance + meritocracy", c: "Strategic & governance-driven", imp: "high" },
+    { no: 5, k: "Filo", a: "Pendekatan Sistem", d25: "SMKTI berbasis aplikasi", d26: "Berbasis aplikasi + audit trail", c: "Kuat di tata kelola & kontrol", imp: "high" },
+    { no: 6, k: "Filo", a: "Cascading KPI", d25: "Diatur teknis", d26: "Tegas: Fully & Partial Cascade", c: "Memperjelas filosofi alignment", imp: "med" },
+    { no: 7, k: "Filo", a: "Penetapan Sasaran", d25: "Berbasis RKAP & indikator", d26: "Tambahan 4 perspektif BSC", c: "Balanced Scorecard approach", imp: "med" },
+    { no: 8, k: "Gov", a: "Process Owner", d25: "Belum eksplisit", d26: "SDM sebagai process owner", c: "Memperjelas akuntabilitas", imp: "high" },
+    { no: 9, k: "Gov", a: "Audit Trail Sistem", d25: "Tidak ditegaskan", d26: "Wajib menyediakan audit trail", c: "Penguatan kontrol & governance", imp: "high" },
+    { no: 10, k: "Gov", a: "Tinjauan Berkala (TKB)", d25: "Ada", d26: "Kewajiban triwulan", c: "Lebih rigid monitoring", imp: "high" },
+    { no: 11, k: "Gov", a: "Validasi SDM", d25: "Tidak ditegaskan kuat", d26: "Validasi Triwulan IV oleh SDM", c: "Tambahan layer kontrol", imp: "high" },
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 2.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Komparasi #1: Perdir SMKTI</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Perubahan Regulasi 2025 vs Draft 2026</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#fff", borderRadius: "24px", overflow: "hidden", border: "1px solid #e2e8f0", boxShadow: "0 15px 45px rgba(0,0,0,0.04)" }}>
+        <div style={{ display: "flex", background: "#1e293b", color: "#fff", padding: "15px 20px", fontSize: "0.9rem", fontWeight: 900, textTransform: "uppercase", textAlign: "center", alignItems: "center" }}>
+          <div style={{ width: "45px" }}>No</div>
+          <div style={{ width: "100px" }}>Klaster</div>
+          <div style={{ width: "220px", textAlign: "left" }}>Aspek</div>
+          <div style={{ flex: 1 }}>DIR/PER/5/2025</div>
+          <div style={{ flex: 1 }}>Draft Perdir 2026</div>
+          <div style={{ flex: 1 }}>Perubahan Utama</div>
+        </div>
+        <div style={{ flex: 1, overflowY: "auto" }}>
+          {data.map((row, i) => (
+            <div key={i} style={{ display: "flex", padding: "12px 20px", borderBottom: "1px solid #f1f5f9", fontSize: "0.88rem", alignItems: "center", minHeight: "60px", background: i % 2 === 0 ? "#fff" : "#fafbfc" }}>
+              <div style={{ width: "45px", textAlign: "center", fontWeight: 800, color: "#94a3b8" }}>{row.no}</div>
+              <div style={{ width: "100px", textAlign: "center", fontWeight: 900, color: "#1a5276", fontSize: "0.85rem" }}>{row.k}</div>
+              <div style={{ width: "220px", fontWeight: 900, color: "#1e293b", lineHeight: 1.3 }}>{row.a}</div>
+              <div style={{ flex: 1, padding: "0 15px", color: "#64748b", fontStyle: "italic", lineHeight: 1.4 }}>{row.d25}</div>
+              <div style={{ flex: 1, padding: "0 15px", color: "#1a5276", fontWeight: 900, lineHeight: 1.4 }}>{row.d26}</div>
+              <div style={{ flex: 1, padding: "0 15px", color: row.imp === "high" ? "#dc2626" : (row.imp === "med" ? "#d97706" : "#059669"), fontWeight: 800, lineHeight: 1.3 }}>{row.c}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Legend */}
+      <div style={{ display: "flex", gap: "2rem", marginTop: "1rem", fontSize: "0.85rem", fontWeight: 900, justifyContent: "center", background: "rgba(248, 250, 252, 0.8)", padding: "10px", borderRadius: "12px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}><div style={{ width: "12px", height: "12px", background: "#dc2626", borderRadius: "50%" }}></div> High Impact Change</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}><div style={{ width: "12px", height: "12px", background: "#d97706", borderRadius: "50%" }}></div> Medium Impact Change</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}><div style={{ width: "12px", height: "12px", background: "#059669", borderRadius: "50%" }}></div> Low Impact Change</div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   NEW: SMKTI KOMPARASI #2
+   ============================= */
+function SlideSMKTIKomparasi2() {
+  const data = [
+    { no: 12, k: "Gov", a: "Kewenangan Komite", d25: "Evaluasi & Koreksi", d26: "Dapat meminta perbaikan evidence", c: "Penguatan fungsi kalibrasi", imp: "high" },
+    { no: 13, k: "Gov", a: "Penetapan Hasil", d25: "SK oleh Pejabat Berwenang", d26: "SK / mekanisme lain dari Holding", c: "Fleksibilitas administratif", imp: "high" },
+    { no: 14, k: "Gov", a: "Ketentuan Peralihan", d25: "Tidak mencabut 2025", d26: "Tegas mencabut 2023, 2024, 2025", c: "Konsolidasi regulasi", imp: "high" },
+    { no: 15, k: "Rating", a: "Distribusi Rating", d25: "Guided distribution", d26: "Guided + top stop min-max", c: "Lebih terkendali", imp: "med" },
+    { no: 16, k: "Rating", a: "Priority Pool", d25: "Ada dalam lampiran", d26: "Diperjelas berbasis level jabatan", c: "Klarifikasi mekanisme", imp: "med" },
+    { no: 17, k: "Remun", a: "Merit Increment", d25: "Diatur detail", d26: "Tetap diatur detail", c: "Substansi relatif sama", imp: "low" },
+    { no: 18, k: "Remun", a: "Person Grade", d25: "Diatur", d26: "Diatur + Grade Ceiling", c: "Konsistensi ceiling", imp: "low" },
+    { no: 19, k: "Remun", a: "PhDP", d25: "Diatur detail", d26: "Tetap diatur detail", c: "Tidak berubah signifikan", imp: "low" },
+    { no: 20, k: "Khusus", a: "Rangkap Jabatan", d25: "Ada", d26: "Diperjelas proporsionalitas", c: "Lebih sistematis", imp: "med" },
+    { no: 21, k: "Khusus", a: "Mutasi/Rotasi", d25: "Ada", d26: "Diperjelas metode proporsional", c: "Lebih eksplisit", imp: "med" },
+    { no: 22, k: "Khusus", a: "Assignment Non SMK", d25: "Ada", d26: "Mekanisme konversi & validasi", c: "Harmonisasi antar entitas", imp: "med" },
+    { no: 23, k: "Fair", a: "Keberatan/Sanggahan", d25: "Tidak diatur eksplisit", d26: "Diatur khusus Pasal 25", c: "Fairness & Due Process", imp: "high" },
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 2.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Komparasi #2: Perdir SMKTI</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Governance, Remunerasi & Kondisi Khusus</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#fff", borderRadius: "24px", overflow: "hidden", border: "1px solid #e2e8f0", boxShadow: "0 15px 45px rgba(0,0,0,0.04)" }}>
+        <div style={{ display: "flex", background: "#1e293b", color: "#fff", padding: "15px 20px", fontSize: "0.9rem", fontWeight: 900, textTransform: "uppercase", textAlign: "center", alignItems: "center" }}>
+          <div style={{ width: "45px" }}>No</div>
+          <div style={{ width: "100px" }}>Klaster</div>
+          <div style={{ width: "220px", textAlign: "left" }}>Aspek</div>
+          <div style={{ flex: 1 }}>DIR/PER/5/2025</div>
+          <div style={{ flex: 1 }}>Draft Perdir 2026</div>
+          <div style={{ flex: 1 }}>Perubahan Utama</div>
+        </div>
+        <div style={{ flex: 1, overflowY: "auto" }}>
+          {data.map((row, i) => (
+            <div key={i} style={{ display: "flex", padding: "12px 20px", borderBottom: "1px solid #f1f5f9", fontSize: "0.88rem", alignItems: "center", minHeight: "60px", background: i % 2 === 0 ? "#fff" : "#fafbfc" }}>
+              <div style={{ width: "45px", textAlign: "center", fontWeight: 800, color: "#94a3b8" }}>{row.no}</div>
+              <div style={{ width: "100px", textAlign: "center", fontWeight: 900, color: "#1a5276", fontSize: "0.85rem" }}>{row.k}</div>
+              <div style={{ width: "220px", fontWeight: 900, color: "#1e293b", lineHeight: 1.3 }}>{row.a}</div>
+              <div style={{ flex: 1, padding: "0 15px", color: "#64748b", fontStyle: "italic", lineHeight: 1.4 }}>{row.d25}</div>
+              <div style={{ flex: 1, padding: "0 15px", color: "#1a5276", fontWeight: 900, lineHeight: 1.4 }}>{row.d26}</div>
+              <div style={{ flex: 1, padding: "0 15px", color: row.imp === "high" ? "#dc2626" : (row.imp === "med" ? "#d97706" : "#059669"), fontWeight: 800, lineHeight: 1.3 }}>{row.c}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Legend */}
+      <div style={{ display: "flex", gap: "2rem", marginTop: "1rem", fontSize: "0.85rem", fontWeight: 900, justifyContent: "center", background: "rgba(248, 250, 252, 0.8)", padding: "10px", borderRadius: "12px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}><div style={{ width: "12px", height: "12px", background: "#dc2626", borderRadius: "50%" }}></div> High Impact Change</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}><div style={{ width: "12px", height: "12px", background: "#d97706", borderRadius: "50%" }}></div> Medium Impact Change</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}><div style={{ width: "12px", height: "12px", background: "#059669", borderRadius: "50%" }}></div> Low Impact Change</div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   NEW: SMKTI TERMINOLOGI
+   ============================= */
+function SlideSMKTITerminologi() {
+  const terms = [
+    { t: "Audit Trail", d: "Rekam jejak digital atas seluruh perubahan data, input, validasi, dan keputusan dalam sistem." },
+    { t: "Grade Ceiling", d: "Batas maksimum kenaikan person grade dalam satu jabatan atau tidak melebihi job grade." },
+    { t: "Guided Distribution", d: "Pedoman distribusi rating agar proporsional dan tidak terjadi inflasi nilai." },
+    { t: "IDP (Individual Dev Plan)", d: "Rencana pengembangan individu yang disusun berdasarkan aspirasi karir dan hasil penilaian." },
+    { t: "Priority Pool", d: "Pengelompokkan karyawan berdasarkan level jabatan dalam penentuan rating distribusi kinerja." },
+    { t: "Process Owner", d: "Unit/fungsi yang bertanggung jawab atas desain, kebijakan, dan pengendalian proses SMKTI." },
+    { t: "Rating Kinerja", d: "Klasifikasi hasil penilaian: Outstanding (RD-1) s.d. Poor (RD-5)." },
+    { t: "System Owner", d: "Unit/fungsi yang bertanggung jawab atas pengelolaan dan keamanan sistem aplikasi SMKTI." },
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 4rem 1.5rem", background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)", color: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "left" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#fff" }}>
+          <em>Terminologi Utama</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.6)", fontWeight: 600 }}>Kamus Definisi Draft Perdir SMKTI 2026</p>
+      </div>
+
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", overflowY: "auto", paddingRight: "1rem" }}>
+        {terms.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: i * 0.05 }}
+            style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "20px", padding: "1.2rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}
+          >
+            <div style={{ color: "#10b981", fontWeight: 900, fontSize: "1.1rem", letterSpacing: "1px" }}>{item.t}</div>
+            <div style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.85rem", fontWeight: 600, lineHeight: 1.5 }}>{item.d}</div>
+          </motion.div>
+        ))}
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+
+/* =============================
    SLIDE 3: FRAMEWORK 2022–2025
    ============================= */
 function SlideFramework2022() {
   return (
-    <div className="slide" style={{ padding: "1rem 4rem 1.5rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 4rem 1.5rem", background: "#f8fafc" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.2rem", color: "#34495e" }}>
-          <em>Existing: Performance Management Framework 2022 – 2025</em>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <div style={{ display: "inline-block", background: "rgba(225, 29, 72, 0.1)", color: "#e11d48", padding: "4px 16px", borderRadius: "20px", fontSize: "0.85rem", fontWeight: 800, marginBottom: "0.6rem", border: "1px solid rgba(225,29,72,0.2)" }}>EXISTING SYSTEM</div>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.5rem" }}>
+          <em>Performance Framework 2022 – 2025</em>
         </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Struktur Pengelolaan Kinerja Berbasis AGHRIS Legacy</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
         {/* ROW 1: INPUT & KPI TYPE */}
-        <div style={{ display: "flex", gap: "1.2rem" }}>
+        <div style={{ display: "flex", gap: "1.5rem" }}>
           {/* Inputs */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            style={{ flex: 1, background: "#f8f9fa", border: "1px solid #dee2e6", borderRadius: "12px", padding: "12px", boxShadow: "0 4px 10px rgba(0,0,0,0.02)" }}
+            style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.5rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
           >
-            <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Strategic Foundation</div>
-            <div style={{ background: "#fff", border: "1px solid #bdc3c7", borderRadius: "10px", overflow: "hidden", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
-              <div style={{ background: "#34495e", color: "#fff", padding: "6px", textAlign: "center", fontSize: "0.85rem", fontWeight: 800 }}>Strategic Inputs</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", padding: "12px", justifyContent: "center" }}>
-                {["Kontrak Manajemen", "RJPP", "RKAP", "Roadmap", "Aspirasi Pemegang Saham"].map((item, i) => (
-                  <span key={i} style={{ background: "#ecf0f1", color: "#2c3e50", fontSize: "0.7rem", padding: "4px 10px", borderRadius: "20px", fontWeight: 700, border: "1px solid #d1d9e0" }}>{item}</span>
+            <div style={{ fontSize: "0.85rem", fontWeight: 850, color: "#1a5276", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.6rem" }}>Strategic Foundation</div>
+            <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "14px", overflow: "hidden" }}>
+              <div style={{ background: "#334155", color: "#fff", padding: "10px", textAlign: "center", fontSize: "0.85rem", fontWeight: 800 }}>External & Internal Inputs</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", padding: "1.2rem", justifyContent: "center" }}>
+                {["Kontrak Manajemen", "RJPP / RKAP", "Top-Down Roadmap", "Aspirasi Pemegang Saham"].map((item, i) => (
+                  <span key={i} style={{ background: "#fff", color: "#334155", fontSize: "0.75rem", padding: "6px 14px", borderRadius: "10px", fontWeight: 700, border: "1px solid #e2e8f0", boxShadow: "0 2px 4px rgba(0,0,0,0.03)" }}>{item}</span>
                 ))}
               </div>
             </div>
@@ -705,19 +1572,19 @@ function SlideFramework2022() {
 
           {/* KPI Types */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            style={{ flex: 1, background: "#f8f9fa", border: "1px solid #dee2e6", borderRadius: "12px", padding: "12px", boxShadow: "0 4px 10px rgba(0,0,0,0.02)" }}
+            style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.5rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
           >
-            <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "0.5px" }}>KPI Configuration</div>
-            <div style={{ display: "flex", gap: "12px", height: "calc(100% - 30px)" }}>
-              <div style={{ flex: 1, background: "#fff", border: "1px solid #bdc3c7", borderRadius: "10px", padding: "10px", display: "flex", flexDirection: "column", gap: "6px" }}>
-                <div style={{ fontSize: "0.75rem", fontWeight: 900, color: "#1a5276", textAlign: "center", borderBottom: "1px solid #eee", paddingBottom: "4px" }}>KPI BERSAMA</div>
-                <div style={{ background: "#1a5276", color: "#fff", padding: "6px", borderRadius: "6px", fontSize: "0.7rem", fontWeight: 800, textAlign: "center" }}>Kolegial</div>
-                <div style={{ background: "#1a5276", color: "#fff", padding: "6px", borderRadius: "6px", fontSize: "0.7rem", fontWeight: 800, textAlign: "center" }}>Unit Kerja</div>
+            <div style={{ fontSize: "0.85rem", fontWeight: 850, color: "#1a5276", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.6rem" }}>KPI Configuration</div>
+            <div style={{ display: "flex", gap: "1rem", height: "calc(100% - 45px)" }}>
+              <div style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "14px", padding: "1rem", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+                <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", textAlign: "center", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.6rem" }}>KPI BERSAMA (30%)</div>
+                <div style={{ background: "rgba(26, 82, 118, 0.1)", color: "#1a5276", padding: "10px", borderRadius: "10px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center" }}>Kolegial / Unit</div>
               </div>
-              <div style={{ flex: 1, background: "linear-gradient(135deg, #fff 0%, #f4f7f8 100%)", border: "2px solid #1a5276", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", padding: "12px", boxShadow: "0 4px 10px rgba(26,82,118,0.05)" }}>
-                <div style={{ color: "#1a5276", fontWeight: 900, fontSize: "0.95rem", textAlign: "center", lineHeight: 1.2 }}>KPI INDIVIDU</div>
+              <div style={{ flex: 1, background: "linear-gradient(135deg, #1a5276 0%, #0e7490 100%)", borderRadius: "14px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "1rem", boxShadow: "0 8px 20px rgba(26,82,118,0.15)" }}>
+                <div style={{ color: "#fff", fontWeight: 900, fontSize: "1.1rem", textAlign: "center", lineHeight: 1.2 }}>KPI UTAMA</div>
+                <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.75rem", fontWeight: 600, marginTop: "4px" }}>(70%)</div>
               </div>
             </div>
           </motion.div>
@@ -725,74 +1592,73 @@ function SlideFramework2022() {
 
         {/* ROW 2: OPERATIONAL PROCESS */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          style={{ background: "#fff", border: "1px solid #e9ecef", borderRadius: "16px", padding: "15px", boxShadow: "0 8px 25px rgba(0,0,0,0.04)" }}
+          style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "24px", padding: "1.8rem", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}
         >
-          <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Operational Execution Lifecycle</div>
-          <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+          <div style={{ fontSize: "0.85rem", fontWeight: 850, color: "#1a5276", marginBottom: "1.2rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.8rem" }}>Performance Cycle lifecycle</div>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
             {[
-              { title: "PERENCANAAN", desc: "Identifikasi KPI & Target" },
-              { title: "MONITORING", desc: "Realisasi Kinerja Triwulan" },
-              { title: "BIMBINGAN", desc: "Coaching Semesteran" },
-              { title: "PENILAIAN", desc: "Final Rating Year-End" }
+              { title: "Planing", desc: "Sasaran Kerja Pegawai" },
+              { title: "Execution", desc: "Input Realisasi KPI" },
+              { title: "Coaching", desc: "Review & Feedback" },
+              { title: "Evaluation", desc: "Final Score Calcs" }
             ].map((step, i) => (
               <React.Fragment key={i}>
-                <div style={{ flex: 1, background: "#f8f9fa", border: "1.5px solid #dee2e6", borderRadius: "10px", padding: "10px", textAlign: "center", boxShadow: "0 4px 8px rgba(0,0,0,0.02)" }}>
-                  <div style={{ color: "#1a5276", fontSize: "0.85rem", fontWeight: 900, marginBottom: "4px" }}>{step.title}</div>
-                  <div style={{ color: "#566573", fontSize: "0.75rem", lineHeight: 1.3, fontWeight: 500 }}>{step.desc}</div>
+                <div style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "1.2rem 1rem", textAlign: "center", boxShadow: "0 4px 12px rgba(0,0,0,0.02)" }}>
+                  <div style={{ color: "#1a5276", fontSize: "0.95rem", fontWeight: 900, marginBottom: "0.4rem" }}>{step.title}</div>
+                  <div style={{ color: "#64748b", fontSize: "0.8rem", lineHeight: 1.4, fontWeight: 600 }}>{step.desc}</div>
                 </div>
-                {i < 3 && <ArrowRight size={20} color="#bdc3c7" strokeWidth={3} />}
+                {i < 3 && <div style={{ display: "flex", alignItems: "center" }}><ArrowRight size={24} color="#cbd5e1" strokeWidth={3} /></div>}
               </React.Fragment>
             ))}
-            <div style={{ background: "#27ae60", color: "#fff", border: "2px solid #fff", borderRadius: "10px", padding: "8px", fontSize: "0.65rem", fontWeight: 900, textAlign: "center", boxShadow: "0 6px 12px rgba(39,174,96,0.2)", minWidth: "90px" }}>
-              AGHRIS <br /> (EXCEL SUPPORTED)
+            <div style={{ background: "#1a5276", color: "#fff", border: "4px solid #fff", borderRadius: "16px", padding: "1rem", fontSize: "0.75rem", fontWeight: 800, textAlign: "center", boxShadow: "0 10px 25px rgba(26,82,118,0.2)", minWidth: "120px" }}>
+              PLATFORM <br /> <span style={{ fontSize: "1rem" }}>AGHRIS</span>
             </div>
           </div>
         </motion.div>
 
-        {/* ROW 3: EVALUATION & REMUNERATION */}
-        <div style={{ display: "flex", gap: "1.2rem", flex: 1 }}>
-          {/* Ratings */}
+        {/* ROW 3: OUTCOMES */}
+        <div style={{ display: "flex", gap: "1.5rem" }}>
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            style={{ flex: 1.5, background: "#f8f9fa", border: "1px solid #dee2e6", borderRadius: "12px", padding: "12px", display: "flex", flexDirection: "column", boxShadow: "0 4px 10px rgba(0,0,0,0.02)" }}
+            transition={{ delay: 0.5 }}
+            style={{ flex: 1.5, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.5rem", display: "flex", flexDirection: "column", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
           >
-            <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Evaluation Outcome</div>
-            <div style={{ flex: 1, display: "flex", gap: "12px", alignItems: "center" }}>
-              <div style={{ flex: 1, background: "#fff", border: "1px solid #bdc3c7", borderRadius: "10px", padding: "10px", boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)" }}>
-                <div style={{ textAlign: "center", fontSize: "0.85rem", fontWeight: 900, color: "#e67e22", marginBottom: "8px", textTransform: "uppercase" }}>Rating Kinerja</div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
-                  {["Outstanding", "Exceed", "Meet", "Below", "Poor"].map((r, i) => (
-                    <div key={i} style={{ fontSize: "0.7rem", color: i < 3 ? "#27ae60" : "#e74c3c", fontWeight: 800 }}>• {r}</div>
+            <div style={{ fontSize: "0.85rem", fontWeight: 850, color: "#1a5276", marginBottom: "1.2rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.6rem" }}>Outcome Structure</div>
+            <div style={{ flex: 1, display: "flex", gap: "1.5rem", alignItems: "center" }}>
+              <div style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "1.2rem", boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)" }}>
+                <div style={{ textAlign: "center", fontSize: "0.9rem", fontWeight: 900, color: "#d97706", marginBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px" }}>Scale Kinerja</div>
+                <div style={{ display: "flex", justifyContent: "space-around", gap: "0.5rem" }}>
+                  {["O", "E", "M", "B", "P"].map((r, i) => (
+                    <div key={i} style={{ fontSize: "0.85rem", color: i < 3 ? "#059669" : "#dc2626", fontWeight: 900, background: "#fff", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "8px", border: "1px solid #e2e8f0" }}>{r}</div>
                   ))}
                 </div>
               </div>
-              <ArrowRight size={24} color="#bdc3c7" strokeWidth={3} />
-              <div style={{ flex: 1, background: "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)", color: "#fff", padding: "15px 10px", borderRadius: "10px", textAlign: "center", fontWeight: 900, fontSize: "0.95rem", boxShadow: "0 6px 15px rgba(44,62,80,0.2)" }}>
-                RATING <br /> KINERJA FINAL
+              <ArrowRight size={32} color="#cbd5e1" strokeWidth={3} />
+              <div style={{ flex: 1, background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)", color: "#fff", padding: "1.5rem 1rem", borderRadius: "16px", textAlign: "center", fontWeight: 900, fontSize: "1.1rem", boxShadow: "0 10px 25px rgba(30,41,59,0.2)" }}>
+                FINAL RATING <br /> <span style={{ fontSize: "0.8rem", opacity: 0.7 }}>(Single Dimension)</span>
               </div>
             </div>
           </motion.div>
 
           {/* Merit */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            style={{ flex: 1, background: "#fdf2e9", border: "2.5px solid #fadbd8", borderRadius: "12px", padding: "15px", display: "flex", flexDirection: "column", justifyContent: "center", boxShadow: "0 4px 15px rgba(230,126,34,0.05)" }}
+            transition={{ delay: 0.6 }}
+            style={{ flex: 1, background: "rgba(217, 119, 6, 0.05)", border: "1px dashed rgba(217, 119, 6, 0.3)", borderRadius: "20px", padding: "1.5rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}
           >
-            <div style={{ textAlign: "center" }}>
-              <div style={{ color: "#e67e22", fontSize: "0.8rem", fontWeight: 900, textTransform: "uppercase", marginBottom: "10px", letterSpacing: "1px" }}>Remuneration Impact</div>
-              <div style={{ background: "#e67e22", color: "#fff", padding: "12px", borderRadius: "40px", fontSize: "0.85rem", fontWeight: 900, lineHeight: 1.3, boxShadow: "0 6px 15px rgba(230,126,34,0.2)" }}>
-                Merit Increment based on Performance Based Remuneration
-              </div>
+            <div style={{ background: "rgba(217, 119, 6, 0.1)", padding: "10px", borderRadius: "50%", marginBottom: "1rem" }}><Award size={32} color="#d97706" /></div>
+            <div style={{ color: "#d97706", fontSize: "0.85rem", fontWeight: 850, textTransform: "uppercase", marginBottom: "0.8rem", letterSpacing: "1px" }}>Reward & Remuneration</div>
+            <div style={{ fontSize: "0.9rem", color: "#92400e", fontWeight: 700, lineHeight: 1.5 }}>
+              Merit Increment based on <br /> Performance Result Only
             </div>
           </motion.div>
         </div>
       </div>
-
       <SlideFooter />
     </div>
   );
@@ -805,56 +1671,51 @@ function SlideFramework2022() {
    ============================= */
 function SlideFramework2026A() {
   return (
-    <div className="slide" style={{ padding: "0.8rem 3rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.3rem", textAlign: "center", color: "#1a5276" }}>
-          <em>Performance Management Framework 2026 (Opsi A)</em>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
+          <em>Performance Framework 2026 (Opsi A)</em>
         </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Arsitektur Kinerja: Target Cascading → Unified Score → Rating Distribution</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
 
-        {/* --- LAYER 1: STRATEGIC PLANNING (Penyusunan Target) --- */}
+        {/* --- LAYER 1: STRATEGIC PLANNING --- */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          style={{
-            background: "rgba(26, 82, 118, 0.03)",
-            border: "1px solid #d1d9e0",
-            borderRadius: "14px",
-            padding: "0.8rem 1.2rem",
-            position: "relative"
-          }}
+          style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem 2rem", position: "relative", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
         >
-          <div style={{ position: "absolute", top: -14, left: 30, background: "#1a5276", color: "#fff", padding: "4px 18px", borderRadius: "20px", fontSize: "0.8rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px" }}>
+          <div style={{ position: "absolute", top: -14, left: 40, background: "#1a5276", color: "#fff", padding: "4px 20px", borderRadius: "20px", fontSize: "0.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>
             STRATEGIC PLANNING LAYER
           </div>
 
-          <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "2.5rem", alignItems: "center" }}>
             {/* Input Group */}
-            <div style={{ flex: 0.8, background: "#fff", border: "1px solid #2c3e50", borderRadius: "10px", overflow: "hidden", boxShadow: "0 4px 12px rgba(0,0,0,0.05)" }}>
-              <div style={{ background: "#34495e", color: "#fff", fontSize: "0.9rem", padding: "8px", textAlign: "center", fontWeight: 700 }}>Strategic Inputs</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", padding: "1rem", justifyContent: "center" }}>
-                {["Kontrak Manajemen", "RJPP", "RKAP", "Roadmap", "Aspirasi Pemegang Saham"].map((item, i) => (
-                  <span key={i} style={{ background: "#2c3e50", color: "#fff", fontSize: "0.75rem", padding: "5px 12px", borderRadius: "20px", fontWeight: 500 }}>{item}</span>
+            <div style={{ flex: 0.8, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "14px", overflow: "hidden" }}>
+              <div style={{ background: "#334155", color: "#fff", fontSize: "0.85rem", padding: "10px", textAlign: "center", fontWeight: 800 }}>Strategic Inputs</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", padding: "1rem", justifyContent: "center" }}>
+                {["RKAP", "RJPP", "CM", "Roadmap"].map((item, i) => (
+                  <span key={i} style={{ background: "#fff", color: "#334155", fontSize: "0.7rem", padding: "4px 12px", borderRadius: "10px", fontWeight: 700, border: "1px solid #e2e8f0" }}>{item}</span>
                 ))}
               </div>
             </div>
 
-            <div style={{ opacity: 0.6 }}><ChevronRight size={32} color="#1a5276" /></div>
+            <ChevronRight size={32} color="#cbd5e1" />
 
             {/* Cascade Group */}
-            <div style={{ flex: 1.2, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+            <div style={{ flex: 1.2, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               {[
                 { label: "Corporate", color: "#1a5276" },
                 { label: "Direktorat", color: "#1f618d" },
-                { label: "Divisi", color: "#2980b9" }
+                { label: "Unit / Divisi", color: "#2980b9" }
               ].map((lvl, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                  <div style={{ flex: 1, border: `2px solid ${lvl.color}`, color: lvl.color, padding: "8px 12px", borderRadius: "25px", textAlign: "center", fontSize: "0.85rem", fontWeight: 800 }}>Strategy Map {lvl.label}</div>
-                  <div style={{ width: "40px", borderBottom: `2px dashed ${lvl.color}` }}></div>
-                  <div style={{ flex: 1, background: lvl.color, color: "#fff", padding: "8px 12px", borderRadius: "8px", textAlign: "center", fontSize: "0.85rem", fontWeight: 800, boxShadow: "0 4px 10px rgba(0,0,0,0.1)" }}>Scorecard {lvl.label}</div>
+                  <div style={{ flex: 1, border: `1.5px solid ${lvl.color}`, color: lvl.color, padding: "8px 15px", borderRadius: "30px", textAlign: "center", fontSize: "0.8rem", fontWeight: 800 }}>Strategy Map {lvl.label}</div>
+                  <div style={{ width: "30px", borderBottom: `2.5px dashed ${lvl.color}44` }}></div>
+                  <div style={{ flex: 1, background: lvl.color, color: "#fff", padding: "8px 15px", borderRadius: "30px", textAlign: "center", fontSize: "0.8rem", fontWeight: 800, boxShadow: `0 4px 10px ${lvl.color}33` }}>Scorecard {lvl.label}</div>
                 </div>
               ))}
             </div>
@@ -862,138 +1723,96 @@ function SlideFramework2026A() {
         </motion.div>
 
         {/* --- CONNECTOR 1 --- */}
-        <div style={{ display: "flex", justifyContent: "center", margin: "-0.8rem 0", zIndex: 2 }}>
-          <div style={{ background: "#fff", padding: "4px", borderRadius: "50%", boxShadow: "0 4px 8px rgba(0,0,0,0.1)", border: "1px solid #dee2e6" }}>
-            <ArrowDown size={24} color="#1a5276" strokeWidth={3} />
+        <div style={{ display: "flex", justifyContent: "center", margin: "-0.6rem 0", zIndex: 5 }}>
+          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
+            <ArrowDown size={18} color="#1a5276" strokeWidth={3} />
           </div>
         </div>
 
-        {/* --- LAYER 2: INDIVIDUAL PERFORMANCE PROCESS --- */}
+        {/* --- LAYER 2: OPERATIONAL PROCESS --- */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          style={{
-            background: "rgba(127, 140, 141, 0.03)",
-            border: "1px solid #d1d9e0",
-            borderRadius: "14px",
-            padding: "1rem",
-            position: "relative"
-          }}
+          style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem 2rem", position: "relative", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
         >
-          <div style={{ position: "absolute", top: -14, left: 30, background: "#7f8c8d", color: "#fff", padding: "4px 18px", borderRadius: "20px", fontSize: "0.8rem", fontWeight: 800, textTransform: "uppercase" }}>
+          <div style={{ position: "absolute", top: -14, left: 40, background: "#64748b", color: "#fff", padding: "4px 20px", borderRadius: "20px", fontSize: "0.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>
             OPERATIONAL PROCESS LAYER
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center" }}>
-            <div style={{ background: "#1a5276", color: "#fff", padding: "10px 60px", borderRadius: "8px", fontWeight: 900, fontSize: "1.1rem", border: "2px solid #fff", boxShadow: "0 6px 15px rgba(26, 82, 118, 0.2)" }}>
-              KPI INDIVIDU
-            </div>
-
-            <div style={{ display: "flex", gap: "0.8rem", width: "100%", position: "relative" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem", alignItems: "center" }}>
+            <div style={{ display: "flex", gap: "1rem", width: "100%", position: "relative" }}>
               {[
-                { title: "PERENCANAAN", desc: "Identifikasi & Kesepakatan Target" },
-                { title: "MONITORING", desc: "Realisasi Kinerja Triwulan" },
-                { title: "COACHING", desc: "Bimbingan & Tindak Lanjut" },
-                { title: "PENILAIAN", desc: "Final Performance Score" }
+                { title: "Planning", desc: "Sasaran Kerja Pegawai" },
+                { title: "Monitoring", desc: "Real-time Realisasi" },
+                { title: "Coaching", desc: "Bimbingan & Feedback" },
+                { title: "Review", desc: "Penilaian Akhir" }
               ].map((step, i) => (
-                <div key={i} style={{ flex: 1, background: "#fff", border: "1px solid #dee2e6", borderRadius: "10px", padding: "10px", textAlign: "center", boxShadow: "0 4px 8px rgba(0,0,0,0.03)" }}>
-                  <div style={{ background: "#1a5276", color: "#fff", fontSize: "0.85rem", fontWeight: 900, padding: "5px", borderRadius: "6px", marginBottom: "8px" }}>{step.title}</div>
-                  <div style={{ fontSize: "0.75rem", color: "#34495e", lineHeight: 1.3 }}>{step.desc}</div>
-                  {i < 3 && <div style={{ position: "absolute", right: `${75 - i * 25}%`, top: "50%", transform: "translate(50%, -50%)", zIndex: 1 }}><ChevronRight size={20} color="#bdc3c7" strokeWidth={3} /></div>}
+                <div key={i} style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "12px", textAlign: "center", position: "relative" }}>
+                  <div style={{ background: "#1a5276", color: "#fff", fontSize: "0.8rem", fontWeight: 800, padding: "4px 10px", borderRadius: "8px", marginBottom: "8px", display: "inline-block" }}>{step.title}</div>
+                  <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 600, lineHeight: 1.4 }}>{step.desc}</div>
+                  {i < 3 && <div style={{ position: "absolute", right: "-15px", top: "50%", transform: "translateY(-50%)", zIndex: 10 }}><ChevronRight size={18} color="#cbd5e1" strokeWidth={3} /></div>}
                 </div>
               ))}
-
-              <div style={{ position: "absolute", right: "-15px", top: "-20px", transform: "rotate(12deg)", background: "#27ae60", color: "#fff", border: "3px solid #fff", borderRadius: "30px", padding: "6px 15px", fontSize: "0.7rem", fontWeight: 900, boxShadow: "0 6px 12px rgba(39,174,96,0.3)" }}>
-                AGHRIS (APMS MODULE)
+              <div style={{ position: "absolute", right: "-10px", top: "-25px", background: "#0e6655", color: "#fff", border: "4px solid #fff", borderRadius: "12px", padding: "8px 15px", fontSize: "0.75rem", fontWeight: 850, boxShadow: "0 8px 20px rgba(14,102,85,0.2)", transform: "rotate(2deg)" }}>
+                PLATFORM <br /> <span style={{ fontSize: "1rem" }}>APMS 2.0</span>
               </div>
             </div>
           </div>
         </motion.div>
 
         {/* --- CONNECTOR 2 --- */}
-        <div style={{ display: "flex", justifyContent: "center", margin: "-0.8rem 0", zIndex: 2 }}>
-          <div style={{ background: "#fff", padding: "4px", borderRadius: "50%", boxShadow: "0 4px 8px rgba(0,0,0,0.1)", border: "1px solid #dee2e6" }}>
+        <div style={{ display: "flex", justifyContent: "center", margin: "-0.6rem 0", zIndex: 5 }}>
+          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
             <ArrowDown size={18} color="#1a5276" strokeWidth={3} />
           </div>
         </div>
 
         {/* --- LAYER 3: EVALUATION & OUTCOMES --- */}
-        <div style={{ display: "flex", gap: "1.2rem", flex: 1 }}>
-          <div style={{ flex: 1.2, display: "flex", flexDirection: "column", gap: "1rem" }}>
-            <div style={{ background: "#fdfefe", border: "1px solid #d1d9e0", borderRadius: "14px", padding: "0.8rem 1.2rem", display: "flex", flexDirection: "column", gap: "0.8rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}>
-              <div style={{ textAlign: "center", fontSize: "0.85rem", fontWeight: 900, color: "#1a5276", borderBottom: "1px solid #f4f7f8", paddingBottom: "6px", textTransform: "uppercase" }}>INDIVIDUAL SCORE CALCULATION</div>
+        <div style={{ display: "flex", gap: "1.5rem", flex: 1 }}>
+          <div style={{ flex: 1.4, display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}>
+              <div style={{ textAlign: "center", fontSize: "0.8rem", fontWeight: 850, color: "#1a5276", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "1rem" }}>Score Inputs Calculation</div>
 
               <div style={{ display: "flex", gap: "1.2rem", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "8px" }}>
-                  <div style={{ background: "#27ae60", color: "#fff", padding: "8px", borderRadius: "30px", fontSize: "0.8rem", fontWeight: 800, textAlign: "center" }}>Behavior Score</div>
-                  <div style={{ background: "#2ecc71", color: "#fff", padding: "8px", borderRadius: "8px", fontSize: "0.8rem", fontWeight: 800, textAlign: "center" }}>KPI Kolegial</div>
+                <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <div style={{ background: "#0e6655", color: "#fff", padding: "10px", borderRadius: "12px", fontSize: "0.8rem", fontWeight: 800, textAlign: "center", boxShadow: "0 4px 10px rgba(14,102,85,0.2)" }}>Behavior (20%)</div>
+                  <div style={{ background: "#d97706", color: "#fff", padding: "10px", borderRadius: "12px", fontSize: "0.8rem", fontWeight: 800, textAlign: "center", boxShadow: "0 4px 10px rgba(217,119,6,0.2)" }}>Corp Score (10%)</div>
                 </div>
-                <Plus size={20} color="#7f8c8d" strokeWidth={3} />
-                <div style={{ flex: 1 }}>
-                  <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "15px 10px", borderRadius: "10px", fontSize: "0.9rem", fontWeight: 900, textAlign: "center", boxShadow: "0 4px 10px rgba(26,82,118,0.2)" }}>Individual Score</div>
-                </div>
-                <ChevronRight size={20} color="#7f8c8d" />
-                <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "8px" }}>
-                  <div style={{ background: "#1a5276", color: "#fff", padding: "8px", borderRadius: "8px", fontSize: "0.8rem", fontWeight: 800, textAlign: "center" }}>Performance Score</div>
-                  <div style={{ background: "#d6eaf8", color: "#1a5276", padding: "8px", borderRadius: "8px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center", border: "1px solid #aed6f1" }}>Performance Score</div>
+                <Plus size={24} color="#cbd5e1" strokeWidth={3} />
+                <div style={{ flex: 1.2 }}>
+                  <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #1d4ed8 100%)", color: "#fff", padding: "1.5rem 1rem", borderRadius: "16px", fontSize: "1rem", fontWeight: 900, textAlign: "center", boxShadow: "0 10px 25px rgba(26,82,118,0.2)" }}>Individual Performance <br /> (70%)</div>
                 </div>
               </div>
             </div>
 
-            <div style={{ flex: 1, background: "#fff", border: "2px solid #1a5276", borderRadius: "14px", padding: "1.2rem", display: "flex", flexDirection: "column", position: "relative" }}>
-              <div style={{ textAlign: "center", fontSize: "1rem", fontWeight: 900, color: "#1a5276", marginBottom: "1rem", letterSpacing: "0.5px" }}>RATING DISTRIBUSI (CURVE CONTROL)</div>
-              <div style={{ display: "flex", gap: "1.5rem", flex: 1, alignItems: "center" }}>
-                <div style={{ flex: 0.8, border: "2px solid #f2f3f4", borderRadius: "10px", padding: "10px", fontSize: "0.75rem", background: "#fcfdfd" }}>
-                  <div style={{ background: "#1a5276", color: "#fff", padding: "4px", fontWeight: 900, textAlign: "center", marginBottom: "8px", borderRadius: "4px" }}>KLASIFIKASI RD</div>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px", fontWeight: 700, color: "#2c3e50" }}>
-                    <span>• RD 1</span><span>• RD 4</span>
-                    <span>• RD 2</span><span>• RD 5</span>
-                    <span>• RD 3</span>
-                  </div>
-                </div>
-                <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                  <div style={{ background: "linear-gradient(to right, #1a5276, #2980b9)", color: "#fff", padding: "10px", borderRadius: "8px", fontSize: "0.85rem", fontWeight: 900, textAlign: "center", position: "relative", boxShadow: "0 4px 12px rgba(26,82,118,0.2)" }}>
-                    PRIORITY POOL (TALENT)
-                    <div style={{ position: "absolute", top: -12, right: -5 }}><Settings size={20} color="#fff" fill="#fff" /></div>
-                  </div>
-                  <div style={{ background: "#d6eaf8", color: "#1a5276", border: "1.5px solid #1a5276", padding: "8px", borderRadius: "8px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center" }}>PERFORMANCE RATING</div>
-                </div>
-                <div style={{ position: "absolute", top: "15px", right: "15px", background: "#27ae60", color: "#fff", width: "55px", height: "55px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", fontSize: "0.6rem", fontWeight: 900, textAlign: "center", lineHeight: 1.1, border: "3px solid #fff", boxShadow: "0 4px 10px rgba(0,0,0,0.1)" }}>
-                  <div>APPS</div>
-                  <div>RATING</div>
-                </div>
+            <div style={{ flex: 1, background: "#fff", border: "2.5px solid #1a5276", borderRadius: "20px", padding: "1rem 1.5rem", position: "relative", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div style={{ textAlign: "center", fontSize: "0.9rem", fontWeight: 900, color: "#1a5276", marginBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px" }}>Rating Distribusi (Calibration)</div>
+              <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+                <div style={{ flex: 1, background: "#f8fafc", padding: "10px", borderRadius: "14px", border: "1px dashed #cbd5e1", textAlign: "center", fontSize: "0.8rem", fontWeight: 700, color: "#64748b" }}>Rating Score <br /> 0 – 120</div>
+                <ArrowRight size={24} color="#cbd5e1" strokeWidth={3} />
+                <div style={{ flex: 1.5, background: "linear-gradient(135deg, #4338ca 0%, #6366f1 100%)", color: "#fff", padding: "10px 20px", borderRadius: "40px", fontSize: "0.9rem", fontWeight: 900, textAlign: "center", boxShadow: "0 8px 20px rgba(67,56,202,0.2)" }}>PERFORMANCE RATING</div>
               </div>
             </div>
           </div>
 
           <div style={{ width: "280px", display: "flex", flexDirection: "column", gap: "1rem" }}>
-            <div style={{ flex: 1, background: "#fff", border: "2px solid #e67e22", borderRadius: "14px", padding: "1.2rem", display: "flex", flexDirection: "column", justifyContent: "space-between", boxShadow: "0 4px 15px rgba(230,126,34,0.05)" }}>
-              <div style={{ background: "#e67e22", color: "#fff", fontSize: "0.85rem", fontWeight: 900, padding: "6px", borderRadius: "8px", textAlign: "center", textTransform: "uppercase" }}>COMPENSATION IMPACT</div>
-              <div style={{ textAlign: "center", fontSize: "0.9rem", padding: "10px", border: "2px solid #f8c471", borderRadius: "8px", background: "#fef5e7", fontWeight: 800, color: "#873b00" }}>Sidang Komite Kinerja</div>
-              <div style={{ display: "flex", justifyContent: "center" }}><ArrowDown size={24} color="#e67e22" strokeWidth={3} /></div>
-              <div style={{ background: "#e67e22", color: "#fff", fontSize: "0.95rem", fontWeight: 900, padding: "12px 10px", borderRadius: "40px", textAlign: "center", lineHeight: 1.2, boxShadow: "0 6px 15px rgba(230,126,34,0.2)" }}>Merit Increment & <br />Performance Bonus</div>
+            <div style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem", display: "flex", flexDirection: "column", gap: "1rem", boxShadow: "0 10px 25px rgba(0,0,0,0.03)" }}>
+              <div style={{ background: "#d97706", color: "#fff", fontSize: "0.8rem", fontWeight: 900, padding: "8px", borderRadius: "10px", textAlign: "center", textTransform: "uppercase" }}>REWARD LINKAGE</div>
+              <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "14px", padding: "1rem", textAlign: "center" }}>
+                <div style={{ color: "#334155", fontSize: "0.8rem", fontWeight: 800, marginBottom: "0.8rem" }}>Calibration Result</div>
+                <div style={{ background: "#fff", border: "1.5px solid #fbd38d", color: "#d97706", padding: "10px", borderRadius: "30px", fontSize: "0.9rem", fontWeight: 900, boxShadow: "0 4px 10px rgba(217,119,6,0.1)" }}>Merit & Bonus</div>
+              </div>
             </div>
 
-            <div style={{ background: "linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)", color: "#fff", borderRadius: "14px", padding: "1.2rem", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center", boxShadow: "0 6px 15px rgba(39, 174, 96, 0.2)" }}>
-              <Award size={32} style={{ margin: "0 auto 8px" }} />
-              <div style={{ fontSize: "1rem", fontWeight: 900 }}>INDIVIDUAL DEVELOPMENT PLAN</div>
-              <div style={{ fontSize: "0.75rem", opacity: 0.9, marginTop: "4px" }}>Career Path & Competency Growth</div>
+            <div style={{ background: "linear-gradient(135deg, #0e6655 0%, #166534 100%)", color: "#fff", borderRadius: "20px", padding: "1.5rem", textAlign: "center", boxShadow: "0 10px 25px rgba(14,102,85,0.2)" }}>
+              <div style={{ background: "rgba(255,255,255,0.15)", width: "50px", height: "50px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1rem" }}><TrendingUp size={28} /></div>
+              <div style={{ fontSize: "1.1rem", fontWeight: 900 }}>TALENT POOL</div>
+              <div style={{ fontSize: "0.8rem", opacity: 0.8, marginTop: "0.4rem", fontWeight: 500 }}>Priority IDP & Promotion</div>
             </div>
           </div>
         </div>
-
-        {/* Footer Roles */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", marginTop: "0.3rem" }}>
-          {["Mgt Kinerja & HCIS (DOPS)", "HI & Remunerasi (DOPS)", "Talent Mgt (DSPS)"].map((role, i) => (
-            <div key={role} style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "#f4f7f8", border: "1px solid #d1d9e0", padding: "3px 12px", borderRadius: "30px", boxShadow: "0 2px 5px rgba(0,0,0,0.02)" }}>
-              <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: i === 0 ? "#2980b9" : i === 1 ? "#e67e22" : "#27ae60" }}></div>
-              <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#34495e" }}>{role}</span>
-            </div>
-          ))}
-        </div>
       </div>
-
       <SlideFooter />
     </div>
   );
@@ -1004,168 +1823,148 @@ function SlideFramework2026A() {
    ============================= */
 function SlideFramework2026B() {
   return (
-    <div className="slide" style={{ padding: "0.8rem 2.5rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.3rem", textAlign: "center", color: "#1a5276" }}>
-          <em>Performance Management Framework 2026 (Opsi B)</em>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
+          <em>Performance Framework 2026 (Opsi B)</em>
         </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Arsitektur Kinerja: Target Cascading → Unified Score → Direct Performance Rating</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-        {/* LAYER 1: STRATEGIC PLANNING */}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+        {/* --- LAYER 1: STRATEGIC PLANNING --- */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          style={{
-            display: "flex",
-            background: "#f4f7f8",
-            border: "1px solid #d1d9e0",
-            borderRadius: "14px",
-            overflow: "hidden",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.05)"
-          }}
+          style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem 2rem", position: "relative", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
         >
-          <div style={{ background: "#2c3e50", width: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <span style={{ transform: "rotate(-90deg)", whiteSpace: "nowrap", fontSize: "0.8rem", fontWeight: 900, color: "#fff", letterSpacing: "1px" }}>STRATEGIC</span>
+          <div style={{ position: "absolute", top: -14, left: 40, background: "#1a5276", color: "#fff", padding: "4px 20px", borderRadius: "20px", fontSize: "0.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>
+            STRATEGIC PLANNING LAYER
           </div>
-          <div style={{ flex: 1, padding: "1rem 1.5rem", display: "flex", gap: "1.5rem", alignItems: "center" }}>
-            <div style={{ background: "#fff", border: "1px solid #2c3e50", borderRadius: "10px", padding: "12px", minWidth: "260px" }}>
-              <div style={{ background: "#1a5276", color: "#fff", textAlign: "center", fontSize: "0.85rem", fontWeight: 800, padding: "6px", borderRadius: "6px", marginBottom: "8px", textTransform: "uppercase" }}>Strategic Inputs</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
-                {["Kontrak Manajemen", "RJPP", "RKAP", "Roadmap", "Aspirasi Pemegang Saham"].map((item, i) => (
-                  <span key={i} style={{ background: "#000", color: "#fff", fontSize: "0.7rem", padding: "4px 10px", borderRadius: "20px", fontWeight: 600 }}>{item}</span>
+
+          <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+            {/* Input Group */}
+            <div style={{ flex: 0.8, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "14px", overflow: "hidden" }}>
+              <div style={{ background: "#334155", color: "#fff", fontSize: "0.85rem", padding: "10px", textAlign: "center", fontWeight: 800 }}>Strategic Inputs</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", padding: "1rem", justifyContent: "center" }}>
+                {["RKAP", "RJPP", "CM", "Roadmap"].map((item, i) => (
+                  <span key={i} style={{ background: "#fff", color: "#334155", fontSize: "0.7rem", padding: "4px 12px", borderRadius: "10px", fontWeight: 700, border: "1px solid #e2e8f0" }}>{item}</span>
                 ))}
               </div>
             </div>
-            <ArrowRight size={28} color="#7f8c8d" />
-            <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "6px" }}>
-              {["Corporate", "Direktorat", "Divisi"].map((level, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div style={{ background: "#1a5276", color: "#fff", padding: "6px 15px", borderRadius: "30px", fontSize: "0.8rem", fontWeight: 800, flex: 1, textAlign: "center" }}>Strategy Map {level}</div>
-                  <div style={{ borderTop: "2px dashed #bdc3c7", width: "30px" }}></div>
-                  <div style={{ background: "#1a5276", color: "#fff", padding: "6px 15px", borderRadius: "8px", fontSize: "0.8rem", fontWeight: 800, flex: 1, textAlign: "center", boxShadow: "0 4px 10px rgba(0,0,0,0.1)" }}>Scorecard {level}</div>
+
+            <ChevronRight size={32} color="#cbd5e1" />
+
+            {/* Cascade Group */}
+            <div style={{ flex: 1.2, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              {[
+                { label: "Corporate", color: "#1a5276" },
+                { label: "Direktorat", color: "#1f618d" },
+                { label: "Unit / Divisi", color: "#2980b9" }
+              ].map((lvl, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <div style={{ flex: 1, border: `1.5px solid ${lvl.color}`, color: lvl.color, padding: "8px 15px", borderRadius: "30px", textAlign: "center", fontSize: "0.8rem", fontWeight: 800 }}>Strategy Map {lvl.label}</div>
+                  <div style={{ width: "30px", borderBottom: `2.5px dashed ${lvl.color}44` }}></div>
+                  <div style={{ flex: 1, background: lvl.color, color: "#fff", padding: "8px 15px", borderRadius: "30px", textAlign: "center", fontSize: "0.8rem", fontWeight: 800, boxShadow: `0 4px 10px ${lvl.color}33` }}>Scorecard {lvl.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </motion.div>
 
-        <div style={{ display: "flex", justifyContent: "center" }}><ArrowDown size={18} color="#bdc3c7" /></div>
+        {/* --- CONNECTOR 1 --- */}
+        <div style={{ display: "flex", justifyContent: "center", margin: "-0.6rem 0", zIndex: 5 }}>
+          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
+            <ArrowDown size={18} color="#1a5276" strokeWidth={3} />
+          </div>
+        </div>
 
-        {/* LAYER 2: OPERATIONAL PROCESS */}
+        {/* --- LAYER 2: OPERATIONAL PROCESS --- */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          style={{ display: "flex", background: "#fcfdfd", border: "1px solid #d1d9e0", borderRadius: "14px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}
+          transition={{ delay: 0.3 }}
+          style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem 2rem", position: "relative", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
         >
-          <div style={{ background: "#7f8c8d", width: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <span style={{ transform: "rotate(-90deg)", whiteSpace: "nowrap", fontSize: "0.8rem", fontWeight: 900, color: "#fff", letterSpacing: "1px" }}>OPERATIONAL</span>
+          <div style={{ position: "absolute", top: -14, left: 40, background: "#64748b", color: "#fff", padding: "4px 20px", borderRadius: "20px", fontSize: "0.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>
+            OPERATIONAL PROCESS LAYER
           </div>
-          <div style={{ flex: 1, padding: "1.2rem" }}>
-            <div style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}>
-              <div style={{ background: "#1a5276", color: "#fff", padding: "6px 40px", borderRadius: "8px", fontSize: "0.95rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>KPI Individu</div>
-            </div>
-            <div style={{ display: "flex", gap: "10px" }}>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem", alignItems: "center" }}>
+            <div style={{ display: "flex", gap: "1rem", width: "100%", position: "relative" }}>
               {[
-                { title: "Perencanaan", items: ["Identifikasi KPI", "Bobot & Target"] },
-                { title: "Monitoring", items: ["Update Progress", "Triwulanan"] },
-                { title: "Coaching", items: ["Umpan Balik", "Tindak Lanjut"] },
-                { title: "Assessment", items: ["Final Review", "Rating"] }
+                { title: "Planning", desc: "Sasaran Kerja Pegawai" },
+                { title: "Monitoring", desc: "Real-time Realisasi" },
+                { title: "Coaching", desc: "Bimbingan & Feedback" },
+                { title: "Review", desc: "Penilaian Akhir" }
               ].map((step, i) => (
-                <div key={i} style={{ flex: 1, background: "#fff", border: "1px solid #e9ecef", borderRadius: "10px", overflow: "hidden", boxShadow: "0 4px 8px rgba(0,0,0,0.02)" }}>
-                  <div style={{ background: "#34495e", color: "#fff", padding: "6px", fontSize: "0.8rem", fontWeight: 900, textAlign: "center" }}>{step.title}</div>
-                  <div style={{ padding: "10px", fontSize: "0.7rem", color: "#2c3e50", fontWeight: 600, lineHeight: 1.4 }}>
-                    {step.items.map((item, j) => <div key={j}>• {item}</div>)}
-                  </div>
+                <div key={i} style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "12px", textAlign: "center", position: "relative" }}>
+                  <div style={{ background: "#1a5276", color: "#fff", fontSize: "0.8rem", fontWeight: 800, padding: "4px 10px", borderRadius: "8px", marginBottom: "8px", display: "inline-block" }}>{step.title}</div>
+                  <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 600, lineHeight: 1.4 }}>{step.desc}</div>
+                  {i < 3 && <div style={{ position: "absolute", right: "-15px", top: "50%", transform: "translateY(-50%)", zIndex: 10 }}><ChevronRight size={18} color="#cbd5e1" strokeWidth={3} /></div>}
                 </div>
               ))}
-              <div style={{ background: "linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)", color: "#fff", borderRadius: "50%", width: "65px", height: "65px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.7rem", fontWeight: 900, textAlign: "center", alignSelf: "center", border: "3px solid #fff", boxShadow: "0 6px 12px rgba(39,174,96,0.2)" }}>
-                MODUL <br /> APMS
+              <div style={{ position: "absolute", right: "-10px", top: "-25px", background: "#0e6655", color: "#fff", border: "4px solid #fff", borderRadius: "12px", padding: "8px 15px", fontSize: "0.75rem", fontWeight: 850, boxShadow: "0 8px 20px rgba(14,102,85,0.2)", transform: "rotate(2deg)" }}>
+                PLATFORM <br /> <span style={{ fontSize: "1rem" }}>APMS 2.0</span>
               </div>
             </div>
           </div>
         </motion.div>
 
-        <div style={{ display: "flex", justifyContent: "center" }}><ArrowDown size={18} color="#bdc3c7" /></div>
-
-        {/* LAYER 3: EVALUATION & OUTCOMES */}
-        <div style={{ flex: 1, display: "flex", gap: "1rem" }}>
-          {/* LEFT: Scoring Logic */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            style={{ flex: 2, background: "#f8f9fa", border: "1px solid #dee2e6", borderRadius: "14px", padding: "1rem 1.2rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
-          >
-            <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", borderBottom: "1px solid #dee2e6", paddingBottom: "6px" }}>Individual Score Calculation</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px", justifyContent: "center" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-                  <div style={{ background: "#27ae60", color: "#fff", padding: "8px", borderRadius: "30px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center", width: "110px" }}>Behavior Score</div>
-                  <div style={{ background: "#1a5276", color: "#fff", padding: "8px", borderRadius: "8px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center", width: "110px" }}>KPI Kolegial</div>
-                </div>
-                <Plus size={20} color="#7f8c8d" strokeWidth={3} />
-                <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "12px 25px", borderRadius: "10px", fontSize: "0.9rem", fontWeight: 900, boxShadow: "0 4px 12px rgba(26,82,118,0.2)" }}>Individual Score</div>
-              </div>
-
-              <div style={{ border: "2px solid #d1d9e0", borderRadius: "12px", background: "#fff", padding: "12px", boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)" }}>
-                <div style={{ fontSize: "0.9rem", fontWeight: 900, color: "#2c3e50", marginBottom: "10px", textAlign: "center", letterSpacing: "0.5px" }}>RATING DISTRIBUSI (CURVE CONTROL)</div>
-                <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-                  <div style={{ flex: 1, background: "#f8f9fa", borderRadius: "8px", padding: "10px", fontSize: "0.8rem", border: "1px solid #dee2e6" }}>
-                    <div style={{ fontWeight: 900, marginBottom: "4px", color: "#1a5276" }}>KLASIFIKASI RD</div>
-                    <div style={{ fontWeight: 700 }}>RD 1 - RD 5</div>
-                  </div>
-                  <ArrowRight size={20} color="#7f8c8d" />
-                  <div style={{ flex: 1, background: "rgba(52, 152, 219, 0.08)", color: "#3498db", border: "1.5px dashed #3498db", borderRadius: "8px", padding: "10px", textAlign: "center" }}>
-                    <div style={{ display: "flex", justifyContent: "center", marginBottom: "2px" }}><Settings size={18} /></div>
-                    <div style={{ fontSize: "0.7rem", fontWeight: 900 }}>APPS RATING DISTRIBUSI</div>
-                  </div>
-                  <ArrowRight size={20} color="#7f8c8d" />
-                  <div style={{ flex: 1, background: "#e9ecef", borderRadius: "8px", padding: "10px", fontSize: "0.8rem", textAlign: "center", border: "1px solid #dee2e6" }}>
-                    <div style={{ fontWeight: 900, color: "#2c3e50" }}>PERFORMANCE</div>
-                    <div style={{ fontWeight: 700 }}>RATING</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* RIGHT: Compensation & IDP Pillars */}
-          <motion.div
-            initial={{ opacity: 20, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}
-          >
-            {/* Committee Pillar */}
-            <div style={{ background: "#fdf2e9", border: "2px solid #fadbd8", borderRadius: "14px", padding: "10px", textAlign: "center", boxShadow: "0 4px 10px rgba(230,126,34,0.05)" }}>
-              <div style={{ color: "#e67e22", fontSize: "0.75rem", fontWeight: 900, textTransform: "uppercase", marginBottom: "6px", letterSpacing: "1px" }}>Committee Approval</div>
-              <div style={{ background: "#fff", border: "2px solid #e67e22", color: "#e67e22", padding: "8px", borderRadius: "30px", fontSize: "0.9rem", fontWeight: 900, boxShadow: "0 2px 8px rgba(230,126,34,0.1)" }}>Sidang Komite Kinerja</div>
-            </div>
-
-            {/* Compensation Pillar */}
-            <div style={{ flex: 1.2, background: "linear-gradient(to bottom, #f39c12, #e67e22)", borderRadius: "14px", padding: "12px", display: "flex", flexDirection: "column", justifyContent: "center", color: "#fff", textAlign: "center", boxShadow: "0 6px 15px rgba(230,126,34,0.15)" }}>
-              <Award size={28} style={{ margin: "0 auto 6px" }} />
-              <div style={{ fontSize: "0.95rem", fontWeight: 900, marginBottom: "4px" }}>COMPENSATION IMPACT</div>
-              <div style={{ fontSize: "0.7rem", opacity: 0.95, lineHeight: 1.3 }}>Merit Increment & Performance Bonus based on Rating</div>
-            </div>
-
-            {/* IDP Pillar */}
-            <div style={{ flex: 1.2, background: "linear-gradient(to bottom, #27ae60, #1e8449)", borderRadius: "14px", padding: "12px", display: "flex", flexDirection: "column", justifyContent: "center", color: "#fff", textAlign: "center", boxShadow: "0 6px 15px rgba(39, 174, 96, 0.15)" }}>
-              <TrendingUp size={28} style={{ margin: "0 auto 6px" }} />
-              <div style={{ fontSize: "0.95rem", fontWeight: 900, marginBottom: "4px" }}>TALENT DEVELOPMENT</div>
-              <div style={{ fontSize: "0.7rem", opacity: 0.95, lineHeight: 1.3 }}>IDP & Career Development Plan</div>
-            </div>
-          </motion.div>
+        {/* --- CONNECTOR 2 --- */}
+        <div style={{ display: "flex", justifyContent: "center", margin: "-0.6rem 0", zIndex: 5 }}>
+          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
+            <ArrowDown size={18} color="#1a5276" strokeWidth={3} />
+          </div>
         </div>
 
-        {/* Footer Organization Labels */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "1.2rem", marginTop: "0.4rem" }}>
-          {["Mgt Kinerja & HCIS (DOPS)", "HI & Remunerasi (DOPS)", "Talent Mgt (DSPS)"].map((role, i) => (
-            <div key={i} style={{ background: "#f4f7f8", color: "#34495e", padding: "5px 15px", borderRadius: "30px", fontSize: "0.75rem", fontWeight: 800, border: "1px solid #d1d9e0" }}>{role}</div>
-          ))}
+        {/* --- LAYER 3: EVALUATION & OUTCOMES --- */}
+        <div style={{ display: "flex", gap: "1.5rem", flex: 1 }}>
+          <div style={{ flex: 1.4, display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}>
+              <div style={{ textAlign: "center", fontSize: "0.8rem", fontWeight: 850, color: "#1a5276", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "1rem" }}>Score Inputs Calculation</div>
+
+              <div style={{ display: "flex", gap: "1.2rem", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <div style={{ background: "#0e6655", color: "#fff", padding: "10px", borderRadius: "12px", fontSize: "0.8rem", fontWeight: 800, textAlign: "center", boxShadow: "0 4px 10px rgba(14,102,85,0.2)" }}>Behavior (20%)</div>
+                  <div style={{ background: "#d97706", color: "#fff", padding: "10px", borderRadius: "12px", fontSize: "0.8rem", fontWeight: 800, textAlign: "center", boxShadow: "0 4px 10px rgba(217,119,6,0.2)" }}>Corp Score (10%)</div>
+                </div>
+                <Plus size={24} color="#cbd5e1" strokeWidth={3} />
+                <div style={{ flex: 1.2 }}>
+                  <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #1d4ed8 100%)", color: "#fff", padding: "1.5rem 1rem", borderRadius: "16px", fontSize: "1rem", fontWeight: 900, textAlign: "center", boxShadow: "0 10px 25px rgba(26,82,118,0.2)" }}>Individual Performance <br /> (70%)</div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ flex: 1, background: "#fff", border: "2px solid #1a5276", borderRadius: "20px", padding: "1rem 1.5rem", position: "relative", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div style={{ textAlign: "center", fontSize: "0.9rem", fontWeight: 900, color: "#1a5276", marginBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px" }}>Direct Rating Determination</div>
+              <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+                <div style={{ flex: 1, background: "#f8fafc", padding: "10px", borderRadius: "14px", border: "1px dashed #cbd5e1", textAlign: "center", fontSize: "0.8rem", fontWeight: 700, color: "#64748b" }}>Rating Score <br /> 0 – 120</div>
+                <ArrowRight size={24} color="#cbd5e1" strokeWidth={3} />
+                <div style={{ flex: 1.5, background: "linear-gradient(135deg, #0e6655 0%, #166534 100%)", color: "#fff", padding: "10px 20px", borderRadius: "40px", fontSize: "0.9rem", fontWeight: 900, textAlign: "center", boxShadow: "0 8px 20px rgba(14,102,85,0.2)" }}>PERFORMANCE RATING</div>
+              </div>
+              <div style={{ marginTop: "10px", fontSize: "0.75rem", color: "#64748b", textAlign: "center", fontWeight: 600 }}>*Tanpa Curve Control / Distribusi Paksa</div>
+            </div>
+          </div>
+
+          <div style={{ width: "280px", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem", display: "flex", flexDirection: "column", gap: "1rem", boxShadow: "0 10px 25px rgba(0,0,0,0.03)" }}>
+              <div style={{ background: "#d97706", color: "#fff", fontSize: "0.8rem", fontWeight: 900, padding: "8px", borderRadius: "10px", textAlign: "center", textTransform: "uppercase" }}>REWARD LINKAGE</div>
+              <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "14px", padding: "1rem", textAlign: "center" }}>
+                <div style={{ color: "#334155", fontSize: "0.8rem", fontWeight: 800, marginBottom: "0.8rem" }}>Final Evaluation</div>
+                <div style={{ background: "#fff", border: "1.5px solid #fbd38d", color: "#d97706", padding: "10px", borderRadius: "30px", fontSize: "0.9rem", fontWeight: 900, boxShadow: "0 4px 10px rgba(217,119,6,0.1)" }}>Merit & Bonus</div>
+              </div>
+            </div>
+
+            <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #1e3a8a 100%)", color: "#fff", borderRadius: "20px", padding: "1.5rem", textAlign: "center", boxShadow: "0 10px 25px rgba(26,82,118,0.2)" }}>
+              <div style={{ background: "rgba(255,255,255,0.15)", width: "50px", height: "50px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1rem" }}><TrendingUp size={28} /></div>
+              <div style={{ fontSize: "1.1rem", fontWeight: 900 }}>TALENT POOL</div>
+              <div style={{ fontSize: "0.8rem", opacity: 0.8, marginTop: "0.4rem", fontWeight: 500 }}>IDP & Competency Growth</div>
+            </div>
+          </div>
         </div>
       </div>
-
       <SlideFooter />
     </div>
   );
@@ -1181,97 +1980,149 @@ function SlideFramework2026B() {
 function SlideWeighting() {
   const years = [
     {
-      year: "Tahun 2025",
+      year: "Siklus 2025 (Existing)",
       type: "current",
       scenarios: [
         {
-          title: "Kebun, Pabrik, Unit Kerja Lainnya",
+          title: "Unit Usaha & Operasional",
           id: 1,
           diagram: (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
               <div style={{ display: "flex", gap: "25px", alignItems: "center" }}>
-                <div style={{ background: "#1e8449", color: "#fff", padding: "15px", borderRadius: "8px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center", width: "110px", boxShadow: "0 4px 10px rgba(0,0,0,0.1)" }}>
-                  KPI Bersama<br />30 %
+                <div style={{
+                  background: "linear-gradient(135deg, #065f46 0%, #047857 100%)",
+                  color: "#fff",
+                  padding: "1.2rem",
+                  borderRadius: "16px",
+                  fontSize: "0.9rem",
+                  fontWeight: 900,
+                  textAlign: "center",
+                  width: "120px",
+                  boxShadow: "0 10px 20px rgba(6, 95, 70, 0.15)",
+                  border: "1px solid rgba(255,255,255,0.1)"
+                }}>
+                  KPI Bersama<br /><span style={{ fontSize: "1.3rem", color: "#6ee7b7" }}>30%</span>
                 </div>
-                <div style={{ fontSize: "1.8rem", fontWeight: 900, color: "#27ae60" }}>+</div>
-                <div style={{ border: "3px dashed #f1c40f", padding: "10px", borderRadius: "10px", background: "rgba(241, 196, 15, 0.05)" }}>
-                  <div style={{ textAlign: "center", fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", marginBottom: "8px" }}>KPI Utama 70 %</div>
+                <div style={{ fontSize: "1.8rem", fontWeight: 900, color: "#1a5276" }}>+</div>
+                <div style={{ border: "2px dashed #f59e0b", padding: "12px", borderRadius: "20px", background: "rgba(245, 158, 11, 0.03)" }}>
+                  <div style={{ textAlign: "center", fontSize: "0.85rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px" }}>KPI Utama (70%)</div>
                   <div style={{ display: "flex", gap: "12px" }}>
-                    <div style={{ background: "#1a5276", color: "#fff", padding: "12px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, textAlign: "center", width: "95px" }}>
-                      KPI Unit Kerja<br />49%
+                    <div style={{ background: "#1a5276", color: "#fff", padding: "1rem", borderRadius: "12px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center", width: "100px", boxShadow: "0 4px 12px rgba(26,82,118,0.1)" }}>
+                      Unit Kerja<br /><span style={{ fontSize: "1.1rem" }}>49%</span>
                     </div>
-                    <div style={{ background: "#1a5276", color: "#fff", padding: "12px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, textAlign: "center", width: "95px" }}>
-                      KPI Individu<br />21%
+                    <div style={{ background: "#1a5276", color: "#fff", padding: "1rem", borderRadius: "12px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center", width: "100px", boxShadow: "0 4px 12px rgba(26,82,118,0.1)" }}>
+                      Individu<br /><span style={{ fontSize: "1.1rem" }}>21%</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <ArrowDown size={18} color="#bdc3c7" />
-              <div style={{ background: "#1a5276", color: "#fff", padding: "8px 30px", borderRadius: "8px", fontSize: "0.9rem", fontWeight: 900, boxShadow: "0 6px 15px rgba(26, 82, 118, 0.2)" }}>Performance Score</div>
+              <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "8px 25px", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 900, color: "#1a5276", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
+                Performance Score
+              </div>
             </div>
           )
         },
         {
-          title: "Holding, Head Office, dan Kantor Regional",
+          title: "Holding & Head Office",
           id: 2,
           diagram: (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
               <div style={{ display: "flex", gap: "25px", alignItems: "center" }}>
-                <div style={{ background: "#1e8449", color: "#fff", padding: "15px", borderRadius: "8px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center", width: "110px", boxShadow: "0 4px 10px rgba(0,0,0,0.1)" }}>
-                  KPI Bersama<br />30 %
+                <div style={{
+                  background: "linear-gradient(135deg, #065f46 0%, #047857 100%)",
+                  color: "#fff",
+                  padding: "1.2rem",
+                  borderRadius: "16px",
+                  fontSize: "0.9rem",
+                  fontWeight: 900,
+                  textAlign: "center",
+                  width: "120px",
+                  boxShadow: "0 10px 20px rgba(6, 95, 70, 0.15)",
+                  border: "1px solid rgba(255,255,255,0.1)"
+                }}>
+                  KPI Bersama<br /><span style={{ fontSize: "1.3rem", color: "#6ee7b7" }}>30%</span>
                 </div>
-                <div style={{ fontSize: "1.8rem", fontWeight: 900, color: "#27ae60" }}>+</div>
-                <div style={{ border: "3px dashed #f1c40f", padding: "10px", borderRadius: "10px", background: "rgba(241, 196, 15, 0.05)", width: "130px" }}>
-                  <div style={{ textAlign: "center", fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", marginBottom: "8px" }}>KPI Utama</div>
-                  <div style={{ background: "#1a5276", color: "#fff", padding: "15px", borderRadius: "8px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center" }}>
-                    KPI Individu<br />70%
+                <div style={{ fontSize: "1.8rem", fontWeight: 900, color: "#1a5276" }}>+</div>
+                <div style={{ border: "2px dashed #1a5276", padding: "12px", borderRadius: "20px", background: "rgba(26, 82, 118, 0.03)", width: "150px" }}>
+                  <div style={{ textAlign: "center", fontSize: "0.85rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px" }}>KPI Utama (70%)</div>
+                  <div style={{ background: "#1a5276", color: "#fff", padding: "1.2rem", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 900, textAlign: "center" }}>
+                    Individu<br /><span style={{ fontSize: "1.3rem" }}>100%</span>
                   </div>
                 </div>
               </div>
-              <ArrowDown size={18} color="#bdc3c7" />
-              <div style={{ background: "#1a5276", color: "#fff", padding: "8px 30px", borderRadius: "8px", fontSize: "0.9rem", fontWeight: 900, boxShadow: "0 6px 15px rgba(26, 82, 118, 0.2)" }}>Performance Score</div>
+              <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "8px 25px", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 900, color: "#1a5276", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
+                Performance Score
+              </div>
             </div>
           )
         }
       ]
     },
     {
-      year: "Tahun 2026 dengan opsi A",
+      year: "Desain Baru 2026 (Modernized)",
       type: "future",
       scenarios: [
         {
-          title: "Mekanisme Bonus All Unit",
+          title: "Struktur Penilaian Terintegrasi",
           id: 1,
           diagram: (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
               <div style={{ display: "flex", gap: "15px" }}>
                 {[
-                  { label: "KPI Individu", sub: "Perform. Score", pct: "70%" },
-                  { label: "ONE, Mission, Innovation", sub: "Behavior Score", pct: "20%" },
-                  { label: "KPI Bersama", sub: "Corp. Score", pct: "10%" }
+                  { label: "Performance", sub: "Outcome", pct: "70%", color: "#1a5276" },
+                  { label: "Behavior", sub: "ONE / Value", pct: "20%", color: "#065f46" },
+                  { label: "Corporate", sub: "Strategic", pct: "10%", color: "#d97706" }
                 ].map((box, bIdx) => (
-                  <div key={bIdx} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
-                    <div style={{ background: "#73c6b6", color: "#145a32", padding: "12px 10px", borderRadius: "8px", fontSize: "0.75rem", fontWeight: 900, textAlign: "center", width: "95px", height: "65px", display: "flex", alignItems: "center", justifyContent: "center" }}>{box.label}</div>
-                    <div style={{ height: "15px", borderLeft: "2px dashed #bdc3c7" }}></div>
-                    <div style={{ background: "#d1f2eb", color: "#117864", padding: "10px 8px", borderRadius: "6px", fontSize: "0.7rem", fontWeight: 800, textAlign: "center", width: "95px" }}>{box.sub}<br />{box.pct}</div>
+                  <div key={bIdx} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+                    <div style={{
+                      background: "white",
+                      border: `2px solid ${box.color}`,
+                      color: box.color,
+                      padding: "1rem",
+                      borderRadius: "16px",
+                      fontSize: "0.85rem",
+                      fontWeight: 900,
+                      textAlign: "center",
+                      width: "110px",
+                      height: "80px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.04)"
+                    }}>
+                      <div style={{ fontSize: "1.2rem" }}>{box.pct}</div>
+                      <div style={{ fontSize: "0.7rem", opacity: 0.8, textTransform: "uppercase" }}>{box.label}</div>
+                    </div>
+                    <div style={{ fontSize: "0.65rem", fontWeight: 700, color: "#64748b", background: "#f1f5f9", padding: "4px 10px", borderRadius: "20px" }}>{box.sub}</div>
                   </div>
                 ))}
               </div>
-              <ArrowDown size={18} color="#bdc3c7" />
-              <div style={{ background: "#1a5276", color: "#fff", padding: "8px 35px", borderRadius: "8px", fontSize: "0.9rem", fontWeight: 900 }}>Individual Score</div>
+              <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "10px 40px", borderRadius: "16px", fontSize: "1rem", fontWeight: 900, boxShadow: "0 10px 25px rgba(26, 82, 118, 0.2)" }}>
+                Total Individual Performance Score
+              </div>
             </div>
           )
         },
         {
-          title: "Mekanisme Merit Increment All Unit",
+          title: "Siklus Reward & Meritocracy",
           id: 2,
           diagram: (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
-              <div style={{ background: "#1a5276", color: "#fff", padding: "12px 35px", borderRadius: "8px", fontSize: "0.9rem", fontWeight: 800 }}>Individual Score</div>
-              <ArrowDown size={20} color="#bdc3c7" />
-              <div style={{ background: "#73c6b6", color: "#145a32", padding: "12px 35px", borderRadius: "8px", fontSize: "0.9rem", fontWeight: 900 }}>Rating Distribusi</div>
-              <ArrowDown size={20} color="#bdc3c7" />
-              <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "12px 30px", borderRadius: "40px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center", boxShadow: "0 6px 15px rgba(26, 82, 118, 0.2)" }}>Merit Increment based<br />on Rating</div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                {[
+                  { label: "Total Score", color: "#1a5276", icon: <Target size={14} /> },
+                  { label: "Rating Distribution", color: "#065f46", icon: <Layers size={14} /> },
+                  { label: "Merit Increment", color: "#d97706", icon: <TrendingUp size={14} /> }
+                ].map((step, sIdx) => (
+                  <div key={sIdx} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div style={{ background: step.color, color: "#fff", padding: "12px 25px", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 800, width: "200px", display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", boxShadow: "0 4px 12px rgba(0,0,0,0.05)" }}>
+                      {step.icon}
+                      {step.label}
+                    </div>
+                    {sIdx < 2 && <ArrowDown size={18} color="#cbd5e1" style={{ transform: "rotate(-90deg)" }} />}
+                  </div>
+                ))}
+              </div>
             </div>
           )
         }
@@ -1280,31 +2131,56 @@ function SlideWeighting() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "0.8rem 3.5rem 1.5rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.3rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
           <em>Pembobotan Performance Appraisal</em>
         </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Struktur Penilaian Pegawai: Transformasi 2025 ke 2026</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
         {years.map((y, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.3 }}
-            style={{ flex: 1, border: "1px solid #d1d9e0", borderRadius: "16px", padding: "15px 25px", position: "relative", background: "#fff", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}
+            style={{
+              flex: 1,
+              border: "1px solid #e2e8f0",
+              borderRadius: "24px",
+              padding: "2rem",
+              position: "relative",
+              background: "#fff",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.03)",
+              display: "flex",
+              flexDirection: "column"
+            }}
           >
-            <div style={{ position: "absolute", top: "-15px", left: "30px", background: "#f39c12", color: "#fff", padding: "4px 20px", borderRadius: "25px", fontSize: "0.9rem", fontWeight: 900, boxShadow: "0 4px 10px rgba(243, 156, 18, 0.3)" }}>{y.year}</div>
-            <div style={{ display: "flex", height: "100%", gap: "1.5rem", marginTop: "10px" }}>
-              <div style={{ flex: 2.2, display: "flex", gap: "1.5rem" }}>
+            <div style={{
+              position: "absolute",
+              top: "-18px",
+              left: "40px",
+              background: y.type === "current" ? "#f59e0b" : "#1a5276",
+              color: "#fff",
+              padding: "8px 24px",
+              borderRadius: "30px",
+              fontSize: "0.95rem",
+              fontWeight: 900,
+              boxShadow: "0 10px 20px rgba(0,0,0,0.1)"
+            }}>
+              {y.year}
+            </div>
+
+            <div style={{ display: "flex", height: "100%", gap: "2rem", marginTop: "1rem" }}>
+              <div style={{ flex: 2.5, display: "flex", gap: "1.5rem" }}>
                 {y.scenarios.map((s, sIdx) => (
-                  <div key={sIdx} style={{ flex: 1, border: "1px solid #f2f3f4", borderRadius: "12px", padding: "10px 15px", display: "flex", flexDirection: "column", background: "#fafbfc" }}>
-                    <div style={{ display: "flex", gap: "10px", marginBottom: "12px" }}>
-                      <div style={{ background: "#2ecc71", color: "#fff", width: "24px", height: "24px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.9rem", fontWeight: 900 }}>{s.id}</div>
-                      <div style={{ background: "rgba(26, 82, 118, 0.05)", color: "#1a5276", padding: "4px 15px", borderRadius: "20px", fontSize: "0.85rem", fontWeight: 800, flex: 1, border: "1px solid rgba(26, 82, 118, 0.1)" }}>{s.title}</div>
+                  <div key={sIdx} style={{ flex: 1, border: "1px solid #f1f5f9", borderRadius: "20px", padding: "1.5rem", display: "flex", flexDirection: "column", background: "rgba(248, 250, 252, 0.5)" }}>
+                    <div style={{ display: "flex", gap: "12px", marginBottom: "20px", alignItems: "center" }}>
+                      <div style={{ background: y.type === "current" ? "#f59e0b" : "#1a5276", color: "#fff", width: "30px", height: "30px", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", fontWeight: 900 }}>{s.id}</div>
+                      <div style={{ fontSize: "1rem", fontWeight: 800, color: "#1e293b" }}>{s.title}</div>
                     </div>
                     <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {s.diagram}
@@ -1312,35 +2188,36 @@ function SlideWeighting() {
                   </div>
                 ))}
               </div>
-              <div style={{ flex: 1.1, background: "linear-gradient(180deg, #fcfdfd 0%, #f4f7f6 100%)", padding: "12px", borderRadius: "12px", border: "1px solid #e9ecef" }}>
-                <div style={{ fontSize: "0.85rem", color: "#2c3e50", lineHeight: 1.6 }}>
+
+              <div style={{ flex: 1, background: "linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)", padding: "1.5rem", borderRadius: "20px", border: "1px solid #e2e8f0" }}>
+                <div style={{ fontSize: "0.95rem", color: "#475569", lineHeight: 1.6 }}>
                   {y.type === "current" ? (
-                    <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                      <p style={{ margin: 0 }}>Di tahun 2025, bobot penilaian kinerja individu terdiri dari:</p>
-                      <ul style={{ margin: 0, paddingLeft: "1.2rem", fontWeight: 700 }}>
-                        <li>KPI Utama 70%</li>
-                        <li>KPI Bersama 30%</li>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+                      <p style={{ margin: 0, fontWeight: 600 }}>Dominasi alignment KPI Unit Kerja pada level operasional.</p>
+                      <ul style={{ margin: 0, paddingLeft: "1.5rem", fontWeight: 700, color: "#1a5276" }}>
+                        <li>KPI Utama (Cascaded): 70%</li>
+                        <li>KPI Bersama: 30%</li>
                       </ul>
-                      <div style={{ marginTop: "10px", padding: "10px", borderLeft: "4px solid #f1c40f", background: "rgba(241, 196, 15, 0.1)" }}>
-                        <span style={{ fontWeight: 900, color: "#1a5276", fontSize: "0.75rem", textTransform: "uppercase" }}>Key Point:</span><br />
-                        <span style={{ fontSize: "0.8rem" }}>KPI Utama pada Unit Usaha terdiri atas KPI Individu 21% dan KPI Unit Kerja 49%.</span>
+                      <div style={{ padding: "12px", borderLeft: "4px solid #f59e0b", background: "rgba(245, 158, 11, 0.08)", borderRadius: "0 12px 12px 0" }}>
+                        <span style={{ fontWeight: 900, color: "#92400e", fontSize: "0.8rem", textTransform: "uppercase" }}>Key Learning:</span><br />
+                        <span style={{ fontSize: "0.85rem", color: "#92400e" }}>Proporsi individu murni (21%) relatif kecil dibanding alignment unit.</span>
                       </div>
                     </div>
                   ) : (
-                    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                      <p style={{ margin: 0 }}>Bobot penilaian 2026 (Opsi A):</p>
-                      <ul style={{ margin: 0, paddingLeft: "1.2rem", fontWeight: 700, fontSize: "0.8rem" }}>
-                        <li>Performance Score (70%)</li>
-                        <li>Behavior Score (20%)</li>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                      <p style={{ margin: 0, fontWeight: 600 }}>Fokus pada Outcome Individu & Culture (ONE).</p>
+                      <ul style={{ margin: 0, paddingLeft: "1.5rem", fontWeight: 700, color: "#1a5276", fontSize: "0.9rem" }}>
+                        <li>Individual Perf. (70%)</li>
+                        <li>Behavioral Score (20%)</li>
                         <li>Corporate Score (10%)</li>
                       </ul>
-                      <div style={{ padding: "10px", borderLeft: "4px solid #2ecc71", background: "rgba(46, 204, 113, 0.1)", fontSize: "0.78rem" }}>
-                        <span style={{ fontWeight: 900, color: "#1a5276", fontSize: "0.7rem", textTransform: "uppercase" }}>Key Point:</span><br />
-                        KPI Unit Kerja telah terakomodasi dalam KPI Individu (cascading scorecard).
+                      <div style={{ padding: "12px", borderLeft: "4px solid #1a5276", background: "rgba(26, 82, 118, 0.08)", borderRadius: "0 12px 12px 0" }}>
+                        <span style={{ fontWeight: 900, color: "#1a5276", fontSize: "0.8rem", textTransform: "uppercase" }}>Strategic Shift:</span><br />
+                        <span style={{ fontSize: "0.85rem" }}>KPI Unit Kerja telah terakomodasi dalam cascading KPI Individu.</span>
                       </div>
-                      <div style={{ padding: "10px", borderLeft: "4px solid #1a5276", background: "rgba(26, 82, 118, 0.05)", fontSize: "0.78rem" }}>
-                        <span style={{ fontWeight: 900, color: "#1a5276", fontSize: "0.7rem", textTransform: "uppercase" }}>Merit Increment:</span><br />
-                        Terdapat perlakuan rating distribusi dalam penentuan kenaikan.
+                      <div style={{ padding: "12px", borderLeft: "4px solid #065f46", background: "rgba(6, 95, 70, 0.08)", borderRadius: "0 12px 12px 0" }}>
+                        <span style={{ fontWeight: 900, color: "#065f46", fontSize: "0.8rem", textTransform: "uppercase" }}>Impact:</span><br />
+                        <span style={{ fontSize: "0.85rem" }}>Diferensiasi reward lebih tajam dengan model rating distribusi.</span>
                       </div>
                     </div>
                   )}
@@ -1362,37 +2239,37 @@ function SlideProConOptions() {
   const data = [
     {
       aspect: "Alignment Korporat",
-      a: "Kuat → Seluruh karyawan memiliki bagian nilai yang langsung dipengaruhi kinerja perusahaan.",
+      a: "Kuat: Seluruh karyawan memiliki bagian nilai yang langsung dipengaruhi kinerja perusahaan.",
       scoreA: 5,
-      b: "Moderat → Alignment hanya terjadi jika penurunan target (cascading) dilakukan dengan disiplin.",
+      b: "Moderat: Alignment hanya terjadi jika penurunan target (cascading) dilakukan dengan disiplin.",
       scoreB: 3
     },
     {
       aspect: "Akuntabilitas Individu",
-      a: "Moderat → Sebagian nilai individu ditentukan oleh faktor kolektif/perusahaan.",
+      a: "Moderat: Sebagian nilai individu ditentukan oleh faktor kolektif/perusahaan.",
       scoreA: 3,
-      b: "Kuat → Seluruh nilai berasal dari target yang berada dalam kendali jabatan individu.",
+      b: "Kuat: Seluruh nilai berasal dari target yang berada dalam kendali jabatan individu.",
       scoreB: 5
     },
     {
       aspect: "Risiko Free Rider",
-      a: "Lemah → Individu kontribusi rendah tetap bisa dapat nilai baik jika kinerja korporat tinggi.",
+      a: "Lemah: Individu kontribusi rendah tetap bisa dapat nilai baik jika kinerja korporat tinggi.",
       scoreA: 2,
-      b: "Kuat → Tidak ada komponen kolektif, individu tidak dapat bergantung pada capaian pihak lain.",
+      b: "Kuat: Tidak ada komponen kolektif, individu tidak dapat bergantung pada capaian pihak lain.",
       scoreB: 4
     },
     {
       aspect: "Diferensiasi Kinerja",
-      a: "Moderat → Karena ada komponen nilai yang sama, rentang nilai antar individu menyempit.",
+      a: "Moderat: Karena ada komponen nilai yang sama, rentang nilai antar individu menyempit.",
       scoreA: 3,
-      b: "Kuat → Nilai sepenuhnya ditentukan capaian masing-masing individu, performa lebih tajam.",
+      b: "Kuat: Nilai sepenuhnya ditentukan capaian masing-masing individu, performa lebih tajam.",
       scoreB: 5
     },
     {
-      aspect: "Kolaborasi",
-      a: "Kuat → Seluruh karyawan terdorong secara sistemik untuk mencapai hasil bersama.",
+      aspect: "Sinergi & Kolaborasi",
+      a: "Kuat: Seluruh karyawan terdorong secara sistemik untuk mencapai hasil bersama.",
       scoreA: 5,
-      b: "Moderat → Fokus pada target masing-masing unit dapat mengurangi kepedulian lintas fungsi.",
+      b: "Moderat: Fokus pada target masing-masing unit dapat mengurangi kepedulian lintas fungsi.",
       scoreB: 3
     }
   ];
@@ -1401,68 +2278,71 @@ function SlideProConOptions() {
   const totalB = data.reduce((acc, curr) => acc + curr.scoreB, 0);
 
   return (
-    <div className="slide" style={{ padding: "0.8rem 3rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.3rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
           <em>Decision Matrix: Opsi A vs Opsi B</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "0.9rem", fontWeight: 600 }}>Criteria-based scoring untuk pemilihan desain PMS global</p>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Criteria-based scoring untuk pemilihan desain PMS global</p>
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        style={{ flex: 1, background: "#fff", borderRadius: "16px", border: "1px solid #d1d9e0", overflow: "hidden", boxShadow: "0 15px 40px rgba(0,0,0,0.06)" }}
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        style={{ flex: 1, background: "#fff", borderRadius: "24px", border: "1px solid #e2e8f0", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.04)" }}
       >
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.82rem", color: "#2c3e50" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem" }}>
           <thead>
-            <tr style={{ background: "linear-gradient(90deg, #1a3a3a 0%, #2c5353 100%)", color: "#fff" }}>
-              <th style={{ padding: "10px 15px", textAlign: "left", width: "15%", borderRight: "1px solid rgba(255,255,255,0.1)", fontSize: "0.85rem", fontWeight: 800 }}>Aspek Strategis</th>
-              <th style={{ padding: "10px 15px", textAlign: "center", width: "35%", borderRight: "1px solid rgba(255,255,255,0.1)", fontSize: "0.85rem", fontWeight: 800 }}>Opsi A (Dengan KPI Bersama)</th>
-              <th style={{ padding: "10px 15px", textAlign: "center", width: "7.5%", borderRight: "1px solid rgba(255,255,255,0.1)", fontSize: "0.85rem", fontWeight: 800 }}>Skor</th>
-              <th style={{ padding: "10px 15px", textAlign: "center", width: "35%", borderRight: "1px solid rgba(255,255,255,0.1)", fontSize: "0.85rem", fontWeight: 800 }}>Opsi B (Tanpa KPI Bersama)</th>
-              <th style={{ padding: "10px 15px", textAlign: "center", width: "7.5%", fontSize: "0.85rem", fontWeight: 800 }}>Skor</th>
+            <tr style={{ background: "#1a5276", color: "#fff" }}>
+              <th style={{ padding: "1.2rem 1.5rem", textAlign: "left", width: "18%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Aspek Strategis</th>
+              <th style={{ padding: "1.2rem 1.5rem", textAlign: "center", width: "33%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Opsi A (Dengan KPI Bersama)</th>
+              <th style={{ padding: "1.2rem", textAlign: "center", width: "8%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Skor</th>
+              <th style={{ padding: "1.2rem 1.5rem", textAlign: "center", width: "33%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Opsi B (Tanpa KPI Bersama)</th>
+              <th style={{ padding: "1.2rem", textAlign: "center", width: "8%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Skor</th>
             </tr>
           </thead>
           <tbody>
             {data.map((row, i) => (
-              <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f8fafc" }}>
-                <td style={{ padding: "10px 15px", fontWeight: 900, borderRight: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0", color: "#1a5276" }}>{row.aspect}</td>
-                <td style={{ padding: "10px 15px", borderRight: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0", lineHeight: 1.4 }}>
-                  <div dangerouslySetInnerHTML={{ __html: row.a.replace("→", "<span style='color: #27ae60; font-weight: 800; font-size: 0.9rem;'> → </span>") }} />
+              <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f8fafc", transition: "all 0.2s" }}>
+                <td style={{ padding: "1rem 1.5rem", fontWeight: 800, color: "#1a5276", borderBottom: "1px solid #eff2f5" }}>{row.aspect}</td>
+                <td style={{ padding: "1rem 1.5rem", borderBottom: "1px solid #eff2f5", color: "#475569", lineHeight: 1.5, textAlign: "center" }}>{row.a}</td>
+                <td style={{ padding: "1rem", borderBottom: "1px solid #eff2f5", textAlign: "center" }}>
+                  <div style={{ background: row.scoreA >= 4 ? "#dcfce7" : "#f1f5f9", color: row.scoreA >= 4 ? "#166534" : "#475569", width: "32px", height: "32px", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto", fontWeight: 900, fontSize: "1rem" }}>{row.scoreA}</div>
                 </td>
-                <td style={{ padding: "10px 15px", borderRight: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0", textAlign: "center", fontWeight: 900, fontSize: "1.1rem", color: row.scoreA >= 4 ? "#27ae60" : "#7f8c8d" }}>{row.scoreA}</td>
-                <td style={{ padding: "10px 15px", borderRight: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0", lineHeight: 1.4 }}>
-                  <div dangerouslySetInnerHTML={{ __html: row.b.replace("→", "<span style='color: #27ae60; font-weight: 800; font-size: 0.9rem;'> → </span>") }} />
+                <td style={{ padding: "1rem 1.5rem", borderBottom: "1px solid #eff2f5", color: "#475569", lineHeight: 1.5, textAlign: "center" }}>{row.b}</td>
+                <td style={{ padding: "1rem", borderBottom: "1px solid #eff2f5", textAlign: "center" }}>
+                  <div style={{ background: row.scoreB >= 4 ? "#dcfce7" : "#f1f5f9", color: row.scoreB >= 4 ? "#166534" : "#475569", width: "32px", height: "32px", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto", fontWeight: 900, fontSize: "1rem" }}>{row.scoreB}</div>
                 </td>
-                <td style={{ padding: "10px 15px", borderBottom: "1px solid #e2e8f0", textAlign: "center", fontWeight: 900, fontSize: "1.1rem", color: row.scoreB >= 4 ? "#27ae60" : "#7f8c8d" }}>{row.scoreB}</td>
               </tr>
             ))}
-            <tr style={{ background: "#f1f2f6" }}>
-              <td style={{ padding: "12px 15px", fontWeight: 900, color: "#2c3e50", textAlign: "right", borderRight: "1px solid #bdc3c7" }}>TOTAL SKOR</td>
-              <td style={{ padding: "12px 15px", borderRight: "1px solid #bdc3c7" }}></td>
-              <td style={{ padding: "12px 15px", borderRight: "1px solid #bdc3c7", textAlign: "center", fontWeight: 900, fontSize: "1.2rem", color: "#1a5276", background: "rgba(26, 82, 118, 0.1)" }}>{totalA}</td>
-              <td style={{ padding: "12px 15px", borderRight: "1px solid #bdc3c7" }}></td>
-              <td style={{ padding: "12px 15px", textAlign: "center", fontWeight: 900, fontSize: "1.2rem", color: "#1a5276", background: "rgba(26, 82, 118, 0.1)" }}>{totalB}</td>
+            <tr style={{ background: "rgba(26, 82, 118, 0.03)" }}>
+              <td style={{ padding: "1.2rem 1.5rem", fontWeight: 900, color: "#1a5276", textAlign: "right", letterSpacing: "1px" }}>TOTAL SKOR</td>
+              <td colSpan={1}></td>
+              <td style={{ padding: "1.2rem", textAlign: "center" }}>
+                <div style={{ background: "#1a5276", color: "#fff", padding: "8px 15px", borderRadius: "10px", fontWeight: 900, fontSize: "1.1rem", border: "2px solid #fff", boxShadow: "0 4px 12px rgba(26,82,118,0.2)" }}>{totalA}</div>
+              </td>
+              <td colSpan={1}></td>
+              <td style={{ padding: "1.2rem", textAlign: "center" }}>
+                <div style={{ background: "#475569", color: "#fff", padding: "8px 15px", borderRadius: "10px", fontWeight: 900, fontSize: "1.1rem", border: "2px solid #fff" }}>{totalB}</div>
+              </td>
             </tr>
           </tbody>
         </table>
       </motion.div>
 
-      {/* Strategic Insight Summary */}
-      <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-        <div style={{ flex: 1, background: "rgba(230, 126, 34, 0.05)", border: "1px solid rgba(230, 126, 34, 0.2)", borderRadius: "10px", padding: "10px 15px", display: "flex", gap: "10px", alignItems: "center" }}>
-          <div style={{ background: "#e67e22", color: "#fff", padding: "6px", borderRadius: "50%", display: "flex" }}><Settings size={18} /></div>
-          <div style={{ fontSize: "0.75rem", fontWeight: 600, color: "#d35400" }}>
-            <span style={{ fontWeight: 900 }}>REKOMENDASI HYBRID:</span> Perusahaan global sering menerapkan KPI Bersama tinggi di level Eksekutif, namun dominan Individu di level Operasional.
-          </div>
+      <div style={{ display: "flex", gap: "1.5rem", marginTop: "1.5rem" }}>
+        <div style={{ flex: 1, background: "rgba(14, 102, 85, 0.05)", border: "1px solid rgba(14, 102, 85, 0.2)", borderRadius: "16px", padding: "1rem 1.5rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+          <div style={{ background: "#0e6655", color: "#fff", padding: "8px", borderRadius: "12px" }}><Award size={20} /></div>
+          <p style={{ fontSize: "0.85rem", color: "#0e6655", fontWeight: 600, margin: 0 }}>
+            <strong>KESIMPULAN:</strong> Opsi B unggul pada akuntabilitas & diferensiasi (Meritocracy), Opsi A unggul pada alignment & sinergi (Collaboration).
+          </p>
         </div>
-        <div style={{ flex: 1, background: "rgba(39, 174, 96, 0.05)", border: "1px solid rgba(39, 174, 96, 0.2)", borderRadius: "10px", padding: "10px 15px", display: "flex", gap: "10px", alignItems: "center" }}>
-          <div style={{ background: "#27ae60", color: "#fff", padding: "6px", borderRadius: "50%", display: "flex" }}><Target size={18} /></div>
-          <div style={{ fontSize: "0.75rem", fontWeight: 600, color: "#1e8449" }}>
-            <span style={{ fontWeight: 900 }}>KESIMPULAN MATRIX:</span> Opsi B unggul pada akuntabilitas & diferensiasi (Meritocracy), Opsi A unggul pada alignment & sinergi (Collaboration).
-          </div>
+        <div style={{ flex: 1, background: "rgba(217, 119, 6, 0.05)", border: "1px solid rgba(217, 119, 6, 0.2)", borderRadius: "16px", padding: "1rem 1.5rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+          <div style={{ background: "#d97706", color: "#fff", padding: "8px", borderRadius: "12px" }}><TrendingUp size={20} /></div>
+          <p style={{ fontSize: "0.85rem", color: "#92400e", fontWeight: 600, margin: 0 }}>
+            <strong>STRATEGIC INSIGHT:</strong> Disarankan pendekatan Hybrid: KPI Bersama tinggi untuk Eksekutif, dominan Individu untuk Operasional.
+          </p>
         </div>
       </div>
       <SlideFooter />
@@ -1477,39 +2357,37 @@ function SlideProConRating() {
   const data = [
     {
       aspek: "Keadilan Persepsi",
-      a: "Moderat → Berpotensi dianggap tidak adil secara individual jika kuota top performer sudah penuh.",
+      a: "Moderat: Berpotensi dianggap tidak adil secara individual jika kuota top performer sudah penuh.",
       scoreA: 3,
-      b: "Kuat → Lebih terasa adil personal karena rating murni berdasarkan capaian tanpa pembatasan.",
+      b: "Kuat: Lebih terasa adil personal karena rating murni berdasarkan capaian tanpa pembatasan.",
       scoreB: 5
     },
     {
       aspek: "Motivasi Karyawan",
-      aspekLabel: "Motivasi",
-      a: "Kuat → Mendorong individu berlomba menjadi top performer dalam budaya kompetitif.",
+      a: "Kuat: Mendorong individu berlomba menjadi top performer dalam budaya kompetitif.",
       scoreA: 4,
-      b: "Moderat → Kolaboratif secara natural, namun berisiko munculnya \"zona nyaman\".",
+      b: "Moderat: Kolaboratif secara natural, namun berisiko munculnya \"zona nyaman\".",
       scoreB: 3
     },
     {
       aspek: "Risiko Rating Inflation",
-      aspekLabel: "Inflation Control",
-      a: "Sangat Kuat → Distribusi menjaga agar tidak terjadi penumpukan nilai tinggi (budget control).",
+      a: "Sangat Kuat: Distribusi menjaga agar tidak terjadi penumpukan nilai tinggi (budget control).",
       scoreA: 5,
-      b: "Lemah → Tanpa kontrol distribusi, muncul lonjakan rating tinggi yang tidak terkendali.",
+      b: "Lemah: Tanpa kontrol distribusi, muncul lonjakan rating tinggi yang tidak terkendali.",
       scoreB: 2
     },
     {
       aspek: "Budaya Kerja",
-      a: "Sangat Kuat → Membentuk budaya meritocracy dan high-performance secara sistemik.",
+      a: "Sangat Kuat: Membentuk budaya meritocracy dan high-performance secara sistemik.",
       scoreA: 5,
-      b: "Moderat → Suasana harmonis namun berisiko standar performa perlahan menurun.",
+      b: "Moderat: Suasana harmonis namun berisiko standar performa perlahan menurun.",
       scoreB: 3
     },
     {
       aspek: "Keterkaitan Reward",
-      a: "Sangat Kuat → Diferensiasi bonus dan talent pool menjadi sangat tajam dan objektif.",
+      a: "Sangat Kuat: Diferensiasi bonus dan talent pool menjadi sangat tajam dan objektif.",
       scoreA: 5,
-      b: "Lemah → Jika banyak yang mendapat rating tinggi, pembagian reward kurang terdiferensiasi.",
+      b: "Lemah: Jika banyak yang mendapat rating tinggi, pembagian reward kurang terdiferensiasi.",
       scoreB: 2
     }
   ];
@@ -1518,86 +2396,76 @@ function SlideProConRating() {
   const totalB = data.reduce((acc, curr) => acc + curr.scoreB, 0);
 
   return (
-    <div className="slide" style={{ padding: "0.8rem 3rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.3rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
           <em>Decision Matrix: Rating Distribusi</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "0.9rem", fontWeight: 600 }}>Objektivitas pemilihan mekanisme diferensiasi performa</p>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Objektivitas pemilihan mekanisme diferensiasi performa</p>
       </div>
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          style={{ flex: 1, background: "#fff", borderRadius: "16px", border: "1px solid #d1d9e0", overflow: "hidden", boxShadow: "0 15px 40px rgba(0,0,0,0.06)" }}
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          style={{ flex: 1, background: "#fff", borderRadius: "24px", border: "1px solid #e2e8f0", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.04)" }}
         >
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.82rem", color: "#2c3e50" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem" }}>
             <thead>
-              <tr style={{ background: "linear-gradient(90deg, #21618c 0%, #2e86c1 100%)", color: "#fff" }}>
-                <th style={{ padding: "10px 15px", textAlign: "left", width: "15%", fontSize: "0.85rem", fontWeight: 800, borderRight: "1px solid rgba(255,255,255,0.1)" }}>Aspek Strategis</th>
-                <th style={{ padding: "10px 15px", textAlign: "center", width: "35%", fontSize: "0.85rem", fontWeight: 800, borderRight: "1px solid rgba(255,255,255,0.1)" }}>Opsi A (Dengan Distribusi)</th>
-                <th style={{ padding: "10px 15px", textAlign: "center", width: "7.5%", fontSize: "0.85rem", fontWeight: 800, borderRight: "1px solid rgba(255,255,255,0.1)" }}>Skor</th>
-                <th style={{ padding: "10px 15px", textAlign: "center", width: "35%", fontSize: "0.85rem", fontWeight: 800, borderRight: "1px solid rgba(255,255,255,0.1)" }}>Opsi B (Tanpa Distribusi)</th>
-                <th style={{ padding: "10px 15px", textAlign: "center", width: "7.5%", fontSize: "0.85rem", fontWeight: 800 }}>Skor</th>
+              <tr style={{ background: "#1a5276", color: "#fff" }}>
+                <th style={{ padding: "1.2rem 1.5rem", textAlign: "left", width: "18%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Aspek Strategis</th>
+                <th style={{ padding: "1.2rem 1.5rem", textAlign: "center", width: "33%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Opsi A (Dengan Distribusi)</th>
+                <th style={{ padding: "1.2rem", textAlign: "center", width: "8%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Skor</th>
+                <th style={{ padding: "1.2rem 1.5rem", textAlign: "center", width: "33%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Opsi B (Tanpa Distribusi)</th>
+                <th style={{ padding: "1.2rem", textAlign: "center", width: "8%", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Skor</th>
               </tr>
             </thead>
             <tbody>
               {data.map((row, i) => (
-                <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f0f7ff" }}>
-                  <td style={{ padding: "10px 15px", fontWeight: 900, borderRight: "1px solid #d1d9e0", borderBottom: "1px solid #d1d9e0", color: "#21618c" }}>{row.aspek}</td>
-                  <td style={{ padding: "10px 15px", borderRight: "1px solid #d1d9e0", borderBottom: "1px solid #d1d9e0", lineHeight: 1.4 }}>
-                    <div dangerouslySetInnerHTML={{ __html: row.a.replace("→", "<span style='color: #27ae60; font-weight: 800; font-size: 0.9rem;'> → </span>") }} />
+                <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f8fafc", transition: "all 0.2s" }}>
+                  <td style={{ padding: "1rem 1.5rem", fontWeight: 800, color: "#1a5276", borderBottom: "1px solid #eff2f5" }}>{row.aspek}</td>
+                  <td style={{ padding: "1rem 1.5rem", borderBottom: "1px solid #eff2f5", color: "#475569", lineHeight: 1.5, textAlign: "center" }}>{row.a}</td>
+                  <td style={{ padding: "1rem", borderBottom: "1px solid #eff2f5", textAlign: "center" }}>
+                    <div style={{ background: row.scoreA >= 4 ? "#dcfce7" : "#f1f5f9", color: row.scoreA >= 4 ? "#166534" : "#475569", width: "32px", height: "32px", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto", fontWeight: 900, fontSize: "1rem" }}>{row.scoreA}</div>
                   </td>
-                  <td style={{ padding: "10px 15px", borderRight: "1px solid #d1d9e0", borderBottom: "1px solid #d1d9e0", textAlign: "center", fontWeight: 900, fontSize: "1.1rem", color: row.scoreA >= 4 ? "#27ae60" : "#7f8c8d" }}>{row.scoreA}</td>
-                  <td style={{ padding: "10px 15px", borderRight: "1px solid #d1d9e0", borderBottom: "1px solid #d1d9e0", lineHeight: 1.4 }}>
-                    <div dangerouslySetInnerHTML={{ __html: row.b.replace("→", "<span style='color: #27ae60; font-weight: 800; font-size: 0.9rem;'> → </span>") }} />
+                  <td style={{ padding: "1rem 1.5rem", borderBottom: "1px solid #eff2f5", color: "#475569", lineHeight: 1.5, textAlign: "center" }}>{row.b}</td>
+                  <td style={{ padding: "1rem", borderBottom: "1px solid #eff2f5", textAlign: "center" }}>
+                    <div style={{ background: row.scoreB >= 4 ? "#dcfce7" : "#f1f5f9", color: row.scoreB >= 4 ? "#166534" : "#475569", width: "32px", height: "32px", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto", fontWeight: 900, fontSize: "1rem" }}>{row.scoreB}</div>
                   </td>
-                  <td style={{ padding: "10px 15px", borderBottom: "1px solid #d1d9e0", textAlign: "center", fontWeight: 900, fontSize: "1.1rem", color: row.scoreB >= 4 ? "#27ae60" : "#7f8c8d" }}>{row.scoreB}</td>
                 </tr>
               ))}
-              <tr style={{ background: "#e9f2fb" }}>
-                <td style={{ padding: "12px 15px", fontWeight: 900, color: "#2c3e50", textAlign: "right", borderRight: "1px solid #bdc3c7" }}>TOTAL SKOR</td>
-                <td style={{ padding: "12px 15px", borderRight: "1px solid #bdc3c7" }}></td>
-                <td style={{ padding: "12px 15px", borderRight: "1px solid #bdc3c7", textAlign: "center", fontWeight: 900, fontSize: "1.2rem", color: "#21618c", background: "rgba(33, 97, 140, 0.1)" }}>{totalA}</td>
-                <td style={{ padding: "12px 15px", borderRight: "1px solid #bdc3c7" }}></td>
-                <td style={{ padding: "12px 15px", textAlign: "center", fontWeight: 900, fontSize: "1.2rem", color: "#21618c", background: "rgba(33, 97, 140, 0.1)" }}>{totalB}</td>
+              <tr style={{ background: "rgba(26, 82, 118, 0.03)" }}>
+                <td style={{ padding: "1.2rem 1.5rem", fontWeight: 900, color: "#1a5276", textAlign: "right", letterSpacing: "1px" }}>TOTAL SKOR</td>
+                <td colSpan={1}></td>
+                <td style={{ padding: "1.2rem", textAlign: "center" }}>
+                  <div style={{ background: "#1a5276", color: "#fff", padding: "8px 15px", borderRadius: "10px", fontWeight: 900, fontSize: "1.1rem", border: "2px solid #fff", boxShadow: "0 4px 12px rgba(26,82,118,0.2)" }}>{totalA}</div>
+                </td>
+                <td colSpan={1}></td>
+                <td style={{ padding: "1.2rem", textAlign: "center" }}>
+                  <div style={{ background: "#475569", color: "#fff", padding: "8px 15px", borderRadius: "10px", fontWeight: 900, fontSize: "1.1rem", border: "2px solid #fff" }}>{totalB}</div>
+                </td>
               </tr>
             </tbody>
           </table>
         </motion.div>
 
         {/* Strategic Insight Summary */}
-        <div style={{ display: "flex", gap: "1rem" }}>
-          <div style={{ flex: 1, background: "rgba(231, 76, 60, 0.05)", border: "1px solid rgba(231, 76, 60, 0.2)", borderRadius: "10px", padding: "10px 15px", display: "flex", gap: "10px", alignItems: "center" }}>
-            <div style={{ background: "#e74c3c", color: "#fff", padding: "6px", borderRadius: "50%", display: "flex" }}><TrendingUp size={18} /></div>
-            <div style={{ fontSize: "0.75rem", fontWeight: 600, color: "#c0392b" }}>
-              <span style={{ fontWeight: 900 }}>RISIKO INFLASI:</span> Opsi B memiliki risiko tinggi terjadi "Rating Inflation" dimana &gt;80% karyawan mendapat skor tinggi, merusak akurasi data talent korporat.
-            </div>
+        <div style={{ display: "flex", gap: "1.5rem", marginTop: "1rem" }}>
+          <div style={{ flex: 1, background: "rgba(220, 38, 38, 0.05)", border: "1px solid rgba(220, 38, 38, 0.2)", borderRadius: "16px", padding: "1rem 1.5rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+            <div style={{ background: "#dc2626", color: "#fff", padding: "8px", borderRadius: "12px" }}><TrendingUp size={20} /></div>
+            <p style={{ fontSize: "0.85rem", color: "#991b1b", fontWeight: 600, margin: 0 }}>
+              <strong>RISIKO INFLASI:</strong> Opsi B berisiko tinggi terjadi "Rating Inflation" (&gt;80% skor tinggi), merusak akurasi data talent korporat.
+            </p>
           </div>
-          <div style={{ flex: 1, background: "rgba(33, 97, 140, 0.05)", border: "1px solid rgba(33, 97, 140, 0.2)", borderRadius: "10px", padding: "10px 15px", display: "flex", gap: "10px", alignItems: "center" }}>
-            <div style={{ background: "#21618c", color: "#fff", padding: "6px", borderRadius: "50%", display: "flex" }}><Award size={18} /></div>
-            <div style={{ fontSize: "0.75rem", fontWeight: 600, color: "#1b4f72" }}>
-              <span style={{ fontWeight: 900 }}>KESIMPULAN:</span> Opsi A unggul signifikan (22 vs 15) untuk membangun <span style={{ fontWeight: 800 }}>High Performance Culture</span> dan diferensiasi reward yang tajam.
-            </div>
+          <div style={{ flex: 1, background: "rgba(26, 82, 118, 0.05)", border: "1px solid rgba(26, 82, 118, 0.2)", borderRadius: "16px", padding: "1rem 1.5rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+            <div style={{ background: "#1a5276", color: "#fff", padding: "8px", borderRadius: "12px" }}><Award size={20} /></div>
+            <p style={{ fontSize: "0.85rem", color: "#1a5276", fontWeight: 600, margin: 0 }}>
+              <strong>KESIMPULAN:</strong> Opsi A (22 vs 15) unggul untuk membangun <strong>High Performance Culture</strong> dan diferensiasi reward yang tajam.
+            </p>
           </div>
         </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        style={{ background: "#f8fbff", borderRadius: "12px", padding: "15px", border: "2px dashed #2e86c1", boxShadow: "0 4px 15px rgba(46,134,193,0.1)", marginTop: "1rem" }}
-      >
-        <div style={{ fontSize: "0.9rem", fontWeight: 900, color: "#21618c", marginBottom: "8px", textTransform: "uppercase" }}>Requirement Tanpa Rating Distribusi:</div>
-        <ol style={{ fontSize: "0.85rem", color: "#2c3e50", paddingLeft: "2rem", lineHeight: 1.5, fontWeight: 600 }}>
-          <li>Penyesuaian kategori skor dalam penetapan klasifikasi rating</li>
-          <li>Penetapan klasifikasi jabatan sesuai fungsi Business Unit (BU) dan Supporting Unit (SU)</li>
-          <li>Perhitungan persentase merit increment pada setiap klasifikasi rating</li>
-        </ol>
-      </motion.div>
       <SlideFooter />
     </div>
   );
@@ -1608,72 +2476,117 @@ function SlideProConRating() {
    ============================= */
 function SlidePriorityPool() {
   const divisions = [
-    { name: "Divisi Operasional SDM", color: "#2e86c1", items: [{ n: "Ali", l: "BOD-1", s: "95,19" }, { n: "Wahyu", l: "BOD-2", s: "95,28" }, { n: "Zaini", l: "BOD-3", s: "90,57" }] },
-    { name: "Divisi Strategi & Pengembangan SDM", color: "#21618c", items: [{ n: "Rezky", l: "BOD-1", s: "90,78" }, { n: "Bakhri", l: "BOD-2", s: "90,34" }, { n: "Kintan", l: "BOD-3", s: "90,89" }] },
-    { name: "Divisi Pengadaan & Umum", color: "#2980b9", items: [{ n: "Yusuf", l: "BOD-1", s: "90,53" }, { n: "Deddy", l: "BOD-2", s: "90,38" }, { n: "Claro", l: "BOD-3", s: "95,71" }] }
+    { name: "Divisi Operasional SDM", color: "#1a5276", items: [{ n: "Ali", l: "BOD-1", s: "95,19" }, { n: "Wahyu", l: "BOD-2", s: "95,28" }, { n: "Zaini", l: "BOD-3", s: "90,57" }] },
+    { name: "Divisi Strategi & Pengembangan SDM", color: "#065f46", items: [{ n: "Rezky", l: "BOD-1", s: "90,78" }, { n: "Bakhri", l: "BOD-2", s: "90,34" }, { n: "Kintan", l: "BOD-3", s: "90,89" }] },
+    { name: "Divisi Pengadaan & Umum", color: "#d97706", items: [{ n: "Yusuf", l: "BOD-1", s: "90,53" }, { n: "Deddy", l: "BOD-2", s: "90,38" }, { n: "Claro", l: "BOD-3", s: "95,71" }] }
   ];
 
   return (
-    <div className="slide" style={{ padding: "0.8rem 3rem 1.5rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.3rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
           <em>Ilustrasi Priority Pool & Klasifikasi Rating</em>
         </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Mekanisme Penentuan Rating Berbasis Level Jabatan</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2.5rem" }}>
         {/* Tables Row: Strategic Inputs */}
         <div style={{ display: "flex", gap: "1.5rem" }}>
           {divisions.map((div, i) => (
-            <div key={i} style={{ flex: 1, border: "1px solid #d1d9e0", borderRadius: "8px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.05)" }}>
-              <div style={{ background: "#fff", padding: "10px", textAlign: "center", fontSize: "0.9rem", fontWeight: 800, borderBottom: "1px solid #d1d9e0", color: div.color }}>{div.name}</div>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              style={{ flex: 1, border: "1px solid #e2e8f0", borderRadius: "20px", overflow: "hidden", background: "#fff", boxShadow: "0 10px 25px rgba(0,0,0,0.03)" }}
+            >
+              <div style={{ background: div.color, padding: "12px", textAlign: "center", fontSize: "0.85rem", fontWeight: 900, color: "#fff", letterSpacing: "0.5px" }}>{div.name}</div>
               <table style={{ width: "100%", fontSize: "0.8rem", borderCollapse: "collapse" }}>
-                <thead style={{ background: div.color, color: "#fff" }}>
-                  <tr>
-                    <th style={{ padding: "8px" }}>No</th>
-                    <th style={{ padding: "8px", textAlign: "left" }}>Nama</th>
-                    <th style={{ padding: "8px" }}>Level</th>
-                    <th style={{ padding: "8px" }}>Score</th>
+                <thead>
+                  <tr style={{ background: "rgba(241, 245, 249, 1)", color: "#1e293b" }}>
+                    <th style={{ padding: "10px", width: "15%" }}>No</th>
+                    <th style={{ padding: "10px", textAlign: "left" }}>Nama</th>
+                    <th style={{ padding: "10px" }}>Level</th>
+                    <th style={{ padding: "10px" }}>Score</th>
                   </tr>
                 </thead>
                 <tbody>
                   {div.items.map((item, idx) => (
-                    <tr key={idx} style={{ background: idx % 2 === 0 ? "#f8f9fa" : "#fff" }}>
-                      <td style={{ textAlign: "center", padding: "10px 8px", border: "1px solid #d1d9e0", fontWeight: 600 }}>{idx + 1}</td>
-                      <td style={{ padding: "10px 8px", border: "1px solid #d1d9e0" }}>{item.n}</td>
-                      <td style={{ textAlign: "center", padding: "10px 8px", border: "1px solid #d1d9e0" }}>{item.l}</td>
-                      <td style={{ textAlign: "center", padding: "10px 8px", border: "1px solid #d1d9e0", fontWeight: 700 }}>{item.s}</td>
+                    <tr key={idx} style={{ borderBottom: "1px solid #f1f5f9" }}>
+                      <td style={{ textAlign: "center", padding: "10px", fontWeight: 700, color: "#64748b" }}>{idx + 1}</td>
+                      <td style={{ padding: "10px", fontWeight: 600, color: "#1e293b" }}>{item.n}</td>
+                      <td style={{ textAlign: "center", padding: "10px", color: "#64748b" }}>{item.l}</td>
+                      <td style={{ textAlign: "center", padding: "10px", fontWeight: 900, color: div.color }}>{item.s}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Pool Section: Central Logic */}
-        <div style={{ flex: 1, background: "linear-gradient(135deg, #f8f9fa 0%, #edf2f7 100%)", border: "1px solid #bdc3c7", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "space-around", padding: "1.2rem", position: "relative", boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)" }}>
-          <div style={{ position: "absolute", top: "10px", right: "20px", opacity: 0.05 }}><Layers size={50} /></div>
+        <div style={{
+          flex: 1,
+          background: "rgba(248, 250, 252, 0.8)",
+          backdropFilter: "blur(10px)",
+          border: "2px dashed #cbd5e1",
+          borderRadius: "32px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+          padding: "2rem",
+          position: "relative",
+          boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)"
+        }}>
+          <div style={{ position: "absolute", top: "20px", right: "30px", opacity: 0.1 }}><Layers size={60} color="#1a5276" /></div>
 
           {[
-            { l: "BOD-1", c: "#1e8449", members: [{ n: "Rezky", s: "90,78", i: 2 }, { n: "Yusuf", s: "90,53", i: 3 }, { n: "Ali", s: "95,19", i: 1 }] },
-            { l: "BOD-2", c: "#f39c12", members: [{ n: "Wahyu", s: "95,28", i: 1 }, { n: "Deddy", s: "90,38", i: 2 }, { n: "Bakhri", s: "90,34", i: 3 }] },
-            { l: "BOD-3", c: "#2e86c1", members: [{ n: "Zaini", s: "90,57", i: 3 }, { n: "Claro", s: "95,71", i: 1 }, { n: "Kintan", s: "90,89", i: 2 }] }
+            { l: "BOD-1 POOL", c: "#065f46", members: [{ n: "Rezky", s: "90,78", i: 2 }, { n: "Yusuf", s: "90,53", i: 3 }, { n: "Ali", s: "95,19", i: 1 }] },
+            { l: "BOD-2 POOL", c: "#d97706", members: [{ n: "Wahyu", s: "95,28", i: 1 }, { n: "Deddy", s: "90,38", i: 2 }, { n: "Bakhri", s: "90,34", i: 3 }] },
+            { l: "BOD-3 POOL", c: "#1a5276", members: [{ n: "Zaini", s: "90,57", i: 3 }, { n: "Claro", s: "95,71", i: 1 }, { n: "Kintan", s: "90,89", i: 2 }] }
           ].map((pool, i) => (
             <motion.div
               key={i}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: i * 0.2 }}
-              style={{ width: "160px", height: "160px", borderRadius: "50%", background: pool.c, border: "3px solid #fff", color: "#fff", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: "0 10px 25px rgba(0,0,0,0.15)", position: "relative" }}
+              transition={{ delay: i * 0.2 + 0.5 }}
+              style={{
+                width: "200px",
+                height: "200px",
+                borderRadius: "50%",
+                background: `linear-gradient(135deg, ${pool.c} 0%, ${pool.c}dd 100%)`,
+                border: "4px solid #fff",
+                color: "#fff",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+                position: "relative"
+              }}
             >
-              <div style={{ position: "absolute", top: "-12px", background: "#fff", color: pool.c, fontSize: "0.8rem", fontWeight: 900, padding: "3px 12px", borderRadius: "20px", border: `2px solid ${pool.c}`, boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}>{pool.l}</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: "center", width: "100%", padding: "0 8px" }}>
+              <div style={{
+                position: "absolute",
+                top: "-15px",
+                background: "#fff",
+                color: pool.c,
+                fontSize: "0.85rem",
+                fontWeight: 900,
+                padding: "4px 16px",
+                borderRadius: "30px",
+                border: `2px solid ${pool.c}`,
+                boxShadow: "0 8px 16px rgba(0,0,0,0.1)"
+              }}>
+                {pool.l}
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center", width: "100%", padding: "0 15px" }}>
                 {pool.members.map((m, idx) => (
-                  <div key={idx} style={{ background: "rgba(255,255,255,0.9)", color: "#1a202c", fontSize: "0.65rem", padding: "4px 10px", borderRadius: "8px", textAlign: "center", width: "90%", boxShadow: "0 2px 4px rgba(0,0,0,0.05)" }}>
-                    <div style={{ fontWeight: 800 }}>{m.n} <span style={{ color: pool.c }}>({m.i})</span></div>
-                    <div style={{ fontSize: "0.55rem", opacity: 0.8 }}>Score: {m.s}</div>
+                  <div key={idx} style={{ background: "rgba(255,255,255,0.95)", color: "#1e293b", fontSize: "0.7rem", padding: "6px 12px", borderRadius: "10px", textAlign: "center", width: "100%", boxShadow: "0 4px 8px rgba(0,0,0,0.05)" }}>
+                    <div style={{ fontWeight: 900 }}>{m.n} <span style={{ color: pool.c }}>({m.i})</span></div>
+                    <div style={{ fontSize: "0.6rem", opacity: 0.7 }}>Score: {m.s}</div>
                   </div>
                 ))}
               </div>
@@ -1688,23 +2601,23 @@ function SlidePriorityPool() {
             { items: [{ n: "Wahyu", l: "BOD-2", r: "RD-1" }, { n: "Deddy", l: "BOD-2", r: "RD-2" }, { n: "Bakhri", l: "BOD-2", r: "RD-3" }] },
             { items: [{ n: "Claro", l: "BOD-3", r: "RD-1" }, { n: "Kintan", l: "BOD-3", r: "RD-2" }, { n: "Zaini", l: "BOD-3", r: "RD-3" }] }
           ].map((res, i) => (
-            <div key={i} style={{ flex: 1, border: "1px solid #dee2e6", borderRadius: "8px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.05)" }}>
+            <div key={i} style={{ flex: 1, border: "1px solid #e2e8f0", borderRadius: "16px", overflow: "hidden", background: "#fff", boxShadow: "0 10px 25px rgba(0,0,0,0.03)" }}>
               <table style={{ width: "100%", fontSize: "0.8rem", borderCollapse: "collapse" }}>
-                <thead style={{ background: "#4a3399", color: "#fff" }}>
+                <thead style={{ background: "#1e293b", color: "#fff" }}>
                   <tr>
-                    <th style={{ padding: "8px" }}>No</th>
-                    <th style={{ padding: "8px", textAlign: "left" }}>Nama</th>
-                    <th style={{ padding: "8px" }}>Level</th>
-                    <th style={{ padding: "8px" }}>Rating</th>
+                    <th style={{ padding: "10px" }}>No</th>
+                    <th style={{ padding: "10px", textAlign: "left" }}>Nama</th>
+                    <th style={{ padding: "10px" }}>Level</th>
+                    <th style={{ padding: "10px" }}>Final Rating</th>
                   </tr>
                 </thead>
-                <tbody style={{ background: "#fff" }}>
+                <tbody>
                   {res.items.map((item, idx) => (
-                    <tr key={idx} style={{ background: idx % 2 === 0 ? "#f4f4ff" : "#fff" }}>
-                      <td style={{ textAlign: "center", padding: "8px", border: "1px solid #dee2e6", fontWeight: 600 }}>{idx + 1}</td>
-                      <td style={{ padding: "8px", border: "1px solid #dee2e6" }}>{item.n}</td>
-                      <td style={{ textAlign: "center", padding: "8px", border: "1px solid #dee2e6" }}>{item.l}</td>
-                      <td style={{ textAlign: "center", padding: "8px", border: "1px solid #dee2e6", fontWeight: 800, color: "#4a3399" }}>{item.r}</td>
+                    <tr key={idx} style={{ borderBottom: "1px solid #f1f5f9" }}>
+                      <td style={{ textAlign: "center", padding: "10px", fontWeight: 700, color: "#64748b" }}>{idx + 1}</td>
+                      <td style={{ padding: "10px", fontWeight: 700, color: "#1e293b" }}>{item.n}</td>
+                      <td style={{ textAlign: "center", padding: "10px", color: "#64748b" }}>{item.l}</td>
+                      <td style={{ textAlign: "center", padding: "10px", fontWeight: 900, color: "#1a5276" }}>{item.r}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1723,125 +2636,134 @@ function SlidePriorityPool() {
    ============================= */
 function SlideTimeline() {
   return (
-    <div className="slide" style={{ padding: "0.8rem 2.5rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.6rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.2rem" }}>
-          <em>Timeline</em>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
+          <em>Roadmap & Timeline Implementasi</em>
         </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Siklus Penilaian 2025 & Transisi ke APMS 2.0 (2026-2027)</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", gap: "1.5rem", height: "100%", overflow: "hidden" }}>
-        {/* Left Table: 2025 */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "15px" }}>
-          <div style={{ background: "linear-gradient(90deg, #f39c12 0%, #e67e22 100%)", color: "#fff", padding: "10px", borderRadius: "10px", fontSize: "0.9rem", fontWeight: 900, textAlign: "center", textTransform: "uppercase", letterSpacing: "1px" }}>
+      <div style={{ flex: 1, display: "flex", gap: "2rem", height: "100%", overflow: "hidden" }}>
+        {/* Left Column: 2025 Closure */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+          <div style={{
+            background: "linear-gradient(90deg, #f59e0b 0%, #d97706 100%)",
+            color: "#fff",
+            padding: "12px",
+            borderRadius: "16px",
+            fontSize: "1rem",
+            fontWeight: 900,
+            textAlign: "center",
+            textTransform: "uppercase",
+            letterSpacing: "1.5px",
+            boxShadow: "0 10px 20px rgba(245, 158, 11, 0.15)"
+          }}>
             Pengukuran Kinerja Tahun 2025
           </div>
-          <table style={{ width: "100%", fontSize: "0.8rem", borderCollapse: "collapse", borderRadius: "10px", overflow: "hidden", border: "1px solid #dee2e6", boxShadow: "0 6px 15px rgba(0,0,0,0.05)" }}>
-            <thead>
-              <tr style={{ background: "#f8f9fa", color: "#2c3e50" }}>
-                <th style={{ padding: "10px", border: "1px solid #dee2e6", width: "10%", fontSize: "0.85rem" }}>No</th>
-                <th style={{ padding: "10px", border: "1px solid #dee2e6", textAlign: "left", fontSize: "0.85rem" }}>Item Kegiatan</th>
-                <th style={{ padding: "10px", border: "1px solid #dee2e6", width: "30%", fontSize: "0.85rem" }}>Due Date</th>
-              </tr>
-            </thead>
-            <tbody style={{ background: "#fff" }}>
-              {[
-                { n: 1, i: "Penyampaian Usulan Rating dan Pemenuhan kelengkapan pendukung", d: "27 Feb 2026" },
-                { n: 2, i: "Perhitungan Merit Increment berdasarkan Distribusi Rating Kinerja", d: "5 Mar 2026" },
-                { n: 3, i: "Penetapan dan pengaturan indikator kinerja aspek operasional dan keuangan pada aplikasi", d: "5 Mar 2026" },
-                { n: 4, i: "Pelaksanaan Sidang Komite Penilaian Kinerja", d: "2 - 14 Mar 2026" }
-              ].map((row, i) => (
-                <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
-                  <td style={{ textAlign: "center", padding: "8px 10px", border: "1px solid #dee2e6", fontWeight: 700, color: "#7f8c8d" }}>{row.n}</td>
-                  <td style={{ padding: "8px 10px", border: "1px solid #dee2e6", lineHeight: 1.3, fontWeight: 600, color: "#2c3e50" }}>{row.i}</td>
-                  <td style={{ textAlign: "center", padding: "8px 10px", border: "1px solid #dee2e6", fontWeight: 800, color: "#1a5276" }}>{row.d}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
 
-          <div style={{ marginTop: "auto", padding: "10px", background: "rgba(243, 156, 18, 0.08)", borderRadius: "10px", borderLeft: "4px solid #f39c12" }}>
-            <p style={{ margin: 0, fontSize: "0.75rem", color: "#7f8c8d", fontWeight: 700, fontStyle: "italic" }}>
-              * Milestone 2025: Penyelesaian siklus penilaian & penetapan reward.
+          <div style={{ background: "#fff", borderRadius: "20px", border: "1px solid #e2e8f0", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
+            <table style={{ width: "100%", fontSize: "0.85rem", borderCollapse: "collapse" }}>
+              <thead style={{ background: "#f8fafc", color: "#475569" }}>
+                <tr>
+                  <th style={{ padding: "15px", borderBottom: "1px solid #e2e8f0", width: "12%" }}>#</th>
+                  <th style={{ padding: "15px", borderBottom: "1px solid #e2e8f0", textAlign: "left" }}>Item Kegiatan Utama</th>
+                  <th style={{ padding: "15px", borderBottom: "1px solid #e2e8f0", width: "30%" }}>Due Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { n: 1, i: "Usulan Rating & Pendukung", d: "27 Feb 2026" },
+                  { n: 2, i: "Perhitungan Merit Increment", d: "5 Mar 2026" },
+                  { n: 3, i: "Penetapan Indikator Ops/Keu", d: "5 Mar 2026" },
+                  { n: 4, i: "Sidang Komite Penilaian", d: "2-14 Mar 2026" }
+                ].map((row, i) => (
+                  <tr key={i} style={{ borderBottom: "1px solid #f1f5f9" }}>
+                    <td style={{ textAlign: "center", padding: "12px", fontWeight: 700, color: "#94a3b8" }}>{row.n}</td>
+                    <td style={{ padding: "12px", fontWeight: 600, color: "#1e293b" }}>{row.i}</td>
+                    <td style={{ textAlign: "center", padding: "12px", fontWeight: 800, color: "#d97706" }}>{row.d}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div style={{ marginTop: "auto", padding: "15px 20px", background: "rgba(245, 158, 11, 0.05)", borderRadius: "16px", borderLeft: "4px solid #f59e0b", display: "flex", gap: "12px" }}>
+            <div style={{ color: "#d97706" }}><Calendar size={20} /></div>
+            <p style={{ margin: 0, fontSize: "0.85rem", color: "#64748b", fontWeight: 600, fontStyle: "italic" }}>
+              Fase penyelesaian siklus 2025 untuk penetapan kenaikan merit (MI).
             </p>
           </div>
         </div>
 
-        {/* Right Area: App Development & 2026 */}
-        <div style={{ flex: 1.2, display: "flex", flexDirection: "column", gap: "15px" }}>
-          {/* App Dev */}
-          <table style={{ width: "100%", fontSize: "0.75rem", borderCollapse: "collapse", borderRadius: "10px", overflow: "hidden", border: "1.5px solid #1a5276", boxShadow: "0 6px 15px rgba(26,82,118,0.1)" }}>
-            <thead style={{ background: "linear-gradient(90deg, #1a5276 0%, #2980b9 100%)", color: "#fff" }}>
-              <tr>
-                <th style={{ padding: "8px 10px", border: "1px solid rgba(255,255,255,0.1)", width: "8%", fontSize: "0.8rem" }}>#</th>
-                <th style={{ padding: "8px 15px", border: "1px solid rgba(255,255,255,0.1)", textAlign: "left", fontSize: "0.8rem", letterSpacing: "0.5px" }}>PENGEMBANGAN APLIKASI 2026 (APMS 2.0)</th>
-                <th style={{ padding: "8px 10px", border: "1px solid rgba(255,255,255,0.1)", width: "30%", fontSize: "0.8rem" }}>DUE DATE</th>
-              </tr>
-            </thead>
-            <tbody style={{ background: "#fff" }}>
-              <tr style={{ background: "#f8fafc", fontWeight: 800, color: "#1a5276" }}>
-                <td style={{ textAlign: "center", padding: "6px", border: "1px solid #e2e8f0" }}>1</td>
-                <td style={{ padding: "6px 15px", border: "1px solid #e2e8f0" }}>User Acceptance Test (UAT)</td>
-                <td style={{ padding: "6px", border: "1px solid #e2e8f0" }}></td>
-              </tr>
-              <tr>
-                <td style={{ border: "1px solid #e2e8f0" }}></td>
-                <td style={{ padding: "5px 25px", border: "1px solid #e2e8f0", color: "#4a5568", fontWeight: 600 }}>• UAT PTPN I (Reg. 3 & 5) & PT SGN</td>
-                <td style={{ padding: "5px", border: "1px solid #e2e8f0", textAlign: "center", fontWeight: 800, color: "#2d3748" }}>25 - 26 Feb 2026</td>
-              </tr>
-              <tr>
-                <td style={{ border: "1px solid #e2e8f0" }}></td>
-                <td style={{ padding: "5px 25px", border: "1px solid #e2e8f0", color: "#4a5568", fontWeight: 600 }}>• UAT PTPN IV (Reg. 1 & 2)</td>
-                <td style={{ padding: "5px", border: "1px solid #e2e8f0", textAlign: "center", fontWeight: 800, color: "#2d3748" }}>25 - 26 Feb 2026</td>
-              </tr>
-              {[
-                { n: 2, i: "Sosialisasi & Training APMS 2.0 (Online)", d: "10 Mar 2026" },
-                { n: 3, i: "Go-live Readiness Check", d: "12 Mar 2026" },
-                { n: 4, i: "Go-live APMS 2.0", d: "30 Mar 2026" }
-              ].map((row, i) => (
-                <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f8fafc" }}>
-                  <td style={{ textAlign: "center", padding: "6px", border: "1px solid #e2e8f0", fontWeight: 700, color: "#4a5568" }}>{row.n}</td>
-                  <td style={{ padding: "6px 15px", border: "1px solid #e2e8f0", fontWeight: 700, color: "#2d3748" }}>{row.i}</td>
-                  <td style={{ textAlign: "center", padding: "6px", border: "1px solid #e2e8f0", fontWeight: 900, color: i === 2 ? "#27ae60" : "#1a5276" }}>{row.d}</td>
+        {/* Right Column: APMS 2.0 & 2026 Cycle */}
+        <div style={{ flex: 1.3, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+          {/* APMS 2.0 System Go-Live */}
+          <div style={{ background: "#fff", borderRadius: "20px", border: "1.5px solid #1a5276", overflow: "hidden", boxShadow: "0 15px 35px rgba(26, 82, 118, 0.08)" }}>
+            <div style={{ background: "linear-gradient(90deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "12px 20px", fontSize: "0.95rem", fontWeight: 900, letterSpacing: "1px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span>APMS 2.0 (SYSTEM DEVELOPMENT)</span>
+              <Settings size={18} />
+            </div>
+            <table style={{ width: "100%", fontSize: "0.8rem", borderCollapse: "collapse" }}>
+              <tbody>
+                <tr style={{ background: "#f8fafc" }}>
+                  <td style={{ textAlign: "center", padding: "10px", width: "10%", fontWeight: 800, color: "#1a5276" }}>1</td>
+                  <td style={{ padding: "10px", fontWeight: 800, color: "#1e293b" }}>User Acceptance Test (UAT)</td>
+                  <td style={{ padding: "10px", textAlign: "center", fontWeight: 800, color: "#1a5276" }}>25-26 Feb 2026</td>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+                <tr>
+                  <td></td>
+                  <td colSpan={2} style={{ padding: "8px 25px", color: "#475569", fontSize: "0.75rem" }}>
+                    <div style={{ display: "flex", gap: "20px" }}>
+                      <span>• PTPN I (Reg 3, 5) & PT SGN</span>
+                      <span>• PTPN IV (Reg 1, 2)</span>
+                    </div>
+                  </td>
+                </tr>
+                {[
+                  { n: 2, i: "Sosialisasi & Training APMS 2.0 (Online)", d: "10 Mar 2026", highlight: false },
+                  { n: 3, i: "Go-live Readiness Check", d: "12 Mar 2026", highlight: false },
+                  { n: 4, i: "GO-LIVE APMS 2.0", d: "30 MAR 2026", highlight: true }
+                ].map((row, i) => (
+                  <tr key={i} style={{ borderTop: "1px solid #f1f5f9", background: row.highlight ? "rgba(34, 197, 94, 0.05)" : "transparent" }}>
+                    <td style={{ textAlign: "center", padding: "10px", fontWeight: 800, color: "#1a5276" }}>{row.n}</td>
+                    <td style={{ padding: "10px", fontWeight: 700, color: row.highlight ? "#065f46" : "#1e293b" }}>{row.i}</td>
+                    <td style={{ textAlign: "center", padding: "10px", fontWeight: 900, color: row.highlight ? "#065f46" : "#1a5276" }}>{row.d}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-          {/* 2026 Process */}
-          <table style={{ width: "100%", fontSize: "0.72rem", borderCollapse: "collapse", borderRadius: "10px", overflow: "hidden", border: "1px solid #dee2e6", boxShadow: "0 4px 12px rgba(0,0,0,0.05)" }}>
-            <thead style={{ background: "linear-gradient(90deg, #f39c12 0%, #d35400 100%)", color: "#fff" }}>
-              <tr>
-                <th style={{ padding: "8px", border: "1px solid rgba(255,255,255,0.1)", width: "8%", fontSize: "0.8rem" }}>#</th>
-                <th style={{ padding: "8px 12px", border: "1px solid rgba(255,255,255,0.1)", textAlign: "left", fontSize: "0.8rem", letterSpacing: "0.5px" }}>PENGUKURAN KINERJA INDIVIDU 2026</th>
-                <th style={{ padding: "8px", border: "1px solid rgba(255,255,255,0.1)", width: "30%", fontSize: "0.8rem" }}>DUE DATE</th>
-              </tr>
-            </thead>
-            <tbody style={{ background: "#fff" }}>
-              {[
-                { n: 1, i: "Surat pelaksanaan penilaian kinerja 2026", d: "12 Mar 2026" },
-                { n: 2, i: "Kesepakatan Sasaran Kerja (KSK)", d: "1 - 17 Apr 2026" },
-                { n: 3, i: "Pengisian realisasi triwulan I", d: "6 - 17 Apr 2026" },
-                { n: 4, i: "Review Bimbingan Kerja (RBK) triwulan I", d: "20 Apr - 4 Mei 2026" },
-                { n: 5, i: "Pengisian realisasi triwulan II", d: "6 - 20 Jul 2026" },
-                { n: 6, i: "Pengukuran Key Attitude Indicator (ONE) Sem. I", d: "6 - 20 Jul 2026" },
-                { n: 7, i: "Review Bimbingan Kerja (RBK) triwulan II", d: "20 Jul - 3 Ags 2026" },
-                { n: 8, i: "Pengisian realisasi triwulan III", d: "19 - 30 Okt 2026" },
-                { n: 9, i: "Review Bimbingan Kerja (RBK) triwulan III", d: "2 - 13 Nov 2026" },
-                { n: 10, i: "Pengisian realisasi triwulan IV", d: "4 - 15 Jan 2027" },
-                { n: 11, i: "Pengukuran Key Attitude Indicator (ONE) Sem. II", d: "4 - 15 Jan 2027" },
-                { n: 12, i: "Evaluasi dan Rencana Pengembangan TW IV", d: "18 - 26 Jan 2027" },
-                { n: 13, i: "Performance Appraisal", d: "27 Jan - 26 Feb 2027" }
-              ].map((row, i) => (
-                <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#fff8f0" }}>
-                  <td style={{ textAlign: "center", padding: "4px", border: "1px solid #fce5cd", fontWeight: 800, color: "#d35400" }}>{row.n}</td>
-                  <td style={{ padding: "4px 12px", border: "1px solid #fce5cd", fontWeight: 600, color: "#2d3748" }}>{row.i}</td>
-                  <td style={{ textAlign: "center", padding: "4px", border: "1px solid #fce5cd", fontWeight: 800, color: "#1a202c" }}>{row.d}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {/* Individual Performance 2026 Cycle */}
+          <div style={{ background: "#fff", borderRadius: "20px", border: "1px solid #e2e8f0", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
+            <div style={{ background: "#f8fafc", color: "#1e293b", padding: "10px 20px", fontSize: "0.9rem", fontWeight: 800, borderBottom: "1px solid #e2e8f0", display: "flex", alignItems: "center", gap: "10px" }}>
+              <Target size={18} color="#065f46" />
+              SIKLUS PENGUKURAN KINERJA 2026
+            </div>
+            <div style={{ maxHeight: "300px", overflowY: "auto", padding: "5px" }}>
+              <table style={{ width: "100%", fontSize: "0.75rem", borderCollapse: "collapse" }}>
+                <tbody>
+                  {[
+                    { n: 1, i: "Surat Pelaksanaan 2026", d: "12 Mar 26", c: "#1e293b" },
+                    { n: 2, i: "KSK (Kesepakatan Sasaran Kerja)", d: "Apr 26", c: "#1a5276" },
+                    { n: 3, i: "Review Bimbingan Kerja (RBK) TW I", d: "Mei 26", c: "#1a5276" },
+                    { n: 4, i: "Pengukuran ONE (Attitude) Sem. I", d: "Jul 26", c: "#065f46" },
+                    { n: 5, i: "RBK TW II & TW III", d: "Ags-Nov 26", c: "#1a5276" },
+                    { n: 6, i: "Pengukuran ONE (Attitude) Sem. II", d: "Jan 27", c: "#065f46" },
+                    { n: 7, i: "Performance Appraisal (Final)", d: "Feb 27", c: "#1e293b" }
+                  ].map((row, i) => (
+                    <tr key={i} style={{ borderBottom: "1px solid #f1f5f9" }}>
+                      <td style={{ textAlign: "center", padding: "8px", width: "10%", fontWeight: 800, color: "#94a3b8" }}>{row.n}</td>
+                      <td style={{ padding: "8px", fontWeight: 700, color: "#334155" }}>{row.i}</td>
+                      <td style={{ textAlign: "right", padding: "8px 20px", fontWeight: 900, color: row.c }}>{row.d}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1857,20 +2779,21 @@ function SlideTimeline() {
    ============================= */
 function SlideRatingKinerja() {
   const tableData = [
-    { rating: "Outstanding (RD 1)", score2025: ">= 90", score2026: "≥ 110", rowSpan2025: 2 },
-    { rating: "Exceed (RD 2)", score2025: null, score2026: "100 – 109" },
-    { rating: "Meet (RD 3)", score2025: "< 90", score2026: "90 – 99", rowSpan2025: 2 },
-    { rating: "Below (RD 4)", score2025: null, score2026: "70 – 89" },
-    { rating: "Poor (RD 5)", score2025: "Hanya yang terkena punishment", score2026: "< 70", rowSpan2025: 1 },
+    { rating: "Outstanding (RP 1)", score2025: "≥ 90", score2026: "≥ 110", rowSpan2025: 2, color: "#065f46" },
+    { rating: "Exceed (RP 2)", score2025: null, score2026: "100 – 109", color: "#047857" },
+    { rating: "Meet (RP 3)", score2025: "< 90", score2026: "90 – 99", rowSpan2025: 2, color: "#b45309" },
+    { rating: "Below (RP 4)", score2025: null, score2026: "70 – 89", color: "#d97706" },
+    { rating: "Poor (RP 5)", score2025: "Punishment Only", score2026: "< 70", rowSpan2025: 1, color: "#991b1b" },
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.2rem 4rem 1.8rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 4rem 1.8rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.2rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.5rem", textAlign: "center" }}>
-          <em>Rating Kinerja</em>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
+          <em>Rating Kinerja: Threshold Update</em>
         </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Perbandingan Ambang Batas Nilai 2025 vs 2026</p>
       </div>
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
@@ -1878,39 +2801,42 @@ function SlideRatingKinerja() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          style={{ width: "100%", maxWidth: "1100px" }}
+          style={{ width: "100%", maxWidth: "1000px" }}
         >
-          <table style={{ width: "100%", borderCollapse: "collapse", borderRadius: "16px", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.12)" }}>
+          <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: "0 8px" }}>
             <thead>
-              <tr style={{ background: "linear-gradient(90deg, #1a5276 0%, #2980b9 100%)", color: "#fff" }}>
-                <th style={{ padding: "1rem", textAlign: "center", fontSize: "1.1rem", fontWeight: 800, borderRight: "1px solid rgba(255,255,255,0.1)" }}>Performance Rating</th>
-                <th style={{ padding: "1rem", textAlign: "center", fontSize: "1.1rem", fontWeight: 800, borderRight: "1px solid rgba(255,255,255,0.1)" }}>2025 (Threshold)</th>
-                <th style={{ padding: "1rem", textAlign: "center", fontSize: "1.1rem", fontWeight: 800 }}>2026 (Threshold)</th>
+              <tr style={{ color: "#1a5276" }}>
+                <th style={{ padding: "1rem", textAlign: "left", fontSize: "1.1rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>Performance Category</th>
+                <th style={{ padding: "1rem", textAlign: "center", fontSize: "1.1rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>2025 Threshold</th>
+                <th style={{ padding: "1rem", textAlign: "center", fontSize: "1.1rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px" }}>2026 Target</th>
               </tr>
             </thead>
             <tbody>
               {tableData.map((row, i) => (
-                <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f8fafc" }}>
-                  <td style={{ padding: "1rem 2rem", border: "1px solid #e2e8f0", fontSize: "1rem", fontWeight: 800, color: "#1a5276" }}>
-                    {row.rating}
+                <tr key={i} style={{ background: "#fff", boxShadow: "0 4px 15px rgba(0,0,0,0.03)", borderRadius: "16px" }}>
+                  <td style={{ padding: "1.2rem 2rem", borderRadius: i === 0 || i === 2 || i === 4 ? "16px 0 0 16px" : "0", border: "1px solid #e2e8f0", borderRight: "none" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                      <div style={{ width: "4px", height: "30px", background: row.color, borderRadius: "2px" }}></div>
+                      <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#1a5276" }}>{row.rating}</div>
+                    </div>
                   </td>
                   {row.score2025 !== null && (
                     <td
                       rowSpan={row.rowSpan2025}
                       style={{
-                        padding: "1.5rem",
+                        padding: "1.2rem",
                         border: "1px solid #e2e8f0",
                         textAlign: "center",
                         fontSize: "1.2rem",
-                        fontWeight: 800,
-                        color: "#4a5568",
-                        background: i % 2 === 0 ? "#f8fafc" : "#fff"
+                        fontWeight: 700,
+                        color: "#64748b",
+                        background: "#f8fafc"
                       }}
                     >
                       {row.score2025}
                     </td>
                   )}
-                  <td style={{ padding: "1.5rem", border: "1px solid #e2e8f0", textAlign: "center", fontSize: "1.25rem", fontWeight: 900, color: row.rating.includes("RD 1") ? "#27ae60" : row.rating.includes("RD 5") ? "#e74c3c" : "#1a202c" }}>
+                  <td style={{ padding: "1.2rem", border: "1px solid #e2e8f0", borderLeft: "none", borderRadius: "0 16px 16px 0", textAlign: "center", fontSize: "1.4rem", fontWeight: 900, color: row.color }}>
                     {row.score2026}
                   </td>
                 </tr>
@@ -1918,9 +2844,10 @@ function SlideRatingKinerja() {
             </tbody>
           </table>
 
-          <div style={{ marginTop: "3rem", padding: "20px 30px", background: "#f8fafc", borderRadius: "12px", borderLeft: "6px solid #1a5276", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
-            <p style={{ margin: 0, fontSize: "1.1rem", color: "#4a5568", fontStyle: "italic", fontWeight: 500, lineHeight: 1.5 }}>
-              * Catatan: Penyesuaian threshold nilai dilakukan untuk memastikan diferensiasi yang lebih tajam dan akurat sesuai dengan dinamika target korporat 2026.
+          <div style={{ marginTop: "2.5rem", padding: "1.5rem 2rem", background: "rgba(26, 82, 118, 0.03)", borderRadius: "20px", border: "1.5px dashed #1a5276", display: "flex", gap: "1.5rem", alignItems: "center" }}>
+            <div style={{ background: "#1a5276", color: "#fff", padding: "10px", borderRadius: "12px" }}><Settings size={24} /></div>
+            <p style={{ margin: 0, fontSize: "1rem", color: "#475569", fontWeight: 600, lineHeight: 1.5 }}>
+              <strong>STRATEGIC RATIONALE:</strong> Penyesuaian threshold dilakukan untuk mendorong <em>stretch achievement</em> dan memastikan diferensiasi yang lebih tajam antara Top vs Average performers.
             </p>
           </div>
         </motion.div>
@@ -1943,7 +2870,7 @@ function SlideThankYou() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: "radial-gradient(circle at 50% 50%, #f0f7f4 0%, #ffffff 100%)",
+        background: "linear-gradient(135deg, #064e3b 0%, #065f46 50%, #1a5276 100%)",
         overflow: "hidden",
         padding: "2rem 4rem",
         height: "100%",
@@ -1951,77 +2878,100 @@ function SlideThankYou() {
         textAlign: "center"
       }}
     >
-      <AccentShapes />
+      {/* Premium Floating Particles */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{
+            y: [0, -40, 0],
+            rotate: [0, 360],
+            opacity: [0.1, 0.2, 0.1]
+          }}
+          transition={{
+            duration: 10 + i * 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          style={{
+            position: "absolute",
+            width: "300px",
+            height: "300px",
+            background: "white",
+            borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
+            filter: "blur(80px)",
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            zIndex: 0
+          }}
+        />
+      ))}
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        style={{ zIndex: 1 }}
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        style={{ zIndex: 1, position: "relative" }}
       >
-        <div style={{ marginBottom: "2rem", display: "flex", justifyContent: "center" }}>
+        <div style={{ marginBottom: "2.5rem", display: "flex", justifyContent: "center" }}>
           <div style={{
-            width: "80px",
-            height: "80px",
-            background: "#fff",
-            borderRadius: "50%",
+            width: "100px",
+            height: "100px",
+            background: "rgba(255,255,255,0.1)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "32px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
-            border: "1px solid rgba(14, 102, 85, 0.1)"
+            boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
+            border: "1px solid rgba(255,255,255,0.2)"
           }}>
-            <Award size={40} color="var(--color-primary)" strokeWidth={1.5} />
+            <Award size={50} color="#fff" strokeWidth={1.2} />
           </div>
         </div>
 
         <h1 style={{
-          fontSize: "4.5rem",
+          fontSize: "5.5rem",
           fontWeight: 400,
           fontStyle: "italic",
-          color: "var(--color-secondary)",
+          color: "#fff",
           marginBottom: "1rem",
-          letterSpacing: "-0.02em"
+          letterSpacing: "-0.02em",
+          textShadow: "0 10px 30px rgba(0,0,0,0.2)"
         }}>
           Terima Kasih
         </h1>
 
         <div style={{
-          width: "60px",
-          height: "3px",
-          background: "var(--color-accent)",
-          margin: "0 auto 2rem",
-          borderRadius: "2px"
+          width: "80px",
+          height: "4px",
+          background: "linear-gradient(90deg, #fff 0%, transparent 100%)",
+          margin: "0 auto 2.5rem",
+          borderRadius: "2px",
+          opacity: 0.6
         }} />
 
-        <p style={{
-          fontSize: "1.2rem",
-          fontWeight: 700,
-          color: "var(--color-primary)",
-          textTransform: "uppercase",
-          letterSpacing: "0.2em",
-          opacity: 0.8
-        }}>
-          PT Perkebunan Nusantara III (Persero)
-        </p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>
+          <p style={{
+            fontSize: "1.4rem",
+            fontWeight: 800,
+            color: "#fff",
+            textTransform: "uppercase",
+            letterSpacing: "0.3em",
+            margin: 0
+          }}>
+            PT Perkebunan Nusantara III (Persero)
+          </p>
+          <p style={{
+            fontSize: "1rem",
+            fontWeight: 600,
+            color: "rgba(255,255,255,0.7)",
+            letterSpacing: "0.1em",
+            margin: 0
+          }}>
+            Human Capital Management Portfolio
+          </p>
+        </div>
       </motion.div>
-
-      {/* Background Decorative Circles */}
-      <motion.div
-        animate={{ scale: [1, 1.1, 1], opacity: [0.03, 0.05, 0.03] }}
-        transition={{ duration: 8, repeat: Infinity }}
-        style={{
-          position: "absolute",
-          width: "600px",
-          height: "600px",
-          background: "var(--color-primary)",
-          borderRadius: "50%",
-          filter: "blur(100px)",
-          top: "-200px",
-          right: "-100px",
-          zIndex: 0
-        }}
-      />
 
       <SlideFooter />
     </div>
@@ -2034,7 +2984,7 @@ function SlideThankYou() {
 function SlideRatingReference() {
   const sources = [
     {
-      title: "Mercer PMS",
+      title: "Mercer PMS Standard",
       color: "#1a5276",
       items: [
         { label: "Outstanding", score: "≥ 110%" },
@@ -2043,163 +2993,139 @@ function SlideRatingReference() {
         { label: "Below", score: "70–89%" },
         { label: "Poor", score: "< 70%" }
       ],
-      note: "Digunakan di energy, plantation, manufacturing multinationals"
+      note: "Global industry standard for MNCs"
     },
     {
-      title: "Korn Ferry / Hay",
-      color: "#0e6655",
+      title: "Korn Ferry / Hay Group",
+      color: "#065f46",
       items: [
         { label: "Far Exceeds", score: "≥ 110%" },
         { label: "Exceeds", score: "100–109%" },
         { label: "Fully Meets", score: "90–99%" },
-        { label: "Partially Meets", score: "70–89%" },
+        { label: "Developing", score: "70–89%" },
         { label: "Does Not Meet", score: "< 70%" }
       ],
-      note: "Global PMS band standard untuk Fortune 500 companies"
+      note: "Fortune 500 calibration methodology"
     },
     {
-      title: "Balanced Scorecard (Kaplan & Norton)",
-      color: "#e67e22",
+      title: "Balanced Scorecard",
+      color: "#d97706",
       items: [
-        { label: "Stretch Achievement", score: "> 110%" },
-        { label: "Target Met", score: "100%" },
-        { label: "Near Target", score: "90–99%" },
-        { label: "Underperform", score: "70–89%" },
-        { label: "Fail", score: "< 70%" }
+        { label: "Stretch Limit", score: "> 110%" },
+        { label: "Target (Budget)", score: "100%" },
+        { label: "Threshold", score: "90–99%" },
+        { label: "Risk Zone", score: "70–89%" },
+        { label: "Failure Zone", score: "< 70%" }
       ],
-      note: "Achievement % = Actual / Target × 100"
+      note: "Kaplan & Norton Strategic Performance"
     },
     {
       title: "SAP SuccessFactors",
-      color: "#8e44ad",
+      color: "#4a3399",
       items: [
-        { label: "5 — Far Exceeds", score: "≥ 110%" },
-        { label: "4 — Exceeds", score: "100–109%" },
-        { label: "3 — Meets", score: "90–99%" },
-        { label: "2 — Partially Meets", score: "70–89%" },
-        { label: "1 — Does Not Meet", score: "< 70%" }
+        { label: "Scale 5", score: "≥ 110%" },
+        { label: "Scale 4", score: "100–109%" },
+        { label: "Scale 3", score: "90–99%" },
+        { label: "Scale 2", score: "70–89%" },
+        { label: "Scale 1", score: "< 70%" }
       ],
-      note: "Default performance form scaling guidance"
+      note: "Default HRMS cloud best practice"
     }
   ];
 
   return (
-    <div className="slide" style={{ padding: "0.8rem 2.5rem 1.2rem" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.6rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
           <em>Appendix: Referensi Skala Rating Global</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "0.85rem", fontWeight: 600 }}>Dasar metodologis penetapan threshold rating kinerja 2026</p>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Dasar Benchmark Penetapan Threshold 2026</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
         {/* Rating Scale Summary */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          style={{ background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", borderRadius: "12px", padding: "12px 25px", display: "flex", alignItems: "center", gap: "2rem" }}
+          style={{
+            background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)",
+            color: "#fff",
+            borderRadius: "24px",
+            padding: "1.5rem 2.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "2.5rem",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+          }}
         >
-          <div style={{ fontSize: "0.85rem", fontWeight: 900, whiteSpace: "nowrap", textTransform: "uppercase", letterSpacing: "1px" }}>Skala 2026</div>
-          <div style={{ display: "flex", gap: "10px", flex: 1 }}>
+          <div style={{ fontSize: "1.1rem", fontWeight: 900, whiteSpace: "nowrap", textTransform: "uppercase", letterSpacing: "2px", color: "#94a3b8" }}>PTPN 2026</div>
+          <div style={{ display: "flex", gap: "12px", flex: 1 }}>
             {[
-              { r: "Outstanding", s: "≥ 110", c: "#27ae60" },
-              { r: "Exceed", s: "100–109", c: "#2ecc71" },
-              { r: "Meet", s: "90–99", c: "#f39c12" },
-              { r: "Below", s: "70–89", c: "#e67e22" },
-              { r: "Poor", s: "< 70", c: "#e74c3c" }
+              { r: "Outstanding", s: "≥ 110", c: "#059669" },
+              { i: "Exceed", s: "100–109", c: "#10b981" },
+              { i: "Meet", s: "90–99", c: "#f59e0b" },
+              { i: "Below", s: "70–89", c: "#ea580c" },
+              { i: "Poor", s: "< 70", c: "#dc2626" }
             ].map((item, i) => (
-              <div key={i} style={{ flex: 1, background: "rgba(255,255,255,0.12)", borderRadius: "8px", padding: "8px", textAlign: "center", border: `1px solid ${item.c}40` }}>
-                <div style={{ fontSize: "0.75rem", fontWeight: 900 }}>{item.r}</div>
-                <div style={{ fontSize: "1rem", fontWeight: 900, color: item.c }}>{item.s}</div>
+              <div key={i} style={{ flex: 1, background: "rgba(255,255,255,0.05)", borderRadius: "16px", padding: "12px", textAlign: "center", border: "1px solid rgba(255,255,255,0.1)" }}>
+                <div style={{ fontSize: "1.2rem", fontWeight: 900, color: item.c }}>{item.s}</div>
               </div>
             ))}
           </div>
         </motion.div>
 
         {/* 4-Column Sources */}
-        <div style={{ flex: 1, display: "flex", gap: "0.8rem" }}>
+        <div style={{ flex: 1, display: "flex", gap: "1.2rem" }}>
           {sources.map((src, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               style={{
                 flex: 1,
                 background: "#fff",
-                border: `1px solid ${src.color}20`,
-                borderRadius: "14px",
+                border: "1px solid #e2e8f0",
+                borderRadius: "24px",
                 overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.04)"
+                boxShadow: "0 10px 25px rgba(0,0,0,0.03)"
               }}
             >
-              <div style={{ background: src.color, color: "#fff", padding: "10px 14px", fontSize: "0.8rem", fontWeight: 900, textAlign: "center", letterSpacing: "0.5px" }}>
+              <div style={{ background: src.color, color: "#fff", padding: "15px", fontSize: "0.9rem", fontWeight: 900, textAlign: "center", letterSpacing: "1px" }}>
                 {src.title}
               </div>
-              <div style={{ padding: "10px", flex: 1, display: "flex", flexDirection: "column", gap: "5px" }}>
+              <div style={{ padding: "15px", flex: 1, display: "flex", flexDirection: "column", gap: "8px" }}>
                 {src.items.map((item, i) => (
-                  <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "5px 8px", borderRadius: "6px", background: i % 2 === 0 ? "#f8f9fa" : "#fff", fontSize: "0.72rem" }}>
-                    <span style={{ fontWeight: 700, color: "#2c3e50" }}>{item.label}</span>
-                    <span style={{ fontWeight: 900, color: src.color, fontSize: "0.78rem" }}>{item.score}</span>
+                  <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderRadius: "12px", background: i % 2 === 0 ? "#f8fafc" : "#fff", fontSize: "0.8rem" }}>
+                    <span style={{ fontWeight: 700, color: "#475569" }}>{item.label}</span>
+                    <span style={{ fontWeight: 900, color: src.color }}>{item.score}</span>
                   </div>
                 ))}
               </div>
-              <div style={{ padding: "8px 12px", borderTop: "1px solid #f0f2f5", fontSize: "0.65rem", color: "#7f8c8d", fontStyle: "italic", fontWeight: 600 }}>
+              <div style={{ padding: "12px 15px", borderTop: "1px solid #f1f5f9", fontSize: "0.75rem", color: "#94a3b8", fontStyle: "italic", fontWeight: 600 }}>
                 {src.note}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom Insights: Why 110 & Why 70 */}
-        <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            style={{ flex: 1, background: "#f0faf5", border: "1.5px solid #27ae60", borderRadius: "12px", padding: "12px 16px", display: "flex", gap: "12px", alignItems: "flex-start" }}
-          >
-            <div style={{ background: "#27ae60", color: "#fff", borderRadius: "50%", width: "28px", height: "28px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 900, flexShrink: 0 }}>?</div>
-            <div>
-              <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#1e8449", marginBottom: "4px" }}>Mengapa ≥110 untuk Outstanding?</div>
-              <div style={{ fontSize: "0.72rem", color: "#2d3748", lineHeight: 1.4, fontWeight: 600 }}>
-                100 = target tercapai · 105 = varian normal · <strong>110 = stretch achievement</strong>. Jika Outstanding di 105, distribusi rusak karena terlalu mudah dicapai.
+        {/* Bottom Insights */}
+        <div style={{ display: "flex", gap: "1.5rem" }}>
+          {[
+            { q: "Mengapa ≥110 untuk Outstanding?", a: "100 = Target · 105 = Variance Normal · 110 = Stretch Achievement.", c: "#065f46" },
+            { q: "Mengapa <70 untuk Poor?", a: "Toleransi variance global ±30%. <70% = Gagal signifikan.", c: "#991b1b" }
+          ].map((insight, i) => (
+            <div key={i} style={{ flex: 1, background: "rgba(255,255,255,0.7)", border: `1px solid ${insight.c}30`, padding: "15px 20px", borderRadius: "20px", display: "flex", gap: "15px", alignItems: "center" }}>
+              <div style={{ background: insight.c, color: "#fff", width: "32px", height: "32px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontWeight: 900 }}>?</div>
+              <div>
+                <div style={{ fontSize: "0.9rem", fontWeight: 900, color: insight.c }}>{insight.q}</div>
+                <div style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>{insight.a}</div>
               </div>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            style={{ flex: 1, background: "#fef5f5", border: "1.5px solid #e74c3c", borderRadius: "12px", padding: "12px 16px", display: "flex", gap: "12px", alignItems: "flex-start" }}
-          >
-            <div style={{ background: "#e74c3c", color: "#fff", borderRadius: "50%", width: "28px", height: "28px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 900, flexShrink: 0 }}>?</div>
-            <div>
-              <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#c0392b", marginBottom: "4px" }}>Mengapa &lt;70 untuk Poor?</div>
-              <div style={{ fontSize: "0.72rem", color: "#2d3748", lineHeight: 1.4, fontWeight: 600 }}>
-                Toleransi variance KPI global ±30%. <strong>&lt;70% = gagal signifikan</strong>, sedangkan 70–89% masih recoverable dan layak mendapat pembinaan.
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            style={{ flex: 1, background: "#f5f0ff", border: "1.5px solid #8e44ad", borderRadius: "12px", padding: "12px 16px", display: "flex", gap: "12px", alignItems: "flex-start" }}
-          >
-            <div style={{ background: "#8e44ad", color: "#fff", borderRadius: "50%", width: "28px", height: "28px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 900, flexShrink: 0 }}>✓</div>
-            <div>
-              <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#6c3483", marginBottom: "4px" }}>Validitas untuk PTPN</div>
-              <div style={{ fontSize: "0.72rem", color: "#2d3748", lineHeight: 1.4, fontWeight: 600 }}>
-                Cocok untuk KPI kuantitatif: <strong>tonase, yield, biaya, produktivitas, EBITDA, utilisasi</strong> — semua berbasis target achievement.
-              </div>
-            </div>
-          </motion.div>
+          ))}
         </div>
       </div>
       <SlideFooter />
@@ -2208,8 +3134,230 @@ function SlideRatingReference() {
 }
 
 /* =============================
+   SLIDE: PROJECT CHARTER / GANTT
+   ============================= */
+function SlideProjectCharter() {
+  const months = [
+    "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des",
+    "Jan", "Feb", "Mar", "Apr"
+  ];
+
+  const milestones = [
+    { name: "Review Proker & Scorecard Holding", progress: "0%", startIdx: 0, duration: 4, color: "#1a5276" },
+    { name: "Review Scorecard & KPI Regional PalmCo", progress: "0%", startIdx: 2, duration: 4, color: "#065f46" },
+    { name: "Review Scorecard & KPI SupportCo", progress: "0%", startIdx: 4, duration: 4, color: "#1e293b" },
+    { name: "Review Scorecard & KPI Cluster SGN", progress: "0%", startIdx: 6, duration: 4, color: "#d97706" },
+    { name: "Tata Kelola Manajemen Kinerja Unit/Individu", progress: "0%", startIdx: 8, duration: 6, color: "#4a3399" },
+    { name: "Proses Bisnis Level 1-4 & FOP SGN", progress: "0%", startIdx: 10, duration: 16, color: "#2563eb" },
+    { name: "Struktur Organisasi SGN", progress: "0%", startIdx: 16, duration: 8, color: "#db2777" },
+    { name: "Pelatihan KPI Champion & BOD-1", progress: "0%", startIdx: 22, duration: 6, color: "#059669" },
+    { name: "Penyusunan Scorecard & KPI 2027", progress: "0%", startIdx: 28, duration: 16, color: "#1a5276" },
+    { name: "Scorecard & KPI Karpim Anper", progress: "0%", startIdx: 44, duration: 12, color: "#475569" },
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "left" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>
+          <em>Project Master Schedule</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 700 }}>Modernization of Scorecard, KPI, Business Process & Organization</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem", overflow: "hidden" }}>
+        {/* Gantt Container */}
+        <div style={{
+          flex: 1,
+          background: "#fff",
+          borderRadius: "24px",
+          border: "1px solid #e2e8f0",
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden",
+          boxShadow: "0 20px 40px rgba(0,0,0,0.05)"
+        }}>
+          {/* Calendar Header */}
+          <div style={{ display: "flex", borderBottom: "2px solid #1a5276", background: "#f8fafc" }}>
+            <div style={{ width: "300px", padding: "18px 24px", fontWeight: 900, fontSize: "0.85rem", borderRight: "1px solid #e2e8f0", color: "#1a5276", textTransform: "uppercase", letterSpacing: "1px" }}>
+              Work Stream / Milestone
+            </div>
+            <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", background: "#1a5276", color: "#fff" }}>
+                {months.map((m, i) => (
+                  <div key={i} style={{ flex: 1, textAlign: "center", padding: "10px", fontSize: "0.8rem", fontWeight: 900, borderRight: "1px solid rgba(255,255,255,0.1)" }}>
+                    {m}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Table Rows */}
+          <div style={{ flex: 1, overflowY: "auto" }}>
+            {milestones.map((m, idx) => (
+              <div key={idx} style={{ display: "flex", borderBottom: "1px solid #f1f5f9", minHeight: "45px", background: idx % 2 === 0 ? "#fff" : "#fcfdfe" }}>
+                <div style={{ width: "300px", padding: "10px 24px", fontSize: "0.85rem", fontWeight: 700, color: "#1e293b", borderRight: "1px solid #e2e8f0", display: "flex", alignItems: "center" }}>
+                  {m.name}
+                </div>
+                <div style={{ flex: 1, position: "relative", display: "flex", background: "rgba(248, 250, 252, 0.4)" }}>
+                  {/* Vertical Grid Lines */}
+                  {months.map((_, i) => (
+                    <div key={i} style={{ flex: 1, borderRight: "1px solid #f1f5f9", height: "100%" }} />
+                  ))}
+                  {/* Progress Bar */}
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: `${(m.duration / 56) * 100}%` }}
+                    transition={{ delay: 0.5 + idx * 0.1, duration: 1 }}
+                    style={{
+                      position: "absolute",
+                      left: `${(m.startIdx / 56) * 100}%`,
+                      height: "14px",
+                      top: "15px",
+                      background: m.color,
+                      opacity: 0.85,
+                      borderRadius: "20px",
+                      boxShadow: `0 4px 12px ${m.color}30`
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Deliverables Footer */}
+        <div style={{
+          background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)",
+          borderRadius: "20px",
+          padding: "1.2rem 2.5rem",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          boxShadow: "0 15px 30px rgba(0,0,0,0.1)"
+        }}>
+          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <Award size={24} color="#f59e0b" />
+            <span style={{ color: "#fff", fontWeight: 900, fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "1px" }}>Core Execution Plan 2026</span>
+          </div>
+          <div style={{ display: "flex", gap: "30px" }}>
+            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", fontWeight: 600 }}>
+              <span style={{ color: "#fff", fontWeight: 900 }}>Phase 1:</span> Design & Governance
+            </div>
+            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", fontWeight: 600 }}>
+              <span style={{ color: "#fff", fontWeight: 900 }}>Phase 2:</span> Process & Organization
+            </div>
+            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", fontWeight: 600 }}>
+              <span style={{ color: "#fff", fontWeight: 900 }}>Phase 3:</span> Roll-out & 2027 Prep
+            </div>
+          </div>
+        </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+
+
+/* =============================
    MAIN PAGE COMPONENT
    ============================= */
+function SlideAppraisalReference() {
+  const kinerjaWeights = [
+    { level: "Kadiv", scorecard: "100%", nonScorecard: "-" },
+    { level: "KasubDiv", scorecard: "100%", nonScorecard: "-" },
+    { level: "Asistan", scorecard: "80%", nonScorecard: "20%" }
+  ];
+
+  const budayaWeights = [
+    { kpi: "Penilaian Perilaku Budaya 40% (360 Derajat)", kadiv: "40%", asistan: "-" },
+    { kpi: "Sharing Knowledge", kadiv: "30%", asistan: "20%" },
+    { kpi: "Pembelajaran Mandiri", kadiv: "20%", asistan: "40%" },
+    { kpi: "Coaching & Mentoring", kadiv: "20%", asistan: "-" }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#f8fafc" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Historical Performance Appraisal Model</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Referensi Struktur Penilaian & Pembobotan Kinerja (Existing Variation)</p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", gap: "2rem" }}>
+        <div style={{ flex: 1.2, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+          {/* Kinerja Weights */}
+          <div style={{ background: "#fff", borderRadius: "20px", border: "1px solid #e2e8f0", overflow: "hidden" }}>
+            <div style={{ background: "#0e6655", color: "#fff", padding: "12px 20px", fontSize: "0.85rem", fontWeight: 900 }}>KPI KINERJA (Kontribusi 90%)</div>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.8rem" }}>
+              <thead>
+                <tr style={{ background: "#f1f5f9", fontWeight: 900, color: "#475569" }}>
+                  <th style={{ padding: "10px", textAlign: "left" }}>Level</th>
+                  <th style={{ padding: "10px", textAlign: "center" }}>Scorecard</th>
+                  <th style={{ padding: "10px", textAlign: "center" }}>Non-Scorecard</th>
+                </tr>
+              </thead>
+              <tbody>
+                {kinerjaWeights.map((w, i) => (
+                  <tr key={i} style={{ borderTop: "1px solid #f1f5f9" }}>
+                    <td style={{ padding: "10px", fontWeight: 800 }}>{w.level}</td>
+                    <td style={{ padding: "10px", textAlign: "center" }}>{w.scorecard}</td>
+                    <td style={{ padding: "10px", textAlign: "center" }}>{w.nonScorecard}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Budaya Weights */}
+          <div style={{ background: "#fff", borderRadius: "20px", border: "1px solid #e2e8f0", overflow: "hidden" }}>
+            <div style={{ background: "#1a5276", color: "#fff", padding: "12px 20px", fontSize: "0.85rem", fontWeight: 900 }}>KPI BUDAYA (Kontribusi 10%)</div>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.8rem" }}>
+              <thead>
+                <tr style={{ background: "#f1f5f9", fontWeight: 900, color: "#475569" }}>
+                  <th style={{ padding: "10px", textAlign: "left" }}>KPI Budaya</th>
+                  <th style={{ padding: "10px", textAlign: "center" }}>Kadiv/KasubDiv</th>
+                  <th style={{ padding: "10px", textAlign: "center" }}>Asistan</th>
+                </tr>
+              </thead>
+              <tbody>
+                {budayaWeights.map((w, i) => (
+                  <tr key={i} style={{ borderTop: "1px solid #f1f5f9" }}>
+                    <td style={{ padding: "10px", fontWeight: 700 }}>{w.kpi}</td>
+                    <td style={{ padding: "10px", textAlign: "center" }}>{w.kadiv}</td>
+                    <td style={{ padding: "10px", textAlign: "center" }}>{w.asistan}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+          <div style={{ background: "#1e293b", color: "#fff", borderRadius: "24px", padding: "2rem", textAlign: "center" }}>
+            <div style={{ fontSize: "1rem", fontWeight: 900, marginBottom: "1.5rem", color: "#6ee7b7" }}>FORMULA NILAI AKHIR</div>
+            <div style={{ fontSize: "1.2rem", fontWeight: 800, lineHeight: 1.4 }}>
+              Nilai Akhir = <br />
+              <span style={{ fontSize: "1.8rem", color: "#ffa500" }}>80%</span> Nilai Kinerja <br />
+              <span style={{ fontSize: "1.5rem" }}>+</span> <br />
+              <span style={{ fontSize: "1.8rem", color: "#6ee7b7" }}>20%</span> Nilai Budaya
+            </div>
+          </div>
+
+          <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "24px", padding: "1.5rem" }}>
+            <p style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600, fontStyle: "italic" }}>
+              * Catatan: Model ini digunakan sebagai referensi perbandingan historis untuk menunjukkan pergeseran beban bobot antara Kinerja Hasil vs Perilaku/Budaya.
+            </p>
+          </div>
+        </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   SlideCover,                // 1: Cover
@@ -2217,34 +3365,47 @@ const slides = [
   SlideWhyChange,            // 3: Why Change? — Gap Analysis ⭐ NEW
 
   // BAGIAN 2 — PMS DESIGN PRINCIPLES
+  SlideSectionConcept,       // ⭐ NEW: Section Divider
+  SlideBSCFoundation,        // ⭐ NEW: BSC Principles
+  SlidePDCACycle,            // ⭐ NEW: PDCA & Improvement
+  SlideStrategicAlignment,   // ⭐ NEW: Cascading
+  SlideUnitIndividualPerformance, // ⭐ NEW: Unit vs Individual
   SlidePrinsipKPI,           // 4: Prinsip KPI
-  SlideModelKinerja,         // 5: Model Kinerja APMS ⭐ NEW
+  SlideBAPerformance,        // 5: Hubungan BA & Kinerja
+  SlideModelKinerja,         // 6: Model Kinerja APMS
 
   // BAGIAN 3 — EXISTING VS 2026
   SlideFramework2022,        // 6: Existing PMS 2022–2025
-  SlidePerubahanKunci,       // 7: Perubahan Kunci ⭐ NEW
+  SlidePerubahanKunci,       // 7: Perubahan Kunci
+  SlideSMKTIKonsep,          // 8: Konsep SMKTI 2026 ⭐ NEW
+  SlideSMKTIKomparasi1,      // 9: Komparasi Perdir #1 ⭐ NEW
+  SlideSMKTIKomparasi2,      // 10: Komparasi Perdir #2 ⭐ NEW
 
   // BAGIAN 4 — DESIGN 2026
-  SlideFramework2026A,       // 8: Arsitektur Opsi A
-  SlideFramework2026B,       // 9: Arsitektur Opsi B
-  SlideProConOptions,        // 10: Pro Con Opsi A vs B
-  SlideProConRating,         // 11: Pro Con Rating Distribusi
-  SlideRatingKinerja,        // 12: Rating Model 2026
-  SlidePriorityPool,         // 13: Priority Pool & Talent
+  SlideFramework2026A,       // 11: Arsitektur Opsi A
+  SlideFramework2026B,       // 12: Arsitektur Opsi B
+  SlideProConOptions,        // 13: Pro Con Opsi A vs B
+  SlideProConRating,         // 14: Pro Con Rating Distribusi
+  SlideRatingKinerja,        // 15: Rating Model 2026
+  SlidePriorityPool,         // 16: Priority Pool & Talent
 
   // BAGIAN 5 — IMPACT
-  SlideWeighting,            // 14: Pembobotan & Dampak Reward
+  SlideWeighting,            // 17: Pembobotan & Dampak Reward
 
   // BAGIAN 6 — IMPLEMENTATION
-  SlideTimeline,             // 15: Timeline
+  SlideTimeline,             // 18: Timeline
+  SlideProjectCharter,       // 19: Project Charter
 
   // CLOSING & APPENDIX
-  SlideThankYou,             // 16: Terima Kasih
-  SlideRatingReference,      // 17: Appendix — Referensi Global
+  SlideSMKTITerminologi,     // 20: Appendix — Terminologi ⭐ NEW
+  SlideAppraisalReference,   // ⭐ NEW: Appendix — Appraisal Model
+  SlideThankYou,             // 21: Terima Kasih
+  SlideRatingReference,      // 22: Appendix — Referensi Global
 ];
 
 export default function PresentationPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const goNext = useCallback(() => {
     setCurrentSlide((p) => Math.min(p + 1, slides.length - 1));
@@ -2256,6 +3417,8 @@ export default function PresentationPage() {
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+
       if (e.key === "ArrowRight" || e.key === " ") {
         e.preventDefault();
         goNext();
@@ -2264,57 +3427,189 @@ export default function PresentationPage() {
         e.preventDefault();
         goPrev();
       }
+
+      // Quick jump with numbers 1-9 (1-indexed for user comfort)
+      const numKey = parseInt(e.key);
+      if (!isNaN(numKey) && numKey > 0 && numKey <= 9) {
+        if (numKey <= slides.length) setCurrentSlide(numKey - 1);
+      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [goNext, goPrev]);
 
+  useEffect(() => {
+    if (isSidebarOpen) {
+      const activeEl = document.getElementById(`side-slide-${currentSlide}`);
+      if (activeEl) {
+        activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  }, [currentSlide, isSidebarOpen]);
+
   const CurrentSlideComponent = slides[currentSlide];
 
   return (
-    <div className="slide-container">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -60 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          style={{ width: "100%", height: "100%" }}
-        >
-          <CurrentSlideComponent />
-        </motion.div>
-      </AnimatePresence>
+    <div style={{ display: "flex", width: "100%", height: "100vh", background: "#f1f5f9", overflow: "hidden" }}>
+      {/* SIDEBAR */}
+      <motion.div
+        initial={false}
+        animate={{ width: isSidebarOpen ? 280 : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        style={{
+          background: "#1e293b",
+          color: "#fff",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          position: "relative",
+          zIndex: 100,
+          borderRight: isSidebarOpen ? "1px solid rgba(255,255,255,0.1)" : "none"
+        }}
+      >
+        {/* Toggle Button Inside Sidebar (when expanded) */}
+        {isSidebarOpen && (
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.2rem", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Layers size={18} className="text-emerald-400" />
+              <span style={{ fontSize: "0.9rem", fontWeight: 800 }}>Slide Navigator</span>
+            </div>
+            <button
+              onClick={() => setIsSidebarOpen(false)}
+              style={{ background: "none", border: "none", color: "rgba(255,255,255,0.6)", cursor: "pointer", padding: "4px" }}
+            >
+              <PanelLeftClose size={20} />
+            </button>
+          </div>
+        )}
 
-      {/* Slide Indicators */}
-      <div className="slide-indicator">
-        {slides.map((_, i) => (
-          <div
-            key={i}
-            className={`indicator-dot ${i === currentSlide ? "active" : ""}`}
-            onClick={() => setCurrentSlide(i)}
-          />
-        ))}
-      </div>
+        {/* Slide List */}
+        {isSidebarOpen && (
+          <div style={{ flex: 1, overflowY: "auto", padding: "10px" }} className="custom-scrollbar">
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              {slides.map((slide, i) => (
+                <button
+                  key={i}
+                  id={`side-slide-${i}`}
+                  onClick={() => setCurrentSlide(i)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    width: "100%",
+                    padding: "10px 14px",
+                    borderRadius: "12px",
+                    textAlign: "left",
+                    background: i === currentSlide ? "rgba(16, 185, 129, 0.2)" : "transparent",
+                    border: i === currentSlide ? "1px solid rgba(16, 185, 129, 0.4)" : "1px solid transparent",
+                    color: i === currentSlide ? "#10b981" : "rgba(255,255,255,0.7)",
+                    transition: "all 0.2s",
+                    cursor: "pointer",
+                    outline: "none"
+                  }}
+                  onMouseEnter={(e) => {
+                    if (i !== currentSlide) e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (i !== currentSlide) e.currentTarget.style.background = "transparent";
+                  }}
+                >
+                  <span style={{ fontSize: "0.75rem", fontWeight: 900, opacity: 0.5, minWidth: "20px" }}>{String(i + 1).padStart(2, '0')}</span>
+                  <span style={{ fontSize: "0.8rem", fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                    {slide.name.replace('Slide', '')}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </motion.div>
 
-      {/* Navigation Buttons */}
-      <div className="nav-controls">
-        <button
-          className="nav-btn"
-          onClick={goPrev}
-          disabled={currentSlide === 0}
-          aria-label="Previous slide"
-        >
-          <ChevronLeft size={18} />
-        </button>
-        <button
-          className="nav-btn"
-          onClick={goNext}
-          disabled={currentSlide === slides.length - 1}
-          aria-label="Next slide"
-        >
-          <ChevronRight size={18} />
-        </button>
+      {/* MAIN CONTENT AREA */}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", position: "relative", height: "100%", overflow: "hidden" }}>
+
+        {/* Toggle Button (when sidebar is closed) */}
+        {!isSidebarOpen && (
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onClick={() => setIsSidebarOpen(true)}
+            style={{
+              position: "absolute",
+              top: "20px",
+              left: "20px",
+              zIndex: 101,
+              background: "#1e293b",
+              color: "#fff",
+              border: "none",
+              borderRadius: "10px",
+              padding: "10px",
+              cursor: "pointer",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+            }}
+          >
+            <PanelLeftOpen size={20} />
+          </motion.button>
+        )}
+
+        {/* Slide Display Area */}
+        <div style={{ flex: 1, position: "relative", height: "100%", display: "flex", flexDirection: "column" }}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              style={{ width: "100%", height: "100%" }}
+            >
+              <CurrentSlideComponent />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Bottom Navigation HUD (Floating or Fixed) */}
+        <div style={{
+          position: "absolute",
+          bottom: "2rem",
+          right: "2.5rem",
+          display: "flex",
+          alignItems: "center",
+          gap: "1.5rem",
+          zIndex: 10
+        }}>
+          <div style={{
+            background: "rgba(30, 41, 59, 0.8)",
+            backdropFilter: "blur(10px)",
+            padding: "4px 12px",
+            borderRadius: "20px",
+            color: "#fff",
+            fontSize: "0.75rem",
+            fontWeight: 900,
+            border: "1px solid rgba(255,255,255,0.1)"
+          }}>
+            {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+          </div>
+
+          <div style={{ display: "flex", gap: "8px" }}>
+            <button
+              className="nav-btn"
+              onClick={goPrev}
+              disabled={currentSlide === 0}
+              style={{ background: "#1e293b", opacity: currentSlide === 0 ? 0.3 : 1 }}
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              className="nav-btn"
+              onClick={goNext}
+              disabled={currentSlide === slides.length - 1}
+              style={{ background: "#1e293b", opacity: currentSlide === slides.length - 1 ? 0.3 : 1 }}
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
