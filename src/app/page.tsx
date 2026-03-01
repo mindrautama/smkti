@@ -1331,7 +1331,7 @@ function SlideBSCFoundation() {
 
   const strategyFlow = [
     { num: "1", label: "Strategy Map", desc: "Peta Sasaran Strategis", color: "#0e6655" },
-    { num: "2", label: "Scorecard (KPI)", desc: "Indikator Terukur", color: "#f97316" },
+    { num: "2", label: "Scorecard", desc: "Indikator Terukur", color: "#f97316" },
     { num: "3", label: "Program Kerja", desc: "Inisiatif & Aktivitas", color: "#1a5276" },
     { num: "4", label: "Budget", desc: "Alokasi Anggaran", color: "#334155" }
   ];
