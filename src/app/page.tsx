@@ -22,6 +22,9 @@ import {
   Calendar,
   PanelLeftOpen,
   PanelLeftClose,
+  Factory,
+  Wallet,
+  Gauge
 } from "lucide-react";
 
 /* =============================
@@ -475,6 +478,98 @@ function SlideBigDream() {
             ))}
           </div>
         </div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   WAYS OF WORKING SLIDE (PCS)
+   ============================= */
+function SlideWaysOfWorking() {
+  const pillars = [
+    {
+      title: "Productivity",
+      icon: <Factory size={48} color="#059669" />,
+      color: "#10b981",
+      desc: "Menghasilkan lebih banyak output berkualitas dari sumber daya yang ada – baik kebun, pabrik, maupun tenaga kerja."
+    },
+    {
+      title: "Cost",
+      icon: <Wallet size={48} color="#d97706" />,
+      color: "#fbbf24",
+      desc: "Menghasilkan produk dengan efisiensi waktu, tenaga, dan bahan untuk hemat biaya."
+    },
+    {
+      title: "Speed",
+      icon: <Gauge size={48} color="#2563eb" />,
+      color: "#3b82f6",
+      desc: "Keputusan & ritme kerja lebih cepat dari sebelumnya – tanpa mengorbankan arah strategis."
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "3rem 4rem", background: "linear-gradient(135deg, #0e6655 0%, #064e3b 50%, #022c22 100%)", position: "relative" }}>
+      <AccentShapes />
+      <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+        <h1 style={{ fontSize: "3.8rem", fontWeight: 900, color: "#fff", margin: 0, letterSpacing: "-0.01em" }}>
+          Ways Of Working Enhancement in PTPN
+        </h1>
+        <p style={{ fontSize: "1.4rem", color: "#fbbf24", margin: "0.5rem 0 0", fontWeight: 700, fontStyle: "italic" }}>
+          &ldquo;Accelerating PTPN&rsquo;s BIG Dream: Productivity, Cost Effectiveness, and Speed as Our DNA&rdquo;
+        </p>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "2.5rem", flex: 1, alignItems: "stretch" }}>
+        {pillars.map((p, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2 }}
+            style={{
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "3rem 2rem",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              position: "relative",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+              borderTop: `12px solid ${p.color}`
+            }}
+          >
+            <div style={{ position: "absolute", top: "15px", left: "15px", opacity: 0.1 }}>
+              <h4 style={{ margin: 0, fontSize: "2rem", fontWeight: 900, color: p.color }}>PCS</h4>
+            </div>
+            <h3 style={{ fontSize: "2.2rem", fontWeight: 900, color: "#1a5276", marginBottom: "2rem" }}>{p.title}</h3>
+            <div style={{ marginBottom: "2.5rem" }}>{p.icon}</div>
+            <p style={{ fontSize: "1.15rem", color: "#334155", lineHeight: 1.6, fontWeight: 500 }}>
+              {p.desc}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+
+      <div style={{ marginTop: "4rem" }}>
+        <motion.div
+          initial={{ width: 0, opacity: 0 }}
+          animate={{ width: "100%", opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          style={{
+            background: "rgba(255, 255, 255, 0.95)",
+            padding: "1.5rem 2rem",
+            borderRadius: "12px",
+            textAlign: "center",
+            boxShadow: "0 10px 20px rgba(0,0,0,0.2)"
+          }}
+        >
+          <p style={{ fontSize: "1.2rem", fontWeight: 800, color: "#064e3b", margin: 0 }}>
+            <span style={{ color: "#059669" }}>PCS bukan</span> sekadar metrik terpisah, melainkan sistem terintegrasi untuk transformasi menyeluruh.
+          </p>
+        </motion.div>
       </div>
       <SlideFooter />
     </div>
@@ -3896,6 +3991,7 @@ const slides = [
   { title: "Cover", component: SlideCover },
   { title: "Strategic Drivers", component: SlideLatar },
   { title: "Our Big Dream RJPP 2026-2030", component: SlideBigDream },
+  { title: "Ways of Working (PCS) Enhancement", component: SlideWaysOfWorking },
   { title: "Gap Analysis — Why Change?", component: SlideWhyChange },
 
   // BAGIAN 2 — PMS DESIGN PRINCIPLES
