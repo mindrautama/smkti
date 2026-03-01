@@ -6462,33 +6462,6 @@ export default function PresentationPage() {
           gap: "1.5rem",
           zIndex: 10
         }}>
-          {showInstallBtn && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={handleInstallClick}
-              style={{
-                background: "linear-gradient(135deg, #0e6655, #1a5276)",
-                color: "#fff",
-                padding: "10px 18px",
-                borderRadius: "14px",
-                border: "none",
-                fontSize: "0.8rem",
-                fontWeight: 900,
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                boxShadow: "0 8px 25px rgba(14, 102, 85, 0.3)",
-                borderBottom: "2px solid rgba(0,0,0,0.2)"
-              }}
-            >
-              <Download size={18} />
-              <span>INSTALL SMKTI</span>
-            </motion.button>
-          )}
 
           <div style={{
             background: "rgba(30, 41, 59, 0.8)",
