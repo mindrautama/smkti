@@ -3393,7 +3393,7 @@ function SlideSMKTIFAQ() {
         <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#10b981", fontWeight: 700 }}>Draft Peraturan Direksi SMKTI 2026</p>
       </div>
 
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", position: "relative" }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", position: "relative" }}>
         {faqs.map((faq, i) => (
           <motion.div
             key={i}
@@ -3402,20 +3402,21 @@ function SlideSMKTIFAQ() {
             transition={{ delay: i * 0.1 }}
             style={{
               background: "rgba(255, 255, 255, 0.05)",
-              borderRadius: "20px",
-              padding: "1.5rem",
+              borderRadius: "24px",
+              padding: "2.5rem",
               border: "1px solid rgba(255, 255, 255, 0.1)",
               display: "flex",
               flexDirection: "column",
-              gap: "12px",
-              backdropFilter: "blur(10px)"
+              gap: "20px",
+              backdropFilter: "blur(10px)",
+              justifyContent: "center"
             }}
           >
-            <div style={{ display: "flex", gap: "15px", alignItems: "flex-start" }}>
-              <div style={{ background: "#f97316", color: "#000", fontWeight: 900, padding: "4px 8px", borderRadius: "4px", fontSize: "0.9rem" }}>{faq.num}</div>
-              <div style={{ fontSize: "0.95rem", fontWeight: 800, color: "#fff", lineHeight: 1.4 }}>{faq.question}</div>
+            <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
+              <div style={{ background: "#f97316", color: "#000", fontWeight: 900, padding: "8px 14px", borderRadius: "8px", fontSize: "1.2rem", boxShadow: "0 4px 12px rgba(249,115,22,0.3)" }}>{faq.num}</div>
+              <div style={{ fontSize: "1.45rem", fontWeight: 800, color: "#fff", lineHeight: 1.3, letterSpacing: "-0.01em" }}>{faq.question}</div>
             </div>
-            <div style={{ fontSize: "0.85rem", color: "rgba(255, 255, 255, 0.7)", lineHeight: 1.6, marginLeft: "45px" }}>
+            <div style={{ fontSize: "1.05rem", color: "rgba(255, 255, 255, 0.8)", lineHeight: 1.7, marginLeft: "4.5rem", fontWeight: 500 }}>
               {faq.answer}
             </div>
           </motion.div>
