@@ -5735,7 +5735,7 @@ function SlideNextSteps() {
                 padding: "1.1rem 1.8rem",
                 border: "1px solid rgba(255, 255, 255, 0.1)",
                 display: "grid",
-                gridTemplateColumns: "55px 1fr auto auto",
+                gridTemplateColumns: "55px 1fr auto",
                 gap: "1.2rem",
                 alignItems: "center"
               }}
@@ -5750,10 +5750,6 @@ function SlideNextSteps() {
               <div style={{ textAlign: "center", minWidth: "130px" }}>
                 <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "4px" }}>Deadline</div>
                 <div style={{ fontSize: "1rem", fontWeight: 900, color: "#fbbf24" }}>{s.deadline}</div>
-              </div>
-              <div style={{ textAlign: "center", minWidth: "130px" }}>
-                <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "4px" }}>PIC</div>
-                <div style={{ fontSize: "1rem", fontWeight: 800, color: "#6ee7b7" }}>{s.owner}</div>
               </div>
             </motion.div>
           ))}
