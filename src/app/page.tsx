@@ -4887,9 +4887,9 @@ function SlideMudaWaste() {
 
 function SlideVSM() {
   const benefits = [
-    { label: "Value Added Ratio", metric: "PRODUKTIVITAS", icon: <BarChart3 size={22} />, color: "#0e6655" },
-    { label: "Efisiensi", metric: "BIAYA", icon: <Wallet size={22} />, color: "#f97316" },
-    { label: "Lead Time", metric: "KECEPATAN", icon: <TrendingUp size={22} />, color: "#1a5276" },
+    { label: "Value Added Ratio", metric: "PRODUKTIVITAS", icon: <BarChart3 size={28} />, color: "#0e6655" },
+    { label: "Efisiensi", metric: "BIAYA", icon: <Wallet size={28} />, color: "#f97316" },
+    { label: "Lead Time", metric: "KECEPATAN", icon: <TrendingUp size={28} />, color: "#1a5276" },
   ];
 
   const fromItems = [
@@ -4920,7 +4920,7 @@ function SlideVSM() {
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
         {/* 3 Benefit Metrics */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.2rem" }}>
           {benefits.map((b, i) => (
             <motion.div
               key={i}
@@ -4929,28 +4929,28 @@ function SlideVSM() {
               transition={{ delay: i * 0.1 }}
               style={{
                 background: b.color,
-                borderRadius: "18px",
-                padding: "1.5rem 2rem",
+                borderRadius: "22px",
+                padding: "1.8rem 2.4rem",
                 color: "#fff",
                 display: "flex",
                 alignItems: "center",
-                gap: "1.2rem",
-                boxShadow: `0 10px 25px ${b.color}30`
+                gap: "1.5rem",
+                boxShadow: `0 12px 30px ${b.color}35`
               }}
             >
-              <div style={{ width: "50px", height: "50px", borderRadius: "14px", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ width: "60px", height: "60px", borderRadius: "16px", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {b.icon}
               </div>
               <div>
-                <div style={{ fontSize: "1rem", fontWeight: 600, opacity: 0.85 }}>{b.label}</div>
-                <div style={{ fontSize: "1.3rem", fontWeight: 900, letterSpacing: "1px" }}>{b.metric}</div>
+                <div style={{ fontSize: "1.1rem", fontWeight: 600, opacity: 0.9, marginBottom: "2px" }}>{b.label}</div>
+                <div style={{ fontSize: "1.6rem", fontWeight: 900, letterSpacing: "1px" }}>{b.metric}</div>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* From → To Transformation */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "1rem", flex: 1 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "1.5rem", flex: 1 }}>
           {/* FROM: Old Way */}
           <motion.div
             initial={{ opacity: 0, x: -25 }}
@@ -4958,22 +4958,23 @@ function SlideVSM() {
             transition={{ delay: 0.3 }}
             style={{
               background: "#fff",
-              borderRadius: "20px",
+              borderRadius: "24px",
               border: "2px solid #fecaca",
-              padding: "1.5rem 2rem",
+              padding: "2.5rem 3rem",
               display: "flex",
-              flexDirection: "column"
+              flexDirection: "column",
+              justifyContent: "center"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1.2rem" }}>
-              <div style={{ background: "#fee2e2", padding: "6px", borderRadius: "10px" }}><X size={18} color="#dc2626" strokeWidth={3} /></div>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: 900, color: "#dc2626", margin: 0, textTransform: "uppercase", letterSpacing: "1px" }}>Sebelum: Hanya Mapping</h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "1.8rem" }}>
+              <div style={{ background: "#fee2e2", padding: "8px", borderRadius: "12px" }}><X size={22} color="#dc2626" strokeWidth={3} /></div>
+              <h3 style={{ fontSize: "1.5rem", fontWeight: 900, color: "#dc2626", margin: 0, textTransform: "uppercase", letterSpacing: "1px" }}>Sebelum: Hanya Mapping</h3>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
               {fromItems.map((item, i) => (
-                <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <span style={{ color: "#dc2626", fontWeight: 900, fontSize: "1.1rem", flexShrink: 0 }}>✕</span>
-                  <span style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600, lineHeight: 1.4 }}>{item}</span>
+                <div key={i} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                  <span style={{ color: "#dc2626", fontWeight: 900, fontSize: "1.3rem", flexShrink: 0, lineHeight: 1 }}>✕</span>
+                  <span style={{ fontSize: "1.15rem", color: "#64748b", fontWeight: 600, lineHeight: 1.4 }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -4986,17 +4987,18 @@ function SlideVSM() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
               style={{
-                width: "60px",
-                height: "60px",
+                width: "70px",
+                height: "70px",
                 borderRadius: "50%",
                 background: "linear-gradient(135deg, #0e6655, #10b981)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0 8px 25px rgba(14, 102, 85, 0.3)"
+                boxShadow: "0 10px 30px rgba(14, 102, 85, 0.3)",
+                zIndex: 2
               }}
             >
-              <ArrowRight size={28} color="#fff" />
+              <ArrowRight size={32} color="#fff" />
             </motion.div>
           </div>
 
@@ -5007,22 +5009,23 @@ function SlideVSM() {
             transition={{ delay: 0.4 }}
             style={{
               background: "#fff",
-              borderRadius: "20px",
+              borderRadius: "24px",
               border: "2px solid #bbf7d0",
-              padding: "1.5rem 2rem",
+              padding: "2.5rem 3rem",
               display: "flex",
-              flexDirection: "column"
+              flexDirection: "column",
+              justifyContent: "center"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1.2rem" }}>
-              <div style={{ background: "#dcfce7", padding: "6px", borderRadius: "10px" }}><Check size={18} color="#16a34a" strokeWidth={3} /></div>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: 900, color: "#16a34a", margin: 0, textTransform: "uppercase", letterSpacing: "1px" }}>Sesudah: Mindset Lean</h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "1.8rem" }}>
+              <div style={{ background: "#dcfce7", padding: "8px", borderRadius: "12px" }}><Check size={22} color="#16a34a" strokeWidth={3} /></div>
+              <h3 style={{ fontSize: "1.5rem", fontWeight: 900, color: "#16a34a", margin: 0, textTransform: "uppercase", letterSpacing: "1px" }}>Sesudah: Mindset Lean</h3>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
               {toItems.map((item, i) => (
-                <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <span style={{ color: "#16a34a", fontWeight: 900, fontSize: "1.1rem", flexShrink: 0 }}>✓</span>
-                  <span style={{ fontSize: "1rem", color: "#334155", fontWeight: 600, lineHeight: 1.4 }}>{item}</span>
+                <div key={i} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                  <span style={{ color: "#16a34a", fontWeight: 900, fontSize: "1.3rem", flexShrink: 0, lineHeight: 1 }}>✓</span>
+                  <span style={{ fontSize: "1.15rem", color: "#334155", fontWeight: 600, lineHeight: 1.4 }}>{item}</span>
                 </div>
               ))}
             </div>
