@@ -2120,20 +2120,20 @@ function SlideBAPerformance() {
    ============================= */
 function SlideProgramKerja() {
   return (
-    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276", marginBottom: "0.5rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276", marginBottom: "0.2rem" }}>
           <em>Program Kerja, KPI & Strategic Objective</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.3rem", color: "#64748b", fontWeight: 600 }}>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
           Hubungan Tiga Elemen Kunci Manajemen Kinerja
         </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
         {/* Main Visual: Hub & Spoke */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 80px 1.2fr 80px 1fr", alignItems: "stretch", gap: "0", flex: 1 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 60px 1.2fr 60px 1fr", alignItems: "stretch", gap: "0", flex: 1 }}>
 
           {/* LEFT: Program Kerja Card */}
           <motion.div
@@ -2142,8 +2142,8 @@ function SlideProgramKerja() {
             transition={{ delay: 0.3 }}
             style={{
               background: "#fff",
-              borderRadius: "24px",
-              padding: "2rem",
+              borderRadius: "20px",
+              padding: "1.5rem",
               display: "flex",
               flexDirection: "column",
               boxShadow: "0 10px 35px rgba(0,0,0,0.04)",
@@ -2153,44 +2153,44 @@ function SlideProgramKerja() {
             }}
           >
             <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: "#e67e22" }} />
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1rem" }}>
               <div style={{
                 background: "rgba(230, 126, 34, 0.1)",
                 color: "#e67e22",
-                width: "60px",
-                height: "60px",
-                borderRadius: "16px",
+                width: "50px",
+                height: "50px",
+                borderRadius: "14px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}>
-                <FileText size={28} />
+                <FileText size={24} />
               </div>
               <div>
-                <div style={{ fontSize: "0.85rem", fontWeight: 900, color: "#e67e22", letterSpacing: "2px", textTransform: "uppercase" }}>THE HOW</div>
-                <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>Program Kerja</h3>
+                <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#e67e22", letterSpacing: "1px", textTransform: "uppercase" }}>THE HOW</div>
+                <h3 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>Program Kerja</h3>
               </div>
             </div>
-            <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.6, margin: "0 0 1.5rem 0" }}>
+            <p style={{ fontSize: "0.95rem", color: "#475569", lineHeight: 1.5, margin: "0 0 1rem 0" }}>
               <strong>Cara mencapai</strong> Strategic Objective. Berupa rencana aksi terstruktur yang memuat aktivitas, timeline, output, dan penanggung jawab.
             </p>
             <div style={{ marginTop: "auto" }}>
-              <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "0.8rem" }}>Contoh</div>
+              <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.5rem" }}>Contoh</div>
               {["Replanting 500 Ha di Q2", "Workshop BSC untuk Divisi", "Audit Internal Unit Kebun"].map((ex, j) => (
                 <div key={j} style={{
                   background: "rgba(230, 126, 34, 0.06)",
                   border: "1px solid rgba(230, 126, 34, 0.15)",
-                  padding: "10px 14px",
-                  borderRadius: "12px",
-                  fontSize: "1rem",
+                  padding: "8px 12px",
+                  borderRadius: "10px",
+                  fontSize: "0.9rem",
                   color: "#e67e22",
                   fontWeight: 700,
-                  marginBottom: "0.5rem",
+                  marginBottom: "0.4rem",
                   display: "flex",
                   alignItems: "center",
-                  gap: "10px"
+                  gap: "8px"
                 }}>
-                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#e67e22", flexShrink: 0 }} />
+                  <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#e67e22", flexShrink: 0 }} />
                   {ex}
                 </div>
               ))}
@@ -2198,16 +2198,16 @@ function SlideProgramKerja() {
           </motion.div>
 
           {/* LEFT ARROW */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.6rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.4rem" }}>
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}
+              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}
             >
-              <span style={{ fontSize: "0.75rem", color: "#e67e22", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>Cara</span>
-              <div style={{ width: "50px", height: "50px", borderRadius: "50%", background: "linear-gradient(135deg, #fef3c7, #fde68a)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(230, 126, 34, 0.15)" }}>
-                <ArrowRight size={22} color="#e67e22" strokeWidth={2.5} style={{ transform: "rotate(180deg)" }} />
+              <span style={{ fontSize: "0.7rem", color: "#e67e22", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>Cara</span>
+              <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "linear-gradient(135deg, #fef3c7, #fde68a)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(230, 126, 34, 0.15)" }}>
+                <ArrowRight size={18} color="#e67e22" strokeWidth={2.5} style={{ transform: "rotate(180deg)" }} />
               </div>
             </motion.div>
           </div>
@@ -2219,8 +2219,8 @@ function SlideProgramKerja() {
             transition={{ delay: 0.15 }}
             style={{
               background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)",
-              borderRadius: "28px",
-              padding: "2.5rem 2rem",
+              borderRadius: "24px",
+              padding: "1.5rem 1.5rem",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -2232,44 +2232,44 @@ function SlideProgramKerja() {
               overflow: "hidden"
             }}
           >
-            <div style={{ position: "absolute", top: "-50px", right: "-50px", width: "200px", height: "200px", borderRadius: "50%", background: "rgba(255,255,255,0.05)" }} />
-            <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "150px", height: "150px", borderRadius: "50%", background: "rgba(255,255,255,0.03)" }} />
+            <div style={{ position: "absolute", top: "-50px", right: "-50px", width: "150px", height: "150px", borderRadius: "50%", background: "rgba(255,255,255,0.05)" }} />
+            <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "100px", height: "100px", borderRadius: "50%", background: "rgba(255,255,255,0.03)" }} />
 
             <div style={{
               background: "rgba(255,255,255,0.15)",
-              width: "80px",
-              height: "80px",
-              borderRadius: "22px",
+              width: "60px",
+              height: "60px",
+              borderRadius: "18px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              marginBottom: "1.5rem"
+              marginBottom: "1rem"
             }}>
-              <Target size={40} />
+              <Target size={32} />
             </div>
-            <div style={{ fontSize: "0.9rem", fontWeight: 800, letterSpacing: "3px", textTransform: "uppercase", opacity: 0.7, marginBottom: "0.5rem" }}>THE WHAT</div>
-            <h2 style={{ fontSize: "2rem", fontWeight: 900, margin: "0 0 1rem 0", lineHeight: 1.2 }}>Strategic Objective</h2>
-            <p style={{ fontSize: "1.1rem", fontWeight: 500, lineHeight: 1.6, opacity: 0.9, margin: 0 }}>
+            <div style={{ fontSize: "0.8rem", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", opacity: 0.7, marginBottom: "0.4rem" }}>THE WHAT</div>
+            <h2 style={{ fontSize: "1.8rem", fontWeight: 900, margin: "0 0 0.8rem 0", lineHeight: 1.2 }}>Strategic Objective</h2>
+            <p style={{ fontSize: "1rem", fontWeight: 500, lineHeight: 1.5, opacity: 0.9, margin: 0 }}>
               Tujuan strategis organisasi yang ditetapkan dalam RJPP & RKAP — menjadi arah utama seluruh aktivitas
             </p>
-            <div style={{ marginTop: "1.5rem", display: "flex", flexWrap: "wrap", gap: "0.6rem", justifyContent: "center" }}>
+            <div style={{ marginTop: "1rem", display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
               {["Revenue Growth 15%", "Cost Efficiency", "Market Expansion"].map((ex, j) => (
-                <span key={j} style={{ background: "rgba(255,255,255,0.15)", padding: "8px 16px", borderRadius: "10px", fontSize: "0.95rem", fontWeight: 700 }}>{ex}</span>
+                <span key={j} style={{ background: "rgba(255,255,255,0.15)", padding: "6px 12px", borderRadius: "8px", fontSize: "0.85rem", fontWeight: 700 }}>{ex}</span>
               ))}
             </div>
           </motion.div>
 
           {/* RIGHT ARROW */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.6rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.4rem" }}>
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}
+              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}
             >
-              <span style={{ fontSize: "0.75rem", color: "#0e6655", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>Ukuran</span>
-              <div style={{ width: "50px", height: "50px", borderRadius: "50%", background: "linear-gradient(135deg, #d1fae5, #a7f3d0)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(14, 102, 85, 0.15)" }}>
-                <ArrowRight size={22} color="#0e6655" strokeWidth={2.5} />
+              <span style={{ fontSize: "0.7rem", color: "#0e6655", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>Ukuran</span>
+              <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "linear-gradient(135deg, #d1fae5, #a7f3d0)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(14, 102, 85, 0.15)" }}>
+                <ArrowRight size={18} color="#0e6655" strokeWidth={2.5} />
               </div>
             </motion.div>
           </div>
@@ -2281,8 +2281,8 @@ function SlideProgramKerja() {
             transition={{ delay: 0.3 }}
             style={{
               background: "#fff",
-              borderRadius: "24px",
-              padding: "2rem",
+              borderRadius: "20px",
+              padding: "1.5rem",
               display: "flex",
               flexDirection: "column",
               boxShadow: "0 10px 35px rgba(0,0,0,0.04)",
@@ -2292,48 +2292,48 @@ function SlideProgramKerja() {
             }}
           >
             <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: "#0e6655" }} />
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1rem" }}>
               <div style={{
                 background: "rgba(14, 102, 85, 0.1)",
                 color: "#0e6655",
-                width: "60px",
-                height: "60px",
-                borderRadius: "16px",
+                width: "50px",
+                height: "50px",
+                borderRadius: "14px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}>
-                <BarChart3 size={28} />
+                <BarChart3 size={24} />
               </div>
               <div>
-                <div style={{ fontSize: "0.85rem", fontWeight: 900, color: "#0e6655", letterSpacing: "2px", textTransform: "uppercase" }}>THE MEASURE</div>
+                <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#0e6655", letterSpacing: "1px", textTransform: "uppercase" }}>THE MEASURE</div>
                 <h3 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>Scorecard & KPI</h3>
               </div>
             </div>
-            <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.6, margin: "0 0 1.5rem 0" }}>
-              <strong>Ukuran keberhasilan</strong> pencapaian Strategic Objective. Disebut <strong style={{ color: "#1a5276" }}>Scorecard</strong> di tingkat Korporat, Direktorat & Divisi — dan <strong style={{ color: "#0e6655" }}>KPI</strong> di tingkat Individu.
+            <p style={{ fontSize: "0.95rem", color: "#475569", lineHeight: 1.5, margin: "0 0 1rem 0" }}>
+              <strong>Ukuran keberhasilan</strong> pencapaian Strategic Objective. Disebut <strong style={{ color: "#1a5276" }}>Scorecard</strong> di Korporat/Divisi — dan <strong style={{ color: "#0e6655" }}>KPI</strong> Individu.
             </p>
             <div style={{ marginTop: "auto" }}>
-              <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "0.8rem" }}>Contoh</div>
+              <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.5rem" }}>Contoh</div>
               {[
-                { level: "Scorecard", ex: "Revenue Growth ≥ 15% (Korporat)" },
-                { level: "Scorecard", ex: "HPP/Ton ≤ Rp X Juta (Direktorat)" },
+                { level: "Scorecard", ex: "Rev. Growth ≥ 15% (Korp)" },
+                { level: "Scorecard", ex: "HPP/Ton ≤ RpX Juta (Dir)" },
                 { level: "KPI", ex: "TBS/Ha ≥ 20 Ton (Individu)" }
               ].map((item, j) => (
                 <div key={j} style={{
                   background: "rgba(14, 102, 85, 0.06)",
                   border: "1px solid rgba(14, 102, 85, 0.15)",
-                  padding: "10px 14px",
-                  borderRadius: "12px",
-                  fontSize: "0.95rem",
+                  padding: "8px 12px",
+                  borderRadius: "10px",
+                  fontSize: "0.85rem",
                   color: "#0e6655",
                   fontWeight: 700,
-                  marginBottom: "0.5rem",
+                  marginBottom: "0.4rem",
                   display: "flex",
                   alignItems: "center",
-                  gap: "10px"
+                  gap: "8px"
                 }}>
-                  <span style={{ fontSize: "0.7rem", fontWeight: 900, background: item.level === "KPI" ? "#0e6655" : "#1a5276", color: "#fff", padding: "2px 8px", borderRadius: "6px", flexShrink: 0 }}>{item.level}</span>
+                  <span style={{ fontSize: "0.65rem", fontWeight: 900, background: item.level === "KPI" ? "#0e6655" : "#1a5276", color: "#fff", padding: "2px 6px", borderRadius: "6px", flexShrink: 0 }}>{item.level}</span>
                   {item.ex}
                 </div>
               ))}
@@ -2349,22 +2349,22 @@ function SlideProgramKerja() {
           style={{
             background: "linear-gradient(135deg, #1a5276 0%, #0e6655 100%)",
             color: "#fff",
-            padding: "1.2rem 2.5rem",
-            borderRadius: "18px",
+            padding: "1rem 2rem",
+            borderRadius: "16px",
             display: "flex",
             alignItems: "center",
-            gap: "2rem",
+            gap: "1.5rem",
             boxShadow: "0 10px 30px rgba(14, 102, 85, 0.2)"
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
-            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <TrendingUp size={24} />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
+            <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <TrendingUp size={20} />
             </div>
-            <div style={{ fontSize: "1.1rem", fontWeight: 800 }}>Prinsip Utama</div>
+            <div style={{ fontSize: "1rem", fontWeight: 800 }}>Prinsip Utama</div>
           </div>
-          <div style={{ height: "40px", width: "1px", background: "rgba(255,255,255,0.2)" }} />
-          <div style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.5 }}>
+          <div style={{ height: "30px", width: "1px", background: "rgba(255,255,255,0.2)" }} />
+          <div style={{ fontSize: "1rem", fontWeight: 600, lineHeight: 1.4 }}>
             <strong>Program Kerja</strong> adalah <em>cara</em> untuk mencapai Strategic Objective. <strong>Scorecard</strong> (Korporat–Divisi) dan <strong>KPI</strong> (Individu) adalah <em>ukuran keberhasilannya</em>.
           </div>
         </motion.div>
