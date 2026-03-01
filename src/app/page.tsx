@@ -3401,16 +3401,16 @@ function SlideWeighting() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "1rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
+      <div className="slide-header" style={{ marginBottom: "0.8rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.2rem" }}>
           <em>Pembobotan Performance Appraisal</em>
         </h1>
         <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Struktur Penilaian Pegawai: Transformasi 2025 ke 2026</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
         {years.map((y, idx) => (
           <motion.div
             key={idx}
@@ -3420,8 +3420,8 @@ function SlideWeighting() {
             style={{
               flex: 1,
               border: "1px solid #e2e8f0",
-              borderRadius: "24px",
-              padding: "2rem",
+              borderRadius: "20px",
+              padding: "1.2rem 1.5rem",
               position: "relative",
               background: "#fff",
               boxShadow: "0 20px 40px rgba(0,0,0,0.03)",
@@ -4447,18 +4447,18 @@ function SlideProjectCharter() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)", display: "flex", flexDirection: "column" }}>
+    <div className="slide" style={{ padding: "1rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)", display: "flex", flexDirection: "column" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "left" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.5rem", color: "#1a5276", marginBottom: "0.2rem" }}>
+      <div className="slide-header" style={{ marginBottom: "0.8rem", textAlign: "left" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.4rem", color: "#1a5276", marginBottom: "0.2rem" }}>
           <em>Proyek Scorecard, KPI, Proses Bisnis & Struktur Organisasi</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.05rem", color: "#64748b", fontWeight: 700 }}>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>
           Project Start Date: Maret 2026
         </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem", overflow: "hidden" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem", overflow: "hidden" }}>
 
         {/* Gantt Container */}
         <div style={{
@@ -4492,8 +4492,8 @@ function SlideProjectCharter() {
           {/* Table Body */}
           <div style={{ display: "flex", flexDirection: "column" }}>
             {milestones.map((m, idx) => (
-              <div key={idx} style={{ display: "flex", borderBottom: "1px solid #f1f5f9", minHeight: "28px" }}>
-                <div style={{ width: "350px", padding: "5px 20px", fontSize: "0.75rem", fontWeight: 600, color: "#334155", borderRight: "1px solid #e2e8f0", display: "flex", alignItems: "center" }}>
+              <div key={idx} style={{ display: "flex", borderBottom: "1px solid #f1f5f9", minHeight: "24px" }}>
+                <div style={{ width: "350px", padding: "4px 20px", fontSize: "0.7rem", fontWeight: 600, color: "#334155", borderRight: "1px solid #e2e8f0", display: "flex", alignItems: "center" }}>
                   {m.name}
                 </div>
                 <div style={{ flex: 1, position: "relative", display: "flex" }}>
@@ -4536,12 +4536,12 @@ function SlideProjectCharter() {
           boxShadow: "0 10px 25px rgba(14, 102, 85, 0.06)",
           position: "relative"
         }}>
-          <div style={{ fontSize: "1.1rem", fontWeight: 900, color: "#0e6655", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Check size={20} />
+          <div style={{ fontSize: "1rem", fontWeight: 900, color: "#0e6655", display: "flex", alignItems: "center", gap: "8px" }}>
+            <Check size={18} />
             Delivery Output :
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: "3rem", rowGap: "0.8rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: "3rem", rowGap: "0.5rem" }}>
             {deliverables.map((item, i) => (
               <div key={i} style={{
                 fontSize: "0.95rem",
@@ -5596,18 +5596,18 @@ function SlideRiskMitigation() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "1.2rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3rem", color: "#0e6655", marginBottom: "0.2rem" }}>
           <em>Risk & Mitigasi</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>
           Identifikasi Risiko Utama & Rencana Penanganan Proaktif
         </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
         {/* Header */}
         <div style={{ display: "grid", gridTemplateColumns: "0.8fr 0.5fr 2fr 2.5fr", gap: "0.8rem", padding: "0.5rem 1.2rem" }}>
           {["Risiko", "Level", "Deskripsi", "Rencana Mitigasi"].map((h, i) => (
@@ -5627,18 +5627,18 @@ function SlideRiskMitigation() {
               gap: "0.8rem",
               background: "#fff",
               borderRadius: "16px",
-              padding: "1.2rem 1.5rem",
+              padding: "1rem 1.5rem",
               border: "1px solid #f1f5f9",
               boxShadow: "0 3px 10px rgba(0,0,0,0.02)",
               alignItems: "center"
             }}
           >
-            <div style={{ fontWeight: 900, fontSize: "1.05rem", color: "#1e293b" }}>{r.risk}</div>
-            <div style={{ background: `${r.levelColor}15`, color: r.levelColor, padding: "4px 12px", borderRadius: "8px", fontSize: "0.8rem", fontWeight: 900, textAlign: "center", letterSpacing: "0.5px" }}>{r.level}</div>
-            <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#64748b", lineHeight: 1.4 }}>{r.desc}</div>
-            <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
-              <ShieldCheck size={18} color="#0e6655" style={{ marginTop: "2px", flexShrink: 0 }} />
-              <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#0e6655", lineHeight: 1.4 }}>{r.mitigation}</span>
+            <div style={{ fontWeight: 900, fontSize: "1rem", color: "#1e293b" }}>{r.risk}</div>
+            <div style={{ background: `${r.levelColor}15`, color: r.levelColor, padding: "4px 12px", borderRadius: "8px", fontSize: "0.75rem", fontWeight: 900, textAlign: "center", letterSpacing: "0.5px" }}>{r.level}</div>
+            <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "#64748b", lineHeight: 1.4 }}>{r.desc}</div>
+            <div style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
+              <ShieldCheck size={16} color="#0e6655" style={{ marginTop: "2px", flexShrink: 0 }} />
+              <span style={{ fontSize: "0.9rem", fontWeight: 700, color: "#0e6655", lineHeight: 1.4 }}>{r.mitigation}</span>
             </div>
           </motion.div>
         ))}
@@ -5648,10 +5648,10 @@ function SlideRiskMitigation() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
-        style={{ marginTop: "1rem", background: "linear-gradient(135deg, #1e293b, #0e6655)", borderRadius: "16px", padding: "1.2rem 2.5rem", display: "flex", alignItems: "center", gap: "1.5rem", color: "#fff" }}
+        style={{ marginTop: "0.8rem", background: "linear-gradient(135deg, #1e293b, #0e6655)", borderRadius: "16px", padding: "1rem 2rem", display: "flex", alignItems: "center", gap: "1.2rem", color: "#fff" }}
       >
-        <ShieldCheck size={22} />
-        <p style={{ fontSize: "1.05rem", fontWeight: 700, margin: 0 }}>
+        <ShieldCheck size={20} />
+        <p style={{ fontSize: "1rem", fontWeight: 700, margin: 0 }}>
           Pendekatan <strong style={{ color: "#fbbf24" }}>proaktif</strong>: setiap risiko telah diidentifikasi sejak awal dengan rencana mitigasi spesifik untuk meminimalkan dampak terhadap timeline dan kualitas implementasi.
         </p>
       </motion.div>
@@ -6080,33 +6080,33 @@ function SlideReviewCycleStrategy() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 2.5rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "1.2rem 3rem", background: "#fff" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Strategi Siklus Review Kinerja</h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>
+      <div className="slide-header" style={{ marginBottom: "0.8rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.5rem", color: "#1a5276", marginBottom: "0.2rem" }}>Strategi Siklus Review Kinerja</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.05rem", color: "#64748b", fontWeight: 600 }}>
           Pendekatan Bertahap: Triwulanan (Fase 1) → Bulanan (Fase 2)
         </p>
       </div>
 
       {/* Maturity Arrow */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0", marginBottom: "1.2rem" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0", marginBottom: "1rem" }}>
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-          style={{ background: "#0e6655", color: "#fff", padding: "14px 35px", borderRadius: "12px 0 0 12px", fontWeight: 900, fontSize: "1.15rem", display: "flex", alignItems: "center", gap: "10px" }}
+          style={{ background: "#0e6655", color: "#fff", padding: "10px 25px", borderRadius: "12px 0 0 12px", fontWeight: 900, fontSize: "1rem", display: "flex", alignItems: "center", gap: "8px" }}
         >
-          <Calendar size={20} /> Quarterly Review (2026)
+          <Calendar size={18} /> Quarterly Review (2026)
         </motion.div>
-        <div style={{ width: 0, height: 0, borderTop: "27px solid transparent", borderBottom: "27px solid transparent", borderLeft: "22px solid #0e6655" }} />
-        <div style={{ width: "60px", height: "5px", background: "linear-gradient(90deg, #10b981, #3b82f6)" }} />
-        <div style={{ width: 0, height: 0, borderTop: "27px solid transparent", borderBottom: "27px solid transparent", borderRight: "22px solid #1a5276" }} />
+        <div style={{ width: 0, height: 0, borderTop: "22px solid transparent", borderBottom: "22px solid transparent", borderLeft: "18px solid #0e6655" }} />
+        <div style={{ width: "50px", height: "4px", background: "linear-gradient(90deg, #10b981, #3b82f6)" }} />
+        <div style={{ width: 0, height: 0, borderTop: "22px solid transparent", borderBottom: "22px solid transparent", borderRight: "18px solid #1a5276" }} />
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
-          style={{ background: "#1a5276", color: "#fff", padding: "14px 35px", borderRadius: "0 12px 12px 0", fontWeight: 900, fontSize: "1.15rem", display: "flex", alignItems: "center", gap: "10px" }}
+          style={{ background: "#1a5276", color: "#fff", padding: "10px 25px", borderRadius: "0 12px 12px 0", fontWeight: 900, fontSize: "1rem", display: "flex", alignItems: "center", gap: "8px" }}
         >
-          <TrendingUp size={20} /> Monthly Review (2027+)
+          <TrendingUp size={18} /> Monthly Review (2027+)
         </motion.div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem", flex: 1 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", flex: 1 }}>
         {phases.map((p, idx) => (
           <motion.div
             key={idx}
@@ -6122,26 +6122,26 @@ function SlideReviewCycleStrategy() {
               boxShadow: `0 8px 25px ${p.color}15`
             }}
           >
-            <div style={{ background: p.color, color: "#fff", padding: "1.2rem 1.8rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ background: p.color, color: "#fff", padding: "1rem 1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
-                <div style={{ fontSize: "0.85rem", fontWeight: 800, opacity: 0.8, letterSpacing: "2px" }}>{p.phase} • {p.period}</div>
-                <div style={{ fontSize: "1.6rem", fontWeight: 900 }}>{p.label}</div>
+                <div style={{ fontSize: "0.8rem", fontWeight: 800, opacity: 0.8, letterSpacing: "2px" }}>{p.phase} • {p.period}</div>
+                <div style={{ fontSize: "1.4rem", fontWeight: 900 }}>{p.label}</div>
               </div>
-              <div style={{ background: idx === 0 ? "#fbbf24" : "rgba(255,255,255,0.15)", color: idx === 0 ? "#1e293b" : "#fff", padding: "6px 16px", borderRadius: "8px", fontSize: "0.75rem", fontWeight: 900, letterSpacing: "1px" }}>
+              <div style={{ background: idx === 0 ? "#fbbf24" : "rgba(255,255,255,0.15)", color: idx === 0 ? "#1e293b" : "#fff", padding: "6px 12px", borderRadius: "8px", fontSize: "0.7rem", fontWeight: 900, letterSpacing: "1px" }}>
                 {p.status}
               </div>
             </div>
 
-            <div style={{ padding: "1.4rem 1.8rem", flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+            <div style={{ padding: "1.2rem 1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
               {/* PROS */}
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                  <div style={{ background: "#dcfce7", padding: "4px", borderRadius: "50%" }}><Check size={14} color="#16a34a" strokeWidth={3} /></div>
-                  <span style={{ fontSize: "0.9rem", fontWeight: 900, color: "#16a34a", textTransform: "uppercase", letterSpacing: "1px" }}>Kelebihan</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                  <div style={{ background: "#dcfce7", padding: "4px", borderRadius: "50%" }}><Check size={12} color="#16a34a" strokeWidth={3} /></div>
+                  <span style={{ fontSize: "0.85rem", fontWeight: 900, color: "#16a34a", textTransform: "uppercase", letterSpacing: "1px" }}>Kelebihan</span>
                 </div>
                 {p.pros.map((pro, i) => (
-                  <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "7px", fontSize: "0.95rem", color: "#334155", fontWeight: 500, lineHeight: 1.35 }}>
-                    <span style={{ color: p.accent, fontWeight: 900, flexShrink: 0, fontSize: "1.1rem" }}>+</span>
+                  <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "4px", fontSize: "0.85rem", color: "#334155", fontWeight: 600, lineHeight: 1.3 }}>
+                    <span style={{ color: p.accent, fontWeight: 900, flexShrink: 0, fontSize: "1rem" }}>+</span>
                     <span>{pro}</span>
                   </div>
                 ))}
@@ -6149,13 +6149,13 @@ function SlideReviewCycleStrategy() {
 
               {/* CONS */}
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                  <div style={{ background: "#fee2e2", padding: "4px", borderRadius: "50%" }}><X size={14} color="#dc2626" strokeWidth={3} /></div>
-                  <span style={{ fontSize: "0.9rem", fontWeight: 900, color: "#dc2626", textTransform: "uppercase", letterSpacing: "1px" }}>Risiko / Tantangan</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                  <div style={{ background: "#fee2e2", padding: "4px", borderRadius: "50%" }}><X size={12} color="#dc2626" strokeWidth={3} /></div>
+                  <span style={{ fontSize: "0.85rem", fontWeight: 900, color: "#dc2626", textTransform: "uppercase", letterSpacing: "1px" }}>Risiko / Tantangan</span>
                 </div>
                 {p.cons.map((con, i) => (
-                  <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "7px", fontSize: "0.95rem", color: "#64748b", fontWeight: 500, lineHeight: 1.35 }}>
-                    <span style={{ color: "#dc2626", fontWeight: 900, flexShrink: 0, fontSize: "1.1rem" }}>–</span>
+                  <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "4px", fontSize: "0.85rem", color: "#64748b", fontWeight: 600, lineHeight: 1.3 }}>
+                    <span style={{ color: "#dc2626", fontWeight: 900, flexShrink: 0, fontSize: "1rem" }}>–</span>
                     <span>{con}</span>
                   </div>
                 ))}
@@ -6170,10 +6170,10 @@ function SlideReviewCycleStrategy() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        style={{ marginTop: "1rem", background: "linear-gradient(135deg, #0e6655, #1a5276)", padding: "1.2rem 2rem", borderRadius: "14px", display: "flex", alignItems: "center", gap: "1.5rem" }}
+        style={{ marginTop: "0.8rem", background: "linear-gradient(135deg, #0e6655, #1a5276)", padding: "1rem 2rem", borderRadius: "14px", display: "flex", alignItems: "center", gap: "1.2rem" }}
       >
-        <div style={{ background: "#fbbf24", color: "#1e293b", padding: "8px 18px", borderRadius: "8px", fontWeight: 900, fontSize: "0.85rem", flexShrink: 0, letterSpacing: "1px" }}>REKOMENDASI</div>
-        <p style={{ color: "#fff", fontWeight: 700, fontSize: "1.05rem", margin: 0, lineHeight: 1.4 }}>
+        <div style={{ background: "#fbbf24", color: "#1e293b", padding: "6px 14px", borderRadius: "8px", fontWeight: 900, fontSize: "0.8rem", flexShrink: 0, letterSpacing: "1px" }}>REKOMENDASI</div>
+        <p style={{ color: "#fff", fontWeight: 700, fontSize: "0.95rem", margin: 0, lineHeight: 1.4 }}>
           Mulai dengan <strong style={{ color: "#fbbf24" }}>quarterly review</strong> di tahun 2026. Transisi penuh ke <strong style={{ color: "#fbbf24" }}>monthly review</strong> untuk <strong>seluruh PTPN Group di tahun 2027</strong> setelah sistem APMS 2.0 siap mendukug kapasitas data skala besar.
         </p>
       </motion.div>
