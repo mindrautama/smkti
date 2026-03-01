@@ -1438,83 +1438,175 @@ function SlideBSCFoundation() {
 }
 
 function SlidePDCACycle() {
+  const pdcaSteps = [
+    {
+      letter: "P",
+      title: "PLAN",
+      subtitle: "Perencanaan Kinerja",
+      color: "#f59e0b",
+      icon: <Target size={26} />,
+      items: [
+        "Penyusunan RKAP & sasaran strategis",
+        "Cascading Scorecard & KPI ke seluruh level",
+        "Penetapan Program Kerja (Proker) & milestone"
+      ]
+    },
+    {
+      letter: "D",
+      title: "DO",
+      subtitle: "Eksekusi & Realisasi",
+      color: "#f97316",
+      icon: <Settings size={26} />,
+      items: [
+        "Pelaksanaan Program Kerja sesuai target",
+        "Input realisasi KPI secara berkala",
+        "Dokumentasi progres di sistem APMS"
+      ]
+    },
+    {
+      letter: "C",
+      title: "CHECK",
+      subtitle: "Monitoring & Evaluasi",
+      color: "#3b82f6",
+      icon: <BarChart3 size={26} />,
+      items: [
+        "Review pencapaian KPI (Quarterly/Monthly)",
+        "Monitoring realisasi Proker (Monev)",
+        "Identifikasi deviasi & gap kinerja"
+      ]
+    },
+    {
+      letter: "A",
+      title: "ACT",
+      subtitle: "Tindak Lanjut & Perbaikan",
+      color: "#8b5cf6",
+      icon: <TrendingUp size={26} />,
+      items: [
+        "Penyusunan PICA (Problem, Cause, Action)",
+        "Coaching & mentoring oleh atasan langsung",
+        "Normalisasi perbaikan ke siklus berikutnya"
+      ]
+    }
+  ];
+
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1rem" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>PDCA as Improvement & Learning Cycle</h1>
-        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Continuous Improvement Framework for Organizational Achievement</p>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>Siklus PDCA — Perbaikan Berkelanjutan</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Kerangka Continuous Improvement untuk Pencapaian Kinerja Organisasi
+        </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <div style={{ position: "relative", width: "600px", height: "600px" }}>
-          {/* Center RJPP */}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+        {/* PDCA Grid with Center Hub */}
+        <div style={{ position: "relative", flex: 1 }}>
+          {/* Center RJPP Hub */}
           <div style={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: "120px",
-            height: "120px",
-            background: "#0e6655",
-            color: "#fff",
+            width: "90px",
+            height: "90px",
             borderRadius: "50%",
+            background: "linear-gradient(135deg, #0e6655, #1a5276)",
+            color: "#fff",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 10,
-            boxShadow: "0 0 30px rgba(14,102,85,0.3)",
             fontWeight: 900,
-            fontSize: "1.2rem"
+            fontSize: "1.1rem",
+            zIndex: 10,
+            boxShadow: "0 8px 30px rgba(14, 102, 85, 0.35)",
+            border: "4px solid #fff"
           }}>RJPP</div>
 
-          {/* Cycle Segments */}
-          {[
-            { t: "PLAN", s: "First Step", items: ["RKAP", "Scorecard & KPI", "Proker"], color: "#f1c40f", pos: { top: "5%", left: "50%", tx: "-50%" }, arrow: "top" },
-            { t: "DO", s: "Second Step", items: ["Program Kerja", "Execution"], color: "#e67e22", pos: { top: "50%", right: "5%", ty: "-50%" }, arrow: "right" },
-            { t: "CHECK", s: "Third Step", items: ["Performance", "Proker Monitoring (Monev)"], color: "#2980b9", pos: { bottom: "5%", left: "50%", tx: "-50%" }, arrow: "bottom" },
-            { t: "ACT", s: "Fourth Step", items: ["PICA", "Coaching & Mentoring", "NORM"], color: "#8e44ad", pos: { top: "50%", left: "5%", ty: "-50%" }, arrow: "left" }
-          ].map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.1 }}
-              style={{
-                position: "absolute",
-                top: step.pos.top,
-                left: step.pos.left,
-                right: step.pos.right,
-                bottom: step.pos.bottom,
-                transform: `translate(${step.pos.tx || "0"}, ${step.pos.ty || "0"})`,
-                width: "220px",
-                background: "#fff",
-                borderRadius: "24px",
-                padding: "1.5rem",
-                border: `2px solid ${step.color}`,
-                boxShadow: `0 10px 25px ${step.color}15`,
-                textAlign: "center"
-              }}
-            >
-              <div style={{ color: step.color, fontWeight: 900, fontSize: "0.8rem", textTransform: "uppercase", marginBottom: "5px" }}>{step.s}</div>
-              <div style={{ background: step.color, color: "#fff", padding: "5px", borderRadius: "8px", fontWeight: 900, fontSize: "1.1rem", marginBottom: "15px" }}>{step.t}</div>
-              <ul style={{ listStyle: "none", padding: 0, textAlign: "left" }}>
-                {step.items.map((it, idx) => (
-                  <li key={idx} style={{ fontSize: "0.8rem", fontWeight: 700, color: "#1e293b", marginBottom: "4px", display: "flex", gap: "8px" }}>
-                    <span style={{ color: step.color }}>•</span> {it}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          {/* 2x2 Grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem", height: "100%" }}>
+            {pdcaSteps.map((s, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: i * 0.12 }}
+                style={{
+                  background: "#fff",
+                  borderRadius: "24px",
+                  padding: "1.8rem 2rem",
+                  border: `2px solid ${s.color}20`,
+                  boxShadow: `0 8px 25px ${s.color}08`,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.8rem",
+                  position: "relative",
+                  overflow: "hidden"
+                }}
+              >
+                {/* Color accent top */}
+                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "5px", background: s.color }} />
 
-          {/* Decorative Arrows SVG would go here, simplified to CSS for now */}
-          <div style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "100%", transform: "translate(-50%, -50%)", pointerEvents: "none" }}>
-            <svg width="100%" height="100%" viewBox="0 0 600 600" fill="none" stroke="#cbd5e1" strokeWidth="2" strokeDasharray="5 5">
-              <circle cx="300" cy="300" r="200" />
-            </svg>
+                {/* Header */}
+                <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+                  <div style={{
+                    width: "52px",
+                    height: "52px",
+                    borderRadius: "16px",
+                    background: s.color,
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontWeight: 900,
+                    fontSize: "1.5rem",
+                    boxShadow: `0 6px 18px ${s.color}35`
+                  }}>{s.letter}</div>
+                  <div>
+                    <div style={{ fontSize: "1.3rem", fontWeight: 900, color: "#1e293b" }}>{s.title}</div>
+                    <div style={{ fontSize: "0.95rem", fontWeight: 700, color: s.color }}>{s.subtitle}</div>
+                  </div>
+                  <div style={{ marginLeft: "auto", opacity: 0.15, color: s.color }}>
+                    {s.icon}
+                  </div>
+                </div>
+
+                {/* Items */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  {s.items.map((item, j) => (
+                    <div key={j} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                      <Check size={15} color={s.color} style={{ marginTop: "3px", flexShrink: 0 }} />
+                      <span style={{ fontSize: "0.95rem", fontWeight: 600, color: "#475569", lineHeight: 1.4 }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
+
+        {/* Bottom Insight */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          style={{
+            background: "linear-gradient(135deg, #1e293b, #0e6655)",
+            borderRadius: "16px",
+            padding: "1.2rem 2.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "1.5rem",
+            color: "#fff"
+          }}
+        >
+          <div style={{ background: "#fbbf24", color: "#1e293b", padding: "8px 18px", borderRadius: "10px", fontWeight: 900, fontSize: "0.9rem", flexShrink: 0 }}>INSIGHT</div>
+          <p style={{ fontSize: "1.05rem", fontWeight: 600, margin: 0, lineHeight: 1.4 }}>
+            Di PTPN, siklus PDCA berjalan <strong style={{ color: "#fbbf24" }}>per kuartal (2026)</strong> dan akan menjadi <strong style={{ color: "#6ee7b7" }}>bulanan (2027+)</strong> — memastikan setiap deviasi terdeteksi dini dan segera ditindaklanjuti.
+          </p>
+        </motion.div>
       </div>
       <SlideFooter />
     </div>
