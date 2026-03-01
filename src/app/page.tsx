@@ -2811,29 +2811,29 @@ function SlideSMKTITerminologi() {
    ============================= */
 function SlideFramework2022() {
   return (
-    <div className="slide" style={{ padding: "1.5rem 4rem 1.5rem", background: "#f8fafc" }}>
+    <div className="slide" style={{ padding: "1.2rem 3.5rem", background: "#f8fafc" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-        <div style={{ display: "inline-block", background: "rgba(225, 29, 72, 0.1)", color: "#e11d48", padding: "4px 16px", borderRadius: "20px", fontSize: "0.85rem", fontWeight: 800, marginBottom: "0.6rem", border: "1px solid rgba(225,29,72,0.2)" }}>EXISTING SYSTEM</div>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.5rem" }}>
+      <div className="slide-header" style={{ marginBottom: "0.8rem", textAlign: "center" }}>
+        <div style={{ display: "inline-block", background: "rgba(225, 29, 72, 0.1)", color: "#e11d48", padding: "4px 16px", borderRadius: "20px", fontSize: "0.8rem", fontWeight: 800, marginBottom: "0.4rem", border: "1px solid rgba(225,29,72,0.2)" }}>EXISTING SYSTEM</div>
+        <h1 className="slide-title" style={{ fontSize: "2.5rem", color: "#1a5276", marginBottom: "0.2rem" }}>
           <em>Performance Framework 2022 – 2025</em>
         </h1>
         <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Struktur Pengelolaan Kinerja Berbasis AGHRIS Legacy</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
         {/* ROW 1: INPUT & KPI TYPE */}
-        <div style={{ display: "flex", gap: "1.5rem" }}>
+        <div style={{ display: "flex", gap: "1rem" }}>
           {/* Inputs */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.5rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
+            style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "1rem 1.5rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
           >
-            <div style={{ fontSize: "0.85rem", fontWeight: 850, color: "#1a5276", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.6rem" }}>Strategic Foundation</div>
-            <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "14px", overflow: "hidden" }}>
-              <div style={{ background: "#334155", color: "#fff", padding: "10px", textAlign: "center", fontSize: "0.85rem", fontWeight: 800 }}>External & Internal Inputs</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", padding: "1.2rem", justifyContent: "center" }}>
+            <div style={{ fontSize: "0.8rem", fontWeight: 850, color: "#1a5276", marginBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.5rem" }}>Strategic Foundation</div>
+            <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "12px", overflow: "hidden" }}>
+              <div style={{ background: "#334155", color: "#fff", padding: "8px", textAlign: "center", fontSize: "0.8rem", fontWeight: 800 }}>External & Internal Inputs</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", padding: "1rem", justifyContent: "center" }}>
                 {["Kontrak Manajemen", "RJPP / RKAP", "Top-Down Roadmap", "Aspirasi Pemegang Saham"].map((item, i) => (
                   <span key={i} style={{ background: "#fff", color: "#334155", fontSize: "0.75rem", padding: "6px 14px", borderRadius: "10px", fontWeight: 700, border: "1px solid #e2e8f0", boxShadow: "0 2px 4px rgba(0,0,0,0.03)" }}>{item}</span>
                 ))}
@@ -2845,13 +2845,13 @@ function SlideFramework2022() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.5rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
+            style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "1rem 1.5rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
           >
-            <div style={{ fontSize: "0.85rem", fontWeight: 850, color: "#1a5276", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.6rem" }}>KPI Configuration</div>
-            <div style={{ display: "flex", gap: "1rem", height: "calc(100% - 45px)" }}>
-              <div style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "14px", padding: "1rem", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                <div style={{ fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", textAlign: "center", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.6rem" }}>KPI BERSAMA (30%)</div>
-                <div style={{ background: "rgba(26, 82, 118, 0.1)", color: "#1a5276", padding: "10px", borderRadius: "10px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center" }}>Kolegial / Unit</div>
+            <div style={{ fontSize: "0.8rem", fontWeight: 850, color: "#1a5276", marginBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.5rem" }}>KPI Configuration</div>
+            <div style={{ display: "flex", gap: "1rem", height: "calc(100% - 35px)" }}>
+              <div style={{ flex: 1, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "12px", padding: "0.8rem", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                <div style={{ fontSize: "0.75rem", fontWeight: 900, color: "#1a5276", textAlign: "center", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.4rem" }}>KPI BERSAMA (30%)</div>
+                <div style={{ background: "rgba(26, 82, 118, 0.1)", color: "#1a5276", padding: "8px", borderRadius: "8px", fontSize: "0.7rem", fontWeight: 800, textAlign: "center" }}>Kolegial / Unit</div>
               </div>
               <div style={{ flex: 1, background: "linear-gradient(135deg, #1a5276 0%, #0e7490 100%)", borderRadius: "14px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "1rem", boxShadow: "0 8px 20px rgba(26,82,118,0.15)" }}>
                 <div style={{ color: "#fff", fontWeight: 900, fontSize: "1.1rem", textAlign: "center", lineHeight: 1.2 }}>KPI UTAMA</div>
@@ -2866,10 +2866,10 @@ function SlideFramework2022() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "24px", padding: "1.8rem", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}
+          style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.2rem 1.5rem", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}
         >
-          <div style={{ fontSize: "0.85rem", fontWeight: 850, color: "#1a5276", marginBottom: "1.2rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.8rem" }}>Performance Cycle lifecycle</div>
-          <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+          <div style={{ fontSize: "0.8rem", fontWeight: 850, color: "#1a5276", marginBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.5rem" }}>Performance Cycle lifecycle</div>
+          <div style={{ display: "flex", gap: "0.8rem", alignItems: "center" }}>
             {[
               { title: "Planing", desc: "Sasaran Kerja Pegawai" },
               { title: "Execution", desc: "Input Realisasi KPI" },
@@ -2877,40 +2877,40 @@ function SlideFramework2022() {
               { title: "Evaluation", desc: "Final Score Calcs" }
             ].map((step, i) => (
               <React.Fragment key={i}>
-                <div style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "1.2rem 1rem", textAlign: "center", boxShadow: "0 4px 12px rgba(0,0,0,0.02)" }}>
-                  <div style={{ color: "#1a5276", fontSize: "0.95rem", fontWeight: 900, marginBottom: "0.4rem" }}>{step.title}</div>
-                  <div style={{ color: "#64748b", fontSize: "0.8rem", lineHeight: 1.4, fontWeight: 600 }}>{step.desc}</div>
+                <div style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "12px", padding: "0.8rem 0.6rem", textAlign: "center", boxShadow: "0 4px 12px rgba(0,0,0,0.02)" }}>
+                  <div style={{ color: "#1a5276", fontSize: "0.9rem", fontWeight: 900, marginBottom: "0.2rem" }}>{step.title}</div>
+                  <div style={{ color: "#64748b", fontSize: "0.75rem", lineHeight: 1.3, fontWeight: 600 }}>{step.desc}</div>
                 </div>
-                {i < 3 && <div style={{ display: "flex", alignItems: "center" }}><ArrowRight size={24} color="#cbd5e1" strokeWidth={3} /></div>}
+                {i < 3 && <div style={{ display: "flex", alignItems: "center" }}><ArrowRight size={20} color="#cbd5e1" strokeWidth={3} /></div>}
               </React.Fragment>
             ))}
-            <div style={{ background: "#1a5276", color: "#fff", border: "4px solid #fff", borderRadius: "16px", padding: "1rem", fontSize: "0.75rem", fontWeight: 800, textAlign: "center", boxShadow: "0 10px 25px rgba(26,82,118,0.2)", minWidth: "120px" }}>
-              PLATFORM <br /> <span style={{ fontSize: "1rem" }}>AGHRIS</span>
+            <div style={{ background: "#1a5276", color: "#fff", border: "3px solid #fff", borderRadius: "12px", padding: "0.8rem", fontSize: "0.7rem", fontWeight: 800, textAlign: "center", boxShadow: "0 10px 25px rgba(26,82,118,0.2)", minWidth: "100px" }}>
+              PLATFORM <br /> <span style={{ fontSize: "0.9rem" }}>AGHRIS</span>
             </div>
           </div>
         </motion.div>
 
         {/* ROW 3: OUTCOMES */}
-        <div style={{ display: "flex", gap: "1.5rem" }}>
+        <div style={{ display: "flex", gap: "1rem" }}>
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            style={{ flex: 1.5, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "20px", padding: "1.5rem", display: "flex", flexDirection: "column", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
+            style={{ flex: 1.5, background: "#fff", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "1rem 1.5rem", display: "flex", flexDirection: "column", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}
           >
-            <div style={{ fontSize: "0.85rem", fontWeight: 850, color: "#1a5276", marginBottom: "1.2rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.6rem" }}>Outcome Structure</div>
-            <div style={{ flex: 1, display: "flex", gap: "1.5rem", alignItems: "center" }}>
-              <div style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", padding: "1.2rem", boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)" }}>
-                <div style={{ textAlign: "center", fontSize: "0.9rem", fontWeight: 900, color: "#d97706", marginBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px" }}>Scale Kinerja</div>
-                <div style={{ display: "flex", justifyContent: "space-around", gap: "0.5rem" }}>
+            <div style={{ fontSize: "0.8rem", fontWeight: 850, color: "#1a5276", marginBottom: "0.8rem", textTransform: "uppercase", letterSpacing: "1px", borderBottom: "1px solid #f1f5f9", paddingBottom: "0.5rem" }}>Outcome Structure</div>
+            <div style={{ flex: 1, display: "flex", gap: "1rem", alignItems: "center" }}>
+              <div style={{ flex: 1, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "12px", padding: "0.8rem", boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)" }}>
+                <div style={{ textAlign: "center", fontSize: "0.8rem", fontWeight: 900, color: "#d97706", marginBottom: "0.6rem", textTransform: "uppercase", letterSpacing: "1px" }}>Scale Kinerja</div>
+                <div style={{ display: "flex", justifyContent: "space-around", gap: "0.4rem" }}>
                   {["O", "E", "M", "B", "P"].map((r, i) => (
-                    <div key={i} style={{ fontSize: "0.85rem", color: i < 3 ? "#059669" : "#dc2626", fontWeight: 900, background: "#fff", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "8px", border: "1px solid #e2e8f0" }}>{r}</div>
+                    <div key={i} style={{ fontSize: "0.8rem", color: i < 3 ? "#059669" : "#dc2626", fontWeight: 900, background: "#fff", width: "28px", height: "28px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "6px", border: "1px solid #e2e8f0" }}>{r}</div>
                   ))}
                 </div>
               </div>
-              <ArrowRight size={32} color="#cbd5e1" strokeWidth={3} />
-              <div style={{ flex: 1, background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)", color: "#fff", padding: "1.5rem 1rem", borderRadius: "16px", textAlign: "center", fontWeight: 900, fontSize: "1.1rem", boxShadow: "0 10px 25px rgba(30,41,59,0.2)" }}>
-                FINAL RATING <br /> <span style={{ fontSize: "0.8rem", opacity: 0.7 }}>(Single Dimension)</span>
+              <ArrowRight size={24} color="#cbd5e1" strokeWidth={3} />
+              <div style={{ flex: 1, background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)", color: "#fff", padding: "1rem 0.8rem", borderRadius: "12px", textAlign: "center", fontWeight: 900, fontSize: "1rem", boxShadow: "0 10px 25px rgba(30,41,59,0.2)" }}>
+                FINAL RATING <br /> <span style={{ fontSize: "0.75rem", opacity: 0.7 }}>(Single Dimension)</span>
               </div>
             </div>
           </motion.div>
@@ -2920,11 +2920,11 @@ function SlideFramework2022() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
-            style={{ flex: 1, background: "rgba(217, 119, 6, 0.05)", border: "1px dashed rgba(217, 119, 6, 0.3)", borderRadius: "20px", padding: "1.5rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}
+            style={{ flex: 1, background: "rgba(217, 119, 6, 0.05)", border: "1px dashed rgba(217, 119, 6, 0.3)", borderRadius: "16px", padding: "1rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}
           >
-            <div style={{ background: "rgba(217, 119, 6, 0.1)", padding: "10px", borderRadius: "50%", marginBottom: "1rem" }}><Award size={32} color="#d97706" /></div>
-            <div style={{ color: "#d97706", fontSize: "0.85rem", fontWeight: 850, textTransform: "uppercase", marginBottom: "0.8rem", letterSpacing: "1px" }}>Reward & Remuneration</div>
-            <div style={{ fontSize: "0.9rem", color: "#92400e", fontWeight: 700, lineHeight: 1.5 }}>
+            <div style={{ background: "rgba(217, 119, 6, 0.1)", padding: "8px", borderRadius: "50%", marginBottom: "0.6rem" }}><Award size={24} color="#d97706" /></div>
+            <div style={{ color: "#d97706", fontSize: "0.8rem", fontWeight: 850, textTransform: "uppercase", marginBottom: "0.5rem", letterSpacing: "1px" }}>Reward & Remuneration</div>
+            <div style={{ fontSize: "0.8rem", color: "#92400e", fontWeight: 700, lineHeight: 1.4 }}>
               Merit Increment based on <br /> Performance Result Only
             </div>
           </motion.div>
