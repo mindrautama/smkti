@@ -888,34 +888,34 @@ function SlideHCStrategicPilar4() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "1.2rem 3.5rem", background: "#fff" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276" }}>HC Strategic Initiatives to Business Priorities</h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 700 }}>Focus: PILAR 4 — Performance Management & Reward</p>
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276", marginBottom: "0.2rem" }}>HC Strategic Initiatives to Business Priorities</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 700 }}>Focus: PILAR 4 — Performance Management & Reward</p>
       </div>
 
       {/* Business Priority Headers */}
-      <div style={{ display: "grid", gridTemplateColumns: "300px 1fr 1fr 1fr", gap: "12px", marginBottom: "12px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "250px 1fr 1fr 1fr", gap: "10px", marginBottom: "8px" }}>
         <div />
         {bizHeaders.map((h, i) => (
           <motion.div key={i} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
-            style={{ background: h.color, color: "#fff", padding: "16px 20px", borderRadius: "14px", textAlign: "center" }}
+            style={{ background: h.color, color: "#fff", padding: "10px 15px", borderRadius: "12px", textAlign: "center" }}
           >
-            <div style={{ fontWeight: 900, fontSize: "1.15rem" }}>{h.t}</div>
-            {h.s && <div style={{ fontSize: "0.85rem", opacity: 0.9, marginTop: "4px" }}>{h.s}</div>}
+            <div style={{ fontWeight: 900, fontSize: "1rem" }}>{h.t}</div>
+            {h.s && <div style={{ fontSize: "0.75rem", opacity: 0.9, marginTop: "2px" }}>{h.s}</div>}
           </motion.div>
         ))}
       </div>
 
       {/* Other Pillars (dimmed) */}
       {otherPillars.slice(0, 3).map((p, i) => (
-        <div key={i} style={{ display: "grid", gridTemplateColumns: "300px 1fr", gap: "12px", marginBottom: "6px", opacity: 0.2 }}>
-          <div style={{ background: p.color, color: "#fff", padding: "12px 18px", borderRadius: "10px", display: "flex", alignItems: "center", gap: "12px" }}>
-            <span style={{ fontWeight: 900, fontSize: "0.9rem" }}>{p.n}</span>
-            <span style={{ fontSize: "0.85rem", fontWeight: 600 }}>{p.t}</span>
+        <div key={i} style={{ display: "grid", gridTemplateColumns: "250px 1fr", gap: "10px", marginBottom: "6px", opacity: 0.25 }}>
+          <div style={{ background: p.color, color: "#fff", padding: "8px 14px", borderRadius: "8px", display: "flex", alignItems: "center", gap: "10px" }}>
+            <span style={{ fontWeight: 900, fontSize: "0.85rem" }}>{p.n}</span>
+            <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>{p.t}</span>
           </div>
-          <div style={{ background: "#f1f5f9", borderRadius: "10px", padding: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ background: "#f1f5f9", borderRadius: "8px", padding: "8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <span style={{ fontSize: "0.85rem", color: "#94a3b8", fontStyle: "italic" }}>...</span>
           </div>
         </div>
@@ -926,26 +926,26 @@ function SlideHCStrategicPilar4() {
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         style={{
-          border: "4px solid #0e6655",
-          borderRadius: "20px",
-          padding: "1.5rem",
+          border: "3px solid #0e6655",
+          borderRadius: "16px",
+          padding: "1rem",
           background: "rgba(16, 185, 129, 0.04)",
-          marginBottom: "12px",
-          boxShadow: "0 10px 30px rgba(14,102,85,0.12)"
+          marginBottom: "8px",
+          boxShadow: "0 10px 30px rgba(14,102,85,0.08)"
         }}
       >
-        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "16px" }}>
-          <div style={{ background: "linear-gradient(135deg, #0e6655, #064e3b)", color: "#fff", padding: "20px", borderRadius: "14px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <div style={{ fontWeight: 900, fontSize: "1.6rem", marginBottom: "6px" }}>PILAR 4</div>
-            <div style={{ fontSize: "1.2rem", fontWeight: 700, lineHeight: 1.3 }}>Performance Management & Reward</div>
-            <div style={{ marginTop: "12px", width: "50px", height: "4px", background: "#fbbf24" }} />
+        <div style={{ display: "grid", gridTemplateColumns: "234px 1fr", gap: "12px" }}>
+          <div style={{ background: "linear-gradient(135deg, #0e6655, #064e3b)", color: "#fff", padding: "15px", borderRadius: "12px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <div style={{ fontWeight: 900, fontSize: "1.4rem", marginBottom: "4px" }}>PILAR 4</div>
+            <div style={{ fontSize: "1rem", fontWeight: 700, lineHeight: 1.3 }}>Performance Management & Reward</div>
+            <div style={{ marginTop: "10px", width: "40px", height: "3px", background: "#fbbf24" }} />
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             {initiatives.map((init, i) => (
-              <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px" }}>
+              <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
                 {init.cols.map((col, j) => (
                   <motion.div key={j} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.1 + j * 0.05 }}
-                    style={{ background: "#fff", border: "1.5px solid #e2e8f0", padding: "14px 16px", borderRadius: "12px", fontSize: "1.1rem", color: "#1e293b", fontWeight: 700, lineHeight: 1.25, display: "flex", alignItems: "center", boxShadow: "0 2px 4px rgba(0,0,0,0.02)" }}
+                    style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "10px 12px", borderRadius: "10px", fontSize: "0.9rem", color: "#1e293b", fontWeight: 700, lineHeight: 1.25, display: "flex", alignItems: "center", boxShadow: "0 2px 4px rgba(0,0,0,0.02)" }}
                   >
                     {col}
                   </motion.div>
@@ -955,12 +955,12 @@ function SlideHCStrategicPilar4() {
           </div>
         </div>
         {/* Initiative Labels */}
-        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "16px", marginTop: "16px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "234px 1fr", gap: "12px", marginTop: "12px" }}>
           <div />
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
             {initiatives.map((init, i) => (
-              <div key={i} style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0e6655" }}>
-                <span style={{ color: "#f97316", background: "rgba(249, 115, 22, 0.1)", padding: "2px 8px", borderRadius: "6px", marginRight: "8px" }}>{init.id}</span>
+              <div key={i} style={{ fontSize: "0.95rem", fontWeight: 800, color: "#0e6655", display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ color: "#f97316", background: "rgba(249, 115, 22, 0.1)", padding: "2px 8px", borderRadius: "6px" }}>{init.id}</span>
                 {init.title}
               </div>
             ))}
@@ -969,12 +969,12 @@ function SlideHCStrategicPilar4() {
       </motion.div>
 
       {/* Pilar 5 dimmed */}
-      <div style={{ display: "grid", gridTemplateColumns: "300px 1fr", gap: "12px", opacity: 0.2 }}>
-        <div style={{ background: otherPillars[3].color, color: "#fff", padding: "12px 18px", borderRadius: "10px", display: "flex", alignItems: "center", gap: "12px" }}>
-          <span style={{ fontWeight: 900, fontSize: "0.9rem" }}>{otherPillars[3].n}</span>
-          <span style={{ fontSize: "0.85rem", fontWeight: 600 }}>{otherPillars[3].t}</span>
+      <div style={{ display: "grid", gridTemplateColumns: "250px 1fr", gap: "10px", opacity: 0.25 }}>
+        <div style={{ background: otherPillars[3].color, color: "#fff", padding: "8px 14px", borderRadius: "8px", display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontWeight: 900, fontSize: "0.85rem" }}>{otherPillars[3].n}</span>
+          <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>{otherPillars[3].t}</span>
         </div>
-        <div style={{ background: "#f1f5f9", borderRadius: "10px", padding: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ background: "#f1f5f9", borderRadius: "8px", padding: "8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <span style={{ fontSize: "0.85rem", color: "#94a3b8", fontStyle: "italic" }}>...</span>
         </div>
       </div>
