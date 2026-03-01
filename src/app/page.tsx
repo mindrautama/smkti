@@ -4530,6 +4530,157 @@ function SlideBPIBridge() {
   );
 }
 
+/* =============================
+   REVIEW CYCLE STRATEGY: QUARTERLY vs MONTHLY
+   ============================= */
+function SlideReviewCycleStrategy() {
+  const phases = [
+    {
+      phase: "FASE 1",
+      label: "Triwulanan (Quarterly)",
+      period: "2026 – 2027",
+      color: "#0e6655",
+      accent: "#10b981",
+      status: "RECOMMENDED",
+      pros: [
+        "Waktu adaptasi cukup bagi 4 entitas (PTPN III, I, IV, SGN) untuk memahami mekanisme BSC-KPI baru",
+        "Data perkebunan bersifat musiman (panen, tanam, olah) — siklus 3 bulan lebih representatif",
+        "Mengurangi beban administratif di fase awal implementasi",
+        "Cukup waktu untuk coaching, PICA, dan corrective action sebelum review berikutnya",
+        "Selaras dengan siklus pelaporan keuangan (Q1-Q4) dan RKAP monitoring"
+      ],
+      cons: [
+        "Deteksi deviasi kinerja lebih lambat (maks 3 bulan)",
+        "Feedback loop ke karyawan tidak secepat monthly",
+        "Risiko akumulasi masalah yang baru terdeteksi di akhir triwulan"
+      ]
+    },
+    {
+      phase: "FASE 2",
+      label: "Bulanan (Monthly)",
+      period: "2028+",
+      color: "#1a5276",
+      accent: "#3b82f6",
+      status: "TARGET MATURITY",
+      pros: [
+        "Early warning system — deviasi terdeteksi dalam 30 hari",
+        "Continuous feedback meningkatkan employee engagement",
+        "Koreksi cepat sebelum masalah membesar",
+        "Mendorong budaya high-performance & accountability",
+        "Data-driven decision making lebih granular"
+      ],
+      cons: [
+        "Beban administratif tinggi — butuh sistem digital matang (APMS 2.0)",
+        "Risiko review fatigue jika budaya belum siap",
+        "Membutuhkan kapabilitas manajer sebagai coach, bukan hanya evaluator",
+        "Kompleksitas agregasi data dari 4 entitas + ratusan unit setiap bulan"
+      ]
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "1.5rem 3rem", background: "#fff" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.4rem", color: "#1a5276" }}>Strategi Siklus Review Kinerja</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>
+          Pendekatan Bertahap: Triwulanan (Fase 1) → Bulanan (Fase 2)
+        </p>
+      </div>
+
+      {/* Maturity Arrow */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0", marginBottom: "1.5rem" }}>
+        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
+          style={{ background: "#0e6655", color: "#fff", padding: "12px 30px", borderRadius: "12px 0 0 12px", fontWeight: 900, fontSize: "1rem", display: "flex", alignItems: "center", gap: "10px" }}
+        >
+          <Calendar size={18} /> Quarterly Review (2026-2027)
+        </motion.div>
+        <div style={{ width: 0, height: 0, borderTop: "24px solid transparent", borderBottom: "24px solid transparent", borderLeft: "20px solid #0e6655" }} />
+        <div style={{ width: "60px", height: "4px", background: "linear-gradient(90deg, #10b981, #3b82f6)" }} />
+        <div style={{ width: 0, height: 0, borderTop: "24px solid transparent", borderBottom: "24px solid transparent", borderRight: "20px solid #1a5276" }} />
+        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
+          style={{ background: "#1a5276", color: "#fff", padding: "12px 30px", borderRadius: "0 12px 12px 0", fontWeight: 900, fontSize: "1rem", display: "flex", alignItems: "center", gap: "10px" }}
+        >
+          <TrendingUp size={18} /> Monthly Review (2028+)
+        </motion.div>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", flex: 1 }}>
+        {phases.map((p, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.2 }}
+            style={{
+              borderRadius: "20px",
+              border: `2px solid ${p.color}`,
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              boxShadow: `0 8px 25px ${p.color}15`
+            }}
+          >
+            <div style={{ background: p.color, color: "#fff", padding: "1rem 1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div>
+                <div style={{ fontSize: "0.7rem", fontWeight: 800, opacity: 0.7, letterSpacing: "2px" }}>{p.phase} • {p.period}</div>
+                <div style={{ fontSize: "1.3rem", fontWeight: 900 }}>{p.label}</div>
+              </div>
+              <div style={{ background: idx === 0 ? "#fbbf24" : "rgba(255,255,255,0.15)", color: idx === 0 ? "#1e293b" : "#fff", padding: "4px 12px", borderRadius: "8px", fontSize: "0.65rem", fontWeight: 900, letterSpacing: "1px" }}>
+                {p.status}
+              </div>
+            </div>
+
+            <div style={{ padding: "1rem 1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {/* PROS */}
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                  <div style={{ background: "#dcfce7", padding: "3px", borderRadius: "50%" }}><Check size={12} color="#16a34a" strokeWidth={3} /></div>
+                  <span style={{ fontSize: "0.75rem", fontWeight: 900, color: "#16a34a", textTransform: "uppercase", letterSpacing: "1px" }}>Kelebihan</span>
+                </div>
+                {p.pros.map((pro, i) => (
+                  <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "5px", fontSize: "0.78rem", color: "#334155", fontWeight: 500, lineHeight: 1.3 }}>
+                    <span style={{ color: p.accent, fontWeight: 900, flexShrink: 0 }}>+</span>
+                    <span>{pro}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CONS */}
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                  <div style={{ background: "#fee2e2", padding: "3px", borderRadius: "50%" }}><X size={12} color="#dc2626" strokeWidth={3} /></div>
+                  <span style={{ fontSize: "0.75rem", fontWeight: 900, color: "#dc2626", textTransform: "uppercase", letterSpacing: "1px" }}>Risiko / Tantangan</span>
+                </div>
+                {p.cons.map((con, i) => (
+                  <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "5px", fontSize: "0.78rem", color: "#64748b", fontWeight: 500, lineHeight: 1.3 }}>
+                    <span style={{ color: "#dc2626", fontWeight: 900, flexShrink: 0 }}>–</span>
+                    <span>{con}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Bottom Recommendation */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        style={{ marginTop: "1rem", background: "linear-gradient(135deg, #0e6655, #1a5276)", padding: "1rem 2rem", borderRadius: "14px", display: "flex", alignItems: "center", gap: "1.5rem" }}
+      >
+        <div style={{ background: "#fbbf24", color: "#1e293b", padding: "6px 14px", borderRadius: "8px", fontWeight: 900, fontSize: "0.75rem", flexShrink: 0, letterSpacing: "1px" }}>REKOMENDASI</div>
+        <p style={{ color: "#fff", fontWeight: 700, fontSize: "0.9rem", margin: 0, lineHeight: 1.4 }}>
+          Mulai dengan <strong style={{ color: "#fbbf24" }}>quarterly review</strong> untuk membangun fondasi, budaya, dan kapabilitas digital. Transisi ke monthly review setelah sistem APMS 2.0 matang dan manajer memiliki kapabilitas coaching yang memadai.
+        </p>
+      </motion.div>
+      <SlideFooter />
+    </div>
+  );
+}
+
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   { title: "Cover", component: SlideCover },
@@ -4573,6 +4724,7 @@ const slides = [
   { title: "Update PM Mar 2026", component: SlidePerformanceUpdate2026 },
   { title: "Timeline", component: SlideTimeline },
   { title: "Project Charter", component: SlideProjectCharter },
+  { title: "Review Cycle: Quarterly vs Monthly", component: SlideReviewCycleStrategy },
 
   // BAGIAN 6 — BUSINESS PROCESS IMPROVEMENT (LEAN)
   { title: "Mengapa BPI untuk SMKTI?", component: SlideBPIBridge },
