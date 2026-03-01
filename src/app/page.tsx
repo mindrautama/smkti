@@ -548,10 +548,6 @@ function SlidePerformanceUpdate2026() {
             <span style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Monitoring Progress & Roadmap Eksekusi</span>
           </div>
         </div>
-        <div style={{ textAlign: "right" }}>
-          <p style={{ fontSize: "1rem", color: "#0e6655", margin: 0, fontWeight: 800 }}>Timestamp Data:</p>
-          <p style={{ fontSize: "1.2rem", color: "#1e293b", margin: 0, fontWeight: 900 }}>1 Mar 2026 | <span style={{ color: "#f97316" }}>09.00 WIB</span></p>
-        </div>
       </div>
 
       <div style={{ flex: 1, display: "flex", gap: "1.5rem", height: "100%", overflow: "hidden" }}>
