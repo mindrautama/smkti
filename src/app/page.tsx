@@ -5332,100 +5332,197 @@ function SlideSectionClosing() {
 /* =============================
    BRIDGE SLIDE: WHY BPI MATTERS FOR SMKTI
    ============================= */
-function SlideBPIBridge() {
+function SlideBPIImportance() {
   const connections = [
     {
       from: "SMKTI 2026",
-      arrow: "mengukur",
+      action: "Strategi & Objektif",
       to: "KPI & Target Karyawan",
+      icon: <Target size={24} />,
       color: "#0e6655"
     },
     {
       from: "KPI & Target",
-      arrow: "dieksekusi melalui",
+      action: "Eksekusi Operasional",
       to: "Proses Bisnis Sehari-hari",
+      icon: <Settings size={24} />,
       color: "#1a5276"
     },
     {
       from: "Proses Bisnis",
-      arrow: "dioptimalkan dengan",
-      to: "Business Process Improvement (Lean)",
-      color: "#e67e22"
+      action: "Optimasi Berkelanjutan",
+      to: "BPI / Lean Methodology",
+      icon: <TrendingUp size={24} />,
+      color: "#f97316"
+    }
+  ];
+
+  const pcsCards = [
+    {
+      metric: "Productivity",
+      title: "PRODUKTIVITAS",
+      icon: <BarChart3 size={32} />,
+      desc: "Lean meningkatkan rasio Output/Input — memastikan target KPI Produktivitas unit tercapai.",
+      color: "#0e6655",
+      accent: "#10b981"
+    },
+    {
+      metric: "Cost",
+      title: "EFISIENSI BIAYA",
+      icon: <Wallet size={32} />,
+      desc: "Eliminasi MUDA (pemborosan) secara sistematis untuk menekan biaya operasional (KPI Cost).",
+      color: "#1a5276",
+      accent: "#3b82f6"
+    },
+    {
+      metric: "Speed",
+      title: "KECEPATAN",
+      icon: <TrendingUp size={32} />,
+      desc: "VSM mempercepat Lead Time proses — memastikan target KPI Kecepatan/Ketepatan Waktu.",
+      color: "#f97316",
+      accent: "#fbbf24"
     }
   ];
 
   return (
-    <div className="slide" style={{ padding: "3rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #fff 100%)" }}>
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>Mengapa BPI Penting untuk SMKTI?</h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>
-          Menghubungkan Sistem Kinerja dengan Perbaikan Proses Berkelanjutan
+      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.5rem" }}>
+          <em>Mengapa BPI Penting bagi SMKTI?</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Menghubungkan Target Kinerja dengan Realita Eksekusi di Lapangan
         </p>
       </div>
 
-      {/* Core Logic Flow */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", maxWidth: "900px", margin: "0 auto 3rem" }}>
-        {connections.map((c, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.2 }}
-            style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}
-          >
-            <div style={{ background: c.color, color: "#fff", padding: "16px 24px", borderRadius: "16px", fontWeight: 900, fontSize: "1.1rem", minWidth: "220px", textAlign: "center", boxShadow: `0 8px 20px ${c.color}30` }}>
-              {c.from}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
+        {/* Connection Flow Section */}
+        <div style={{ background: "rgba(255,255,255,0.6)", borderRadius: "32px", padding: "2.5rem", border: "1px solid #e2e8f0", boxShadow: "0 15px 40px rgba(0,0,0,0.02)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "1rem", alignItems: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {connections.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.15 }}
+                  style={{
+                    background: "#fff",
+                    padding: "1.2rem 1.8rem",
+                    borderRadius: "18px",
+                    border: `1px solid ${item.color}20`,
+                    boxShadow: "0 4px 15px rgba(0,0,0,0.03)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "1.2rem",
+                    position: "relative"
+                  }}
+                >
+                  <div style={{ width: "45px", height: "45px", borderRadius: "12px", background: `${item.color}15`, color: item.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px" }}>Langkah {i + 1}</div>
+                    <div style={{ fontSize: "1.2rem", fontWeight: 900, color: "#1e293b" }}>{item.from}</div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px" }}>
-              <ArrowRight size={28} color={c.color} />
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#94a3b8", fontStyle: "italic", whiteSpace: "nowrap" }}>{c.arrow}</span>
-            </div>
-            <div style={{ flex: 1, background: `${c.color}10`, border: `2px solid ${c.color}30`, padding: "16px 24px", borderRadius: "16px", fontWeight: 800, fontSize: "1.05rem", color: c.color }}>
-              {c.to}
-            </div>
-          </motion.div>
-        ))}
-      </div>
 
-      {/* Bottom Insight Row */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5rem" }}>
-        {[
-          { metric: "Productivity", icon: "📈", desc: "Lean meningkatkan output/input ratio → KPI Produktivitas tercapai" },
-          { metric: "Cost", icon: "💰", desc: "Eliminasi Muda (waste) → KPI Efisiensi Biaya tercapai" },
-          { metric: "Speed", icon: "⚡", desc: "VSM mempercepat lead time → KPI Kecepatan tercapai" }
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 + i * 0.15 }}
-            style={{
-              background: "#fff",
-              padding: "1.5rem",
-              borderRadius: "20px",
-              border: "1px solid #e2e8f0",
-              boxShadow: "0 8px 20px rgba(0,0,0,0.03)",
-              textAlign: "center"
-            }}
-          >
-            <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>{item.icon}</div>
-            <div style={{ fontWeight: 900, color: "#0e6655", fontSize: "1.1rem", marginBottom: "0.5rem" }}>{item.metric}</div>
-            <p style={{ fontSize: "0.85rem", color: "#64748b", fontWeight: 600, lineHeight: 1.4, margin: 0 }}>{item.desc}</p>
-          </motion.div>
-        ))}
-      </div>
+            <div style={{ padding: "0 1rem", display: "flex", flexDirection: "column", gap: "3.5rem", alignItems: "center" }}>
+              {[0, 1, 2].map(i => (
+                <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px" }}>
+                  <ArrowRight size={24} color={connections[i].color} />
+                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#94a3b8", whiteSpace: "nowrap", textTransform: "uppercase" }}>{connections[i].action}</span>
+                </div>
+              ))}
+            </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        style={{ marginTop: "2rem", textAlign: "center", background: "linear-gradient(135deg, #0e6655, #1a5276)", padding: "1rem 2rem", borderRadius: "16px" }}
-      >
-        <p style={{ color: "#fff", fontWeight: 800, fontSize: "1.1rem", margin: 0 }}>
-          BPI bukan bagian terpisah — ia adalah <span style={{ color: "#fbbf24" }}>mesin eksekusi</span> yang memastikan target PCS dalam SMKTI benar-benar tercapai.
-        </p>
-      </motion.div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {connections.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + i * 0.15 }}
+                  style={{
+                    background: `linear-gradient(135deg, ${item.color} 0%, ${item.color}dd 100%)`,
+                    padding: "1.2rem 1.8rem",
+                    borderRadius: "18px",
+                    color: "#fff",
+                    boxShadow: `0 8px 20px ${item.color}30`,
+                    display: "flex",
+                    alignItems: "center",
+                    minHeight: "75px"
+                  }}
+                >
+                  <div style={{ fontSize: "1.1rem", fontWeight: 700 }}>{item.to}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* PCS Cards Section */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
+          {pcsCards.map((card, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 + i * 0.15 }}
+              style={{
+                background: "#fff",
+                borderRadius: "24px",
+                padding: "2rem",
+                border: "1px solid #f1f5f9",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.2rem",
+                position: "relative"
+              }}
+            >
+              <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: card.color, borderRadius: "24px 24px 0 0" }} />
+              <div style={{ display: "flex", alignItems: "center", gap: "1.2rem" }}>
+                <div style={{ width: "60px", height: "60px", borderRadius: "16px", background: `${card.color}10`, color: card.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  {card.icon}
+                </div>
+                <div>
+                  <div style={{ fontSize: "0.8rem", fontWeight: 800, color: card.color, letterSpacing: "1px" }}>TARGET {card.metric}</div>
+                  <h3 style={{ fontSize: "1.4rem", fontWeight: 900, color: "#1e293b", margin: 0 }}>{card.title}</h3>
+                </div>
+              </div>
+              <p style={{ fontSize: "1.05rem", color: "#64748b", lineHeight: 1.5, margin: 0, fontWeight: 500 }}>
+                {card.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Closing Message */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2 }}
+          style={{
+            background: "linear-gradient(135deg, #1e293b 0%, #0e6655 100%)",
+            borderRadius: "20px",
+            padding: "1.5rem 2.5rem",
+            color: "#fff",
+            display: "flex",
+            alignItems: "center",
+            gap: "1.5rem",
+            boxShadow: "0 15px 35px rgba(0,0,0,0.15)"
+          }}
+        >
+          <div style={{ background: "#fbbf24", color: "#1e293b", padding: "10px 20px", borderRadius: "12px", fontWeight: 900, fontSize: "1rem", flexShrink: 0 }}>INSIGHT</div>
+          <p style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0, lineHeight: 1.4 }}>
+            BPI bukan bagian terpisah — ia adalah <strong style={{ color: "#fbbf24" }}>mesin eksekusi</strong> yang memastikan target <span style={{ color: "#6ee7b7" }}>Productivity, Cost, & Speed (PCS)</span> dalam SMKTI benar-benar tercapai secara konkret.
+          </p>
+        </motion.div>
+      </div>
       <SlideFooter />
     </div>
   );
@@ -5630,7 +5727,7 @@ const slides = [
   { title: "Review Cycle: Quarterly vs Monthly", component: SlideReviewCycleStrategy },
 
   // BAGIAN 6 — BUSINESS PROCESS IMPROVEMENT (LEAN)
-  { title: "Mengapa BPI untuk SMKTI?", component: SlideBPIBridge },
+  { title: "Mengapa BPI untuk SMKTI?", component: SlideBPIImportance },
   { title: "§ Business Process Improvement", component: SlideBPIConcept },
   { title: "What is Lean?", component: SlideWhatIsLean },
   { title: "Lean Philosophy", component: SlideLeanPhilosophy },
