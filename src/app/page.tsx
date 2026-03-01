@@ -71,6 +71,114 @@ function AccentShapes() {
 }
 
 /* =============================
+   AGENDA / TABLE OF CONTENTS
+   ============================= */
+function SlideAgenda() {
+  const sections = [
+    { num: "01", title: "Strategic Context", desc: "Visi besar, DNA PCS, HC Strategic Initiatives, dan Gap Analysis", color: "#0e6655", slides: 6, targetTitle: "Strategic Drivers" },
+    { num: "02", title: "Fondasi Konseptual & Strategis", desc: "Prinsip KPI, BSC, PDCA, Cascading, dan Model Kinerja", color: "#0e6655", slides: 8, targetTitle: "§ Fondasi Konseptual & Strategis" },
+    { num: "03", title: "Evaluasi & Perubahan Regulasi", desc: "Review PMS existing, perubahan paradigma, dan komparasi Perdir", color: "#1a5276", slides: 6, targetTitle: "§ Evaluasi & Perubahan Regulasi" },
+    { num: "04", title: "Desain Arsitektur SMKTI 2026", desc: "Opsi arsitektur, pro-contra, rating model, dan reward impact", color: "#064e3b", slides: 8, targetTitle: "§ Desain Arsitektur SMKTI 2026" },
+    { num: "05", title: "Implementasi & Roadmap", desc: "Monitoring progress, timeline, dan project charter", color: "#e67e22", slides: 4, targetTitle: "§ Implementasi & Roadmap" },
+    { num: "06", title: "Business Process Improvement", desc: "Lean methodology, eliminasi Muda, dan Value Stream Mapping", color: "#0e6655", slides: 6, targetTitle: "Mengapa BPI untuk SMKTI?" },
+    { num: "07", title: "Penutup & Lampiran", desc: "FAQ, referensi global, terminologi, dan model appraisal", color: "#334155", slides: 6, targetTitle: "§ Penutup & Lampiran" }
+  ];
+
+  const handleSectionClick = (targetTitle: string) => {
+    window.dispatchEvent(new CustomEvent('navigateToSlide', { detail: { targetTitle } }));
+  };
+
+  return (
+    <div className="slide" style={{ padding: "2.5rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #fff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
+        <motion.h1
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="slide-title"
+          style={{ fontSize: "3rem", color: "#1a5276", marginBottom: "0.3rem" }}
+        >
+          Agenda Presentasi
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="slide-subtitle"
+          style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}
+        >
+          Klik bagian untuk langsung menuju section
+        </motion.p>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", flex: 1 }}>
+        {sections.map((sec, i) => (
+          <motion.button
+            key={i}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 + i * 0.06 }}
+            onClick={() => handleSectionClick(sec.targetTitle)}
+            style={{
+              display: "flex",
+              gap: "1.2rem",
+              padding: "1.2rem 1.5rem",
+              borderRadius: "16px",
+              background: "#fff",
+              border: "1px solid #e2e8f0",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.03)",
+              cursor: "pointer",
+              textAlign: "left",
+              outline: "none",
+              transition: "all 0.25s ease",
+              position: "relative",
+              overflow: "hidden"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = `0 8px 25px ${sec.color}20`;
+              e.currentTarget.style.borderColor = sec.color;
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.03)";
+              e.currentTarget.style.borderColor = "#e2e8f0";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            <div style={{ position: "absolute", top: 0, left: 0, width: "5px", height: "100%", background: sec.color }} />
+            <div style={{
+              background: sec.color,
+              color: "#fff",
+              width: "48px",
+              height: "48px",
+              borderRadius: "14px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontWeight: 900,
+              fontSize: "1.1rem",
+              flexShrink: 0,
+              boxShadow: `0 6px 15px ${sec.color}30`
+            }}>
+              {sec.num}
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontWeight: 900, fontSize: "1rem", color: "#1e293b", marginBottom: "4px" }}>{sec.title}</div>
+              <div style={{ fontSize: "0.78rem", color: "#64748b", fontWeight: 500, lineHeight: 1.3 }}>{sec.desc}</div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", flexShrink: 0 }}>
+              <span style={{ fontSize: "0.65rem", color: "#94a3b8", fontWeight: 700 }}>{sec.slides} slides</span>
+              <ChevronRight size={16} color={sec.color} style={{ marginTop: "4px" }} />
+            </div>
+          </motion.button>
+        ))}
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
    COVER SLIDE
    ============================= */
 function SlideCover() {
@@ -4425,6 +4533,7 @@ function SlideBPIBridge() {
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   { title: "Cover", component: SlideCover },
+  { title: "Agenda", component: SlideAgenda },
   { title: "Strategic Drivers", component: SlideLatar },
   { title: "Our Big Dream RJPP 2026-2030", component: SlideBigDream },
   { title: "Ways of Working (PCS) Enhancement", component: SlideWaysOfWorking },
@@ -4516,6 +4625,20 @@ export default function PresentationPage() {
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [goNext, goPrev]);
+
+  // Listen for custom navigation events from Agenda slide
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const customEvent = e as CustomEvent<{ targetTitle: string }>;
+      const targetTitle = customEvent.detail.targetTitle;
+      const targetIndex = slides.findIndex(s => s.title === targetTitle);
+      if (targetIndex !== -1) {
+        setCurrentSlide(targetIndex);
+      }
+    };
+    window.addEventListener('navigateToSlide', handler);
+    return () => window.removeEventListener('navigateToSlide', handler);
+  }, []);
 
   useEffect(() => {
     if (isSidebarOpen) {
