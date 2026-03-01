@@ -3752,18 +3752,18 @@ function SlidePriorityPool() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "1.2rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.2rem" }}>
           <em>Ilustrasi Priority Pool & Klasifikasi Rating</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Mekanisme Penentuan Rating Berbasis Level Jabatan</p>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Mekanisme Penentuan Rating Berbasis Level Jabatan</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
         {/* Tables Row: Strategic Inputs */}
-        <div style={{ display: "flex", gap: "1.5rem" }}>
+        <div style={{ display: "flex", gap: "1.2rem" }}>
           {divisions.map((div, i) => (
             <motion.div
               key={i}
@@ -3772,23 +3772,23 @@ function SlidePriorityPool() {
               transition={{ delay: i * 0.1 }}
               style={{ flex: 1, border: "1px solid #e2e8f0", borderRadius: "20px", overflow: "hidden", background: "#fff", boxShadow: "0 10px 25px rgba(0,0,0,0.03)" }}
             >
-              <div style={{ background: div.color, padding: "12px", textAlign: "center", fontSize: "0.85rem", fontWeight: 900, color: "#fff", letterSpacing: "0.5px" }}>{div.name}</div>
-              <table style={{ width: "100%", fontSize: "0.8rem", borderCollapse: "collapse" }}>
+              <div style={{ background: div.color, padding: "8px", textAlign: "center", fontSize: "0.8rem", fontWeight: 900, color: "#fff", letterSpacing: "0.5px" }}>{div.name}</div>
+              <table style={{ width: "100%", fontSize: "0.75rem", borderCollapse: "collapse" }}>
                 <thead>
                   <tr style={{ background: "rgba(241, 245, 249, 1)", color: "#1e293b" }}>
-                    <th style={{ padding: "10px", width: "15%" }}>No</th>
-                    <th style={{ padding: "10px", textAlign: "left" }}>Nama</th>
-                    <th style={{ padding: "10px" }}>Level</th>
-                    <th style={{ padding: "10px" }}>Score</th>
+                    <th style={{ padding: "8px", width: "15%" }}>No</th>
+                    <th style={{ padding: "8px", textAlign: "left" }}>Nama</th>
+                    <th style={{ padding: "8px" }}>Level</th>
+                    <th style={{ padding: "8px" }}>Score</th>
                   </tr>
                 </thead>
                 <tbody>
                   {div.items.map((item, idx) => (
                     <tr key={idx} style={{ borderBottom: "1px solid #f1f5f9" }}>
-                      <td style={{ textAlign: "center", padding: "10px", fontWeight: 700, color: "#64748b" }}>{idx + 1}</td>
-                      <td style={{ padding: "10px", fontWeight: 600, color: "#1e293b" }}>{item.n}</td>
-                      <td style={{ textAlign: "center", padding: "10px", color: "#64748b" }}>{item.l}</td>
-                      <td style={{ textAlign: "center", padding: "10px", fontWeight: 900, color: div.color }}>{item.s}</td>
+                      <td style={{ textAlign: "center", padding: "8px", fontWeight: 700, color: "#64748b" }}>{idx + 1}</td>
+                      <td style={{ padding: "8px", fontWeight: 600, color: "#1e293b" }}>{item.n}</td>
+                      <td style={{ textAlign: "center", padding: "8px", color: "#64748b" }}>{item.l}</td>
+                      <td style={{ textAlign: "center", padding: "8px", fontWeight: 900, color: div.color }}>{item.s}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -3803,15 +3803,15 @@ function SlidePriorityPool() {
           background: "rgba(248, 250, 252, 0.8)",
           backdropFilter: "blur(10px)",
           border: "2px dashed #cbd5e1",
-          borderRadius: "32px",
+          borderRadius: "24px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-around",
-          padding: "2rem",
+          padding: "1.2rem",
           position: "relative",
           boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)"
         }}>
-          <div style={{ position: "absolute", top: "20px", right: "30px", opacity: 0.1 }}><Layers size={60} color="#1a5276" /></div>
+          <div style={{ position: "absolute", top: "15px", right: "20px", opacity: 0.1 }}><Layers size={48} color="#1a5276" /></div>
 
           {[
             { l: "BOD-1 POOL", c: "#065f46", members: [{ n: "Rezky", s: "90,78", i: 2 }, { n: "Yusuf", s: "90,53", i: 3 }, { n: "Ali", s: "95,19", i: 1 }] },
@@ -3824,8 +3824,8 @@ function SlidePriorityPool() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: i * 0.2 + 0.5 }}
               style={{
-                width: "200px",
-                height: "200px",
+                width: "170px",
+                height: "170px",
                 borderRadius: "50%",
                 background: `linear-gradient(135deg, ${pool.c} 0%, ${pool.c}dd 100%)`,
                 border: "4px solid #fff",
@@ -3834,29 +3834,29 @@ function SlidePriorityPool() {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+                boxShadow: "0 15px 30px rgba(0,0,0,0.1)",
                 position: "relative"
               }}
             >
               <div style={{
                 position: "absolute",
-                top: "-15px",
+                top: "-12px",
                 background: "#fff",
                 color: pool.c,
-                fontSize: "0.85rem",
+                fontSize: "0.75rem",
                 fontWeight: 900,
-                padding: "4px 16px",
-                borderRadius: "30px",
+                padding: "2px 12px",
+                borderRadius: "20px",
                 border: `2px solid ${pool.c}`,
                 boxShadow: "0 8px 16px rgba(0,0,0,0.1)"
               }}>
                 {pool.l}
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center", width: "100%", padding: "0 15px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: "center", width: "100%", padding: "0 10px" }}>
                 {pool.members.map((m, idx) => (
-                  <div key={idx} style={{ background: "rgba(255,255,255,0.95)", color: "#1e293b", fontSize: "0.7rem", padding: "6px 12px", borderRadius: "10px", textAlign: "center", width: "100%", boxShadow: "0 4px 8px rgba(0,0,0,0.05)" }}>
+                  <div key={idx} style={{ background: "rgba(255,255,255,0.95)", color: "#1e293b", fontSize: "0.65rem", padding: "4px 10px", borderRadius: "8px", textAlign: "center", width: "100%", boxShadow: "0 4px 8px rgba(0,0,0,0.05)" }}>
                     <div style={{ fontWeight: 900 }}>{m.n} <span style={{ color: pool.c }}>({m.i})</span></div>
-                    <div style={{ fontSize: "0.6rem", opacity: 0.7 }}>Score: {m.s}</div>
+                    <div style={{ fontSize: "0.55rem", opacity: 0.7 }}>Score: {m.s}</div>
                   </div>
                 ))}
               </div>
@@ -3865,29 +3865,30 @@ function SlidePriorityPool() {
         </div>
 
         {/* Bottom Row: Rating Results */}
-        <div style={{ display: "flex", gap: "1.5rem" }}>
+        <div style={{ display: "flex", gap: "1.2rem" }}>
           {[
             { items: [{ n: "Ali", l: "BOD-1", r: "RD-1" }, { n: "Rezky", l: "BOD-1", r: "RD-2" }, { n: "Yusuf", l: "BOD-1", r: "RD-3" }] },
             { items: [{ n: "Wahyu", l: "BOD-2", r: "RD-1" }, { n: "Deddy", l: "BOD-2", r: "RD-2" }, { n: "Bakhri", l: "BOD-2", r: "RD-3" }] },
             { items: [{ n: "Claro", l: "BOD-3", r: "RD-1" }, { n: "Kintan", l: "BOD-3", r: "RD-2" }, { n: "Zaini", l: "BOD-3", r: "RD-3" }] }
           ].map((res, i) => (
             <div key={i} style={{ flex: 1, border: "1px solid #e2e8f0", borderRadius: "16px", overflow: "hidden", background: "#fff", boxShadow: "0 10px 25px rgba(0,0,0,0.03)" }}>
-              <table style={{ width: "100%", fontSize: "0.8rem", borderCollapse: "collapse" }}>
+              <table style={{ width: "100%", fontSize: "0.75rem", borderCollapse: "collapse" }}>
                 <thead style={{ background: "#1e293b", color: "#fff" }}>
                   <tr>
-                    <th style={{ padding: "10px" }}>No</th>
-                    <th style={{ padding: "10px", textAlign: "left" }}>Nama</th>
-                    <th style={{ padding: "10px" }}>Level</th>
-                    <th style={{ padding: "10px" }}>Final Rating</th>
+                    <th style={{ padding: "8px" }}>No</th>
+                    <th style={{ padding: "8px", textAlign: "left" }}>Nama</th>
+                    <th style={{ padding: "8px" }}>Level</th>
+                    <th style={{ padding: "8px" }}>Final Rating</th>
+
                   </tr>
                 </thead>
                 <tbody>
                   {res.items.map((item, idx) => (
                     <tr key={idx} style={{ borderBottom: "1px solid #f1f5f9" }}>
-                      <td style={{ textAlign: "center", padding: "10px", fontWeight: 700, color: "#64748b" }}>{idx + 1}</td>
-                      <td style={{ padding: "10px", fontWeight: 700, color: "#1e293b" }}>{item.n}</td>
-                      <td style={{ textAlign: "center", padding: "10px", color: "#64748b" }}>{item.l}</td>
-                      <td style={{ textAlign: "center", padding: "10px", fontWeight: 900, color: "#1a5276" }}>{item.r}</td>
+                      <td style={{ textAlign: "center", padding: "8px", fontWeight: 700, color: "#64748b" }}>{idx + 1}</td>
+                      <td style={{ padding: "8px", fontWeight: 700, color: "#1e293b" }}>{item.n}</td>
+                      <td style={{ textAlign: "center", padding: "8px", color: "#64748b" }}>{item.l}</td>
+                      <td style={{ textAlign: "center", padding: "8px", fontWeight: 900, color: "#1a5276" }}>{item.r}</td>
                     </tr>
                   ))}
                 </tbody>
