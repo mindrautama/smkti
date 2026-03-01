@@ -3256,36 +3256,36 @@ function SlideWeighting() {
           title: "Unit Usaha & Operasional",
           id: 1,
           diagram: (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
-              <div style={{ display: "flex", gap: "25px", alignItems: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
+              <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
                 <div style={{
                   background: "linear-gradient(135deg, #065f46 0%, #047857 100%)",
                   color: "#fff",
-                  padding: "1.2rem",
+                  padding: "0.8rem",
                   borderRadius: "16px",
-                  fontSize: "0.9rem",
+                  fontSize: "0.8rem",
                   fontWeight: 900,
                   textAlign: "center",
-                  width: "120px",
+                  width: "110px",
                   boxShadow: "0 10px 20px rgba(6, 95, 70, 0.15)",
                   border: "1px solid rgba(255,255,255,0.1)"
                 }}>
-                  KPI Bersama<br /><span style={{ fontSize: "1.3rem", color: "#6ee7b7" }}>30%</span>
+                  KPI Bersama<br /><span style={{ fontSize: "1.1rem", color: "#6ee7b7" }}>30%</span>
                 </div>
-                <div style={{ fontSize: "1.8rem", fontWeight: 900, color: "#1a5276" }}>+</div>
-                <div style={{ border: "2px dashed #f59e0b", padding: "12px", borderRadius: "20px", background: "rgba(245, 158, 11, 0.03)" }}>
-                  <div style={{ textAlign: "center", fontSize: "0.85rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px" }}>KPI Utama (70%)</div>
-                  <div style={{ display: "flex", gap: "12px" }}>
-                    <div style={{ background: "#1a5276", color: "#fff", padding: "1rem", borderRadius: "12px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center", width: "100px", boxShadow: "0 4px 12px rgba(26,82,118,0.1)" }}>
-                      Unit Kerja<br /><span style={{ fontSize: "1.1rem" }}>49%</span>
+                <div style={{ fontSize: "1.4rem", fontWeight: 900, color: "#1a5276" }}>+</div>
+                <div style={{ border: "2px dashed #f59e0b", padding: "8px", borderRadius: "18px", background: "rgba(245, 158, 11, 0.03)" }}>
+                  <div style={{ textAlign: "center", fontSize: "0.75rem", fontWeight: 900, color: "#1a5276", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>KPI Utama (70%)</div>
+                  <div style={{ display: "flex", gap: "10px" }}>
+                    <div style={{ background: "#1a5276", color: "#fff", padding: "0.7rem", borderRadius: "10px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center", width: "85px", boxShadow: "0 4px 12px rgba(26,82,118,0.1)" }}>
+                      Unit Kerja<br /><span style={{ fontSize: "1rem" }}>49%</span>
                     </div>
-                    <div style={{ background: "#1a5276", color: "#fff", padding: "1rem", borderRadius: "12px", fontSize: "0.85rem", fontWeight: 800, textAlign: "center", width: "100px", boxShadow: "0 4px 12px rgba(26,82,118,0.1)" }}>
-                      Individu<br /><span style={{ fontSize: "1.1rem" }}>21%</span>
+                    <div style={{ background: "#1a5276", color: "#fff", padding: "0.7rem", borderRadius: "10px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center", width: "85px", boxShadow: "0 4px 12px rgba(26,82,118,0.1)" }}>
+                      Individu<br /><span style={{ fontSize: "1rem" }}>21%</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "8px 25px", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 900, color: "#1a5276", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
+              <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "6px 20px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
                 Performance Score
               </div>
             </div>
@@ -3295,31 +3295,31 @@ function SlideWeighting() {
           title: "Holding & Head Office",
           id: 2,
           diagram: (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
-              <div style={{ display: "flex", gap: "25px", alignItems: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
+              <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
                 <div style={{
                   background: "linear-gradient(135deg, #065f46 0%, #047857 100%)",
                   color: "#fff",
-                  padding: "1.2rem",
+                  padding: "0.8rem",
                   borderRadius: "16px",
-                  fontSize: "0.9rem",
+                  fontSize: "0.8rem",
                   fontWeight: 900,
                   textAlign: "center",
-                  width: "120px",
+                  width: "110px",
                   boxShadow: "0 10px 20px rgba(6, 95, 70, 0.15)",
                   border: "1px solid rgba(255,255,255,0.1)"
                 }}>
-                  KPI Bersama<br /><span style={{ fontSize: "1.3rem", color: "#6ee7b7" }}>30%</span>
+                  KPI Bersama<br /><span style={{ fontSize: "1.1rem", color: "#6ee7b7" }}>30%</span>
                 </div>
-                <div style={{ fontSize: "1.8rem", fontWeight: 900, color: "#1a5276" }}>+</div>
-                <div style={{ border: "2px dashed #1a5276", padding: "12px", borderRadius: "20px", background: "rgba(26, 82, 118, 0.03)", width: "150px" }}>
-                  <div style={{ textAlign: "center", fontSize: "0.85rem", fontWeight: 900, color: "#1a5276", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px" }}>KPI Utama (70%)</div>
-                  <div style={{ background: "#1a5276", color: "#fff", padding: "1.2rem", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 900, textAlign: "center" }}>
-                    Individu<br /><span style={{ fontSize: "1.3rem" }}>100%</span>
+                <div style={{ fontSize: "1.4rem", fontWeight: 900, color: "#1a5276" }}>+</div>
+                <div style={{ border: "2px dashed #1a5276", padding: "8px", borderRadius: "18px", background: "rgba(26, 82, 118, 0.03)", width: "130px" }}>
+                  <div style={{ textAlign: "center", fontSize: "0.75rem", fontWeight: 900, color: "#1a5276", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>KPI Utama (70%)</div>
+                  <div style={{ background: "#1a5276", color: "#fff", padding: "0.8rem", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900, textAlign: "center" }}>
+                    Individu<br /><span style={{ fontSize: "1.1rem" }}>100%</span>
                   </div>
                 </div>
               </div>
-              <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "8px 25px", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 900, color: "#1a5276", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
+              <div style={{ background: "#fff", border: "1px solid #e2e8f0", padding: "6px 20px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900, color: "#1a5276", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
                 Performance Score
               </div>
             </div>
@@ -3335,38 +3335,38 @@ function SlideWeighting() {
           title: "Struktur Penilaian Terintegrasi",
           id: 1,
           diagram: (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
-              <div style={{ display: "flex", gap: "15px" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+              <div style={{ display: "flex", gap: "10px" }}>
                 {[
                   { label: "Performance", sub: "Outcome", pct: "70%", color: "#1a5276" },
                   { label: "Behavior", sub: "ONE / Value", pct: "20%", color: "#065f46" },
                   { label: "Corporate", sub: "Strategic", pct: "10%", color: "#d97706" }
                 ].map((box, bIdx) => (
-                  <div key={bIdx} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+                  <div key={bIdx} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
                     <div style={{
                       background: "white",
                       border: `2px solid ${box.color}`,
                       color: box.color,
-                      padding: "1rem",
-                      borderRadius: "16px",
-                      fontSize: "0.85rem",
+                      padding: "0.6rem",
+                      borderRadius: "14px",
+                      fontSize: "0.8rem",
                       fontWeight: 900,
                       textAlign: "center",
-                      width: "110px",
-                      height: "80px",
+                      width: "95px",
+                      height: "70px",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "center",
                       boxShadow: "0 10px 25px rgba(0,0,0,0.04)"
                     }}>
-                      <div style={{ fontSize: "1.2rem" }}>{box.pct}</div>
-                      <div style={{ fontSize: "0.7rem", opacity: 0.8, textTransform: "uppercase" }}>{box.label}</div>
+                      <div style={{ fontSize: "1.1rem" }}>{box.pct}</div>
+                      <div style={{ fontSize: "0.65rem", opacity: 0.8, textTransform: "uppercase" }}>{box.label}</div>
                     </div>
-                    <div style={{ fontSize: "0.65rem", fontWeight: 700, color: "#64748b", background: "#f1f5f9", padding: "4px 10px", borderRadius: "20px" }}>{box.sub}</div>
+                    <div style={{ fontSize: "0.6rem", fontWeight: 700, color: "#64748b", background: "#f1f5f9", padding: "2px 8px", borderRadius: "15px" }}>{box.sub}</div>
                   </div>
                 ))}
               </div>
-              <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "10px 40px", borderRadius: "16px", fontSize: "1rem", fontWeight: 900, boxShadow: "0 10px 25px rgba(26, 82, 118, 0.2)" }}>
+              <div style={{ background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "8px 30px", borderRadius: "14px", fontSize: "0.85rem", fontWeight: 900, boxShadow: "0 10px 25px rgba(26, 82, 118, 0.2)" }}>
                 Total Individual Performance Score
               </div>
             </div>
@@ -3376,19 +3376,19 @@ function SlideWeighting() {
           title: "Siklus Reward & Meritocracy",
           id: 2,
           diagram: (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px" }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                 {[
                   { label: "Total Score", color: "#1a5276", icon: <Target size={14} /> },
                   { label: "Rating Distribution", color: "#065f46", icon: <Layers size={14} /> },
                   { label: "Merit Increment", color: "#d97706", icon: <TrendingUp size={14} /> }
                 ].map((step, sIdx) => (
-                  <div key={sIdx} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <div style={{ background: step.color, color: "#fff", padding: "12px 25px", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 800, width: "200px", display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", boxShadow: "0 4px 12px rgba(0,0,0,0.05)" }}>
+                  <div key={sIdx} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <div style={{ background: step.color, color: "#fff", padding: "10px 20px", borderRadius: "10px", fontSize: "0.85rem", fontWeight: 800, width: "170px", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", boxShadow: "0 4px 12px rgba(0,0,0,0.05)" }}>
                       {step.icon}
                       {step.label}
                     </div>
-                    {sIdx < 2 && <ArrowDown size={18} color="#cbd5e1" style={{ transform: "rotate(-90deg)" }} />}
+                    {sIdx < 2 && <ArrowDown size={14} color="#cbd5e1" style={{ transform: "rotate(-90deg)" }} />}
                   </div>
                 ))}
               </div>
@@ -3400,16 +3400,16 @@ function SlideWeighting() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "0.8rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.2rem" }}>
+      <div className="slide-header" style={{ marginBottom: "0.4rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.2rem", color: "#1a5276", marginBottom: "0.1rem" }}>
           <em>Pembobotan Performance Appraisal</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Struktur Penilaian Pegawai: Transformasi 2025 ke 2026</p>
+        <p className="slide-subtitle" style={{ fontSize: "0.95rem", color: "#64748b", fontWeight: 600 }}>Struktur Penilaian Pegawai: Transformasi 2025 ke 2026</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
         {years.map((y, idx) => (
           <motion.div
             key={idx}
@@ -3420,7 +3420,7 @@ function SlideWeighting() {
               flex: 1,
               border: "1px solid #e2e8f0",
               borderRadius: "20px",
-              padding: "1.2rem 1.5rem",
+              padding: "0.7rem 1.2rem",
               position: "relative",
               background: "#fff",
               boxShadow: "0 20px 40px rgba(0,0,0,0.03)",
@@ -3430,26 +3430,26 @@ function SlideWeighting() {
           >
             <div style={{
               position: "absolute",
-              top: "-18px",
+              top: "-15px",
               left: "40px",
               background: y.type === "current" ? "#f59e0b" : "#1a5276",
               color: "#fff",
-              padding: "8px 24px",
+              padding: "6px 20px",
               borderRadius: "30px",
-              fontSize: "0.95rem",
+              fontSize: "0.85rem",
               fontWeight: 900,
               boxShadow: "0 10px 20px rgba(0,0,0,0.1)"
             }}>
               {y.year}
             </div>
 
-            <div style={{ display: "flex", height: "100%", gap: "2rem", marginTop: "1rem" }}>
-              <div style={{ flex: 2.5, display: "flex", gap: "1.5rem" }}>
+            <div style={{ display: "flex", height: "100%", gap: "1.5rem", marginTop: "0.4rem" }}>
+              <div style={{ flex: 2.5, display: "flex", gap: "1.2rem" }}>
                 {y.scenarios.map((s, sIdx) => (
-                  <div key={sIdx} style={{ flex: 1, border: "1px solid #f1f5f9", borderRadius: "20px", padding: "1.5rem", display: "flex", flexDirection: "column", background: "rgba(248, 250, 252, 0.5)" }}>
-                    <div style={{ display: "flex", gap: "12px", marginBottom: "20px", alignItems: "center" }}>
-                      <div style={{ background: y.type === "current" ? "#f59e0b" : "#1a5276", color: "#fff", width: "30px", height: "30px", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", fontWeight: 900 }}>{s.id}</div>
-                      <div style={{ fontSize: "1rem", fontWeight: 800, color: "#1e293b" }}>{s.title}</div>
+                  <div key={sIdx} style={{ flex: 1, border: "1px solid #f1f5f9", borderRadius: "20px", padding: "0.7rem", display: "flex", flexDirection: "column", background: "rgba(248, 250, 252, 0.5)" }}>
+                    <div style={{ display: "flex", gap: "10px", marginBottom: "10px", alignItems: "center" }}>
+                      <div style={{ background: y.type === "current" ? "#f59e0b" : "#1a5276", color: "#fff", width: "26px", height: "26px", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.85rem", fontWeight: 900 }}>{s.id}</div>
+                      <div style={{ fontSize: "0.9rem", fontWeight: 800, color: "#1e293b" }}>{s.title}</div>
                     </div>
                     <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {s.diagram}
@@ -3458,35 +3458,35 @@ function SlideWeighting() {
                 ))}
               </div>
 
-              <div style={{ flex: 1, background: "linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)", padding: "1.5rem", borderRadius: "20px", border: "1px solid #e2e8f0" }}>
-                <div style={{ fontSize: "0.95rem", color: "#475569", lineHeight: 1.6 }}>
+              <div style={{ flex: 1, background: "linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)", padding: "0.8rem", borderRadius: "20px", border: "1px solid #e2e8f0" }}>
+                <div style={{ fontSize: "0.85rem", color: "#475569", lineHeight: 1.5 }}>
                   {y.type === "current" ? (
-                    <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
                       <p style={{ margin: 0, fontWeight: 600 }}>Dominasi alignment KPI Unit Kerja pada level operasional.</p>
                       <ul style={{ margin: 0, paddingLeft: "1.5rem", fontWeight: 700, color: "#1a5276" }}>
                         <li>KPI Utama (Cascaded): 70%</li>
                         <li>KPI Bersama: 30%</li>
                       </ul>
-                      <div style={{ padding: "12px", borderLeft: "4px solid #f59e0b", background: "rgba(245, 158, 11, 0.08)", borderRadius: "0 12px 12px 0" }}>
-                        <span style={{ fontWeight: 900, color: "#92400e", fontSize: "0.8rem", textTransform: "uppercase" }}>Key Learning:</span><br />
-                        <span style={{ fontSize: "0.85rem", color: "#92400e" }}>Proporsi individu murni (21%) relatif kecil dibanding alignment unit.</span>
+                      <div style={{ padding: "10px", borderLeft: "4px solid #f59e0b", background: "rgba(245, 158, 11, 0.08)", borderRadius: "0 12px 12px 0" }}>
+                        <span style={{ fontWeight: 900, color: "#92400e", fontSize: "0.75rem", textTransform: "uppercase" }}>Key Learning:</span><br />
+                        <span style={{ fontSize: "0.8rem", color: "#92400e" }}>Proporsi individu murni (21%) relatif kecil dibanding alignment unit.</span>
                       </div>
                     </div>
                   ) : (
-                    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem" }}>
                       <p style={{ margin: 0, fontWeight: 600 }}>Fokus pada Outcome Individu & Culture (ONE).</p>
-                      <ul style={{ margin: 0, paddingLeft: "1.5rem", fontWeight: 700, color: "#1a5276", fontSize: "0.9rem" }}>
+                      <ul style={{ margin: 0, paddingLeft: "1.5rem", fontWeight: 700, color: "#1a5276", fontSize: "0.85rem" }}>
                         <li>Individual Perf. (70%)</li>
                         <li>Behavioral Score (20%)</li>
                         <li>Corporate Score (10%)</li>
                       </ul>
-                      <div style={{ padding: "12px", borderLeft: "4px solid #1a5276", background: "rgba(26, 82, 118, 0.08)", borderRadius: "0 12px 12px 0" }}>
-                        <span style={{ fontWeight: 900, color: "#1a5276", fontSize: "0.8rem", textTransform: "uppercase" }}>Strategic Shift:</span><br />
-                        <span style={{ fontSize: "0.85rem" }}>KPI Unit Kerja telah terakomodasi dalam cascading KPI Individu.</span>
+                      <div style={{ padding: "10px", borderLeft: "4px solid #1a5276", background: "rgba(26, 82, 118, 0.08)", borderRadius: "0 12px 12px 0" }}>
+                        <span style={{ fontWeight: 900, color: "#1a5276", fontSize: "0.75rem", textTransform: "uppercase" }}>Strategic Shift:</span><br />
+                        <span style={{ fontSize: "0.8rem" }}>KPI Unit Kerja telah terakomodasi dalam cascading KPI Individu.</span>
                       </div>
-                      <div style={{ padding: "12px", borderLeft: "4px solid #065f46", background: "rgba(6, 95, 70, 0.08)", borderRadius: "0 12px 12px 0" }}>
-                        <span style={{ fontWeight: 900, color: "#065f46", fontSize: "0.8rem", textTransform: "uppercase" }}>Impact:</span><br />
-                        <span style={{ fontSize: "0.85rem" }}>Diferensiasi reward lebih tajam dengan model rating distribusi.</span>
+                      <div style={{ padding: "10px", borderLeft: "4px solid #065f46", background: "rgba(6, 95, 70, 0.08)", borderRadius: "0 12px 12px 0" }}>
+                        <span style={{ fontWeight: 900, color: "#065f46", fontSize: "0.75rem", textTransform: "uppercase" }}>Impact:</span><br />
+                        <span style={{ fontSize: "0.8rem" }}>Diferensiasi reward lebih tajam dengan model rating distribusi.</span>
                       </div>
                     </div>
                   )}
