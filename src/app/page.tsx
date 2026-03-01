@@ -81,7 +81,7 @@ function SlideExecutiveSummary() {
     {
       label: "Latar Belakang",
       icon: <FileText size={24} />,
-      content: "Transformasi pengelolaan kinerja PTPN Group yang terintegrasi dan berbasis data, menggantikan sistem manual yang terdesentralisasi.",
+      content: "Transformasi pengelolaan kinerja PTPN Group yang terintegrasi dan berbasis data, menggantikan sistem yang belum berbasis Balanced Scorecard.",
       color: "#0e6655"
     },
     {
@@ -206,9 +206,9 @@ function SlideAgenda() {
     { num: "02", title: "Fondasi Konseptual & Strategis", desc: "Prinsip KPI, BSC, PDCA, Cascading, dan Model Kinerja", color: "#0e6655", slides: 10, targetTitle: "§ Fondasi Konseptual & Strategis" },
     { num: "03", title: "Evaluasi & Perubahan Regulasi", desc: "Review PMS existing, perubahan paradigma, dan komparasi Perdir", color: "#1a5276", slides: 6, targetTitle: "§ Evaluasi & Perubahan Regulasi" },
     { num: "04", title: "Desain Arsitektur SMKTI 2026", desc: "Opsi arsitektur, pro-contra, rating model, dan reward impact", color: "#064e3b", slides: 8, targetTitle: "§ Desain Arsitektur SMKTI 2026" },
-    { num: "05", title: "Implementasi & Roadmap", desc: "Monitoring progress, timeline, dan project charter", color: "#e67e22", slides: 4, targetTitle: "§ Implementasi & Roadmap" },
+    { num: "05", title: "Implementasi & Roadmap", desc: "Timeline, governance, change management, risk & mitigasi", color: "#e67e22", slides: 8, targetTitle: "§ Implementasi & Roadmap" },
     { num: "06", title: "Business Process Improvement", desc: "Lean methodology, eliminasi Muda, dan Value Stream Mapping", color: "#0e6655", slides: 6, targetTitle: "Mengapa BPI untuk SMKTI?" },
-    { num: "07", title: "Penutup & Lampiran", desc: "FAQ, referensi global, terminologi, dan model appraisal", color: "#334155", slides: 6, targetTitle: "§ Penutup & Lampiran" }
+    { num: "07", title: "Penutup & Lampiran", desc: "Next steps, FAQ, terminologi, dan referensi global", color: "#334155", slides: 7, targetTitle: "§ Penutup & Lampiran" }
   ];
 
   const handleSectionClick = (targetTitle: string) => {
@@ -5407,6 +5407,446 @@ function SlideSectionImplementation() {
 }
 
 /* =============================
+/* =============================
+   GOVERNANCE & TATA KELOLA
+   ============================= */
+function SlideGovernance() {
+  const roles = [
+    { level: "Steering Committee", who: "Direksi PTPN III (Holding)", role: "Sponsor & Approval", frequency: "Per Kuartal", color: "#0e6655" },
+    { level: "Project Lead", who: "Direktorat HC / SDM", role: "Penanggung Jawab Utama Implementasi", frequency: "Bulanan", color: "#1a5276" },
+    { level: "Technical Team", who: "Tim IT & HC Analytics", role: "Pengembangan Sistem APMS 2.0 & Dashboard", frequency: "Mingguan", color: "#f97316" },
+    { level: "Entity PIC", who: "VP HC / GM SDM per Entitas", role: "Koordinasi Implementasi di PTPN I, IV, SGN", frequency: "Bulanan", color: "#0e6655" },
+    { level: "Change Agent", who: "HR Champion per Unit", role: "Sosialisasi, Training & Eskalasi Masalah", frequency: "Ongoing", color: "#1a5276" },
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>Governance & Tata Kelola</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Struktur Pengambilan Keputusan & Penanggung Jawab Implementasi SMKTI
+        </p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+        {/* Header Row */}
+        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 2fr 1fr", gap: "0.8rem", padding: "0.8rem 1.2rem" }}>
+          {["Level", "Penanggung Jawab", "Peran & Tanggung Jawab", "Frekuensi"].map((h, i) => (
+            <div key={i} style={{ fontSize: "0.9rem", fontWeight: 900, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px" }}>{h}</div>
+          ))}
+        </div>
+
+        {roles.map((r, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -25 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.1 }}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1.2fr 1.5fr 2fr 1fr",
+              gap: "0.8rem",
+              background: "#fff",
+              borderRadius: "18px",
+              padding: "1.4rem 1.5rem",
+              border: "1px solid #f1f5f9",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.02)",
+              alignItems: "center",
+              borderLeft: `6px solid ${r.color}`
+            }}
+          >
+            <div style={{ fontWeight: 900, fontSize: "1.15rem", color: r.color }}>{r.level}</div>
+            <div style={{ fontSize: "1.05rem", fontWeight: 700, color: "#334155" }}>{r.who}</div>
+            <div style={{ fontSize: "1rem", fontWeight: 600, color: "#64748b", lineHeight: 1.4 }}>{r.role}</div>
+            <div style={{ background: `${r.color}10`, color: r.color, padding: "6px 14px", borderRadius: "10px", fontSize: "0.9rem", fontWeight: 800, textAlign: "center" }}>{r.frequency}</div>
+          </motion.div>
+        ))}
+
+        {/* Escalation Path */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          style={{
+            marginTop: "auto",
+            background: "linear-gradient(135deg, #1e293b, #0e6655)",
+            borderRadius: "18px",
+            padding: "1.4rem 2.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "2rem",
+            color: "#fff"
+          }}
+        >
+          <div style={{ background: "#fbbf24", color: "#1e293b", padding: "8px 18px", borderRadius: "10px", fontWeight: 900, fontSize: "0.9rem", flexShrink: 0 }}>ESKALASI</div>
+          <p style={{ fontSize: "1.1rem", fontWeight: 600, margin: 0, lineHeight: 1.4 }}>
+            Isu operasional → <strong style={{ color: "#6ee7b7" }}>Entity PIC</strong> → Project Lead → <strong style={{ color: "#fbbf24" }}>Steering Committee (Direksi)</strong> untuk keputusan strategis.
+          </p>
+        </motion.div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   CHANGE MANAGEMENT & SOSIALISASI
+   ============================= */
+function SlideChangeManagement() {
+  const phases = [
+    {
+      phase: "FASE 1",
+      title: "Persiapan & Awareness",
+      period: "Mar — Mei 2026",
+      color: "#0e6655",
+      items: [
+        "Sosialisasi ke Direksi & Level VP",
+        "Pembentukan Tim Project & Change Agent",
+        "Kick-off Meeting 4 Entitas"
+      ]
+    },
+    {
+      phase: "FASE 2",
+      title: "Pelatihan & Uji Coba",
+      period: "Jun — Sep 2026",
+      color: "#1a5276",
+      items: [
+        "Training BSC, KPI & Sistem APMS 2.0",
+        "Pilot run di unit terpilih per entitas",
+        "Feedback loop & penyesuaian sistem"
+      ]
+    },
+    {
+      phase: "FASE 3",
+      title: "Rollout & Stabilisasi",
+      period: "Okt 2026 — Mar 2027",
+      color: "#f97316",
+      items: [
+        "Go-live APMS 2.0 di 4 entitas",
+        "Pendampingan intensif (helpdesk & coaching)",
+        "Evaluasi Q1 dan penyempurnaan Perdir"
+      ]
+    },
+    {
+      phase: "FASE 4",
+      title: "Ekspansi PTPN Group",
+      period: "2027 Onwards",
+      color: "#7c3aed",
+      items: [
+        "Perluasan ke seluruh entitas PTPN Group",
+        "Monthly review cycle aktif",
+        "Continuous improvement & best practice sharing"
+      ]
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>Change Management & Sosialisasi</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Strategi Pengelolaan Perubahan untuk Keberhasilan Implementasi SMKTI
+        </p>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.2rem", flex: 1 }}>
+        {phases.map((p, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.15 }}
+            style={{
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "2rem 1.8rem",
+              border: "1px solid #f1f5f9",
+              boxShadow: "0 8px 25px rgba(0,0,0,0.03)",
+              display: "flex",
+              flexDirection: "column",
+              position: "relative",
+              overflow: "hidden"
+            }}
+          >
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: p.color }} />
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1rem" }}>
+              <span style={{ background: p.color, color: "#fff", padding: "4px 10px", borderRadius: "8px", fontSize: "0.8rem", fontWeight: 900 }}>{p.phase}</span>
+              <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#94a3b8" }}>{p.period}</span>
+            </div>
+            <h3 style={{ fontSize: "1.3rem", fontWeight: 900, color: "#1e293b", margin: "0 0 1.2rem 0", lineHeight: 1.2 }}>{p.title}</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", flex: 1 }}>
+              {p.items.map((item, j) => (
+                <div key={j} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                  <Check size={16} color={p.color} style={{ marginTop: "3px", flexShrink: 0 }} />
+                  <span style={{ fontSize: "1rem", fontWeight: 600, color: "#475569", lineHeight: 1.4 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+            {/* Progress indicator */}
+            <div style={{ marginTop: "1.5rem", display: "flex", gap: "4px" }}>
+              {[0, 1, 2, 3].map(j => (
+                <div key={j} style={{ flex: 1, height: "4px", borderRadius: "2px", background: j <= i ? p.color : "#e2e8f0" }} />
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8 }}
+        style={{ marginTop: "1.2rem", background: "linear-gradient(135deg, #0e6655, #1a5276)", borderRadius: "16px", padding: "1.2rem 2.5rem", display: "flex", alignItems: "center", gap: "1.5rem", color: "#fff" }}
+      >
+        <Users size={22} />
+        <p style={{ fontSize: "1.1rem", fontWeight: 700, margin: 0, lineHeight: 1.4 }}>
+          Kunci keberhasilan: <strong style={{ color: "#fbbf24" }}>komitmen pimpinan</strong> di setiap level, komunikasi transparan, dan pendampingan berkelanjutan hingga perubahan menjadi budaya kerja baru.
+        </p>
+      </motion.div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   RISK & MITIGASI
+   ============================= */
+function SlideRiskMitigation() {
+  const risks = [
+    {
+      risk: "Resistensi Perubahan",
+      level: "TINGGI",
+      levelColor: "#dc2626",
+      desc: "Karyawan dan pimpinan unit terbiasa dengan sistem lama, enggan beradaptasi.",
+      mitigation: "Sosialisasi bertahap, dukungan Direksi secara eksplisit, quick wins sebagai bukti manfaat."
+    },
+    {
+      risk: "Kualitas Data Tidak Konsisten",
+      level: "TINGGI",
+      levelColor: "#dc2626",
+      desc: "Data KPI antar entitas belum terstandarisasi, risiko data tidak valid.",
+      mitigation: "Data cleansing sebelum migrasi, standarisasi format, validasi oleh Entity PIC."
+    },
+    {
+      risk: "Kapasitas Tim IT Terbatas",
+      level: "SEDANG",
+      levelColor: "#f59e0b",
+      desc: "Pengembangan APMS 2.0 membutuhkan resource IT yang signifikan.",
+      mitigation: "Prioritaskan fitur MVP, gunakan pendekatan agile, libatkan vendor jika perlu."
+    },
+    {
+      risk: "Timeline Terlalu Optimis",
+      level: "SEDANG",
+      levelColor: "#f59e0b",
+      desc: "14 bulan untuk 4 entitas bisa terlambat jika ada kendala regulasi.",
+      mitigation: "Buffer time di setiap milestone, eskalasi cepat, fase pilot sebelum full rollout."
+    },
+    {
+      risk: "Ketidakselarasan Regulasi",
+      level: "RENDAH",
+      levelColor: "#22c55e",
+      desc: "Draft Perdir SMKTI bisa berbenturan dengan aturan Kementerian BUMN.",
+      mitigation: "Review legal sejak awal, koordinasi dengan Biro Hukum dan Kementerian."
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>Risk & Mitigasi</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Identifikasi Risiko Utama & Rencana Penanganan Proaktif
+        </p>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+        {/* Header */}
+        <div style={{ display: "grid", gridTemplateColumns: "0.8fr 0.5fr 2fr 2.5fr", gap: "0.8rem", padding: "0.5rem 1.2rem" }}>
+          {["Risiko", "Level", "Deskripsi", "Rencana Mitigasi"].map((h, i) => (
+            <div key={i} style={{ fontSize: "0.85rem", fontWeight: 900, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px" }}>{h}</div>
+          ))}
+        </div>
+
+        {risks.map((r, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.1 }}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "0.8fr 0.5fr 2fr 2.5fr",
+              gap: "0.8rem",
+              background: "#fff",
+              borderRadius: "16px",
+              padding: "1.2rem 1.5rem",
+              border: "1px solid #f1f5f9",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.02)",
+              alignItems: "center"
+            }}
+          >
+            <div style={{ fontWeight: 900, fontSize: "1.05rem", color: "#1e293b" }}>{r.risk}</div>
+            <div style={{ background: `${r.levelColor}15`, color: r.levelColor, padding: "4px 12px", borderRadius: "8px", fontSize: "0.8rem", fontWeight: 900, textAlign: "center", letterSpacing: "0.5px" }}>{r.level}</div>
+            <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#64748b", lineHeight: 1.4 }}>{r.desc}</div>
+            <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+              <ShieldCheck size={18} color="#0e6655" style={{ marginTop: "2px", flexShrink: 0 }} />
+              <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#0e6655", lineHeight: 1.4 }}>{r.mitigation}</span>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8 }}
+        style={{ marginTop: "1rem", background: "linear-gradient(135deg, #1e293b, #0e6655)", borderRadius: "16px", padding: "1.2rem 2.5rem", display: "flex", alignItems: "center", gap: "1.5rem", color: "#fff" }}
+      >
+        <ShieldCheck size={22} />
+        <p style={{ fontSize: "1.05rem", fontWeight: 700, margin: 0 }}>
+          Pendekatan <strong style={{ color: "#fbbf24" }}>proaktif</strong>: setiap risiko telah diidentifikasi sejak awal dengan rencana mitigasi spesifik untuk meminimalkan dampak terhadap timeline dan kualitas implementasi.
+        </p>
+      </motion.div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
+   NEXT STEPS & TINDAK LANJUT
+   ============================= */
+function SlideNextSteps() {
+  const steps = [
+    {
+      num: "01",
+      title: "Persetujuan Framework SMKTI 2026",
+      desc: "Direksi menyetujui kerangka kerja, arsitektur desain, dan model rating yang diusulkan.",
+      deadline: "Maret 2026",
+      owner: "Direksi",
+      color: "#0e6655"
+    },
+    {
+      num: "02",
+      title: "Pengesahan Draft Peraturan Direksi",
+      desc: "Finalisasi dan pengesahan Perdir SMKTI sebagai landasan hukum implementasi.",
+      deadline: "April 2026",
+      owner: "Sekretaris Perusahaan",
+      color: "#1a5276"
+    },
+    {
+      num: "03",
+      title: "Mobilisasi Tim & Kick-off",
+      desc: "Pembentukan tim project, penunjukan Entity PIC, dan kick-off meeting seluruh entitas.",
+      deadline: "April 2026",
+      owner: "Direktorat HC",
+      color: "#f97316"
+    },
+    {
+      num: "04",
+      title: "Pengembangan APMS 2.0",
+      desc: "Mulai development sistem digital APMS 2.0 dengan fitur BSC, cascading KPI, dan dashboard real-time.",
+      deadline: "Mei — Okt 2026",
+      owner: "Tim IT & HC Analytics",
+      color: "#0e6655"
+    },
+    {
+      num: "05",
+      title: "Pilot Run & Evaluasi",
+      desc: "Uji coba di unit terpilih, pengumpulan feedback, dan penyesuaian sebelum full rollout.",
+      deadline: "Nov 2026 — Jan 2027",
+      owner: "Entity PIC",
+      color: "#1a5276"
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0e6655 100%)", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", top: "-80px", right: "-80px", width: "350px", height: "350px", borderRadius: "50%", background: "rgba(14, 102, 85, 0.12)", filter: "blur(50px)" }} />
+
+      <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column" }}>
+        <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
+          <h1 style={{ fontSize: "3.5rem", color: "#fff", fontWeight: 900, margin: 0 }}>
+            <em>Next Steps & Tindak Lanjut</em>
+          </h1>
+          <p style={{ fontSize: "1.2rem", color: "#6ee7b7", fontWeight: 700, marginTop: "0.5rem", letterSpacing: "1px" }}>
+            Langkah Konkret Pasca-Persetujuan Direksi
+          </p>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", flex: 1 }}>
+          {steps.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.12 }}
+              style={{
+                background: "rgba(255, 255, 255, 0.07)",
+                backdropFilter: "blur(10px)",
+                borderRadius: "20px",
+                padding: "1.3rem 2rem",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                display: "grid",
+                gridTemplateColumns: "60px 1fr auto auto",
+                gap: "1.5rem",
+                alignItems: "center"
+              }}
+            >
+              <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: s.color, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: "1.3rem", boxShadow: `0 6px 18px ${s.color}40` }}>
+                {s.num}
+              </div>
+              <div>
+                <div style={{ fontSize: "1.2rem", fontWeight: 900, color: "#fff", marginBottom: "4px" }}>{s.title}</div>
+                <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "rgba(255,255,255,0.7)", lineHeight: 1.4 }}>{s.desc}</div>
+              </div>
+              <div style={{ textAlign: "center", minWidth: "130px" }}>
+                <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "4px" }}>Deadline</div>
+                <div style={{ fontSize: "1rem", fontWeight: 900, color: "#fbbf24" }}>{s.deadline}</div>
+              </div>
+              <div style={{ textAlign: "center", minWidth: "130px" }}>
+                <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "4px" }}>PIC</div>
+                <div style={{ fontSize: "1rem", fontWeight: 800, color: "#6ee7b7" }}>{s.owner}</div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          style={{
+            marginTop: "1rem",
+            background: "linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(249, 115, 22, 0.1))",
+            borderRadius: "18px",
+            padding: "1.3rem 2.5rem",
+            border: "1px solid rgba(251, 191, 36, 0.25)",
+            display: "flex",
+            alignItems: "center",
+            gap: "1.5rem"
+          }}
+        >
+          <div style={{ background: "#fbbf24", color: "#0f172a", padding: "10px 22px", borderRadius: "12px", fontWeight: 900, fontSize: "0.95rem", flexShrink: 0 }}>KEY ASK</div>
+          <p style={{ fontSize: "1.15rem", fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1.4 }}>
+            Mohon <strong style={{ color: "#fbbf24" }}>persetujuan prinsip</strong> atas framework SMKTI 2026 hari ini agar tim dapat segera memulai mobilisasi dan pengembangan sistem di bulan <strong style={{ color: "#6ee7b7" }}>April 2026</strong>.
+          </p>
+        </motion.div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
    SECTION DIVIDER: CLOSING & APPENDIX
    ============================= */
 function SlideSectionClosing() {
@@ -5849,7 +6289,10 @@ const slides = [
   { title: "Update PM Mar 2026", component: SlidePerformanceUpdate2026 },
   { title: "Timeline", component: SlideTimeline },
   { title: "Project Charter", component: SlideProjectCharter },
+  { title: "Governance & Tata Kelola", component: SlideGovernance },
   { title: "Review Cycle: Quarterly vs Monthly", component: SlideReviewCycleStrategy },
+  { title: "Change Management & Sosialisasi", component: SlideChangeManagement },
+  { title: "Risk & Mitigasi", component: SlideRiskMitigation },
 
   // BAGIAN 6 — BUSINESS PROCESS IMPROVEMENT (LEAN)
   { title: "Mengapa BPI untuk SMKTI?", component: SlideBPIImportance },
@@ -5861,6 +6304,7 @@ const slides = [
 
   // BAGIAN 7 — CLOSING & APPENDIX
   { title: "§ Penutup & Lampiran", component: SlideSectionClosing },
+  { title: "Next Steps & Tindak Lanjut", component: SlideNextSteps },
   { title: "FAQ — Perdir SMKTI 2026", component: SlideSMKTIFAQ },
   { title: "Terima Kasih", component: SlideThankYou },
   { title: "Appendix — Terminologi", component: SlideSMKTITerminologi },
