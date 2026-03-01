@@ -1801,146 +1801,222 @@ function SlideBAPerformance() {
    SLIDE: PROGRAM KERJA & HUBUNGAN KPI
    ============================= */
 function SlideProgramKerja() {
-  const cascadeLevels = [
-    {
-      level: "01",
-      title: "Strategic Objective",
-      subtitle: "Tujuan strategis organisasi",
-      desc: "Sasaran besar yang ditetapkan dalam RJPP & RKAP — menjadi arah utama seluruh aktivitas perusahaan.",
-      color: "#1a5276",
-      examples: ["Revenue Growth 15%", "Cost Efficiency 10%", "Market Expansion"],
-      icon: <Target size={28} />
-    },
-    {
-      level: "02",
-      title: "KPI Individu",
-      subtitle: "Indikator kinerja terukur",
-      desc: "Turunan langsung dari Strategic Objective yang dipecah ke level individu melalui proses cascading. Bersifat SMART dan terukur.",
-      color: "#0e6655",
-      examples: ["Produktivitas TBS/Ha", "% Pengisian ERP", "Skor Engagement"],
-      icon: <BarChart3 size={28} />
-    },
-    {
-      level: "03",
-      title: "Program Kerja",
-      subtitle: "Rencana aksi konkret",
-      desc: "Serangkaian aktivitas kerja terstruktur yang dirancang untuk mencapai target KPI Individu. Memuat timeline, output, dan penanggung jawab.",
-      color: "#e67e22",
-      examples: ["Replanting 500 Ha", "Workshop BSC Q2", "Audit Internal"],
-      icon: <FileText size={28} />
-    }
-  ];
-
   return (
     <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
       <AccentShapes />
       <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
         <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276", marginBottom: "0.5rem" }}>
-          <em>Program Kerja & Hubungannya dengan KPI</em>
+          <em>Program Kerja, KPI & Strategic Objective</em>
         </h1>
         <p className="slide-subtitle" style={{ fontSize: "1.3rem", color: "#64748b", fontWeight: 600 }}>
-          Dari Strategi Organisasi hingga Aksi Individu
+          Hubungan Tiga Elemen Kunci Manajemen Kinerja
         </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-        {/* Cascade Flow */}
-        <div style={{ display: "flex", gap: "1.5rem", alignItems: "stretch" }}>
-          {cascadeLevels.map((item, i) => (
-            <React.Fragment key={i}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 + i * 0.15 }}
-                style={{
-                  flex: 1,
-                  background: "#fff",
-                  borderRadius: "22px",
-                  padding: "2rem",
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
+        {/* Main Visual: Hub & Spoke */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 80px 1.2fr 80px 1fr", alignItems: "stretch", gap: "0", flex: 1 }}>
+
+          {/* LEFT: Program Kerja Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            style={{
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "2rem",
+              display: "flex",
+              flexDirection: "column",
+              boxShadow: "0 10px 35px rgba(0,0,0,0.04)",
+              border: "1px solid #f1f5f9",
+              position: "relative",
+              overflow: "hidden"
+            }}
+          >
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: "#e67e22" }} />
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+              <div style={{
+                background: "rgba(230, 126, 34, 0.1)",
+                color: "#e67e22",
+                width: "60px",
+                height: "60px",
+                borderRadius: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}>
+                <FileText size={28} />
+              </div>
+              <div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 900, color: "#e67e22", letterSpacing: "2px", textTransform: "uppercase" }}>THE HOW</div>
+                <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>Program Kerja</h3>
+              </div>
+            </div>
+            <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.6, margin: "0 0 1.5rem 0" }}>
+              <strong>Cara mencapai</strong> Strategic Objective. Berupa rencana aksi terstruktur yang memuat aktivitas, timeline, output, dan penanggung jawab.
+            </p>
+            <div style={{ marginTop: "auto" }}>
+              <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "0.8rem" }}>Contoh</div>
+              {["Replanting 500 Ha di Q2", "Workshop BSC untuk Divisi", "Audit Internal Unit Kebun"].map((ex, j) => (
+                <div key={j} style={{
+                  background: "rgba(230, 126, 34, 0.06)",
+                  border: "1px solid rgba(230, 126, 34, 0.15)",
+                  padding: "10px 14px",
+                  borderRadius: "12px",
+                  fontSize: "1rem",
+                  color: "#e67e22",
+                  fontWeight: 700,
+                  marginBottom: "0.5rem",
                   display: "flex",
-                  flexDirection: "column",
-                  boxShadow: "0 10px 35px rgba(0,0,0,0.04)",
-                  border: "1px solid #f1f5f9",
-                  position: "relative",
-                  overflow: "hidden"
-                }}
-              >
-                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: item.color }} />
-
-                {/* Level Badge */}
-                <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
-                  <div style={{
-                    background: `${item.color}12`,
-                    color: item.color,
-                    width: "60px",
-                    height: "60px",
-                    borderRadius: "16px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    boxShadow: `0 6px 15px ${item.color}15`
-                  }}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "0.85rem", fontWeight: 900, color: item.color, letterSpacing: "2px", textTransform: "uppercase" }}>LEVEL {item.level}</div>
-                    <h3 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>{item.title}</h3>
-                  </div>
+                  alignItems: "center",
+                  gap: "10px"
+                }}>
+                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#e67e22", flexShrink: 0 }} />
+                  {ex}
                 </div>
+              ))}
+            </div>
+          </motion.div>
 
-                <p style={{ fontSize: "0.95rem", color: "#64748b", fontWeight: 600, fontStyle: "italic", marginBottom: "1rem" }}>{item.subtitle}</p>
-                <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.6, margin: 0, marginBottom: "1.5rem" }}>{item.desc}</p>
+          {/* LEFT ARROW */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.6rem" }}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}
+            >
+              <span style={{ fontSize: "0.75rem", color: "#e67e22", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>Cara</span>
+              <div style={{ width: "50px", height: "50px", borderRadius: "50%", background: "linear-gradient(135deg, #fef3c7, #fde68a)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(230, 126, 34, 0.15)" }}>
+                <ArrowRight size={22} color="#e67e22" strokeWidth={2.5} />
+              </div>
+            </motion.div>
+          </div>
 
-                {/* Examples */}
-                <div style={{ marginTop: "auto" }}>
-                  <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "0.8rem" }}>Contoh</div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    {item.examples.map((ex, j) => (
-                      <div key={j} style={{
-                        background: `${item.color}08`,
-                        border: `1px solid ${item.color}20`,
-                        padding: "8px 14px",
-                        borderRadius: "10px",
-                        fontSize: "0.95rem",
-                        color: item.color,
-                        fontWeight: 700,
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px"
-                      }}>
-                        <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />
-                        {ex}
-                      </div>
-                    ))}
-                  </div>
+          {/* CENTER: Strategic Objective */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.15 }}
+            style={{
+              background: "linear-gradient(135deg, #1a5276 0%, #2980b9 100%)",
+              borderRadius: "28px",
+              padding: "2.5rem 2rem",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 15px 40px rgba(26, 82, 118, 0.25)",
+              color: "#fff",
+              textAlign: "center",
+              position: "relative",
+              overflow: "hidden"
+            }}
+          >
+            <div style={{ position: "absolute", top: "-50px", right: "-50px", width: "200px", height: "200px", borderRadius: "50%", background: "rgba(255,255,255,0.05)" }} />
+            <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "150px", height: "150px", borderRadius: "50%", background: "rgba(255,255,255,0.03)" }} />
+
+            <div style={{
+              background: "rgba(255,255,255,0.15)",
+              width: "80px",
+              height: "80px",
+              borderRadius: "22px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "1.5rem"
+            }}>
+              <Target size={40} />
+            </div>
+            <div style={{ fontSize: "0.9rem", fontWeight: 800, letterSpacing: "3px", textTransform: "uppercase", opacity: 0.7, marginBottom: "0.5rem" }}>THE WHAT</div>
+            <h2 style={{ fontSize: "2rem", fontWeight: 900, margin: "0 0 1rem 0", lineHeight: 1.2 }}>Strategic Objective</h2>
+            <p style={{ fontSize: "1.1rem", fontWeight: 500, lineHeight: 1.6, opacity: 0.9, margin: 0 }}>
+              Tujuan strategis organisasi yang ditetapkan dalam RJPP & RKAP — menjadi arah utama seluruh aktivitas
+            </p>
+            <div style={{ marginTop: "1.5rem", display: "flex", flexWrap: "wrap", gap: "0.6rem", justifyContent: "center" }}>
+              {["Revenue Growth 15%", "Cost Efficiency", "Market Expansion"].map((ex, j) => (
+                <span key={j} style={{ background: "rgba(255,255,255,0.15)", padding: "8px 16px", borderRadius: "10px", fontSize: "0.95rem", fontWeight: 700 }}>{ex}</span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT ARROW */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.6rem" }}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}
+            >
+              <span style={{ fontSize: "0.75rem", color: "#0e6655", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>Ukuran</span>
+              <div style={{ width: "50px", height: "50px", borderRadius: "50%", background: "linear-gradient(135deg, #d1fae5, #a7f3d0)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(14, 102, 85, 0.15)" }}>
+                <ArrowRight size={22} color="#0e6655" strokeWidth={2.5} />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* RIGHT: KPI Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            style={{
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "2rem",
+              display: "flex",
+              flexDirection: "column",
+              boxShadow: "0 10px 35px rgba(0,0,0,0.04)",
+              border: "1px solid #f1f5f9",
+              position: "relative",
+              overflow: "hidden"
+            }}
+          >
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "6px", background: "#0e6655" }} />
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+              <div style={{
+                background: "rgba(14, 102, 85, 0.1)",
+                color: "#0e6655",
+                width: "60px",
+                height: "60px",
+                borderRadius: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}>
+                <BarChart3 size={28} />
+              </div>
+              <div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 900, color: "#0e6655", letterSpacing: "2px", textTransform: "uppercase" }}>THE MEASURE</div>
+                <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>KPI</h3>
+              </div>
+            </div>
+            <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.6, margin: "0 0 1.5rem 0" }}>
+              <strong>Ukuran keberhasilan</strong> dari pencapaian Strategic Objective. Bersifat SMART, terukur, dan menjadi basis evaluasi kinerja.
+            </p>
+            <div style={{ marginTop: "auto" }}>
+              <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "0.8rem" }}>Contoh</div>
+              {["Produktivitas TBS/Ha ≥ 20 Ton", "% Pengisian ERP ≥ 95%", "Skor Employee Engagement ≥ 80"].map((ex, j) => (
+                <div key={j} style={{
+                  background: "rgba(14, 102, 85, 0.06)",
+                  border: "1px solid rgba(14, 102, 85, 0.15)",
+                  padding: "10px 14px",
+                  borderRadius: "12px",
+                  fontSize: "1rem",
+                  color: "#0e6655",
+                  fontWeight: 700,
+                  marginBottom: "0.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px"
+                }}>
+                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#0e6655", flexShrink: 0 }} />
+                  {ex}
                 </div>
-              </motion.div>
-
-              {/* Arrow connector */}
-              {i < cascadeLevels.length - 1 && (
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", flexShrink: 0, width: "50px" }}>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.4 + i * 0.2 }}
-                    style={{
-                      width: "48px",
-                      height: "48px",
-                      borderRadius: "50%",
-                      background: "linear-gradient(135deg, #f1f5f9, #e2e8f0)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
-                    }}
-                  >
-                    <ArrowRight size={22} color="#1a5276" strokeWidth={2.5} />
-                  </motion.div>
-                  <span style={{ fontSize: "0.7rem", color: "#94a3b8", fontWeight: 700, textTransform: "uppercase" }}>Cascade</span>
-                </div>
-              )}
-            </React.Fragment>
-          ))}
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         {/* Bottom Insight Bar */}
@@ -1967,7 +2043,7 @@ function SlideProgramKerja() {
           </div>
           <div style={{ height: "40px", width: "1px", background: "rgba(255,255,255,0.2)" }} />
           <div style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.5 }}>
-            Program Kerja <strong>bukan daftar tugas harian</strong>, melainkan <strong>rencana aksi terstruktur</strong> yang dirancang khusus untuk memastikan setiap KPI Individu tercapai dan berkontribusi langsung terhadap Strategic Objective organisasi.
+            <strong>Program Kerja</strong> adalah <em>cara</em> untuk mencapai Strategic Objective. <strong>KPI</strong> adalah <em>ukuran keberhasilan</em>. Keduanya harus selaras dan saling mendukung.
           </div>
         </motion.div>
       </div>
