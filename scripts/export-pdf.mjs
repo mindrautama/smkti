@@ -4,59 +4,57 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = path.resolve(__dirname, "../APMS_Framework_2026.pdf");
-const BASE_URL = "http://localhost:3020";
-const TOTAL_SLIDES = 17; // 0-indexed: 0 to 16
+const BASE_URL = "http://localhost:3000";
+const TOTAL_SLIDES = 53;
 
 async function exportPDF() {
   console.log("🚀 Launching browser...");
   const browser = await puppeteer.launch({
-    headless: "new",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
   const page = await browser.newPage();
-  await page.setViewport({ width: 1920, height: 1080 });
+  await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 2 });
 
   console.log(`📄 Navigating to ${BASE_URL}...`);
-  await page.goto(BASE_URL, { waitUntil: "networkidle2", timeout: 30000 });
+  await page.goto(BASE_URL, { waitUntil: "networkidle0", timeout: 60000 });
 
-  // Wait for first slide to render
-  await page.waitForSelector(".slide", { timeout: 10000 });
+  // Hide the floating navigation buttons and slide nav bar to keep PDF clean
+  await page.evaluate(() => {
+    const navButtons = document.querySelectorAll('button');
+    navButtons.forEach(btn => btn.style.display = 'none');
+    
+    // Attempt to hide sidebar/navbars in case it is open
+    const elementsToHide = document.querySelectorAll('.slide-footer, .sidebar'); // Or specific classes used for nav
+    elementsToHide.forEach(el => el.style.opacity = '0');
+  });
+
   await new Promise((r) => setTimeout(r, 2000));
 
+  console.log("📝 Generating PDF from DOM...");
+
+  // First we need to get everything scrolled and loaded before printing
+  // Since it might be a single page app rendering on keydown, we will programmatically export
   const screenshots = [];
 
   for (let i = 0; i < TOTAL_SLIDES; i++) {
     console.log(`📸 Capturing slide ${i + 1}/${TOTAL_SLIDES}...`);
-
-    // Navigate to slide via clicking indicator dots
+    
     if (i > 0) {
-      // Click the i-th indicator dot
-      const dots = await page.$$(".indicator-dot");
-      if (dots[i]) {
-        await dots[i].click();
-      } else {
-        // Fallback: press right arrow
-        await page.keyboard.press("ArrowRight");
-      }
-      // Wait for animation
-      await new Promise((r) => setTimeout(r, 800));
+      await page.keyboard.press("ArrowRight");
+      await new Promise((r) => setTimeout(r, 1000));
     }
 
-    // Capture screenshot as buffer
     const screenshot = await page.screenshot({
       type: "png",
-      clip: { x: 0, y: 0, width: 1920, height: 1080 },
+      clip: { x: 0, y: 0, width: 1920, height: 1080 }
     });
     screenshots.push(screenshot);
   }
 
-  console.log("📝 Generating PDF from captured slides...");
-
-  // Create a new page for PDF generation
+  console.log("📝 Assembling PDF...");
   const pdfPage = await browser.newPage();
-
-  // Build an HTML page with all screenshots as images
+  
   const imageDataUrls = screenshots.map(
     (buf) => `data:image/png;base64,${buf.toString("base64")}`
   );
@@ -66,8 +64,9 @@ async function exportPDF() {
 <html>
 <head>
   <style>
-    * { margin: 0; padding: 0; }
-    body { background: white; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: white; margin: 0; }
+    @page { margin: 0; size: 1920px 1080px; }
     .slide-page {
       width: 1920px;
       height: 1080px;
@@ -78,22 +77,14 @@ async function exportPDF() {
       page-break-after: auto;
     }
     .slide-page img {
-      width: 100%;
-      height: 100%;
+      width: 1920px;
+      height: 1080px;
       object-fit: contain;
     }
   </style>
 </head>
 <body>
-  ${imageDataUrls
-      .map(
-        (url) => `
-    <div class="slide-page">
-      <img src="${url}" />
-    </div>
-  `
-      )
-      .join("")}
+  ${imageDataUrls.map(url => `<div class="slide-page"><img src="${url}" /></div>`).join("")}
 </body>
 </html>`;
 
