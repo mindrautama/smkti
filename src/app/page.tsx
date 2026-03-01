@@ -4886,71 +4886,175 @@ function SlideMudaWaste() {
 }
 
 function SlideVSM() {
+  const benefits = [
+    { label: "Value Added Ratio", metric: "PRODUKTIVITAS", icon: <BarChart3 size={22} />, color: "#0e6655" },
+    { label: "Efisiensi", metric: "BIAYA", icon: <Wallet size={22} />, color: "#f97316" },
+    { label: "Lead Time", metric: "KECEPATAN", icon: <TrendingUp size={22} />, color: "#1a5276" },
+  ];
+
+  const fromItems = [
+    "Hanya membuat peta proses tanpa tindak lanjut",
+    "Mengadakan event kaizen tetapi tanpa mengukur hasilnya",
+    "Hanya mengandalkan koordinator Lean saja untuk perbaikan",
+    "Membentuk tim tanpa kejelasan peran dan target"
+  ];
+
+  const toItems = [
+    "Metode untuk menghubungkan seluruh area dan orang dalam menciptakan organisasi Lean",
+    "Pendekatan menggunakan proses yang berkelanjutan untuk mempertahankan Lean",
+    "Cara agar semua orang memahami Lean secara utuh, bukan hanya teori",
+    "Peluang untuk membuat rencana implementasi nyata yang terukur"
+  ];
+
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-        <div>
-          <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655" }}>VSM (Value Stream Mapping)</h1>
-          <div style={{ width: "60px", height: "4px", background: "#f97316", marginTop: "8px" }} />
-        </div>
-        <div style={{ background: "#0e6655", color: "#fff", padding: "4px 12px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900 }}>PAGE 18</div>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>Value Stream Mapping (VSM)</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Alat utama Lean untuk memvisualisasikan dan memperbaiki alur proses bisnis
+        </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} style={{ textAlign: "center" }}>
-          <h2 style={{ fontSize: "1.8rem", color: "#10b981", fontWeight: 900, marginBottom: "1rem" }}>What&rsquo;s VSM ?</h2>
-          <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "#475569" }}>VSM is Lean&rsquo;s tool to improve:</p>
-          <div style={{ display: "flex", justifyContent: "center", gap: "2rem", marginTop: "1rem" }}>
-            {[
-              { l: "Value Added Ratio", v: "(PRODUCTIVITY)" },
-              { l: "Efficiency", v: "(COST)" },
-              { l: "Lead Time", v: "(SPEED)" }
-            ].map((item, i) => (
-              <div key={i} style={{ background: "#1a5276", color: "#fff", padding: "1rem 2rem", borderRadius: "12px", boxShadow: "0 4px 12px rgba(26,82,118,0.2)" }}>
-                <span style={{ fontWeight: 400 }}>{i + 1}. {item.l} </span>
-                <span style={{ fontWeight: 900, color: "#f97316" }}>{item.v}</span>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+        {/* 3 Benefit Metrics */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
+          {benefits.map((b, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              style={{
+                background: b.color,
+                borderRadius: "18px",
+                padding: "1.5rem 2rem",
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                gap: "1.2rem",
+                boxShadow: `0 10px 25px ${b.color}30`
+              }}
+            >
+              <div style={{ width: "50px", height: "50px", borderRadius: "14px", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                {b.icon}
               </div>
-            ))}
-          </div>
-        </motion.div>
+              <div>
+                <div style={{ fontSize: "1rem", fontWeight: 600, opacity: 0.85 }}>{b.label}</div>
+                <div style={{ fontSize: "1.3rem", fontWeight: 900, letterSpacing: "1px" }}>{b.metric}</div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
-          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
-            <h3 style={{ fontSize: "1.5rem", color: "#0e6655", fontWeight: 900, marginBottom: "1.5rem", textTransform: "uppercase", textAlign: "center" }}>FROM : MAPPING</h3>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: 0, listStyle: "none" }}>
-              {[
-                "Just creating maps",
-                "Just holding kaizen (improvement) events and expecting results",
-                "Having only the lean coordinators responsible for improvements",
-                "Forming teams"
-              ].map((text, i) => (
-                <li key={i} style={{ display: "flex", gap: "15px", fontSize: "1rem", color: "#475569", fontWeight: 600 }}>
-                  <X size={20} color="#dc2626" style={{ marginTop: "3px", flexShrink: 0 }} />
-                  {text}
-                </li>
+        {/* From → To Transformation */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "1rem", flex: 1 }}>
+          {/* FROM: Old Way */}
+          <motion.div
+            initial={{ opacity: 0, x: -25 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            style={{
+              background: "#fff",
+              borderRadius: "20px",
+              border: "2px solid #fecaca",
+              padding: "1.5rem 2rem",
+              display: "flex",
+              flexDirection: "column"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1.2rem" }}>
+              <div style={{ background: "#fee2e2", padding: "6px", borderRadius: "10px" }}><X size={18} color="#dc2626" strokeWidth={3} /></div>
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 900, color: "#dc2626", margin: 0, textTransform: "uppercase", letterSpacing: "1px" }}>Sebelum: Hanya Mapping</h3>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+              {fromItems.map((item, i) => (
+                <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+                  <span style={{ color: "#dc2626", fontWeight: 900, fontSize: "1.1rem", flexShrink: 0 }}>✕</span>
+                  <span style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600, lineHeight: 1.4 }}>{item}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
-            <h3 style={{ fontSize: "1.5rem", color: "#10b981", fontWeight: 900, marginBottom: "1.5rem", textTransform: "uppercase", textAlign: "center" }}>TO : MINDSET</h3>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: 0, listStyle: "none" }}>
-              {[
-                "A method for linking all areas and people to create a lean enterprise",
-                "An approach to using a process to sustain lean",
-                "A way for everyone to understand lean",
-                "An opportunity for creating an actual implementation plan"
-              ].map((text, i) => (
-                <li key={i} style={{ display: "flex", gap: "15px", fontSize: "1rem", color: "#475569", fontWeight: 700 }}>
-                  <Check size={20} color="#10b981" style={{ marginTop: "3px", flexShrink: 0 }} />
-                  {text}
-                </li>
+          {/* Arrow */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+              style={{
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #0e6655, #10b981)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 8px 25px rgba(14, 102, 85, 0.3)"
+              }}
+            >
+              <ArrowRight size={28} color="#fff" />
+            </motion.div>
+          </div>
+
+          {/* TO: New Mindset */}
+          <motion.div
+            initial={{ opacity: 0, x: 25 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+            style={{
+              background: "#fff",
+              borderRadius: "20px",
+              border: "2px solid #bbf7d0",
+              padding: "1.5rem 2rem",
+              display: "flex",
+              flexDirection: "column"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1.2rem" }}>
+              <div style={{ background: "#dcfce7", padding: "6px", borderRadius: "10px" }}><Check size={18} color="#16a34a" strokeWidth={3} /></div>
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 900, color: "#16a34a", margin: 0, textTransform: "uppercase", letterSpacing: "1px" }}>Sesudah: Mindset Lean</h3>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+              {toItems.map((item, i) => (
+                <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+                  <span style={{ color: "#16a34a", fontWeight: 900, fontSize: "1.1rem", flexShrink: 0 }}>✓</span>
+                  <span style={{ fontSize: "1rem", color: "#334155", fontWeight: 600, lineHeight: 1.4 }}>{item}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
         </div>
+
+        {/* Bottom Context Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          style={{
+            background: "linear-gradient(135deg, #0e6655 0%, #1a5276 100%)",
+            borderRadius: "16px",
+            padding: "1.2rem 2.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "1.5rem",
+            color: "#fff"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
+            <Factory size={22} />
+            <span style={{ fontWeight: 900, fontSize: "1rem", textTransform: "uppercase", letterSpacing: "1px" }}>Relevansi PTPN</span>
+          </div>
+          <div style={{ width: "1px", height: "35px", background: "rgba(255,255,255,0.2)" }} />
+          <p style={{ fontSize: "1.05rem", fontWeight: 600, margin: 0, lineHeight: 1.4, opacity: 0.9 }}>
+            VSM akan digunakan untuk memetakan proses bisnis <strong style={{ color: "#fbbf24" }}>Level 1-4</strong> di Holding & SGN, mengidentifikasi pemborosan, dan merancang proses masa depan (<em>future state</em>) yang lebih efisien dan terukur.
+          </p>
+        </motion.div>
       </div>
+
       <SlideFooter />
     </div>
   );
