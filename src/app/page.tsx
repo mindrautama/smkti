@@ -4440,30 +4440,106 @@ function SlideSMKTIFAQ() {
 }
 
 function SlideBPIConcept() {
+  const bpiSteps = [
+    { num: "01", title: "IDENTIFIKASI", desc: "Menemukan proses yang membutuhkan perbaikan (bottleneck, biaya tinggi, atau waktu lama)." },
+    { num: "02", title: "ANALISIS", desc: "Membedah proses saat ini (As-Is) untuk menemukan akar masalah dan pemborosan (Waste)." },
+    { num: "03", title: "REDESAIN", desc: "Merancang proses baru (To-Be) yang lebih ramping, cepat, dan bernilai tambah tinggi." },
+    { num: "04", title: "IMPLEMENTASI", desc: "Eksekusi perubahan, pemantauan hasil, dan perbaikan terus-menerus (Kaizen)." },
+  ];
+
   return (
-    <div className="slide" style={{ padding: 0, background: "#fff", display: "flex" }}>
-      <div style={{ flex: 1.2, position: "relative", overflow: "hidden" }}>
+    <div className="slide" style={{ padding: 0, background: "#f8fafc", position: "relative", overflow: "hidden" }}>
+      {/* Background with Overlay */}
+      <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}>
         <img
           src="/images/bpi_landscape.png"
           alt="BPI Landscape"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, transparent 70%, #fff 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(14, 102, 85, 0.95) 0%, rgba(26, 82, 118, 0.8) 100%)" }} />
       </div>
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "4rem" }}>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          style={{ borderLeft: "12px solid #10b981", paddingLeft: "2rem" }}
-        >
-          <h1 style={{ fontSize: "4rem", color: "#1a5276", fontWeight: 900, lineHeight: 1, margin: 0, textTransform: "uppercase", letterSpacing: "-0.02em" }}>
-            CONCEPT OF<br />
-            <span style={{ color: "#10b981" }}>BUSINESS PROCESS</span><br />
-            IMPROVEMENT
-          </h1>
-          <div style={{ width: "100px", height: "6px", background: "#f97316", marginTop: "2rem", borderRadius: "3px" }} />
-        </motion.div>
+
+      <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", padding: "3rem 4rem" }}>
+        {/* Header Section */}
+        <div style={{ marginBottom: "2rem" }}>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            style={{ borderLeft: "10px solid #fbbf24", paddingLeft: "1.5rem" }}
+          >
+            <h1 style={{ fontSize: "3.5rem", color: "#fff", fontWeight: 900, lineHeight: 1.1, margin: 0, letterSpacing: "-0.03em" }}>
+              KONSEP <span style={{ color: "#fbbf24" }}>BUSINESS PROCESS</span><br />
+              <span style={{ opacity: 0.9 }}>IMPROVEMENT (BPI)</span>
+            </h1>
+            <p style={{ fontSize: "1.2rem", color: "#6ee7b7", fontWeight: 700, marginTop: "0.5rem", textTransform: "uppercase", letterSpacing: "2px" }}>Transformasi Menuju Operasional Ekselen</p>
+          </motion.div>
+        </div>
+
+        {/* Content Section: Glassmorphism Card */}
+        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "2rem", flex: 1 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            style={{
+              background: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(15px)",
+              borderRadius: "32px",
+              padding: "2.5rem",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "1.5rem"
+            }}
+          >
+            <h2 style={{ fontSize: "1.8rem", color: "#fbbf24", fontWeight: 900, margin: 0 }}>4 Pilar Utama Perbaikan Proses</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+              {bpiSteps.map((step, i) => (
+                <div key={i} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <span style={{ fontSize: "0.9rem", fontWeight: 900, color: "#6ee7b7", background: "rgba(110, 231, 183, 0.15)", padding: "4px 8px", borderRadius: "6px" }}>{step.num}</span>
+                    <h3 style={{ fontSize: "1.2rem", fontWeight: 900, color: "#fff", margin: 0 }}>{step.title}</h3>
+                  </div>
+                  <p style={{ fontSize: "0.95rem", color: "rgba(255, 255, 255, 0.8)", lineHeight: 1.5, margin: 0 }}>{step.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ marginTop: "auto", background: "rgba(0, 0, 0, 0.2)", padding: "1.5rem", borderRadius: "20px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
+              <p style={{ color: "#fff", fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.5, margin: 0 }}>
+                💡 <span style={{ color: "#fbbf24" }}>Tujuan Utama:</span> Bukan sekadar berubah, tapi memastikan setiap langkah dalam proses bisnis <strong style={{ color: "#6ee7b7" }}>memberikan nilai (Value)</strong> dan mendukung target organisasi.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Right Section: Focus Box */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+            style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
+          >
+            <div style={{ background: "#fff", borderRadius: "24px", padding: "2rem", boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "1rem" }}>
+                <Factory size={24} color="#0e6655" />
+                <h3 style={{ fontSize: "1.3rem", fontWeight: 900, color: "#0e6655", margin: 0 }}>Kaitan dengan PTPN</h3>
+              </div>
+              <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.6, margin: 0 }}>
+                Di PTPN, BPI membantu menyederhanakan birokrasi, mempercepat alur data dari kebun ke holding, serta memastikan <strong>Productivity, Cost, & Speed</strong> terjaga di seluruh unit.
+              </p>
+            </div>
+
+            <div style={{ background: "rgba(251, 191, 36, 0.1)", borderRadius: "24px", padding: "2rem", border: "2px dashed #fbbf24" }}>
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 900, color: "#fbbf24", margin: "0 0 1rem 0" }}>Mindset Kaizen</h3>
+              <p style={{ fontSize: "1.05rem", color: "#fff", lineHeight: 1.6, margin: 0, opacity: 0.9 }}>
+                "Proses bisnis yang baik tidak pernah 'selesai'. Ia harus terus disempurnakan seiring dengan perkembangan teknologi dan dinamika pasar."
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
+      <SlideFooter />
     </div>
   );
 }
