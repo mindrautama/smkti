@@ -1884,28 +1884,28 @@ function SlideWhyBusinessArchitecture() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
+    <div className="slide" style={{ padding: "1.5rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276", marginBottom: "0.5rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276", marginBottom: "0.3rem" }}>
           <em>Enterprise Architecture</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.3rem", color: "#e67e22", fontWeight: 700 }}>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#e67e22", fontWeight: 700 }}>
           Mengapa Business Architecture (BA) Begitu Krusial?
         </p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.8fr", gap: "3rem", flex: 1 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.8fr", gap: "2rem", flex: 1 }}>
         {/* Left Side: EA Tower */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           <div>
-            <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#1e293b", marginBottom: "0.5rem" }}>Arsitektur Enterprise (EA)</h2>
-            <p style={{ fontSize: "1rem", color: "#64748b", margin: 0, lineHeight: 1.5 }}>
+            <h2 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1e293b", marginBottom: "0.3rem" }}>Arsitektur Enterprise (EA)</h2>
+            <p style={{ fontSize: "0.9rem", color: "#64748b", margin: 0, lineHeight: 1.5 }}>
               EA adalah blueprint utama perusahaan. <strong style={{ color: "#1a5276" }}>Business Architecture</strong> adalah lapisan tertinggi yang memandu seluruh keputusan desain di bawahnya.
             </p>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginTop: "1rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginTop: "0.5rem" }}>
             {eaLayers.map((layer, i) => (
               <motion.div
                 key={i}
@@ -1948,7 +1948,7 @@ function SlideWhyBusinessArchitecture() {
         </div>
 
         {/* Right Side: Reasons Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem" }}>
           {reasons.map((reason, i) => (
             <motion.div
               key={i}
@@ -1958,7 +1958,7 @@ function SlideWhyBusinessArchitecture() {
               style={{
                 background: "#fff",
                 borderRadius: "20px",
-                padding: "1.8rem",
+                padding: "1.2rem",
                 boxShadow: "0 8px 30px rgba(0,0,0,0.04)",
                 border: "1px solid #f1f5f9",
                 display: "flex",
@@ -1967,21 +1967,21 @@ function SlideWhyBusinessArchitecture() {
             >
               <div style={{
                 background: reason.bgc,
-                width: "60px",
-                height: "60px",
-                borderRadius: "16px",
+                width: "45px",
+                height: "45px",
+                borderRadius: "12px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 color: reason.color,
-                marginBottom: "1.5rem"
+                marginBottom: "0.8rem"
               }}>
                 {reason.icon}
               </div>
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1e293b", marginBottom: "0.8rem", lineHeight: 1.3 }}>
+              <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#1e293b", marginBottom: "0.5rem", lineHeight: 1.2 }}>
                 {reason.title}
               </h3>
-              <p style={{ fontSize: "1rem", color: "#475569", lineHeight: 1.6, margin: 0 }}>
+              <p style={{ fontSize: "0.9rem", color: "#475569", lineHeight: 1.5, margin: 0 }}>
                 {reason.desc}
               </p>
             </motion.div>
@@ -2411,45 +2411,45 @@ function SlideModelKinerja() {
               }}>
                 <div style={{ fontSize: "1rem", fontWeight: 800, marginBottom: "0.4rem" }}>{item.label}</div>
                 <div style={{ fontSize: "0.75rem", opacity: 0.8, marginBottom: "0.8rem", fontWeight: 600 }}>{item.sub}</div>
-                <div style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)", padding: "6px 20px", borderRadius: "12px", display: "inline-block", fontSize: "1.3rem", fontWeight: 900 }}>{item.pct}</div>
+                <div style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)", padding: "4px 16px", borderRadius: "12px", display: "inline-block", fontSize: "1.1rem", fontWeight: 900 }}>{item.pct}</div>
               </div>
             </React.Fragment>
           ))}
         </motion.div>
 
         {/* Arrow Down */}
-        <div style={{ display: "flex", justifyContent: "center", padding: "0.5rem 0" }}>
-          <motion.div initial={{ y: -5 }} animate={{ y: 5 }} transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }} style={{ background: "#fff", padding: "8px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
-            <ArrowDown size={20} color="#1a5276" strokeWidth={3} />
+        <div style={{ display: "flex", justifyContent: "center", padding: "0.3rem 0" }}>
+          <motion.div initial={{ y: -5 }} animate={{ y: 5 }} transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }} style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
+            <ArrowDown size={18} color="#1a5276" strokeWidth={3} />
           </motion.div>
         </div>
 
         {/* STEP 2: Individual Score */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ background: "#fff", border: "2px solid #1a5276", color: "#1a5276", padding: "1.2rem 4rem", borderRadius: "24px", textAlign: "center", boxShadow: "0 15px 40px rgba(26,82,118,0.1)", position: "relative" }}>
+          <div style={{ background: "#fff", border: "2px solid #1a5276", color: "#1a5276", padding: "1rem 3.5rem", borderRadius: "20px", textAlign: "center", boxShadow: "0 15px 40px rgba(26,82,118,0.1)", position: "relative" }}>
             <div style={{ fontSize: "1.5rem", fontWeight: 900, marginBottom: "0.4rem" }}>Individual Score (Final)</div>
             <div style={{ fontSize: "0.85rem", color: "#64748b", fontWeight: 600 }}>Bobot Terkalibrasi (Sum of 3 Inputs)</div>
           </div>
         </motion.div>
 
         {/* Arrow Down */}
-        <div style={{ display: "flex", justifyContent: "center", padding: "0.5rem 0" }}>
-          <div style={{ background: "#fff", padding: "8px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
-            <ArrowDown size={20} color="#7c3aed" strokeWidth={3} />
+        <div style={{ display: "flex", justifyContent: "center", padding: "0.3rem 0" }}>
+          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
+            <ArrowDown size={18} color="#7c3aed" strokeWidth={3} />
           </div>
         </div>
 
         {/* STEP 3: Rating Distribusi */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ background: "linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%)", color: "#fff", padding: "1.2rem 3rem", borderRadius: "20px", textAlign: "center", boxShadow: "0 10px 30px rgba(109,40,217,0.2)" }}>
-            <div style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "0.4rem" }}>Rating Distribusi → Performance Grade</div>
-            <div style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.8)", fontWeight: 700, letterSpacing: "1px" }}>OUTSTANDING · EXCEED · MEET · BELOW · POOR</div>
+          <div style={{ background: "linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%)", color: "#fff", padding: "1rem 2.5rem", borderRadius: "16px", textAlign: "center", boxShadow: "0 10px 30px rgba(109,40,217,0.2)" }}>
+            <div style={{ fontSize: "1.2rem", fontWeight: 800, marginBottom: "0.4rem" }}>Rating Distribusi → Performance Grade</div>
+            <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.8)", fontWeight: 700, letterSpacing: "1px" }}>OUTSTANDING · EXCEED · MEET · BELOW · POOR</div>
           </div>
         </motion.div>
 
         {/* Arrow Down */}
-        <div style={{ display: "flex", justifyContent: "center", padding: "0.5rem 0" }}>
-          <div style={{ background: "#fff", padding: "8px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
+        <div style={{ display: "flex", justifyContent: "center", padding: "0.3rem 0" }}>
+          <div style={{ background: "#fff", padding: "6px", borderRadius: "50%", boxShadow: "0 4px 12px rgba(0,0,0,0.05)", border: "1px solid #f1f5f9" }}>
             <ArrowDown size={20} color="#0e6655" strokeWidth={3} />
           </div>
         </div>
@@ -3906,18 +3906,18 @@ function SlidePriorityPool() {
    ============================= */
 function SlideTimeline() {
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "1.5rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.3rem" }}>
           <em>Roadmap & Timeline Implementasi</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>Siklus Penilaian 2025 & Transisi ke APMS 2.0 (2026-2027)</p>
+        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Siklus Penilaian 2025 & Transisi ke APMS 2.0 (2026-2027)</p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", gap: "2rem", height: "100%", overflow: "hidden" }}>
+      <div style={{ flex: 1, display: "flex", gap: "1.5rem", height: "100%", overflow: "hidden" }}>
         {/* Left Column: 2025 Closure */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
           <div style={{
             background: "linear-gradient(90deg, #f59e0b 0%, #d97706 100%)",
             color: "#fff",
@@ -5887,22 +5887,22 @@ function SlideBPIImportance() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "1.5rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.5rem" }}>
+      <div className="slide-header" style={{ marginBottom: "1.2rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655", marginBottom: "0.3rem" }}>
           <em>Mengapa BPI Penting bagi SMKTI?</em>
         </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>
           Menghubungkan Target Kinerja dengan Realita Eksekusi di Lapangan
         </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2rem" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
         {/* Connection Flow Section */}
-        <div style={{ background: "rgba(255,255,255,0.6)", borderRadius: "32px", padding: "2.5rem", border: "1px solid #e2e8f0", boxShadow: "0 15px 40px rgba(0,0,0,0.02)" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "1rem", alignItems: "center" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div style={{ background: "rgba(255,255,255,0.6)", borderRadius: "24px", padding: "1.5rem", border: "1px solid #e2e8f0", boxShadow: "0 15px 40px rgba(0,0,0,0.02)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "0.8rem", alignItems: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
               {connections.map((item, i) => (
                 <motion.div
                   key={i}
@@ -5932,16 +5932,16 @@ function SlideBPIImportance() {
               ))}
             </div>
 
-            <div style={{ padding: "0 1rem", display: "flex", flexDirection: "column", gap: "3.5rem", alignItems: "center" }}>
+            <div style={{ padding: "0 1rem", display: "flex", flexDirection: "column", gap: "2.8rem", alignItems: "center" }}>
               {[0, 1, 2].map(i => (
-                <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px" }}>
-                  <ArrowRight size={24} color={connections[i].color} />
-                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#94a3b8", whiteSpace: "nowrap", textTransform: "uppercase" }}>{connections[i].action}</span>
+                <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
+                  <ArrowRight size={20} color={connections[i].color} />
+                  <span style={{ fontSize: "0.65rem", fontWeight: 800, color: "#94a3b8", whiteSpace: "nowrap", textTransform: "uppercase" }}>{connections[i].action}</span>
                 </div>
               ))}
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
               {connections.map((item, i) => (
                 <motion.div
                   key={i}
@@ -5967,7 +5967,7 @@ function SlideBPIImportance() {
         </div>
 
         {/* PCS Cards Section */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
           {pcsCards.map((card, i) => (
             <motion.div
               key={i}
@@ -5976,13 +5976,13 @@ function SlideBPIImportance() {
               transition={{ delay: 0.6 + i * 0.15 }}
               style={{
                 background: "#fff",
-                borderRadius: "24px",
-                padding: "2rem",
+                borderRadius: "20px",
+                padding: "1.2rem",
                 border: "1px solid #f1f5f9",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
                 display: "flex",
                 flexDirection: "column",
-                gap: "1.2rem",
+                gap: "0.8rem",
                 position: "relative"
               }}
             >
