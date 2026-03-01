@@ -412,97 +412,124 @@ function SlidePerformanceUpdate2026() {
   const tableData = [
     {
       no: 1,
-      uraian: "Monitoring Pengisian Kinerja 2025",
-      p3: "99,39%",
-      p1: "98,13%",
-      p4: "93,04%",
-      sgn: "98,26%",
+      title: "Monitoring Pengisian Kinerja 2025",
+      stats: [
+        { name: "PTPN III (Persero)", val: "99,39%", num: 99.39, color: "#10b981" },
+        { name: "PTPN I", val: "98,13%", num: 98.13, color: "#10b981" },
+        { name: "PTPN IV", val: "93,04%", num: 93.04, color: "#f59e0b" },
+        { name: "PT SGN", val: "98,26%", num: 98.26, color: "#10b981" },
+      ],
       keterangan: (
-        <ul style={{ paddingLeft: "1.2rem", margin: 0, fontSize: "0.85rem" }}>
-          <li>PTPN I: Proses cetak ERP</li>
-          <li>PTPN IV: Proses pengisian, rekapitulasi dan cetak ERP (proses dijalankan parallel dan fokus pada KSO yang masih rendah progress nya)</li>
-          <li>PT SGN : Proses rekapitulasi nilai dan cetak ERP</li>
-        </ul>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+          <span style={{ fontSize: "0.8rem", color: "#64748b", background: "#f1f5f9", padding: "4px 10px", borderRadius: "100px", fontWeight: 600 }}>PTPN I: Cetak ERP</span>
+          <span style={{ fontSize: "0.8rem", color: "#64748b", background: "#f1f5f9", padding: "4px 10px", borderRadius: "100px", fontWeight: 600 }}>PTPN IV: Fokus KSO</span>
+          <span style={{ fontSize: "0.8rem", color: "#64748b", background: "#f1f5f9", padding: "4px 10px", borderRadius: "100px", fontWeight: 600 }}>PT SGN: Rekap Nilai</span>
+        </div>
       )
     },
     {
       no: 2,
-      uraian: "Pengisian Matrix KPI Individu 2026",
-      p3: "90%",
-      p1: "10%",
-      p4: "20%",
-      sgn: "0%",
-      keterangan: (
-        <ul style={{ paddingLeft: "1.2rem", margin: 0, fontSize: "0.85rem" }}>
-          <li>PTPN III : Draft Matrix per Divisi telah dibuat, namun perlu dikroscek ulang</li>
-          <li>PTPN I : Draft Matrix per Divisi HO telah dibuat, Unit Komoditi Karet telah dibuat</li>
-          <li>PTPN IV : Draft Matrix per Divisi HO telah dibuat, Unit Komoditi Sawit dan Karet telah dibuat beserta simulasi sederhana</li>
-          <li>PT SGN : Draft Matrix belum dibuat</li>
-        </ul>
-      )
+      title: "Pengisian Matrix KPI Individu 2026",
+      stats: [
+        { name: "PTPN III (Persero)", val: "90%", num: 90, color: "#10b981" },
+        { name: "PTPN I", val: "10%", num: 10, color: "#ef4444" },
+        { name: "PTPN IV", val: "20%", num: 20, color: "#f97316" },
+        { name: "PT SGN", val: "0%", num: 0, color: "#94a3b8" },
+      ],
+      keterangan: "Draft Matrix per Divisi sudah dibuat di Holding, Sub-Holding menyusul sesuai timeline regional."
     },
     {
       no: 3,
-      uraian: "Form Program Kerja Individu 2026",
-      p3: "50%",
-      p1: "-",
-      p4: "-",
-      sgn: "-",
-      keterangan: "Penyesuaian Form Program Kerja Individu untuk disebarkan ke Seluruh Divisi Holding masih dalam tahap drafting"
+      title: "Form Program Kerja Individu 2026",
+      stats: [
+        { name: "PTPN III (Persero)", val: "50%", num: 50, color: "#3b82f6" },
+        { name: "PTPN I", val: "-", num: 0, color: "#e2e8f0" },
+        { name: "PTPN IV", val: "-", num: 0, color: "#e2e8f0" },
+        { name: "PT SGN", val: "-", num: 0, color: "#e2e8f0" },
+      ],
+      keterangan: "Penyesuaian form untuk seluruh Divisi Holding masih dalam tahap drafting."
     }
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3rem", background: "#f8fafc" }}>
-      <div style={{ position: "absolute", top: 0, right: 0, width: "100%", height: "80px", background: "linear-gradient(90deg, #fff 0%, #10b981 100%)", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 3rem" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <div style={{ width: "100px", height: "40px", background: "rgba(0,0,0,0.05)", borderRadius: "4px" }} /> {/* Placeholder Logo */}
-          <span style={{ fontSize: "1rem", fontWeight: 700, color: "#1a5276" }}>Perkebunan Nusantara</span>
+    <div className="slide" style={{ padding: "1.5rem 4rem 2rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+      <AccentShapes />
+
+      {/* Premium Header */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2.5rem", borderBottom: "4px solid #1a5276", paddingBottom: "1.5rem" }}>
+        <div>
+          <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276", marginBottom: "0.2rem" }}>
+            <em>Update Performance Management</em>
+          </h1>
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <span style={{ background: "#f97316", color: "#fff", padding: "4px 12px", borderRadius: "6px", fontSize: "0.9rem", fontWeight: 800, textTransform: "uppercase" }}>High Priority</span>
+            <span style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 700 }}>Monitoring Progress — Eksekusi Fase 1</span>
+          </div>
         </div>
-        <div style={{ textAlign: "right", borderRight: "100px solid #f97316", paddingRight: "1rem" }}>
-          <h2 style={{ fontSize: "2rem", color: "#1a5276", margin: 0, fontWeight: 800 }}>Update Performance Management</h2>
-          <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0, fontWeight: 600, fontStyle: "italic" }}>Monitoring Progress — Eksekusi Fase 1</p>
-          <p style={{ fontSize: "1.1rem", color: "#0e6655", margin: 0, fontWeight: 700 }}>per 1 Mar 2026, Pukul <span style={{ color: "#f97316" }}>09.00</span></p>
+        <div style={{ textAlign: "right" }}>
+          <p style={{ fontSize: "1.2rem", color: "#0e6655", margin: 0, fontWeight: 800 }}>Timestamp Data:</p>
+          <p style={{ fontSize: "1.5rem", color: "#1e293b", margin: 0, fontWeight: 900 }}>1 Mar 2026 | <span style={{ color: "#f97316" }}>09.00 WIB</span></p>
         </div>
       </div>
 
-      <div style={{ marginTop: "100px", flex: 1, overflow: "hidden" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", background: "#fff", borderRadius: "12px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.05)", tableLayout: "fixed" }}>
-          <thead>
-            <tr style={{ background: "#94a3b8", color: "#fff" }}>
-              <th rowSpan={2} style={{ width: "50px", border: "1px solid #e2e8f0", padding: "12px" }}>No</th>
-              <th rowSpan={2} style={{ width: "220px", border: "1px solid #e2e8f0", padding: "12px" }}>Uraian</th>
-              <th colSpan={4} style={{ border: "1px solid #e2e8f0", padding: "12px", background: "#64748b" }}>Progress (%)</th>
-              <th rowSpan={2} style={{ border: "1px solid #e2e8f0", padding: "12px" }}>Keterangan</th>
-            </tr>
-            <tr style={{ background: "#cbd5e1", color: "#1a5276" }}>
-              <th style={{ border: "1px solid #e2e8f0", padding: "10px", fontSize: "0.85rem" }}>PTPN III (Persero)</th>
-              <th style={{ border: "1px solid #e2e8f0", padding: "10px", fontSize: "0.85rem" }}>PTPN I</th>
-              <th style={{ border: "1px solid #e2e8f0", padding: "10px", fontSize: "0.85rem" }}>PTPN IV</th>
-              <th style={{ border: "1px solid #e2e8f0", padding: "10px", fontSize: "0.85rem" }}>PT SGN</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((row) => (
-              <tr key={row.no} style={{ borderBottom: "1px solid #e2e8f0" }}>
-                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0" }}>{row.no}</td>
-                <td style={{ padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#1a5276" }}>{row.uraian}</td>
-                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#10b981", fontSize: "1.1rem" }}>{row.p3}</td>
-                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#64748b" }}>{row.p1}</td>
-                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#64748b" }}>{row.p4}</td>
-                <td style={{ textAlign: "center", padding: "15px", fontWeight: 700, border: "1px solid #e2e8f0", color: "#64748b" }}>{row.sgn}</td>
-                <td style={{ padding: "15px", border: "1px solid #e2e8f0", fontSize: "0.8rem", color: "#475569", lineHeight: 1.4 }}>{row.keterangan}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        {tableData.map((section, idx) => (
+          <motion.div
+            key={section.no}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: idx * 0.1 }}
+            style={{
+              background: "#fff",
+              borderRadius: "20px",
+              padding: "1.5rem 2rem",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
+              border: "1px solid #f1f5f9",
+              display: "flex",
+              flexDirection: "column",
+              gap: "1.2rem",
+              position: "relative",
+              overflow: "hidden"
+            }}
+          >
+            {/* Background Decoration */}
+            <div style={{ position: "absolute", top: 0, right: 0, width: "300px", height: "100%", background: "linear-gradient(90deg, transparent 0%, #f8fafc 100%)", zIndex: 0 }} />
+
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", position: "relative", zIndex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+                <div style={{ width: "45px", height: "45px", borderRadius: "12px", background: "#1a5276", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.5rem", fontWeight: 900 }}>
+                  {section.no}
+                </div>
+                <h3 style={{ fontSize: "1.8rem", color: "#1e293b", fontWeight: 800, margin: 0 }}>{section.title}</h3>
+              </div>
+              <div style={{ width: "35%", fontSize: "0.9rem", color: "#64748b", fontWeight: 600, lineHeight: 1.5, fontStyle: "italic", borderLeft: "4px solid #f97316", paddingLeft: "1.2rem" }}>
+                {section.keterangan}
+              </div>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem", position: "relative", zIndex: 1 }}>
+              {section.stats.map((stat, sIdx) => (
+                <div key={sIdx} style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+                    <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#475569", textTransform: "uppercase", letterSpacing: "0.5px" }}>{stat.name}</span>
+                    <span style={{ fontSize: "1.2rem", fontWeight: 900, color: stat.color }}>{stat.val}</span>
+                  </div>
+                  {/* Progress Bar Container */}
+                  <div style={{ width: "100%", height: "10px", background: "#f1f5f9", borderRadius: "100px", overflow: "hidden" }}>
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: `${stat.num}%` }}
+                      transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}
+                      style={{ height: "100%", background: stat.color, borderRadius: "100px" }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
 
-      <div style={{ position: "absolute", bottom: "4rem", right: "2rem", display: "flex", gap: "10px" }}>
-        <div style={{ width: "25px", height: "25px", background: "#0e6655", transform: "skew(-20deg)" }} />
-        <div style={{ width: "25px", height: "25px", background: "#f97316", transform: "skew(-20deg)" }} />
-        <div style={{ width: "25px", height: "25px", background: "#1a5276", transform: "skew(-20deg)" }} />
-      </div>
       <SlideFooter />
     </div>
   );
