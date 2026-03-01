@@ -4768,61 +4768,118 @@ function SlideLeanPhilosophy() {
 
 function SlideMudaWaste() {
   const mudaList = [
-    { t: "Over production", d: "Make report that no body or no section use / need it" },
-    { t: "Transportation", d: "Movement of paper work that does not add value" },
-    { t: "Motion", d: "Movement of people that does not add value" },
-    { t: "Waiting", d: "Idle time created when material, information, people, or equipment is not ready" },
-    { t: "Over processing", d: "Effort that adds no value from the customer's viewpoint" },
-    { t: "Inventory", d: "More paper work on hand than customer needed right now" },
-    { t: "Defects", d: "Work that contains errors, rework, or lacks something necessary" },
-    { t: "Knowledge disconnect", d: "Miscommunication between each section that make problem happen" }
+    { num: "1", t: "Produksi Berlebih", d: "Membuat laporan atau output yang tidak dibutuhkan oleh siapapun atau unit manapun", icon: <Plus size={20} />, color: "#ef4444" },
+    { num: "2", t: "Transportasi", d: "Perpindahan dokumen atau informasi yang tidak menambah nilai dalam proses", icon: <ArrowRight size={20} />, color: "#f97316" },
+    { num: "3", t: "Gerakan Sia-sia", d: "Pergerakan orang yang tidak produktif — mencari file, berpindah antar ruangan tanpa tujuan jelas", icon: <Users size={20} />, color: "#eab308" },
+    { num: "4", t: "Menunggu", d: "Waktu idle karena material, informasi, persetujuan, atau peralatan belum siap", icon: <Calendar size={20} />, color: "#22c55e" },
+    { num: "5", t: "Proses Berlebih", d: "Upaya atau tahapan kerja yang tidak memberikan nilai dari sudut pandang pelanggan", icon: <Settings size={20} />, color: "#14b8a6" },
+    { num: "6", t: "Inventaris Berlebih", d: "Stok dokumen, data, atau material yang lebih banyak dari yang dibutuhkan saat ini", icon: <Layers size={20} />, color: "#3b82f6" },
+    { num: "7", t: "Cacat / Defect", d: "Pekerjaan yang mengandung kesalahan, perlu dikerjakan ulang, atau kurang lengkap", icon: <X size={20} />, color: "#8b5cf6" },
+    { num: "8", t: "Silo Pengetahuan", d: "Miskomunikasi antar bagian yang menyebabkan duplikasi, kesalahan, atau keterlambatan", icon: <GitBranch size={20} />, color: "#ec4899" }
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-        <div>
-          <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655" }}>MUDA OR WASTE</h1>
-          <div style={{ width: "60px", height: "4px", background: "#f97316", marginTop: "8px" }} />
-        </div>
-        <div style={{ background: "#0e6655", color: "#fff", padding: "4px 12px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900 }}>PAGE 17</div>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>8 Jenis Pemborosan (MUDA)</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          <span style={{ color: "#f97316", fontWeight: 800 }}>無駄</span> — Segala aktivitas yang menambah biaya tanpa menambah nilai bagi pelanggan
+        </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <div style={{ background: "#0e6655", color: "#fff", borderRadius: "12px 12px 0 0", overflow: "hidden" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 2.5fr", padding: "1rem 2rem", fontWeight: 900, fontSize: "1.1rem" }}>
-            <div>8 MUDA OR WASTE</div>
-            <div>DEFINITION</div>
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: "4px", flex: 1 }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+        {/* 8 Waste Grid - 2 columns x 4 rows */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem", flex: 1 }}>
           {mudaList.map((m, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.05 }}
+              transition={{ delay: 0.1 + i * 0.05 }}
               style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 2.5fr",
-                padding: "1rem 2rem",
-                background: i % 2 === 0 ? "rgba(16, 185, 129, 0.05)" : "#fff",
-                border: "1px solid #e2e8f0",
-                borderRadius: "8px",
-                fontSize: "1.05rem"
+                background: "#fff",
+                borderRadius: "16px",
+                padding: "1.2rem 1.5rem",
+                border: "1px solid #f1f5f9",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.03)",
+                display: "flex",
+                gap: "1rem",
+                alignItems: "center",
+                position: "relative",
+                overflow: "hidden"
               }}
             >
-              <div style={{ fontWeight: 900, color: "#0e6655", display: "flex", gap: "10px", alignItems: "center" }}>
-                <span style={{ fontSize: "0.8rem", background: "#0e6655", color: "#fff", width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "4px" }}>{i + 1}</span>
-                {m.t}
+              <div style={{ position: "absolute", left: 0, top: 0, width: "4px", height: "100%", background: m.color }} />
+
+              <div style={{
+                width: "48px",
+                height: "48px",
+                borderRadius: "14px",
+                background: `${m.color}15`,
+                color: m.color,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+                position: "relative"
+              }}>
+                {m.icon}
+                <div style={{
+                  position: "absolute",
+                  top: "-4px",
+                  right: "-4px",
+                  width: "20px",
+                  height: "20px",
+                  borderRadius: "50%",
+                  background: m.color,
+                  color: "#fff",
+                  fontSize: "0.65rem",
+                  fontWeight: 900,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}>
+                  {m.num}
+                </div>
               </div>
-              <div style={{ color: "#475569", fontWeight: 500 }}>{m.d}</div>
+
+              <div style={{ flex: 1 }}>
+                <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#1e293b", margin: "0 0 4px 0" }}>{m.t}</h4>
+                <p style={{ fontSize: "0.9rem", color: "#64748b", margin: 0, lineHeight: 1.4, fontWeight: 500 }}>{m.d}</p>
+              </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom Insight */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          style={{
+            background: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
+            borderRadius: "16px",
+            padding: "1.2rem 2.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "1.5rem",
+            color: "#fff"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
+            <Target size={22} />
+            <span style={{ fontWeight: 900, fontSize: "1rem", textTransform: "uppercase", letterSpacing: "1px" }}>Tujuan</span>
+          </div>
+          <div style={{ width: "1px", height: "35px", background: "rgba(255,255,255,0.3)" }} />
+          <p style={{ fontSize: "1.05rem", fontWeight: 600, margin: 0, lineHeight: 1.4 }}>
+            Identifikasi dan eliminasi ke-8 pemborosan ini di setiap proses bisnis PTPN — mulai dari <strong>operasional kebun</strong>, <strong>administrasi kantor</strong>, hingga <strong>pelaporan kinerja</strong> — untuk meningkatkan efisiensi dan kecepatan.
+          </p>
+        </motion.div>
       </div>
+
       <SlideFooter />
     </div>
   );
