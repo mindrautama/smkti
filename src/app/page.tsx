@@ -4223,26 +4223,18 @@ function SlideProjectCharter() {
             Delivery Output :
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "x 2rem", columnGap: "3rem", rowGap: "0.8rem" }}>
-            {deliverables.map((item, i) => {
-              // Highlight item #3 as seen in image2 (green box)
-              const isHighlighted = i === 2;
-              return (
-                <div key={i} style={{
-                  fontSize: "0.95rem",
-                  fontWeight: 700,
-                  color: "#1e293b",
-                  padding: isHighlighted ? "6px 12px" : "0",
-                  border: isHighlighted ? "2px solid #0e6655" : "none",
-                  borderRadius: isHighlighted ? "4px" : "0",
-                  background: isHighlighted ? "rgba(14, 102, 85, 0.04)" : "transparent",
-                  display: "flex",
-                  alignItems: "center"
-                }}>
-                  {item}
-                </div>
-              );
-            })}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: "3rem", rowGap: "0.8rem" }}>
+            {deliverables.map((item, i) => (
+              <div key={i} style={{
+                fontSize: "0.95rem",
+                fontWeight: 700,
+                color: "#1e293b",
+                display: "flex",
+                alignItems: "center"
+              }}>
+                {item}
+              </div>
+            ))}
           </div>
         </div>
 
