@@ -89,14 +89,14 @@ function SlideAgenda() {
   };
 
   return (
-    <div className="slide" style={{ padding: "2.5rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #fff 100%)" }}>
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #fff 100%)" }}>
       <AccentShapes />
       <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
         <motion.h1
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           className="slide-title"
-          style={{ fontSize: "3rem", color: "#1a5276", marginBottom: "0.3rem" }}
+          style={{ fontSize: "3.5rem", color: "#1a5276", marginBottom: "0.3rem" }}
         >
           Agenda Presentasi
         </motion.h1>
@@ -105,13 +105,13 @@ function SlideAgenda() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="slide-subtitle"
-          style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}
+          style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}
         >
           Klik bagian untuk langsung menuju section
         </motion.p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", flex: 1 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem", flex: 1 }}>
         {sections.map((sec, i) => (
           <motion.button
             key={i}
@@ -121,9 +121,9 @@ function SlideAgenda() {
             onClick={() => handleSectionClick(sec.targetTitle)}
             style={{
               display: "flex",
-              gap: "1.2rem",
-              padding: "1.2rem 1.5rem",
-              borderRadius: "16px",
+              gap: "1.5rem",
+              padding: "1.5rem 2rem",
+              borderRadius: "20px",
               background: "#fff",
               border: "1px solid #e2e8f0",
               boxShadow: "0 4px 12px rgba(0,0,0,0.03)",
@@ -145,30 +145,30 @@ function SlideAgenda() {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            <div style={{ position: "absolute", top: 0, left: 0, width: "5px", height: "100%", background: sec.color }} />
+            <div style={{ position: "absolute", top: 0, left: 0, width: "6px", height: "100%", background: sec.color }} />
             <div style={{
               background: sec.color,
               color: "#fff",
-              width: "48px",
-              height: "48px",
-              borderRadius: "14px",
+              width: "64px",
+              height: "64px",
+              borderRadius: "18px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontWeight: 900,
-              fontSize: "1.1rem",
+              fontSize: "1.5rem",
               flexShrink: 0,
               boxShadow: `0 6px 15px ${sec.color}30`
             }}>
               {sec.num}
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontWeight: 900, fontSize: "1rem", color: "#1e293b", marginBottom: "4px" }}>{sec.title}</div>
-              <div style={{ fontSize: "0.78rem", color: "#64748b", fontWeight: 500, lineHeight: 1.3 }}>{sec.desc}</div>
+              <div style={{ fontWeight: 900, fontSize: "1.3rem", color: "#1e293b", marginBottom: "6px" }}>{sec.title}</div>
+              <div style={{ fontSize: "1rem", color: "#64748b", fontWeight: 500, lineHeight: 1.4 }}>{sec.desc}</div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", flexShrink: 0 }}>
-              <span style={{ fontSize: "0.65rem", color: "#94a3b8", fontWeight: 700 }}>{sec.slides} slides</span>
-              <ChevronRight size={16} color={sec.color} style={{ marginTop: "4px" }} />
+              <span style={{ fontSize: "0.85rem", color: "#94a3b8", fontWeight: 700 }}>{sec.slides} slides</span>
+              <ChevronRight size={22} color={sec.color} style={{ marginTop: "6px" }} />
             </div>
           </motion.button>
         ))}
