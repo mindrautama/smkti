@@ -4447,9 +4447,9 @@ function SlideProjectCharter() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)", display: "flex", flexDirection: "column" }}>
+    <div className="slide" style={{ padding: "0.8rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)", display: "flex", flexDirection: "column" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "0.8rem", textAlign: "left" }}>
+      <div className="slide-header" style={{ marginBottom: "0.5rem", textAlign: "left" }}>
         <h1 className="slide-title" style={{ fontSize: "2.4rem", color: "#1a5276", marginBottom: "0.2rem" }}>
           <em>Proyek Scorecard, KPI, Proses Bisnis & Struktur Organisasi</em>
         </h1>
@@ -4458,7 +4458,7 @@ function SlideProjectCharter() {
         </p>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.8rem", overflow: "hidden" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.5rem", overflow: "hidden" }}>
 
         {/* Gantt Container */}
         <div style={{
@@ -4492,8 +4492,8 @@ function SlideProjectCharter() {
           {/* Table Body */}
           <div style={{ display: "flex", flexDirection: "column" }}>
             {milestones.map((m, idx) => (
-              <div key={idx} style={{ display: "flex", borderBottom: "1px solid #f1f5f9", minHeight: "24px" }}>
-                <div style={{ width: "350px", padding: "4px 20px", fontSize: "0.7rem", fontWeight: 600, color: "#334155", borderRight: "1px solid #e2e8f0", display: "flex", alignItems: "center" }}>
+              <div key={idx} style={{ display: "flex", borderBottom: "1px solid #f1f5f9", minHeight: "22px" }}>
+                <div style={{ width: "350px", padding: "2px 20px", fontSize: "0.65rem", fontWeight: 600, color: "#334155", borderRight: "1px solid #e2e8f0", display: "flex", alignItems: "center" }}>
                   {m.name}
                 </div>
                 <div style={{ flex: 1, position: "relative", display: "flex" }}>
@@ -4510,8 +4510,8 @@ function SlideProjectCharter() {
                     style={{
                       position: "absolute",
                       left: `${(m.startIdx / 56) * 100}%`,
-                      top: "4px",
-                      bottom: "4px",
+                      top: "2px",
+                      bottom: "2px",
                       background: "rgba(110, 142, 235, 0.8)", // close to the excel blue color
                       borderRadius: "2px",
                       border: "1px solid rgba(110, 142, 235, 1)"
@@ -4529,10 +4529,10 @@ function SlideProjectCharter() {
           background: "#fff",
           borderRadius: "16px",
           border: "2px solid #0e6655",
-          padding: "1.2rem",
+          padding: "1rem",
           display: "flex",
           flexDirection: "column",
-          gap: "1rem",
+          gap: "0.6rem",
           boxShadow: "0 10px 25px rgba(14, 102, 85, 0.06)",
           position: "relative"
         }}>
@@ -4541,10 +4541,10 @@ function SlideProjectCharter() {
             Delivery Output :
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: "3rem", rowGap: "0.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: "3rem", rowGap: "0.4rem" }}>
             {deliverables.map((item, i) => (
               <div key={i} style={{
-                fontSize: "0.95rem",
+                fontSize: "0.85rem",
                 fontWeight: 700,
                 color: "#1e293b",
                 display: "flex",
