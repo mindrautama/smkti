@@ -564,14 +564,14 @@ function SlidePerformanceUpdate2026() {
     },
     {
       no: 3,
-      title: "Form Program Kerja Individu 2026",
+      title: "Status Progress APMS",
       stats: [
-        { name: "PTPN III (Persero)", val: "50%", num: 50, color: "#3b82f6" },
-        { name: "PTPN I", val: "-", num: 0, color: "#e2e8f0" },
-        { name: "PTPN IV", val: "-", num: 0, color: "#e2e8f0" },
-        { name: "PT SGN", val: "-", num: 0, color: "#e2e8f0" },
+        { name: "PTPN III (Persero)", val: "Ready", num: 100, color: "#10b981" },
+        { name: "PTPN I", val: "Ready", num: 100, color: "#10b981" },
+        { name: "PTPN IV", val: "Ready", num: 100, color: "#10b981" },
+        { name: "PT SGN", val: "Ready", num: 100, color: "#10b981" },
       ],
-      keterangan: "Penyesuaian form untuk seluruh Divisi Holding masih dalam tahap drafting."
+      keterangan: "Seluruh pengembangan sistem APMS (Fitur 1-7) telah selesai 100%. Saat ini status tinggal menunggu pelaksanaan UAT."
     }
   ];
 
