@@ -533,127 +533,145 @@ function SlideCover() {
    UPDATE PERFORMANCE MANAGEMENT SLIDE
    ============================= */
 function SlidePerformanceUpdate2026() {
-  const tableData = [
-    {
-      no: 1,
-      title: "Monitoring Pengisian Kinerja 2025",
-      stats: [
-        { name: "PTPN III (Persero)", val: "99,39%", num: 99.39, color: "#10b981" },
-        { name: "PTPN I", val: "98,13%", num: 98.13, color: "#10b981" },
-        { name: "PTPN IV", val: "93,04%", num: 93.04, color: "#f59e0b" },
-        { name: "PT SGN", val: "98,26%", num: 98.26, color: "#10b981" },
-      ],
-      keterangan: (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-          <span style={{ fontSize: "0.8rem", color: "#64748b", background: "#f1f5f9", padding: "4px 10px", borderRadius: "100px", fontWeight: 600 }}>PTPN I: Cetak ERP</span>
-          <span style={{ fontSize: "0.8rem", color: "#64748b", background: "#f1f5f9", padding: "4px 10px", borderRadius: "100px", fontWeight: 600 }}>PTPN IV: Fokus KSO</span>
-          <span style={{ fontSize: "0.8rem", color: "#64748b", background: "#f1f5f9", padding: "4px 10px", borderRadius: "100px", fontWeight: 600 }}>PT SGN: Rekap Nilai</span>
-        </div>
-      )
-    },
-    {
-      no: 2,
-      title: "Pengisian Matrix KPI Individu 2026",
-      stats: [
-        { name: "PTPN III (Persero)", val: "90%", num: 90, color: "#10b981" },
-        { name: "PTPN I", val: "10%", num: 10, color: "#ef4444" },
-        { name: "PTPN IV", val: "20%", num: 20, color: "#f97316" },
-        { name: "PT SGN", val: "0%", num: 0, color: "#94a3b8" },
-      ],
-      keterangan: "Draft Matrix per Divisi sudah dibuat di Holding, Sub-Holding menyusul sesuai timeline regional."
-    },
-    {
-      no: 3,
-      title: "Status Progress APMS",
-      stats: [
-        { name: "PTPN III (Persero)", val: "Ready", num: 100, color: "#10b981" },
-        { name: "PTPN I", val: "Ready", num: 100, color: "#10b981" },
-        { name: "PTPN IV", val: "Ready", num: 100, color: "#10b981" },
-        { name: "PT SGN", val: "Ready", num: 100, color: "#10b981" },
-      ],
-      keterangan: "Seluruh pengembangan sistem APMS (Fitur 1-7) telah selesai 100%. Saat ini status tinggal menunggu pelaksanaan UAT."
-    }
-  ];
-
   return (
-    <div className="slide" style={{ padding: "1.5rem 4rem 2rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
+    <div className="slide" style={{ padding: "1.5rem 3.5rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
       <AccentShapes />
 
       {/* Premium Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2.5rem", borderBottom: "4px solid #1a5276", paddingBottom: "1.5rem" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "1.5rem", borderBottom: "4px solid #1a5276", paddingBottom: "1rem" }}>
         <div>
-          <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#1a5276", marginBottom: "0.2rem" }}>
-            <em>Update Performance Management</em>
+          <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.2rem" }}>
+            <em>Update Kinerja & Timeline Implementasi</em>
           </h1>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-            <span style={{ background: "#f97316", color: "#fff", padding: "4px 12px", borderRadius: "6px", fontSize: "0.9rem", fontWeight: 800, textTransform: "uppercase" }}>High Priority</span>
-            <span style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 700 }}>Monitoring Progress — Eksekusi Fase 1</span>
+            <span style={{ background: "#f97316", color: "#fff", padding: "4px 12px", borderRadius: "6px", fontSize: "0.85rem", fontWeight: 800, textTransform: "uppercase" }}>High Priority</span>
+            <span style={{ fontSize: "1rem", color: "#64748b", fontWeight: 700 }}>Monitoring Progress & Roadmap Eksekusi</span>
           </div>
         </div>
         <div style={{ textAlign: "right" }}>
-          <p style={{ fontSize: "1.2rem", color: "#0e6655", margin: 0, fontWeight: 800 }}>Timestamp Data:</p>
-          <p style={{ fontSize: "1.5rem", color: "#1e293b", margin: 0, fontWeight: 900 }}>1 Mar 2026 | <span style={{ color: "#f97316" }}>09.00 WIB</span></p>
+          <p style={{ fontSize: "1rem", color: "#0e6655", margin: 0, fontWeight: 800 }}>Timestamp Data:</p>
+          <p style={{ fontSize: "1.2rem", color: "#1e293b", margin: 0, fontWeight: 900 }}>1 Mar 2026 | <span style={{ color: "#f97316" }}>09.00 WIB</span></p>
         </div>
       </div>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-        {tableData.map((section, idx) => (
-          <motion.div
-            key={section.no}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: idx * 0.1 }}
-            style={{
-              background: "#fff",
-              borderRadius: "20px",
-              padding: "1.5rem 2rem",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
-              border: "1px solid #f1f5f9",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.2rem",
-              position: "relative",
-              overflow: "hidden"
-            }}
-          >
-            {/* Background Decoration */}
-            <div style={{ position: "absolute", top: 0, right: 0, width: "300px", height: "100%", background: "linear-gradient(90deg, transparent 0%, #f8fafc 100%)", zIndex: 0 }} />
+      <div style={{ flex: 1, display: "flex", gap: "1.5rem", height: "100%", overflow: "hidden" }}>
+        {/* LEFT COLUMN - 2025 */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <div style={{ background: "linear-gradient(90deg, #f59e0b 0%, #d97706 100%)", color: "#fff", padding: "12px", borderRadius: "14px", fontSize: "1rem", fontWeight: 900, textAlign: "center", textTransform: "uppercase", letterSpacing: "1px", boxShadow: "0 10px 20px rgba(245, 158, 11, 0.15)" }}>
+            Pengukuran Kinerja Tahun 2025
+          </div>
 
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", position: "relative", zIndex: 1 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-                <div style={{ width: "45px", height: "45px", borderRadius: "12px", background: "#1a5276", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.5rem", fontWeight: 900 }}>
-                  {section.no}
-                </div>
-                <h3 style={{ fontSize: "1.8rem", color: "#1e293b", fontWeight: 800, margin: 0 }}>{section.title}</h3>
-              </div>
-              <div style={{ width: "35%", fontSize: "0.9rem", color: "#64748b", fontWeight: 600, lineHeight: 1.5, fontStyle: "italic", borderLeft: "4px solid #f97316", paddingLeft: "1.2rem" }}>
-                {section.keterangan}
-              </div>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem", position: "relative", zIndex: 1 }}>
-              {section.stats.map((stat, sIdx) => (
-                <div key={sIdx} style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-                    <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#475569", textTransform: "uppercase", letterSpacing: "0.5px" }}>{stat.name}</span>
-                    <span style={{ fontSize: "1.2rem", fontWeight: 900, color: stat.color }}>{stat.val}</span>
+          {/* Tracker 2025 */}
+          <div style={{ background: "#fff", borderRadius: "16px", padding: "1.2rem", border: "1px solid #e2e8f0", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
+            <h3 style={{ fontSize: "1.1rem", color: "#1e293b", fontWeight: 800, margin: "0 0 1rem 0", display: "flex", alignItems: "center", gap: "8px" }}><Target size={18} color="#f59e0b" /> Monitoring Kinerja 2025</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              {[
+                { name: "PTPN III (Persero)", val: "99,39%", num: 99.39, color: "#10b981" },
+                { name: "PTPN I", val: "98,13%", num: 98.13, color: "#10b981" },
+                { name: "PTPN IV", val: "93,04%", num: 93.04, color: "#f59e0b" },
+                { name: "PT SGN", val: "98,26%", num: 98.26, color: "#10b981" },
+              ].map((stat, i) => (
+                <div key={i}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
+                    <span style={{ fontSize: "0.75rem", fontWeight: 800, color: "#475569" }}>{stat.name}</span>
+                    <span style={{ fontSize: "0.9rem", fontWeight: 900, color: stat.color }}>{stat.val}</span>
                   </div>
-                  {/* Progress Bar Container */}
-                  <div style={{ width: "100%", height: "10px", background: "#f1f5f9", borderRadius: "100px", overflow: "hidden" }}>
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${stat.num}%` }}
-                      transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}
-                      style={{ height: "100%", background: stat.color, borderRadius: "100px" }}
-                    />
+                  <div style={{ width: "100%", height: "6px", background: "#f1f5f9", borderRadius: "100px" }}>
+                    <div style={{ height: "100%", width: `${stat.num}%`, background: stat.color, borderRadius: "100px" }} />
                   </div>
                 </div>
               ))}
             </div>
-          </motion.div>
-        ))}
-      </div>
+            <div style={{ display: "flex", gap: "10px", marginTop: "1rem" }}>
+              <span style={{ fontSize: "0.7rem", color: "#64748b", background: "#f1f5f9", padding: "4px 8px", borderRadius: "100px", fontWeight: 600 }}>PTPN I: Cetak ERP</span>
+              <span style={{ fontSize: "0.7rem", color: "#64748b", background: "#f1f5f9", padding: "4px 8px", borderRadius: "100px", fontWeight: 600 }}>PTPN IV: Fokus KSO</span>
+            </div>
+          </div>
 
+          {/* Timeline 2025 */}
+          <div style={{ background: "#fff", borderRadius: "16px", border: "1px solid #e2e8f0", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.03)", flex: 1, display: "flex", flexDirection: "column" }}>
+            <table style={{ width: "100%", fontSize: "0.8rem", borderCollapse: "collapse" }}>
+              <thead style={{ background: "#f8fafc", color: "#475569" }}>
+                <tr>
+                  <th style={{ padding: "12px 15px", borderBottom: "1px solid #e2e8f0", textAlign: "left" }}>Item Kegiatan Timeline</th>
+                  <th style={{ padding: "12px 15px", borderBottom: "1px solid #e2e8f0" }}>Due Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { i: "Usulan Rating & Pendukung", d: "27 Feb 2026" },
+                  { i: "Perhitungan Merit Increment", d: "5 Mar 2026" },
+                  { i: "Penetapan Indikator Ops/Keu", d: "5 Mar 2026" },
+                  { i: "Sidang Komite Penilaian", d: "2-14 Mar 2026" }
+                ].map((row, i) => (
+                  <tr key={i} style={{ borderBottom: "1px solid #f1f5f9" }}>
+                    <td style={{ padding: "12px 15px", fontWeight: 600, color: "#1e293b" }}>{row.i}</td>
+                    <td style={{ textAlign: "center", padding: "12px 15px", fontWeight: 800, color: "#d97706" }}>{row.d}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN - 2026+ */}
+        <div style={{ flex: 1.2, display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <div style={{ background: "linear-gradient(90deg, #1a5276 0%, #0e6655 100%)", color: "#fff", padding: "12px", borderRadius: "14px", fontSize: "1rem", fontWeight: 900, textAlign: "center", textTransform: "uppercase", letterSpacing: "1px", boxShadow: "0 10px 20px rgba(26, 82, 118, 0.15)" }}>
+            Siklus 2026 & Seterusnya (APMS 2.0)
+          </div>
+
+          {/* Progress 2026 Readiness */}
+          <div style={{ background: "#fff", borderRadius: "16px", padding: "1.2rem", border: "1.5px solid #1a5276", boxShadow: "0 10px 30px rgba(26,82,118,0.08)" }}>
+            <div style={{ display: "flex", gap: "1.5rem" }}>
+              <div style={{ flex: 1 }}>
+                <h3 style={{ fontSize: "0.95rem", color: "#1e293b", fontWeight: 800, margin: "0 0 0.8rem 0" }}>Matrix KPI Individu 2026</h3>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <div style={{ flex: 1 }}><span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#475569", display: "block" }}>PTPN III</span><span style={{ fontSize: "0.95rem", fontWeight: 900, color: "#10b981" }}>90%</span></div>
+                  <div style={{ flex: 1 }}><span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#475569", display: "block" }}>PTPN I</span><span style={{ fontSize: "0.95rem", fontWeight: 900, color: "#ef4444" }}>10%</span></div>
+                  <div style={{ flex: 1 }}><span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#475569", display: "block" }}>PTPN IV</span><span style={{ fontSize: "0.95rem", fontWeight: 900, color: "#f97316" }}>20%</span></div>
+                  <div style={{ flex: 1 }}><span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#475569", display: "block" }}>PT SGN</span><span style={{ fontSize: "0.95rem", fontWeight: 900, color: "#94a3b8" }}>0%</span></div>
+                </div>
+              </div>
+              <div style={{ width: "1px", background: "#e2e8f0" }} />
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <h3 style={{ fontSize: "0.95rem", color: "#1e293b", fontWeight: 800, margin: "0 0 0.8rem 0", display: "flex", alignItems: "center", gap: "6px" }}><Settings size={16} color="#1a5276" /> Kesiapan Sistem APMS 2.0</h3>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  <div style={{ background: "#10b981", color: "#fff", padding: "6px 12px", borderRadius: "8px", fontWeight: 900, fontSize: "0.9rem" }}>100% READY</div>
+                  <div style={{ fontSize: "0.75rem", color: "#475569", fontWeight: 600, lineHeight: 1.4 }}>Menunggu pelaksanaan UAT.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline 2026 */}
+          <div style={{ background: "#fff", borderRadius: "16px", border: "1px solid #e2e8f0", overflow: "hidden", flex: 1, display: "flex", flexDirection: "column", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
+            <div style={{ padding: "10px 15px", background: "#f8fafc", borderBottom: "1px solid #e2e8f0", fontWeight: 800, color: "#1e293b", fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "8px" }}>
+              <Calendar size={16} color="#0e6655" /> Siklus Rencana & Roadmap APMS 2026
+            </div>
+            <div style={{ flex: 1, padding: "0" }}>
+              <table style={{ width: "100%", fontSize: "0.75rem", borderCollapse: "collapse" }}>
+                <tbody>
+                  {[
+                    { i: "User Acceptance Test (UAT) PTPN Group", d: "25-26 Feb 26", c: "#1a5276", b: true },
+                    { i: "Sosialisasi & Training APMS 2.0", d: "10 Mar 26", c: "#1e293b" },
+                    { i: "Surat Pelaksanaan 2026 & KSK", d: "12 Mar-Apr 26", c: "#1e293b" },
+                    { i: "GO-LIVE APMS 2.0", d: "30 Mar 26", c: "#065f46", bg: "rgba(34, 197, 94, 0.08)", b: true },
+                    { i: "Review Bimbingan Kerja (RBK) TW I, II, III", d: "Mei-Nov 26", c: "#475569" },
+                    { i: "Pengukuran ONE (Attitude) Sem. I & II", d: "Jul 26 & Jan 27", c: "#475569" },
+                    { i: "Performance Appraisal (Final) 2026", d: "Feb 27", c: "#1e293b", b: true }
+                  ].map((row, i) => (
+                    <tr key={i} style={{ borderBottom: "1px solid #f1f5f9", background: row.bg || "transparent" }}>
+                      <td style={{ padding: "10px 15px", fontWeight: row.b ? 800 : 600, color: row.c }}>{row.i}</td>
+                      <td style={{ textAlign: "right", padding: "10px 15px", fontWeight: row.b ? 900 : 700, color: row.c, whiteSpace: "nowrap" }}>{row.d}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
       <SlideFooter />
     </div>
   );
@@ -3904,143 +3922,7 @@ function SlidePriorityPool() {
 /* =============================
    SLIDE 11: TIMELINE
    ============================= */
-function SlideTimeline() {
-  return (
-    <div className="slide" style={{ padding: "1.5rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)" }}>
-      <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276", marginBottom: "0.3rem" }}>
-          <em>Roadmap & Timeline Implementasi</em>
-        </h1>
-        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>Siklus Penilaian 2025 & Transisi ke APMS 2.0 (2026-2027)</p>
-      </div>
 
-      <div style={{ flex: 1, display: "flex", gap: "1.5rem", height: "100%", overflow: "hidden" }}>
-        {/* Left Column: 2025 Closure */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
-          <div style={{
-            background: "linear-gradient(90deg, #f59e0b 0%, #d97706 100%)",
-            color: "#fff",
-            padding: "12px",
-            borderRadius: "16px",
-            fontSize: "1rem",
-            fontWeight: 900,
-            textAlign: "center",
-            textTransform: "uppercase",
-            letterSpacing: "1.5px",
-            boxShadow: "0 10px 20px rgba(245, 158, 11, 0.15)"
-          }}>
-            Pengukuran Kinerja Tahun 2025
-          </div>
-
-          <div style={{ background: "#fff", borderRadius: "20px", border: "1px solid #e2e8f0", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
-            <table style={{ width: "100%", fontSize: "0.85rem", borderCollapse: "collapse" }}>
-              <thead style={{ background: "#f8fafc", color: "#475569" }}>
-                <tr>
-                  <th style={{ padding: "15px", borderBottom: "1px solid #e2e8f0", width: "12%" }}>#</th>
-                  <th style={{ padding: "15px", borderBottom: "1px solid #e2e8f0", textAlign: "left" }}>Item Kegiatan Utama</th>
-                  <th style={{ padding: "15px", borderBottom: "1px solid #e2e8f0", width: "30%" }}>Due Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { n: 1, i: "Usulan Rating & Pendukung", d: "27 Feb 2026" },
-                  { n: 2, i: "Perhitungan Merit Increment", d: "5 Mar 2026" },
-                  { n: 3, i: "Penetapan Indikator Ops/Keu", d: "5 Mar 2026" },
-                  { n: 4, i: "Sidang Komite Penilaian", d: "2-14 Mar 2026" }
-                ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: "1px solid #f1f5f9" }}>
-                    <td style={{ textAlign: "center", padding: "12px", fontWeight: 700, color: "#94a3b8" }}>{row.n}</td>
-                    <td style={{ padding: "12px", fontWeight: 600, color: "#1e293b" }}>{row.i}</td>
-                    <td style={{ textAlign: "center", padding: "12px", fontWeight: 800, color: "#d97706" }}>{row.d}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div style={{ marginTop: "auto", padding: "15px 20px", background: "rgba(245, 158, 11, 0.05)", borderRadius: "16px", borderLeft: "4px solid #f59e0b", display: "flex", gap: "12px" }}>
-            <div style={{ color: "#d97706" }}><Calendar size={20} /></div>
-            <p style={{ margin: 0, fontSize: "0.85rem", color: "#64748b", fontWeight: 600, fontStyle: "italic" }}>
-              Fase penyelesaian siklus 2025 untuk penetapan kenaikan merit (MI).
-            </p>
-          </div>
-        </div>
-
-        {/* Right Column: APMS 2.0 & 2026 Cycle */}
-        <div style={{ flex: 1.3, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-          {/* APMS 2.0 System Go-Live */}
-          <div style={{ background: "#fff", borderRadius: "20px", border: "1.5px solid #1a5276", overflow: "hidden", boxShadow: "0 15px 35px rgba(26, 82, 118, 0.08)" }}>
-            <div style={{ background: "linear-gradient(90deg, #1a5276 0%, #2980b9 100%)", color: "#fff", padding: "12px 20px", fontSize: "0.95rem", fontWeight: 900, letterSpacing: "1px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span>APMS 2.0 (SYSTEM DEVELOPMENT)</span>
-              <Settings size={18} />
-            </div>
-            <table style={{ width: "100%", fontSize: "0.8rem", borderCollapse: "collapse" }}>
-              <tbody>
-                <tr style={{ background: "#f8fafc" }}>
-                  <td style={{ textAlign: "center", padding: "10px", width: "10%", fontWeight: 800, color: "#1a5276" }}>1</td>
-                  <td style={{ padding: "10px", fontWeight: 800, color: "#1e293b" }}>User Acceptance Test (UAT)</td>
-                  <td style={{ padding: "10px", textAlign: "center", fontWeight: 800, color: "#1a5276" }}>25-26 Feb 2026</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td colSpan={2} style={{ padding: "8px 25px", color: "#475569", fontSize: "0.75rem" }}>
-                    <div style={{ display: "flex", gap: "20px" }}>
-                      <span>• PTPN I (Reg 3, 5) & PT SGN</span>
-                      <span>• PTPN IV (Reg 1, 2)</span>
-                    </div>
-                  </td>
-                </tr>
-                {[
-                  { n: 2, i: "Sosialisasi & Training APMS 2.0 (Online)", d: "10 Mar 2026", highlight: false },
-                  { n: 3, i: "Go-live Readiness Check", d: "12 Mar 2026", highlight: false },
-                  { n: 4, i: "GO-LIVE APMS 2.0", d: "30 MAR 2026", highlight: true }
-                ].map((row, i) => (
-                  <tr key={i} style={{ borderTop: "1px solid #f1f5f9", background: row.highlight ? "rgba(34, 197, 94, 0.05)" : "transparent" }}>
-                    <td style={{ textAlign: "center", padding: "10px", fontWeight: 800, color: "#1a5276" }}>{row.n}</td>
-                    <td style={{ padding: "10px", fontWeight: 700, color: row.highlight ? "#065f46" : "#1e293b" }}>{row.i}</td>
-                    <td style={{ textAlign: "center", padding: "10px", fontWeight: 900, color: row.highlight ? "#065f46" : "#1a5276" }}>{row.d}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Individual Performance 2026 Cycle */}
-          <div style={{ background: "#fff", borderRadius: "20px", border: "1px solid #e2e8f0", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
-            <div style={{ background: "#f8fafc", color: "#1e293b", padding: "10px 20px", fontSize: "0.9rem", fontWeight: 800, borderBottom: "1px solid #e2e8f0", display: "flex", alignItems: "center", gap: "10px" }}>
-              <Target size={18} color="#065f46" />
-              SIKLUS PENGUKURAN KINERJA 2026
-            </div>
-            <div style={{ maxHeight: "300px", overflowY: "auto", padding: "5px" }}>
-              <table style={{ width: "100%", fontSize: "0.75rem", borderCollapse: "collapse" }}>
-                <tbody>
-                  {[
-                    { n: 1, i: "Surat Pelaksanaan 2026", d: "12 Mar 26", c: "#1e293b" },
-                    { n: 2, i: "KSK (Kesepakatan Sasaran Kerja)", d: "Apr 26", c: "#1a5276" },
-                    { n: 3, i: "Review Bimbingan Kerja (RBK) TW I", d: "Mei 26", c: "#1a5276" },
-                    { n: 4, i: "Pengukuran ONE (Attitude) Sem. I", d: "Jul 26", c: "#065f46" },
-                    { n: 5, i: "RBK TW II & TW III", d: "Ags-Nov 26", c: "#1a5276" },
-                    { n: 6, i: "Pengukuran ONE (Attitude) Sem. II", d: "Jan 27", c: "#065f46" },
-                    { n: 7, i: "Performance Appraisal (Final)", d: "Feb 27", c: "#1e293b" }
-                  ].map((row, i) => (
-                    <tr key={i} style={{ borderBottom: "1px solid #f1f5f9" }}>
-                      <td style={{ textAlign: "center", padding: "8px", width: "10%", fontWeight: 800, color: "#94a3b8" }}>{row.n}</td>
-                      <td style={{ padding: "8px", fontWeight: 700, color: "#334155" }}>{row.i}</td>
-                      <td style={{ textAlign: "right", padding: "8px 20px", fontWeight: 900, color: row.c }}>{row.d}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <SlideFooter />
-    </div>
-  );
-}
 
 
 
@@ -6321,8 +6203,7 @@ const slides = [
 
   // BAGIAN 5 — IMPLEMENTATION & ROADMAP
   { title: "§ Implementasi & Roadmap", component: SlideSectionImplementation },
-  { title: "Update PM Mar 2026", component: SlidePerformanceUpdate2026 },
-  { title: "Timeline", component: SlideTimeline },
+  { title: "Update PM & Timeline Implementasi", component: SlidePerformanceUpdate2026 },
   { title: "Project Charter", component: SlideProjectCharter },
   { title: "Status ProTrack", component: SlideProTrackStatus },
   { title: "Governance & Tata Kelola", component: SlideGovernance },

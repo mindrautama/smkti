@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = path.resolve(__dirname, "../APMS_Framework_2026.pdf");
 const BASE_URL = "http://localhost:3000";
-const TOTAL_SLIDES = 54;
+const TOTAL_SLIDES = 53;
 
 async function exportPDF() {
   console.log("🚀 Launching browser...");
