@@ -1621,11 +1621,11 @@ function SlideStrategicAlignment() {
   // Helper: Stacked functional box (IT/HR/Fin layers)
   const StackedBox = ({ label }: { label: string }) => (
     <div style={{ position: "relative", width: "145px", height: "110px", flexShrink: 0 }}>
-      {/* IT (back) */}
-      <div style={{ position: "absolute", top: 0, left: "20px", width: "125px", height: "100px", background: "#b45309", display: "flex", alignItems: "flex-start", justifyContent: "flex-end", padding: "4px 6px", fontWeight: 800, fontSize: "0.7rem", color: "#fff" }}>IT</div>
-      {/* HR (mid) */}
-      <div style={{ position: "absolute", top: "6px", left: "10px", width: "125px", height: "100px", background: "#4ade80", display: "flex", alignItems: "flex-start", justifyContent: "flex-end", padding: "4px 6px", fontWeight: 800, fontSize: "0.7rem", color: "#fff" }}>HR</div>
-      {/* Fin (front, main) */}
+      {/* IT (back - yellow) */}
+      <div style={{ position: "absolute", top: 0, left: "20px", width: "125px", height: "100px", background: "#ca8a04", display: "flex", alignItems: "flex-start", justifyContent: "flex-end", padding: "4px 6px", fontWeight: 800, fontSize: "0.7rem", color: "#fff" }}>IT</div>
+      {/* HR (mid - olive/dark green) */}
+      <div style={{ position: "absolute", top: "6px", left: "10px", width: "125px", height: "100px", background: "#4d7c0f", display: "flex", alignItems: "flex-start", justifyContent: "flex-end", padding: "4px 6px", fontWeight: 800, fontSize: "0.7rem", color: "#fff" }}>HR</div>
+      {/* Fin (front, main - dark teal) */}
       <div style={{ position: "absolute", top: "12px", left: "0", width: "125px", height: "100px", background: "#1a5276", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", fontWeight: 700, fontSize: "0.85rem", lineHeight: 1.3 }}>
         <span style={{ position: "absolute", top: "4px", right: "6px", color: "#facc15", fontWeight: 900, fontSize: "0.75rem" }}>Fin</span>
         {label}
@@ -1734,32 +1734,28 @@ function SlideStrategicAlignment() {
             {/* Left spacer (aligns with Stakeholder width) */}
             <div style={{ width: "110px", flexShrink: 0 }} />
 
-            {/* Center connector: arrows 4 (down) and SBU Strategy Map (up) */}
+            {/* Center connector: arrow 4 (down only, from Corporate to SBU) */}
             <div style={{ flex: 1, display: "flex", justifyContent: "space-around", padding: "0 8px" }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2 }}>Enterprise<br />Strategy Map</div>
                 <Badge n="4" style={{ margin: "2px 0" }} />
-                <div style={{ width: "2px", height: "20px", background: "#16a34a" }} />
+                <div style={{ width: "2px", height: "40px", background: "#16a34a" }} />
                 <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,2 5,9 9,2" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
-                <div style={{ width: "2px", height: "20px", background: "#16a34a" }} />
-                <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,8 5,1 9,8" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
-                <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2 }}>SBU<br />Strategy Map</div>
+                <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2, marginTop: "2px" }}>SBU<br />Strategy Map</div>
               </div>
             </div>
 
             {/* Middle-right spacer — aligns with Enterprise Strategy Update width */}
             <div style={{ width: "110px", flexShrink: 0 }} />
 
-            {/* Right connector: arrows 8 (down) and BU Functional Strategy Map (up) */}
+            {/* Right connector: arrow 8 (up only, from SBU Support Unit to Corporate Functional) */}
             <div style={{ flex: 1, display: "flex", justifyContent: "space-around", padding: "0 8px" }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2 }}>Enterprise<br />Functional<br />Strategy Map</div>
                 <Badge n="8" style={{ margin: "2px 0" }} />
-                <div style={{ width: "2px", height: "20px", background: "#16a34a" }} />
-                <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,2 5,9 9,2" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
-                <div style={{ width: "2px", height: "20px", background: "#16a34a" }} />
+                <div style={{ width: "2px", height: "40px", background: "#16a34a" }} />
                 <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,8 5,1 9,8" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
-                <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2 }}>BU<br />Functional<br />Strategy Map</div>
+                <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2, marginTop: "2px" }}>BU<br />Functional<br />Strategy Map</div>
               </div>
             </div>
 
