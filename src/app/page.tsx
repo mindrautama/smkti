@@ -74,6 +74,130 @@ function AccentShapes() {
 }
 
 /* =============================
+   EXECUTIVE SUMMARY
+   ============================= */
+function SlideExecutiveSummary() {
+  const summaryItems = [
+    {
+      label: "Latar Belakang",
+      icon: <FileText size={24} />,
+      content: "Transformasi pengelolaan kinerja PTPN Group yang terintegrasi dan berbasis data, menggantikan sistem manual yang terdesentralisasi.",
+      color: "#0e6655"
+    },
+    {
+      label: "Lingkup Entitas",
+      icon: <Factory size={24} />,
+      content: "4 entitas di 2026 (PTPN III Holding, PTPN I, PTPN IV, SGN) → seluruh PTPN Group di 2027.",
+      color: "#1a5276"
+    },
+    {
+      label: "Kerangka Utama",
+      icon: <Target size={24} />,
+      content: "BSC → Scorecard (Korporat, Direktorat, Divisi) → KPI (Individu) dengan cascading dari strategi ke operasional.",
+      color: "#0e6655"
+    },
+    {
+      label: "Metodologi Pendukung",
+      icon: <Settings size={24} />,
+      content: "Lean / BPI untuk optimasi proses bisnis yang berfokus pada Productivity, Cost, dan Speed (PCS).",
+      color: "#f97316"
+    },
+    {
+      label: "Timeline Proyek",
+      icon: <Calendar size={24} />,
+      content: "Mulai Maret 2026, durasi 56 minggu (14 bulan). Deliverable: 9 output utama termasuk Perdir, Sistem IT, dan Proses Bisnis.",
+      color: "#1a5276"
+    },
+    {
+      label: "Siklus Review",
+      icon: <Gauge size={24} />,
+      content: "Quarterly Review di 2026 (fase adaptasi) → Monthly Review di 2027+ untuk seluruh PTPN Group.",
+      color: "#0e6655"
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "2.5rem 4rem", background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0e6655 100%)", position: "relative", overflow: "hidden" }}>
+      {/* Decorative Elements */}
+      <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "400px", height: "400px", borderRadius: "50%", background: "rgba(14, 102, 85, 0.15)", filter: "blur(60px)" }} />
+      <div style={{ position: "absolute", bottom: "-150px", left: "-100px", width: "500px", height: "500px", borderRadius: "50%", background: "rgba(26, 82, 118, 0.1)", filter: "blur(80px)" }} />
+
+      <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column" }}>
+        {/* Header */}
+        <div style={{ marginBottom: "2.5rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+          <div style={{ borderLeft: "8px solid #fbbf24", paddingLeft: "1.5rem" }}>
+            <h1 style={{ fontSize: "3.5rem", color: "#fff", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+              <em>Executive Summary</em>
+            </h1>
+            <p style={{ fontSize: "1.2rem", color: "#6ee7b7", fontWeight: 700, marginTop: "0.5rem", textTransform: "uppercase", letterSpacing: "2px" }}>
+              Framework SMKTI 2026 — Ringkasan untuk Direksi
+            </p>
+          </div>
+          <div style={{ background: "rgba(251, 191, 36, 0.15)", border: "1px solid rgba(251, 191, 36, 0.3)", padding: "8px 20px", borderRadius: "12px" }}>
+            <span style={{ color: "#fbbf24", fontWeight: 800, fontSize: "0.9rem", letterSpacing: "1px" }}>CONFIDENTIAL</span>
+          </div>
+        </div>
+
+        {/* Grid Content */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.2rem", flex: 1 }}>
+          {summaryItems.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              style={{
+                background: "rgba(255, 255, 255, 0.06)",
+                backdropFilter: "blur(12px)",
+                borderRadius: "24px",
+                padding: "2rem",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: `${item.color}25`, color: item.color === "#f97316" ? "#fbbf24" : "#6ee7b7", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  {item.icon}
+                </div>
+                <h3 style={{ fontSize: "1.2rem", fontWeight: 900, color: "#fff", margin: 0, letterSpacing: "0.5px" }}>{item.label}</h3>
+              </div>
+              <p style={{ fontSize: "1.05rem", color: "rgba(255, 255, 255, 0.8)", lineHeight: 1.5, margin: 0, fontWeight: 500, flex: 1 }}>
+                {item.content}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Key Ask Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          style={{
+            marginTop: "1.5rem",
+            background: "linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(249, 115, 22, 0.1) 100%)",
+            borderRadius: "20px",
+            padding: "1.5rem 2.5rem",
+            border: "1px solid rgba(251, 191, 36, 0.25)",
+            display: "flex",
+            alignItems: "center",
+            gap: "2rem"
+          }}
+        >
+          <div style={{ background: "#fbbf24", color: "#0f172a", padding: "12px 24px", borderRadius: "14px", fontWeight: 900, fontSize: "1rem", flexShrink: 0, letterSpacing: "1px" }}>KEY ASK</div>
+          <p style={{ fontSize: "1.15rem", fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1.5 }}>
+            Persetujuan Direksi atas <strong style={{ color: "#fbbf24" }}>Framework SMKTI 2026</strong>, timeline implementasi, entitas target, serta <strong style={{ color: "#6ee7b7" }}>alokasi sumber daya</strong> untuk transformasi sistem manajemen kinerja terintegrasi.
+          </p>
+        </motion.div>
+      </div>
+      <SlideFooter />
+    </div>
+  );
+}
+
+/* =============================
    AGENDA / TABLE OF CONTENTS
    ============================= */
 function SlideAgenda() {
@@ -5682,6 +5806,7 @@ function SlideReviewCycleStrategy() {
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   { title: "Cover", component: SlideCover },
+  { title: "Executive Summary", component: SlideExecutiveSummary },
   { title: "Agenda", component: SlideAgenda },
   { title: "Strategic Drivers", component: SlideLatar },
   { title: "Our Big Dream RJPP 2026-2030", component: SlideBigDream },
