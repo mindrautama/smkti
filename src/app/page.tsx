@@ -4622,58 +4622,145 @@ function SlideWhatIsLean() {
 }
 
 function SlideLeanPhilosophy() {
+  const pillars = [
+    {
+      icon: <Target size={28} />,
+      title: "Nilai Pelanggan",
+      subtitle: "Customer Value First",
+      desc: "Semua aktivitas harus menciptakan nilai bagi pelanggan (internal & eksternal). Jika tidak memberi nilai tambah — itu adalah pemborosan.",
+      color: "#0e6655",
+      accent: "#10b981"
+    },
+    {
+      icon: <X size={28} />,
+      title: "Eliminasi MUDA",
+      subtitle: "Hapus Pemborosan",
+      desc: "MUDA (無駄) — istilah Jepang untuk segala sesuatu yang menambah biaya tanpa menambah nilai. Lean mengidentifikasi dan menghapus 8 jenis muda secara sistematis.",
+      color: "#f97316",
+      accent: "#fbbf24"
+    },
+    {
+      icon: <TrendingUp size={28} />,
+      title: "Kaizen",
+      subtitle: "Perbaikan Berkelanjutan",
+      desc: "Budaya perbaikan kecil yang konsisten setiap hari. Tidak menunggu perubahan besar — setiap orang berkontribusi menyempurnakan proses yang dijalankan.",
+      color: "#1a5276",
+      accent: "#3b82f6"
+    }
+  ];
+
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-        <div>
-          <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#0e6655" }}>PHILOSOPHY OF LEAN</h1>
-          <div style={{ width: "60px", height: "4px", background: "#f97316", marginTop: "8px" }} />
-        </div>
-        <div style={{ background: "#0e6655", color: "#fff", padding: "4px 12px", borderRadius: "10px", fontSize: "0.8rem", fontWeight: 900 }}>PAGE 16</div>
+      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "3.2rem", color: "#0e6655", marginBottom: "0.3rem" }}>
+          <em>Filosofi Lean</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.2rem", color: "#64748b", fontWeight: 600 }}>
+          Prinsip dasar yang melandasi metodologi perbaikan proses bisnis
+        </p>
       </div>
 
-      <div style={{ display: "flex", gap: "4rem", alignItems: "center", justifyContent: "center", flex: 1 }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        {/* Hero Tagline */}
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           style={{
-            background: "#fff",
-            border: "1px solid #e2e8f0",
-            padding: "2rem",
-            borderRadius: "12px",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
-            textAlign: "center"
+            background: "linear-gradient(135deg, #064e3b 0%, #0e6655 50%, #1a5276 100%)",
+            borderRadius: "24px",
+            padding: "2.5rem 3rem",
+            color: "#fff",
+            textAlign: "center",
+            position: "relative",
+            overflow: "hidden"
           }}
         >
-          <img
-            src="/images/da_big.png"
-            alt="Da character"
-            style={{ width: "300px", height: "300px", objectFit: "contain" }}
-          />
-          <p style={{ marginTop: "1rem", fontSize: "1.5rem", fontWeight: 900, color: "#1a5276" }}>Da means <span style={{ color: "#0e6655" }}>BIG</span></p>
+          <div style={{ position: "absolute", top: "-60px", left: "-60px", width: "200px", height: "200px", borderRadius: "50%", background: "rgba(255,255,255,0.04)" }} />
+          <div style={{ position: "absolute", bottom: "-40px", right: "-40px", width: "150px", height: "150px", borderRadius: "50%", background: "rgba(255,255,255,0.03)" }} />
+
+          <h2 style={{ fontSize: "2.8rem", fontWeight: 900, margin: "0 0 0.8rem 0", lineHeight: 1.2 }}>
+            Berpikir <span style={{ color: "#fbbf24" }}>BESAR</span>, Bertindak <span style={{ color: "#6ee7b7" }}>CEPAT</span>
+          </h2>
+          <p style={{ fontSize: "1.3rem", fontWeight: 500, opacity: 0.85, margin: 0, maxWidth: "800px", marginLeft: "auto", marginRight: "auto", lineHeight: 1.5 }}>
+            Lean bukan hanya tentang efisiensi — ia adalah <strong>cara berpikir</strong> yang menempatkan pelanggan di pusat setiap keputusan dan menjadikan perbaikan sebagai kebiasaan sehari-hari.
+          </p>
         </motion.div>
 
-        <motion.div
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          style={{ flex: 1 }}
-        >
-          <div style={{ marginBottom: "2.5rem" }}>
-            <h2 style={{ fontSize: "2rem", color: "#475569", fontWeight: 400 }}>
-              Think <span style={{ fontWeight: 900, color: "#0e6655" }}>BIG</span> but Act <span style={{ fontWeight: 900, color: "#10b981" }}>SPEED</span>
-            </h2>
-          </div>
+        {/* 3 Philosophy Pillars */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", flex: 1 }}>
+          {pillars.map((p, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 + i * 0.15 }}
+              style={{
+                background: "#fff",
+                borderRadius: "22px",
+                padding: "2rem",
+                border: "1px solid #f1f5f9",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+                overflow: "hidden"
+              }}
+            >
+              <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "5px", background: p.color }} />
 
-          <div style={{ background: "rgba(16, 185, 129, 0.05)", borderLeft: "6px solid #10b981", padding: "2rem", borderRadius: "0 12px 12px 0" }}>
-            <h3 style={{ fontSize: "1.4rem", color: "#0e6655", fontWeight: 900, marginBottom: "1rem" }}>How to SPEED :</h3>
-            <p style={{ fontSize: "1.2rem", color: "#475569", lineHeight: 1.6, margin: 0 }}>
-              Eliminate <span style={{ fontWeight: 900, color: "#f97316" }}>&ldquo;MUDA&rdquo;</span>. Muda is Japanese word which means everything that add cost without adding any value from customer perspective (Internal & external customer). Founded by Toyota (Taiichi Ohno)
-            </p>
+              <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.2rem" }}>
+                <div style={{
+                  width: "56px",
+                  height: "56px",
+                  borderRadius: "16px",
+                  background: `${p.color}12`,
+                  color: p.color,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}>
+                  {p.icon}
+                </div>
+                <div>
+                  <h3 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#1e293b", margin: 0 }}>{p.title}</h3>
+                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: p.accent, textTransform: "uppercase", letterSpacing: "1px" }}>{p.subtitle}</span>
+                </div>
+              </div>
+
+              <p style={{ fontSize: "1.1rem", color: "#475569", lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+                {p.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom Context Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          style={{
+            background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)",
+            borderRadius: "16px",
+            padding: "1.2rem 2.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "1.5rem",
+            color: "#fff"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
+            <Factory size={22} />
+            <span style={{ fontWeight: 900, fontSize: "1rem", textTransform: "uppercase", letterSpacing: "1px" }}>Konteks PTPN</span>
           </div>
+          <div style={{ width: "1px", height: "35px", background: "rgba(255,255,255,0.15)" }} />
+          <p style={{ fontSize: "1.05rem", fontWeight: 600, margin: 0, lineHeight: 1.4, opacity: 0.9 }}>
+            Dengan kompleksitas operasional perkebunan di seluruh Indonesia, filosofi Lean membantu <strong style={{ color: "#fbbf24" }}>mengurangi pemborosan</strong> di setiap proses — dari kebun hingga kantor — sehingga sumber daya difokuskan pada aktivitas yang benar-benar <strong style={{ color: "#6ee7b7" }}>menciptakan nilai</strong>.
+          </p>
         </motion.div>
       </div>
+
       <SlideFooter />
     </div>
   );
