@@ -1618,191 +1618,205 @@ function SlidePDCACycle() {
 }
 
 function SlideStrategicAlignment() {
+  // Helper: Stacked functional box (IT/HR/Fin layers)
+  const StackedBox = ({ label }: { label: string }) => (
+    <div style={{ position: "relative", width: "145px", height: "110px", flexShrink: 0 }}>
+      {/* IT (back) */}
+      <div style={{ position: "absolute", top: 0, left: "20px", width: "125px", height: "100px", background: "#b45309", display: "flex", alignItems: "flex-start", justifyContent: "flex-end", padding: "4px 6px", fontWeight: 800, fontSize: "0.7rem", color: "#fff" }}>IT</div>
+      {/* HR (mid) */}
+      <div style={{ position: "absolute", top: "6px", left: "10px", width: "125px", height: "100px", background: "#4ade80", display: "flex", alignItems: "flex-start", justifyContent: "flex-end", padding: "4px 6px", fontWeight: 800, fontSize: "0.7rem", color: "#fff" }}>HR</div>
+      {/* Fin (front, main) */}
+      <div style={{ position: "absolute", top: "12px", left: "0", width: "125px", height: "100px", background: "#1a5276", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", fontWeight: 700, fontSize: "0.85rem", lineHeight: 1.3 }}>
+        <span style={{ position: "absolute", top: "4px", right: "6px", color: "#facc15", fontWeight: 900, fontSize: "0.75rem" }}>Fin</span>
+        {label}
+      </div>
+    </div>
+  );
+
+  // Helper: numbered badge
+  const Badge = ({ n, style }: { n: string; style?: React.CSSProperties }) => (
+    <div style={{ background: "#16a34a", color: "#fff", fontWeight: 900, fontSize: "0.8rem", width: "22px", height: "22px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, ...style }}>{n}</div>
+  );
+
+  // Helper: two-headed horizontal arrow with badge + top/bottom labels
+  const HArrow = ({ badge, top, bottom, style }: { badge: string; top?: string; bottom?: string; style?: React.CSSProperties }) => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, position: "relative", ...style }}>
+      {top && <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2, marginBottom: "4px" }}>{top}</div>}
+      <div style={{ display: "flex", alignItems: "center", width: "100%", gap: "4px" }}>
+        {/* left arrowhead */}
+        <svg width="10" height="10" viewBox="0 0 10 10" style={{ flexShrink: 0 }}><polyline points="8,1 1,5 8,9" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
+        <div style={{ flex: 1, height: "2px", background: "#16a34a" }} />
+        <Badge n={badge} />
+        <div style={{ flex: 1, height: "2px", background: "#16a34a" }} />
+        {/* right arrowhead */}
+        <svg width="10" height="10" viewBox="0 0 10 10" style={{ flexShrink: 0 }}><polyline points="2,1 9,5 2,9" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
+      </div>
+      {bottom && <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2, marginTop: "4px" }}>{bottom}</div>}
+    </div>
+  );
+
+  // Helper: vertical arrow with label above/below
+  const VArrow = ({ badge, top, bottom, dir = "down", style }: { badge: string; top?: string; bottom?: string; dir?: "up" | "down"; style?: React.CSSProperties }) => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", ...style }}>
+      {top && <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2, marginBottom: "2px" }}>{top}</div>}
+      {dir === "up" && <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,8 5,1 9,8" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>}
+      <div style={{ width: "2px", flex: "1 0 24px", background: "#16a34a" }} />
+      <Badge n={badge} />
+      <div style={{ width: "2px", flex: "1 0 24px", background: "#16a34a" }} />
+      {dir === "down" && <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,2 5,9 9,2" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>}
+      {bottom && <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2, marginTop: "2px" }}>{bottom}</div>}
+    </div>
+  );
+
+  // Helper for one-headed horizontal arrow with badge + labels (left or right side going to SBU)
+  const OneHeadArrowLeft = ({ badge, label }: { badge: string; label?: string }) => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+      <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2, marginBottom: "4px" }}>{label}</div>
+      <div style={{ display: "flex", alignItems: "center", width: "100%", gap: "4px" }}>
+        <svg width="10" height="10" viewBox="0 0 10 10" style={{ flexShrink: 0 }}><polyline points="8,1 1,5 8,9" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
+        <div style={{ flex: 1, height: "2px", background: "#16a34a" }} />
+        <Badge n={badge} />
+      </div>
+    </div>
+  );
+  const OneHeadArrowRight = ({ badge, label }: { badge: string; label?: string }) => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+      <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2, marginBottom: "4px" }}>{label}</div>
+      <div style={{ display: "flex", alignItems: "center", width: "100%", gap: "4px" }}>
+        <Badge n={badge} />
+        <div style={{ flex: 1, height: "2px", background: "#16a34a" }} />
+        <svg width="10" height="10" viewBox="0 0 10 10" style={{ flexShrink: 0 }}><polyline points="2,1 9,5 2,9" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
+      </div>
+    </div>
+  );
+
+  const blockStyle: React.CSSProperties = { background: "#1a5276", color: "#fff", fontWeight: 700, fontSize: "0.9rem", textAlign: "center", lineHeight: 1.3, display: "flex", alignItems: "center", justifyContent: "center", padding: "0.6rem 0.8rem", flexShrink: 0 };
+
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem", background: "#fff" }}>
-      <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.2rem", color: "#16a34a", textTransform: "uppercase", fontWeight: 800 }}>
-          Alignment Between Corporate and Business Unit
-        </h1>
+    <div className="slide" style={{ padding: "0.8rem 1rem 0.5rem", background: "#fff", overflow: "hidden" }}>
+      {/* Title */}
+      <div style={{ textAlign: "center", marginBottom: "0.5rem" }}>
+        <h1 style={{ fontSize: "1.6rem", color: "#16a34a", textTransform: "uppercase", fontWeight: 900, fontStyle: "italic", margin: 0 }}>Alignment Between Corporate and Business Unit</h1>
       </div>
 
-      {/* Main Diagram */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.5rem", position: "relative", width: "85%", margin: "0 auto" }}>
-        {/* Top dashed container: Corporate Planning Process */}
-        <div style={{ position: "relative", border: "2px dashed #9f1239", borderRadius: "24px", padding: "1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      {/* Main content: diagram + right labels */}
+      <div style={{ display: "flex", gap: "1rem", alignItems: "stretch", flex: 1 }}>
+        {/* DIAGRAM AREA */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0" }}>
 
-          {/* Stakeholder */}
-          <div style={{ background: "#1a5276", color: "#fff", padding: "1.5rem", width: "160px", textAlign: "center", fontWeight: 700, zIndex: 2 }}>
-            Stakeholder
+          {/* ===== TOP BOX: Corporate Planning Process ===== */}
+          <div style={{ border: "2px dashed #be123c", borderRadius: "16px", padding: "1.5rem 1rem 1rem", position: "relative" }}>
+            {/* Corporate Support Unit label above stacked box */}
+            <div style={{ position: "absolute", top: "0px", right: "140px", fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b" }}>Corporate<br />Support Unit</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "0" }}>
+              {/* Stakeholder */}
+              <div style={{ ...blockStyle, width: "110px", height: "80px" }}>Stakeholder</div>
+
+              {/* Arrow 1 */}
+              <HArrow badge="1" top="Enterprise&#10;Strategy Map" bottom="Stakeeholder&#10;expectation" style={{ padding: "0 8px" }} />
+
+              {/* Enterprise Strategy Update (box 2) */}
+              <div style={{ position: "relative", flexShrink: 0 }}>
+                <div style={{ position: "absolute", top: "-12px", left: "50%", transform: "translateX(-50%)", background: "#78716c", color: "#fff", width: "18px", height: "18px", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: "0.75rem" }}>2</div>
+                <div style={{ ...blockStyle, width: "110px", height: "80px" }}>Enterprise<br />Strategy<br />Update</div>
+              </div>
+
+              {/* Arrow 3 */}
+              <HArrow badge="3" top="Enterprise&#10;Strategy Map" bottom="Functional&#10;Strategy Map" style={{ padding: "0 8px" }} />
+
+              {/* Functional Strategy Update stacked */}
+              <StackedBox label={"Functional\nStrategy\nUpdate"} />
+            </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, position: "relative" }}>
-            <div style={{ fontSize: "0.75rem", fontWeight: 800, marginBottom: "8px", position: "absolute", top: "-20px" }}>Enterprise<br />Strategy Map</div>
-            <div style={{ display: "flex", alignItems: "center", width: "100%", justifyContent: "center" }}>
-              <div style={{ width: "30%", height: "2px", background: "#16a34a", position: "relative" }}>
-                <div style={{ position: "absolute", left: 0, top: "-4px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderLeft: "2px solid #16a34a", transform: "rotate(-45deg)" }} />
-              </div>
-              <div style={{ background: "#16a34a", color: "#fff", padding: "2px 8px", fontWeight: 700, fontSize: "0.8rem", margin: "0 10px" }}>1</div>
-              <div style={{ width: "30%", height: "2px", background: "#16a34a", position: "relative" }}>
-                <div style={{ position: "absolute", right: 0, top: "-4px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderRight: "2px solid #16a34a", transform: "rotate(45deg)" }} />
+          {/* ===== MIDDLE CONNECTORS ===== */}
+          <div style={{ display: "flex", alignItems: "stretch", padding: "0 0" }}>
+            {/* Left spacer (aligns with Stakeholder width) */}
+            <div style={{ width: "110px", flexShrink: 0 }} />
+
+            {/* Center connector: arrows 4 (down) and SBU Strategy Map (up) */}
+            <div style={{ flex: 1, display: "flex", justifyContent: "space-around", padding: "0 8px" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2 }}>Enterprise<br />Strategy Map</div>
+                <Badge n="4" style={{ margin: "2px 0" }} />
+                <div style={{ width: "2px", height: "20px", background: "#16a34a" }} />
+                <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,2 5,9 9,2" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
+                <div style={{ width: "2px", height: "20px", background: "#16a34a" }} />
+                <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,8 5,1 9,8" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
+                <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2 }}>SBU<br />Strategy Map</div>
               </div>
             </div>
-            <div style={{ fontSize: "0.75rem", fontWeight: 800, marginTop: "8px", position: "absolute", bottom: "-30px", textAlign: "center" }}>Stakeholder<br />expectation</div>
-          </div>
 
-          {/* Enterprise Strategy Update */}
-          <div style={{ background: "#1a5276", color: "#fff", padding: "1.5rem", width: "160px", textAlign: "center", fontWeight: 700, position: "relative", zIndex: 2 }}>
-            <div style={{ position: "absolute", top: "-10px", left: "50%", transform: "translateX(-50%)", background: "#78716c", color: "#fff", padding: "2px 8px", fontSize: "0.8rem", fontWeight: 700 }}>2</div>
-            Enterprise<br />Strategy<br />Update
-          </div>
+            {/* Middle-right spacer — aligns with Enterprise Strategy Update width */}
+            <div style={{ width: "110px", flexShrink: 0 }} />
 
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, position: "relative" }}>
-            <div style={{ fontSize: "0.75rem", fontWeight: 800, marginBottom: "8px", position: "absolute", top: "-20px" }}>Enterprise<br />Strategy Map</div>
-            <div style={{ display: "flex", alignItems: "center", width: "100%", justifyContent: "center" }}>
-              <div style={{ width: "30%", height: "2px", background: "#16a34a", position: "relative" }}>
-                <div style={{ position: "absolute", left: 0, top: "-4px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderLeft: "2px solid #16a34a", transform: "rotate(-45deg)" }} />
-              </div>
-              <div style={{ background: "#16a34a", color: "#fff", padding: "2px 8px", fontWeight: 700, fontSize: "0.8rem", margin: "0 10px" }}>3</div>
-              <div style={{ width: "30%", height: "2px", background: "#16a34a", position: "relative" }}>
-                <div style={{ position: "absolute", right: 0, top: "-4px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderRight: "2px solid #16a34a", transform: "rotate(45deg)" }} />
+            {/* Right connector: arrows 8 (down) and BU Functional Strategy Map (up) */}
+            <div style={{ flex: 1, display: "flex", justifyContent: "space-around", padding: "0 8px" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2 }}>Enterprise<br />Functional<br />Strategy Map</div>
+                <Badge n="8" style={{ margin: "2px 0" }} />
+                <div style={{ width: "2px", height: "20px", background: "#16a34a" }} />
+                <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,2 5,9 9,2" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
+                <div style={{ width: "2px", height: "20px", background: "#16a34a" }} />
+                <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1,8 5,1 9,8" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinejoin="round" /></svg>
+                <div style={{ fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b", lineHeight: 1.2 }}>BU<br />Functional<br />Strategy Map</div>
               </div>
             </div>
-            <div style={{ fontSize: "0.75rem", fontWeight: 800, marginTop: "8px", position: "absolute", bottom: "-20px" }}>Functional<br />Strategy Map</div>
+
+            {/* Right spacer (aligns with StackedBox) */}
+            <div style={{ width: "145px", flexShrink: 0 }} />
           </div>
 
-          {/* Functional Strategy Update Stacked */}
-          <div style={{ position: "relative", width: "160px", height: "100px", zIndex: 2 }}>
-            <div style={{ position: "absolute", top: "-15px", left: "30px", background: "#eab308", color: "#fff", padding: "0.5rem", width: "150px", height: "100px", textAlign: "right", fontWeight: 800, fontSize: "0.8rem" }}>IT</div>
-            <div style={{ position: "absolute", top: "-5px", left: "15px", background: "#84cc16", color: "#fff", padding: "0.5rem", width: "150px", height: "100px", textAlign: "right", fontWeight: 800, fontSize: "0.8rem" }}>HR</div>
-            <div style={{ position: "absolute", top: "5px", left: "0", background: "#1a5276", color: "#fff", padding: "1.5rem 1rem", width: "150px", height: "100px", textAlign: "center", fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <div style={{ position: "absolute", top: "5px", right: "5px", fontSize: "0.8rem", color: "#facc15", fontWeight: 800 }}>Fin</div>
-              Functional<br />Strategy<br />Update
+          {/* ===== BOTTOM BOX: Integrated Planning Process ===== */}
+          <div style={{ border: "2px dashed #be123c", borderRadius: "16px", padding: "1rem 1rem 1.5rem", position: "relative" }}>
+            {/* Support Unit label below stacked box */}
+            <div style={{ display: "flex", alignItems: "center", gap: "0" }}>
+              {/* Customers / Vendors */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px", width: "110px", flexShrink: 0 }}>
+                <div style={{ ...blockStyle, height: "36px", fontSize: "0.8rem" }}>Customers</div>
+                <div style={{ ...blockStyle, height: "36px", fontSize: "0.8rem" }}>Vendors /<br />Alliances</div>
+              </div>
+
+              {/* Arrows 6 & 7 */}
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "6px", padding: "0 8px" }}>
+                <OneHeadArrowLeft badge="6" />
+                <OneHeadArrowRight badge="7" />
+              </div>
+
+              {/* SBU Strategy Update */}
+              <div style={{ ...blockStyle, width: "110px", height: "80px" }}>SBU<br />Strategy<br />Update</div>
+
+              {/* Arrow 5 */}
+              <HArrow badge="5" top="SBU&#10;Strategy Map" bottom="Support Unit&#10;Strategy Map" style={{ padding: "0 8px" }} />
+
+              {/* Support Unit Strategy Update stacked */}
+              <StackedBox label={"Support Unit\nStrategy\nUpdate"} />
             </div>
-            <div style={{ position: "absolute", top: "-40px", left: "50px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center" }}>Corporate<br />Support Unit</div>
+            <div style={{ position: "absolute", bottom: "4px", right: "148px", fontSize: "0.65rem", fontWeight: 700, textAlign: "center", color: "#1e293b" }}>Support Unit</div>
           </div>
+        </div>
 
-          {/* Label outside right */}
-          <div style={{ position: "absolute", right: "-120px", top: "50%", transform: "translateY(-50%)", fontWeight: 800, color: "#1e293b", fontSize: "0.9rem" }}>
+        {/* RIGHT LABELS */}
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: "130px", flexShrink: 0, paddingTop: "10px", paddingBottom: "10px" }}>
+          <div style={{ fontWeight: 800, fontSize: "0.9rem", color: "#1e293b", lineHeight: 1.4, textAlign: "left" }}>
             Corporate<br />Planning<br />Process
           </div>
-        </div>
-
-        {/* Vertical connectors space */}
-        <div style={{ position: "relative", height: "120px" }}>
-          {/* Center block downwards */}
-          <div style={{ position: "absolute", left: "calc(160px + 60px)", top: 0, width: "calc(100% - 320px - 120px)", height: "100%", pointerEvents: "none" }}>
-            {/* Arrow 4 down */}
-            <div style={{ position: "absolute", left: "10%", top: "10px" }}>
-              <div style={{ fontSize: "0.7rem", fontWeight: 800, textAlign: "center", marginBottom: "4px" }}>Enterprise<br />Strategy Map</div>
-              <div style={{ width: "2px", height: "50px", background: "#16a34a", margin: "0 auto", position: "relative" }}>
-                <div style={{ position: "absolute", bottom: "-2px", left: "-3px", width: "8px", height: "8px", borderBottom: "2px solid #16a34a", borderRight: "2px solid #16a34a", transform: "rotate(45deg)" }} />
-              </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+            <div style={{ fontWeight: 800, fontSize: "0.9rem", color: "#1e293b", lineHeight: 1.4, textAlign: "left" }}>
+              Integrated<br />Planning<br />Process
             </div>
-            <div style={{ position: "absolute", left: "20%", top: "40px", background: "#16a34a", color: "#fff", padding: "2px 8px", fontWeight: 700, fontSize: "0.8rem" }}>4</div>
-
-            {/* Arrow up from SBU */}
-            <div style={{ position: "absolute", left: "30%", bottom: "10px" }}>
-              <div style={{ width: "2px", height: "50px", background: "#16a34a", margin: "0 auto", position: "relative" }}>
-                <div style={{ position: "absolute", top: "-2px", left: "-3px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderLeft: "2px solid #16a34a", transform: "rotate(45deg)" }} />
-              </div>
-              <div style={{ fontSize: "0.7rem", fontWeight: 800, textAlign: "center", marginTop: "4px" }}>SBU<br />Strategy Map</div>
-            </div>
-
-            {/* Right side arrows */}
-            <div style={{ position: "absolute", right: "30%", top: "10px" }}>
-              <div style={{ fontSize: "0.7rem", fontWeight: 800, textAlign: "center", marginBottom: "4px" }}>Enterprise<br />Functional<br />Strategy Map</div>
-              <div style={{ width: "2px", height: "40px", background: "#16a34a", margin: "0 auto", position: "relative" }}>
-                <div style={{ position: "absolute", bottom: "-2px", left: "-3px", width: "8px", height: "8px", borderBottom: "2px solid #16a34a", borderRight: "2px solid #16a34a", transform: "rotate(45deg)" }} />
-              </div>
-            </div>
-
-            <div style={{ position: "absolute", right: "20%", top: "40px", background: "#16a34a", color: "#fff", padding: "2px 8px", fontWeight: 700, fontSize: "0.8rem" }}>8</div>
-
-            <div style={{ position: "absolute", right: "10%", bottom: "10px" }}>
-              <div style={{ width: "2px", height: "50px", background: "#16a34a", margin: "0 auto", position: "relative" }}>
-                <div style={{ position: "absolute", top: "-2px", left: "-3px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderLeft: "2px solid #16a34a", transform: "rotate(45deg)" }} />
-              </div>
-              <div style={{ fontSize: "0.7rem", fontWeight: 800, textAlign: "center", marginTop: "4px" }}>BU<br />Functional<br />Strategy Map</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div style={{ width: "18px", height: "18px", background: "#16a34a", flexShrink: 0 }} />
+              <div style={{ fontWeight: 800, fontSize: "0.8rem", color: "#1e293b" }}>Synergy<br />Checkpoint</div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom dashed container: Integrated Planning Process */}
-        <div style={{ position: "relative", border: "2px dashed #9f1239", borderRadius: "24px", padding: "1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-
-          {/* Customers / Vendors */}
-          <div style={{ width: "160px", display: "flex", flexDirection: "column", gap: "10px", zIndex: 2 }}>
-            <div style={{ background: "#1a5276", color: "#fff", padding: "0.8rem", textAlign: "center", fontWeight: 700 }}>
-              Customers
-            </div>
-            <div style={{ background: "#1a5276", color: "#fff", padding: "0.8rem", textAlign: "center", fontWeight: 700 }}>
-              Vendors /<br />Alliances
-            </div>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, position: "relative", height: "100px", justifyContent: "space-between" }}>
-            <div style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", marginTop: "10px" }}>
-              <div style={{ background: "#16a34a", color: "#fff", padding: "2px 8px", fontWeight: 700, fontSize: "0.8rem", margin: "0 10px", zIndex: 2 }}>6</div>
-              <div style={{ width: "50%", height: "2px", background: "#16a34a", position: "absolute", right: "25%" }}>
-                <div style={{ position: "absolute", left: 0, top: "-4px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderLeft: "2px solid #16a34a", transform: "rotate(-45deg)" }} />
-              </div>
-            </div>
-
-            <div style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", marginBottom: "10px" }}>
-              <div style={{ background: "#16a34a", color: "#fff", padding: "2px 8px", fontWeight: 700, fontSize: "0.8rem", margin: "0 10px", zIndex: 2 }}>7</div>
-              <div style={{ width: "50%", height: "2px", background: "#16a34a", position: "absolute", right: "25%" }}>
-                <div style={{ position: "absolute", right: 0, top: "-4px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderRight: "2px solid #16a34a", transform: "rotate(45deg)" }} />
-              </div>
-            </div>
-          </div>
-
-          {/* SBU Strategy Update */}
-          <div style={{ background: "#1a5276", color: "#fff", padding: "1.5rem", width: "160px", textAlign: "center", fontWeight: 700, height: "100px", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 2 }}>
-            SBU<br />Strategy<br />Update
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, position: "relative" }}>
-            <div style={{ fontSize: "0.75rem", fontWeight: 800, marginBottom: "8px", position: "absolute", top: "-20px" }}>SBU Strategy Map</div>
-            <div style={{ display: "flex", alignItems: "center", width: "100%", justifyContent: "center" }}>
-              <div style={{ width: "30%", height: "2px", background: "#16a34a", position: "relative" }}>
-                <div style={{ position: "absolute", left: 0, top: "-4px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderLeft: "2px solid #16a34a", transform: "rotate(-45deg)" }} />
-              </div>
-              <div style={{ background: "#16a34a", color: "#fff", padding: "2px 8px", fontWeight: 700, fontSize: "0.8rem", margin: "0 10px" }}>5</div>
-              <div style={{ width: "30%", height: "2px", background: "#16a34a", position: "relative" }}>
-                <div style={{ position: "absolute", right: 0, top: "-4px", width: "8px", height: "8px", borderTop: "2px solid #16a34a", borderRight: "2px solid #16a34a", transform: "rotate(45deg)" }} />
-              </div>
-            </div>
-            <div style={{ fontSize: "0.75rem", fontWeight: 800, marginTop: "8px", position: "absolute", bottom: "-30px", textAlign: "center" }}>Support Unit<br />Strategy Map</div>
-          </div>
-
-          {/* Support Unit Strategy Update Stacked */}
-          <div style={{ position: "relative", width: "160px", height: "100px", zIndex: 2 }}>
-            <div style={{ position: "absolute", top: "-15px", left: "30px", background: "#eab308", color: "#fff", padding: "0.5rem", width: "150px", height: "100px", textAlign: "right", fontWeight: 800, fontSize: "0.8rem" }}>IT</div>
-            <div style={{ position: "absolute", top: "-5px", left: "15px", background: "#84cc16", color: "#fff", padding: "0.5rem", width: "150px", height: "100px", textAlign: "right", fontWeight: 800, fontSize: "0.8rem" }}>HR</div>
-            <div style={{ position: "absolute", top: "5px", left: "0", background: "#1a5276", color: "#fff", padding: "1.5rem 1rem", width: "150px", height: "100px", textAlign: "center", fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <div style={{ position: "absolute", top: "5px", right: "5px", fontSize: "0.8rem", color: "#facc15", fontWeight: 800 }}>Fin</div>
-              Support Unit<br />Strategy<br />Update
-            </div>
-            <div style={{ position: "absolute", bottom: "-30px", left: "40px", fontSize: "0.75rem", fontWeight: 800, textAlign: "center" }}>Support Unit</div>
-          </div>
-
-          {/* Label outside right */}
-          <div style={{ position: "absolute", right: "-120px", top: "50%", transform: "translateY(-50%)", fontWeight: 800, color: "#1e293b", fontSize: "0.9rem" }}>
-            Integrated<br />Planning<br />Process
-          </div>
-        </div>
-
-        {/* Synergy Checkpoint Icon at bottom right */}
-        <div style={{ position: "absolute", bottom: "-20px", right: "-110px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <div style={{ width: "20px", height: "20px", background: "#16a34a" }}></div>
-          <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#16a34a", textAlign: "center", marginTop: "4px" }}>Synergy<br />Checkpoint</div>
         </div>
       </div>
       <SlideFooter />
     </div>
   );
 }
+
 
 function SlideUnitIndividualPerformance() {
   return (
