@@ -350,6 +350,7 @@ function SlidePerformanceUpdate2026() {
         </div>
         <div style={{ textAlign: "right", borderRight: "100px solid #f97316", paddingRight: "1rem" }}>
           <h2 style={{ fontSize: "2rem", color: "#1a5276", margin: 0, fontWeight: 800 }}>Update Performance Management</h2>
+          <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0, fontWeight: 600, fontStyle: "italic" }}>Monitoring Progress — Eksekusi Fase 1</p>
           <p style={{ fontSize: "1.1rem", color: "#0e6655", margin: 0, fontWeight: 700 }}>per 1 Mar 2026, Pukul <span style={{ color: "#f97316" }}>09.00</span></p>
         </div>
       </div>
@@ -4319,6 +4320,108 @@ function SlideSectionClosing() {
   );
 }
 
+/* =============================
+   BRIDGE SLIDE: WHY BPI MATTERS FOR SMKTI
+   ============================= */
+function SlideBPIBridge() {
+  const connections = [
+    {
+      from: "SMKTI 2026",
+      arrow: "mengukur",
+      to: "KPI & Target Karyawan",
+      color: "#0e6655"
+    },
+    {
+      from: "KPI & Target",
+      arrow: "dieksekusi melalui",
+      to: "Proses Bisnis Sehari-hari",
+      color: "#1a5276"
+    },
+    {
+      from: "Proses Bisnis",
+      arrow: "dioptimalkan dengan",
+      to: "Business Process Improvement (Lean)",
+      color: "#e67e22"
+    }
+  ];
+
+  return (
+    <div className="slide" style={{ padding: "3rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #fff 100%)" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "2.5rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.8rem", color: "#1a5276" }}>Mengapa BPI Penting untuk SMKTI?</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>
+          Menghubungkan Sistem Kinerja dengan Perbaikan Proses Berkelanjutan
+        </p>
+      </div>
+
+      {/* Core Logic Flow */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", maxWidth: "900px", margin: "0 auto 3rem" }}>
+        {connections.map((c, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.2 }}
+            style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}
+          >
+            <div style={{ background: c.color, color: "#fff", padding: "16px 24px", borderRadius: "16px", fontWeight: 900, fontSize: "1.1rem", minWidth: "220px", textAlign: "center", boxShadow: `0 8px 20px ${c.color}30` }}>
+              {c.from}
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px" }}>
+              <ArrowRight size={28} color={c.color} />
+              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#94a3b8", fontStyle: "italic", whiteSpace: "nowrap" }}>{c.arrow}</span>
+            </div>
+            <div style={{ flex: 1, background: `${c.color}10`, border: `2px solid ${c.color}30`, padding: "16px 24px", borderRadius: "16px", fontWeight: 800, fontSize: "1.05rem", color: c.color }}>
+              {c.to}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Bottom Insight Row */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5rem" }}>
+        {[
+          { metric: "Productivity", icon: "📈", desc: "Lean meningkatkan output/input ratio → KPI Produktivitas tercapai" },
+          { metric: "Cost", icon: "💰", desc: "Eliminasi Muda (waste) → KPI Efisiensi Biaya tercapai" },
+          { metric: "Speed", icon: "⚡", desc: "VSM mempercepat lead time → KPI Kecepatan tercapai" }
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 + i * 0.15 }}
+            style={{
+              background: "#fff",
+              padding: "1.5rem",
+              borderRadius: "20px",
+              border: "1px solid #e2e8f0",
+              boxShadow: "0 8px 20px rgba(0,0,0,0.03)",
+              textAlign: "center"
+            }}
+          >
+            <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>{item.icon}</div>
+            <div style={{ fontWeight: 900, color: "#0e6655", fontSize: "1.1rem", marginBottom: "0.5rem" }}>{item.metric}</div>
+            <p style={{ fontSize: "0.85rem", color: "#64748b", fontWeight: 600, lineHeight: 1.4, margin: 0 }}>{item.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        style={{ marginTop: "2rem", textAlign: "center", background: "linear-gradient(135deg, #0e6655, #1a5276)", padding: "1rem 2rem", borderRadius: "16px" }}
+      >
+        <p style={{ color: "#fff", fontWeight: 800, fontSize: "1.1rem", margin: 0 }}>
+          BPI bukan bagian terpisah — ia adalah <span style={{ color: "#fbbf24" }}>mesin eksekusi</span> yang memastikan target PCS dalam SMKTI benar-benar tercapai.
+        </p>
+      </motion.div>
+      <SlideFooter />
+    </div>
+  );
+}
+
 const slides = [
   // BAGIAN 1 — STRATEGIC CONTEXT
   { title: "Cover", component: SlideCover },
@@ -4330,11 +4433,11 @@ const slides = [
 
   // BAGIAN 2 — PMS DESIGN PRINCIPLES
   { title: "§ Fondasi Konseptual & Strategis", component: SlideSectionConcept },
+  { title: "Prinsip Dasar KPI", component: SlidePrinsipKPI },
   { title: "BSC Principles", component: SlideBSCFoundation },
   { title: "PDCA & Improvement", component: SlidePDCACycle },
   { title: "Strategic Cascading", component: SlideStrategicAlignment },
   { title: "Unit vs Individual Performance", component: SlideUnitIndividualPerformance },
-  { title: "Prinsip Dasar KPI", component: SlidePrinsipKPI },
   { title: "Hubungan BA & Kinerja", component: SlideBAPerformance },
   { title: "Model Kinerja APMS", component: SlideModelKinerja },
 
@@ -4363,6 +4466,7 @@ const slides = [
   { title: "Project Charter", component: SlideProjectCharter },
 
   // BAGIAN 6 — BUSINESS PROCESS IMPROVEMENT (LEAN)
+  { title: "Mengapa BPI untuk SMKTI?", component: SlideBPIBridge },
   { title: "§ Business Process Improvement", component: SlideBPIConcept },
   { title: "What is Lean?", component: SlideWhatIsLean },
   { title: "Lean Philosophy", component: SlideLeanPhilosophy },
