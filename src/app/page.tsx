@@ -5708,20 +5708,20 @@ function SlideNextSteps() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "2rem 4rem", background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0e6655 100%)", position: "relative", overflow: "hidden" }}>
+    <div className="slide" style={{ padding: "1rem 4rem", background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0e6655 100%)", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", top: "-80px", right: "-80px", width: "350px", height: "350px", borderRadius: "50%", background: "rgba(14, 102, 85, 0.12)", filter: "blur(50px)" }} />
 
       <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column" }}>
-        <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
-          <h1 style={{ fontSize: "3.5rem", color: "#fff", fontWeight: 900, margin: 0 }}>
+        <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+          <h1 style={{ fontSize: "3rem", color: "#fff", fontWeight: 900, margin: 0 }}>
             <em>Next Steps & Tindak Lanjut</em>
           </h1>
-          <p style={{ fontSize: "1.2rem", color: "#6ee7b7", fontWeight: 700, marginTop: "0.5rem", letterSpacing: "1px" }}>
+          <p style={{ fontSize: "1.1rem", color: "#6ee7b7", fontWeight: 700, marginTop: "0.5rem", letterSpacing: "1px" }}>
             Langkah Konkret Pasca-Persetujuan Direksi
           </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", flex: 1 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", flex: 1 }}>
           {steps.map((s, i) => (
             <motion.div
               key={i}
@@ -5731,21 +5731,21 @@ function SlideNextSteps() {
               style={{
                 background: "rgba(255, 255, 255, 0.07)",
                 backdropFilter: "blur(10px)",
-                borderRadius: "20px",
-                padding: "1.3rem 2rem",
+                borderRadius: "16px",
+                padding: "1.1rem 1.8rem",
                 border: "1px solid rgba(255, 255, 255, 0.1)",
                 display: "grid",
-                gridTemplateColumns: "60px 1fr auto auto",
-                gap: "1.5rem",
+                gridTemplateColumns: "55px 1fr auto auto",
+                gap: "1.2rem",
                 alignItems: "center"
               }}
             >
-              <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: s.color, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: "1.3rem", boxShadow: `0 6px 18px ${s.color}40` }}>
+              <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: s.color, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: "1.2rem", boxShadow: `0 6px 18px ${s.color}40` }}>
                 {s.num}
               </div>
               <div>
-                <div style={{ fontSize: "1.2rem", fontWeight: 900, color: "#fff", marginBottom: "4px" }}>{s.title}</div>
-                <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "rgba(255,255,255,0.7)", lineHeight: 1.4 }}>{s.desc}</div>
+                <div style={{ fontSize: "1.1rem", fontWeight: 900, color: "#fff", marginBottom: "4px" }}>{s.title}</div>
+                <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "rgba(255,255,255,0.7)", lineHeight: 1.4 }}>{s.desc}</div>
               </div>
               <div style={{ textAlign: "center", minWidth: "130px" }}>
                 <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "4px" }}>Deadline</div>
@@ -5764,18 +5764,18 @@ function SlideNextSteps() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
           style={{
-            marginTop: "1rem",
+            marginTop: "0.5rem",
             background: "linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(249, 115, 22, 0.1))",
-            borderRadius: "18px",
-            padding: "1.3rem 2.5rem",
+            borderRadius: "16px",
+            padding: "1rem 2.5rem",
             border: "1px solid rgba(251, 191, 36, 0.25)",
             display: "flex",
             alignItems: "center",
-            gap: "1.5rem"
+            gap: "1.2rem"
           }}
         >
-          <div style={{ background: "#fbbf24", color: "#0f172a", padding: "10px 22px", borderRadius: "12px", fontWeight: 900, fontSize: "0.95rem", flexShrink: 0 }}>KEY ASK</div>
-          <p style={{ fontSize: "1.15rem", fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1.4 }}>
+          <div style={{ background: "#fbbf24", color: "#0f172a", padding: "8px 20px", borderRadius: "10px", fontWeight: 900, fontSize: "0.9rem", flexShrink: 0 }}>KEY ASK</div>
+          <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1.4 }}>
             Mohon <strong style={{ color: "#fbbf24" }}>persetujuan prinsip</strong> atas framework SMKTI 2026 hari ini agar tim dapat segera memulai mobilisasi dan pengembangan sistem di bulan <strong style={{ color: "#6ee7b7" }}>April 2026</strong>.
           </p>
         </motion.div>
