@@ -4560,10 +4560,110 @@ function SlideProjectCharter() {
     </div>
   );
 }
+/* =============================
+   PROTRACK STATUS — CURRENT FINDINGS
+   ============================= */
+function SlideProTrackStatus() {
+  const findings = [
+    { text: "Belum memiliki kapabilitas inputan Scorecard dan Program Kerja per Individu — format perlu disesuaikan.", status: "critical" },
+    { text: "Kapabilitas saat ini hanya via upload Excel oleh Admin IT.", status: "warning" },
+    { text: "Terdapat redundansi kolom inputan antara Scorecard dan KPI.", status: "warning" },
+    { text: "Belum memiliki inputan langsung breakdown target per bulan.", status: "critical" },
+    { text: "Form rencana target KPI masih bercampur dengan realisasi KPI, serta target dan capaian Program Kerja.", status: "critical" },
+    { text: "Belum mengakomodasi konsep Provider (penginput realisasi) dan Subscriber (penerima realisasi) per KPI.", status: "critical" },
+    { text: "Belum menghubungkan antara Program Kerja dengan KPI.", status: "critical" },
+    { text: "Penyesuaian istilah: \"Indikator Scorecard\" menggantikan istilah \"KPI\" untuk memperjelas terminologi.", status: "info" },
+    { text: "Estimasi perbaikan: 2–3 minggu untuk membangun kapabilitas inputan per user yang ideal (poin 1 s.d 7).", status: "info" },
+  ];
 
+  return (
+    <div className="slide" style={{ padding: "1rem 4rem", background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)", display: "flex", flexDirection: "column" }}>
+      <AccentShapes />
+      <div className="slide-header" style={{ marginBottom: "0.8rem", textAlign: "left" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.3rem" }}>
+          <div style={{ background: "linear-gradient(135deg, #1a5276, #0e6655)", padding: "8px 18px", borderRadius: "10px", color: "#fff", fontWeight: 900, fontSize: "0.85rem", letterSpacing: "1px" }}>
+            ProTrack
+          </div>
+          <div style={{ fontSize: "0.85rem", color: "#94a3b8", fontWeight: 700 }}>
+            Program Kerja Tracking System
+          </div>
+        </div>
+        <h1 className="slide-title" style={{ fontSize: "2.4rem", color: "#1a5276", marginBottom: "0.2rem" }}>
+          <em>Status Aplikasi ProTrack — Temuan &amp; Perbaikan</em>
+        </h1>
+        <p className="slide-subtitle" style={{ fontSize: "0.95rem", color: "#64748b", fontWeight: 600 }}>
+          Monitoring Capaian Program Kerja s.d. Level Individu
+        </p>
+      </div>
 
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.45rem", overflow: "hidden" }}>
+        {findings.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.08 }}
+            style={{
+              background: item.status === "critical" ? "rgba(239, 68, 68, 0.04)" : item.status === "warning" ? "rgba(249, 115, 22, 0.04)" : "rgba(14, 102, 85, 0.04)",
+              borderRadius: "12px",
+              padding: "0.7rem 1.2rem",
+              border: `1px solid ${item.status === "critical" ? "rgba(239, 68, 68, 0.15)" : item.status === "warning" ? "rgba(249, 115, 22, 0.15)" : "rgba(14, 102, 85, 0.15)"}`,
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem"
+            }}
+          >
+            <div style={{
+              width: "32px", height: "32px", borderRadius: "8px", flexShrink: 0,
+              background: item.status === "critical" ? "#ef4444" : item.status === "warning" ? "#f97316" : "#0e6655",
+              color: "#fff", display: "flex", alignItems: "center", justifyContent: "center",
+              fontWeight: 900, fontSize: "0.8rem"
+            }}>
+              {i + 1}
+            </div>
+            <p style={{ fontSize: "0.88rem", fontWeight: 600, color: "#334155", margin: 0, lineHeight: 1.45 }}>
+              {item.text}
+            </p>
+            <div style={{
+              marginLeft: "auto", flexShrink: 0,
+              padding: "4px 10px", borderRadius: "6px", fontSize: "0.65rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px",
+              background: item.status === "critical" ? "#fef2f2" : item.status === "warning" ? "#fff7ed" : "#f0fdf4",
+              color: item.status === "critical" ? "#dc2626" : item.status === "warning" ? "#ea580c" : "#16a34a",
+            }}>
+              {item.status === "critical" ? "Belum Ada" : item.status === "warning" ? "Parsial" : "Planned"}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        style={{
+          marginTop: "0.5rem",
+          background: "linear-gradient(135deg, #1e293b, #1a5276)",
+          borderRadius: "14px",
+          padding: "1rem 1.8rem",
+          display: "flex",
+          alignItems: "center",
+          gap: "1rem",
+          color: "#fff"
+        }}
+      >
+        <div style={{ background: "#fbbf24", color: "#1e293b", padding: "6px 14px", borderRadius: "8px", fontWeight: 900, fontSize: "0.8rem", flexShrink: 0 }}>TIMELINE</div>
+        <p style={{ fontSize: "0.95rem", fontWeight: 700, margin: 0, lineHeight: 1.4 }}>
+          Kapabilitas inputan per user yang ideal (poin 1–7) ditargetkan selesai dalam <strong style={{ color: "#fbbf24" }}>2–3 minggu</strong> ke depan — siap digunakan sebelum siklus review Q1 2026.
+        </p>
+      </motion.div>
+
+      <SlideFooter />
+    </div>
+  );
+}
 
 /* =============================
+
    MAIN PAGE COMPONENT
    ============================= */
 function SlideAppraisalReference() {
@@ -6224,6 +6324,7 @@ const slides = [
   { title: "Update PM Mar 2026", component: SlidePerformanceUpdate2026 },
   { title: "Timeline", component: SlideTimeline },
   { title: "Project Charter", component: SlideProjectCharter },
+  { title: "Status ProTrack", component: SlideProTrackStatus },
   { title: "Governance & Tata Kelola", component: SlideGovernance },
   { title: "Review Cycle: Quarterly vs Monthly", component: SlideReviewCycleStrategy },
   { title: "Change Management & Sosialisasi", component: SlideChangeManagement },

@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = path.resolve(__dirname, "../APMS_Framework_2026.pdf");
 const BASE_URL = "http://localhost:3000";
-const TOTAL_SLIDES = 53;
+const TOTAL_SLIDES = 54;
 
 async function exportPDF() {
   console.log("🚀 Launching browser...");
@@ -23,7 +23,7 @@ async function exportPDF() {
   await page.evaluate(() => {
     const navButtons = document.querySelectorAll('button');
     navButtons.forEach(btn => btn.style.display = 'none');
-    
+
     // Attempt to hide sidebar/navbars in case it is open
     const elementsToHide = document.querySelectorAll('.slide-footer, .sidebar'); // Or specific classes used for nav
     elementsToHide.forEach(el => el.style.opacity = '0');
@@ -39,7 +39,7 @@ async function exportPDF() {
 
   for (let i = 0; i < TOTAL_SLIDES; i++) {
     console.log(`📸 Capturing slide ${i + 1}/${TOTAL_SLIDES}...`);
-    
+
     if (i > 0) {
       await page.keyboard.press("ArrowRight");
       await new Promise((r) => setTimeout(r, 1000));
@@ -54,7 +54,7 @@ async function exportPDF() {
 
   console.log("📝 Assembling PDF...");
   const pdfPage = await browser.newPage();
-  
+
   const imageDataUrls = screenshots.map(
     (buf) => `data:image/png;base64,${buf.toString("base64")}`
   );
