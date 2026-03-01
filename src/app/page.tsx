@@ -836,7 +836,7 @@ function SlideLatar() {
     {
       title: "EXTERNALLY DRIVEN",
       subtitle: "BUMN & DAM Directives",
-      icon: <Layers size={22} />,
+      icon: <Layers size={28} />,
       color: "#0e6655",
       accent: "#27ae60",
       items: [
@@ -848,7 +848,7 @@ function SlideLatar() {
     {
       title: "STRATEGICALLY ALIGNED",
       subtitle: "Board of Commissioners",
-      icon: <GitBranch size={22} />,
+      icon: <GitBranch size={28} />,
       color: "#1a5276",
       accent: "#2980b9",
       items: [
@@ -861,7 +861,7 @@ function SlideLatar() {
     {
       title: "INTERNALLY VERIFIED",
       subtitle: "Survey & Employee Feedback",
-      icon: <Users size={22} />,
+      icon: <Users size={28} />,
       color: "#e67e22",
       accent: "#f39c12",
       items: [
@@ -874,14 +874,14 @@ function SlideLatar() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3.5rem 1.5rem", background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)" }}>
+    <div className="slide" style={{ padding: "1.5rem 3rem", background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)" }}>
       <AccentShapes />
       <div className="slide-header" style={{ marginBottom: "2rem", textAlign: "center" }}>
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="slide-title"
-          style={{ fontSize: "2.8rem", color: "#1a5276", marginBottom: "0.5rem" }}
+          style={{ fontSize: "3.2rem", color: "#1a5276", marginBottom: "0.5rem" }}
         >
           Latar Belakang
         </motion.h1>
@@ -890,7 +890,7 @@ function SlideLatar() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           className="slide-subtitle"
-          style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 500, letterSpacing: "1px" }}
+          style={{ fontSize: "1.3rem", color: "#64748b", fontWeight: 600, letterSpacing: "1px" }}
         >
           Pondasi Strategis & Arahan Perbaikan Sistem 2026
         </motion.p>
@@ -907,7 +907,7 @@ function SlideLatar() {
               flex: 1,
               background: "#fff",
               borderRadius: "24px",
-              padding: "2rem 1.5rem",
+              padding: "2.5rem 2rem",
               display: "flex",
               flexDirection: "column",
               boxShadow: "0 10px 40px rgba(0,0,0,0.04)",
@@ -918,39 +918,39 @@ function SlideLatar() {
           >
             <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "8px", background: `linear-gradient(90deg, ${sec.color}, ${sec.accent})` }}></div>
 
-            <div style={{ marginBottom: "1.5rem" }}>
+            <div style={{ marginBottom: "2rem" }}>
               <div style={{
                 background: `${sec.color}10`,
                 color: sec.color,
-                width: "54px",
-                height: "54px",
-                borderRadius: "16px",
+                width: "64px",
+                height: "64px",
+                borderRadius: "18px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginBottom: "1.2rem",
+                marginBottom: "1.5rem",
                 boxShadow: `0 8px 20px ${sec.color}15`
               }}>
                 {sec.icon}
               </div>
-              <h3 style={{ fontSize: "0.8rem", fontWeight: 900, color: sec.color, letterSpacing: "2px", marginBottom: "0.4rem", textTransform: "uppercase" }}>{sec.title}</h3>
-              <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1e293b", lineHeight: 1.2 }}>{sec.subtitle}</h4>
+              <h3 style={{ fontSize: "0.95rem", fontWeight: 900, color: sec.color, letterSpacing: "2px", marginBottom: "0.5rem", textTransform: "uppercase" }}>{sec.title}</h3>
+              <h4 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#1e293b", lineHeight: 1.2 }}>{sec.subtitle}</h4>
             </div>
 
             <div style={{ flex: 1 }}>
               <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                 {sec.items.map((item, i) => (
                   <li key={i} style={{
-                    fontSize: "0.95rem",
+                    fontSize: "1.1rem",
                     lineHeight: 1.5,
                     color: "#475569",
-                    marginBottom: "14px",
+                    marginBottom: "18px",
                     display: "flex",
-                    gap: "12px",
+                    gap: "14px",
                     fontWeight: 500
                   }}>
-                    <div style={{ marginTop: "6px" }}>
-                      <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: sec.accent }}></div>
+                    <div style={{ marginTop: "7px" }}>
+                      <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: sec.accent }}></div>
                     </div>
                     <span>{item}</span>
                   </li>
@@ -962,15 +962,15 @@ function SlideLatar() {
               marginTop: "auto",
               paddingTop: "1.5rem",
               borderTop: "1px solid #f1f5f9",
-              fontSize: "0.75rem",
+              fontSize: "0.85rem",
               fontWeight: 700,
               color: "#94a3b8",
               fontStyle: "italic",
               display: "flex",
               alignItems: "center",
-              gap: "8px"
+              gap: "10px"
             }}>
-              <FileText size={14} /> Source: {sec.source}
+              <FileText size={16} /> Source: {sec.source}
             </div>
           </motion.div>
         ))}
@@ -980,10 +980,10 @@ function SlideLatar() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
-        style={{ marginTop: "1.5rem", textAlign: "center", background: "linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(230, 126, 34, 0.05) 100%)", padding: "12px 30px", borderRadius: "14px", border: "1px solid rgba(230, 126, 34, 0.2)", boxShadow: "0 10px 30px rgba(230,126,34,0.05)" }}
+        style={{ marginTop: "2rem", textAlign: "center", background: "linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(230, 126, 34, 0.05) 100%)", padding: "16px 30px", borderRadius: "16px", border: "1px solid rgba(230, 126, 34, 0.2)", boxShadow: "0 10px 30px rgba(230,126,34,0.05)" }}
       >
-        <p style={{ fontSize: "1rem", color: "#d35400", fontWeight: 700, margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
-          <TrendingUp size={20} />
+        <p style={{ fontSize: "1.2rem", color: "#d35400", fontWeight: 700, margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
+          <TrendingUp size={24} />
           <span>Fokus Utama: SMART System, Integrasi Data Vertikal, dan Digitalisasi Kinerja.</span>
         </p>
       </motion.div>
