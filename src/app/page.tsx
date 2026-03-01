@@ -4579,33 +4579,33 @@ function SlideReviewCycleStrategy() {
   ];
 
   return (
-    <div className="slide" style={{ padding: "1.5rem 3rem", background: "#fff" }}>
+    <div className="slide" style={{ padding: "1.5rem 2.5rem", background: "#fff" }}>
       <AccentShapes />
-      <div className="slide-header" style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-        <h1 className="slide-title" style={{ fontSize: "2.4rem", color: "#1a5276" }}>Strategi Siklus Review Kinerja</h1>
-        <p className="slide-subtitle" style={{ fontSize: "1rem", color: "#64748b", fontWeight: 600 }}>
+      <div className="slide-header" style={{ marginBottom: "1rem", textAlign: "center" }}>
+        <h1 className="slide-title" style={{ fontSize: "2.6rem", color: "#1a5276" }}>Strategi Siklus Review Kinerja</h1>
+        <p className="slide-subtitle" style={{ fontSize: "1.1rem", color: "#64748b", fontWeight: 600 }}>
           Pendekatan Bertahap: Triwulanan (Fase 1) → Bulanan (Fase 2)
         </p>
       </div>
 
       {/* Maturity Arrow */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0", marginBottom: "1.5rem" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0", marginBottom: "1.2rem" }}>
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-          style={{ background: "#0e6655", color: "#fff", padding: "12px 30px", borderRadius: "12px 0 0 12px", fontWeight: 900, fontSize: "1rem", display: "flex", alignItems: "center", gap: "10px" }}
+          style={{ background: "#0e6655", color: "#fff", padding: "14px 35px", borderRadius: "12px 0 0 12px", fontWeight: 900, fontSize: "1.15rem", display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <Calendar size={18} /> Quarterly Review (2026-2027)
+          <Calendar size={20} /> Quarterly Review (2026-2027)
         </motion.div>
-        <div style={{ width: 0, height: 0, borderTop: "24px solid transparent", borderBottom: "24px solid transparent", borderLeft: "20px solid #0e6655" }} />
-        <div style={{ width: "60px", height: "4px", background: "linear-gradient(90deg, #10b981, #3b82f6)" }} />
-        <div style={{ width: 0, height: 0, borderTop: "24px solid transparent", borderBottom: "24px solid transparent", borderRight: "20px solid #1a5276" }} />
+        <div style={{ width: 0, height: 0, borderTop: "27px solid transparent", borderBottom: "27px solid transparent", borderLeft: "22px solid #0e6655" }} />
+        <div style={{ width: "60px", height: "5px", background: "linear-gradient(90deg, #10b981, #3b82f6)" }} />
+        <div style={{ width: 0, height: 0, borderTop: "27px solid transparent", borderBottom: "27px solid transparent", borderRight: "22px solid #1a5276" }} />
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
-          style={{ background: "#1a5276", color: "#fff", padding: "12px 30px", borderRadius: "0 12px 12px 0", fontWeight: 900, fontSize: "1rem", display: "flex", alignItems: "center", gap: "10px" }}
+          style={{ background: "#1a5276", color: "#fff", padding: "14px 35px", borderRadius: "0 12px 12px 0", fontWeight: 900, fontSize: "1.15rem", display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <TrendingUp size={18} /> Monthly Review (2028+)
+          <TrendingUp size={20} /> Monthly Review (2028+)
         </motion.div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", flex: 1 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem", flex: 1 }}>
         {phases.map((p, idx) => (
           <motion.div
             key={idx}
@@ -4621,26 +4621,26 @@ function SlideReviewCycleStrategy() {
               boxShadow: `0 8px 25px ${p.color}15`
             }}
           >
-            <div style={{ background: p.color, color: "#fff", padding: "1rem 1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ background: p.color, color: "#fff", padding: "1.2rem 1.8rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
-                <div style={{ fontSize: "0.7rem", fontWeight: 800, opacity: 0.7, letterSpacing: "2px" }}>{p.phase} • {p.period}</div>
-                <div style={{ fontSize: "1.3rem", fontWeight: 900 }}>{p.label}</div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 800, opacity: 0.8, letterSpacing: "2px" }}>{p.phase} • {p.period}</div>
+                <div style={{ fontSize: "1.6rem", fontWeight: 900 }}>{p.label}</div>
               </div>
-              <div style={{ background: idx === 0 ? "#fbbf24" : "rgba(255,255,255,0.15)", color: idx === 0 ? "#1e293b" : "#fff", padding: "4px 12px", borderRadius: "8px", fontSize: "0.65rem", fontWeight: 900, letterSpacing: "1px" }}>
+              <div style={{ background: idx === 0 ? "#fbbf24" : "rgba(255,255,255,0.15)", color: idx === 0 ? "#1e293b" : "#fff", padding: "6px 16px", borderRadius: "8px", fontSize: "0.75rem", fontWeight: 900, letterSpacing: "1px" }}>
                 {p.status}
               </div>
             </div>
 
-            <div style={{ padding: "1rem 1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ padding: "1.4rem 1.8rem", flex: 1, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
               {/* PROS */}
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                  <div style={{ background: "#dcfce7", padding: "3px", borderRadius: "50%" }}><Check size={12} color="#16a34a" strokeWidth={3} /></div>
-                  <span style={{ fontSize: "0.75rem", fontWeight: 900, color: "#16a34a", textTransform: "uppercase", letterSpacing: "1px" }}>Kelebihan</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                  <div style={{ background: "#dcfce7", padding: "4px", borderRadius: "50%" }}><Check size={14} color="#16a34a" strokeWidth={3} /></div>
+                  <span style={{ fontSize: "0.9rem", fontWeight: 900, color: "#16a34a", textTransform: "uppercase", letterSpacing: "1px" }}>Kelebihan</span>
                 </div>
                 {p.pros.map((pro, i) => (
-                  <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "5px", fontSize: "0.78rem", color: "#334155", fontWeight: 500, lineHeight: 1.3 }}>
-                    <span style={{ color: p.accent, fontWeight: 900, flexShrink: 0 }}>+</span>
+                  <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "7px", fontSize: "0.95rem", color: "#334155", fontWeight: 500, lineHeight: 1.35 }}>
+                    <span style={{ color: p.accent, fontWeight: 900, flexShrink: 0, fontSize: "1.1rem" }}>+</span>
                     <span>{pro}</span>
                   </div>
                 ))}
@@ -4648,13 +4648,13 @@ function SlideReviewCycleStrategy() {
 
               {/* CONS */}
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                  <div style={{ background: "#fee2e2", padding: "3px", borderRadius: "50%" }}><X size={12} color="#dc2626" strokeWidth={3} /></div>
-                  <span style={{ fontSize: "0.75rem", fontWeight: 900, color: "#dc2626", textTransform: "uppercase", letterSpacing: "1px" }}>Risiko / Tantangan</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                  <div style={{ background: "#fee2e2", padding: "4px", borderRadius: "50%" }}><X size={14} color="#dc2626" strokeWidth={3} /></div>
+                  <span style={{ fontSize: "0.9rem", fontWeight: 900, color: "#dc2626", textTransform: "uppercase", letterSpacing: "1px" }}>Risiko / Tantangan</span>
                 </div>
                 {p.cons.map((con, i) => (
-                  <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "5px", fontSize: "0.78rem", color: "#64748b", fontWeight: 500, lineHeight: 1.3 }}>
-                    <span style={{ color: "#dc2626", fontWeight: 900, flexShrink: 0 }}>–</span>
+                  <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "7px", fontSize: "0.95rem", color: "#64748b", fontWeight: 500, lineHeight: 1.35 }}>
+                    <span style={{ color: "#dc2626", fontWeight: 900, flexShrink: 0, fontSize: "1.1rem" }}>–</span>
                     <span>{con}</span>
                   </div>
                 ))}
@@ -4669,10 +4669,10 @@ function SlideReviewCycleStrategy() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        style={{ marginTop: "1rem", background: "linear-gradient(135deg, #0e6655, #1a5276)", padding: "1rem 2rem", borderRadius: "14px", display: "flex", alignItems: "center", gap: "1.5rem" }}
+        style={{ marginTop: "1rem", background: "linear-gradient(135deg, #0e6655, #1a5276)", padding: "1.2rem 2rem", borderRadius: "14px", display: "flex", alignItems: "center", gap: "1.5rem" }}
       >
-        <div style={{ background: "#fbbf24", color: "#1e293b", padding: "6px 14px", borderRadius: "8px", fontWeight: 900, fontSize: "0.75rem", flexShrink: 0, letterSpacing: "1px" }}>REKOMENDASI</div>
-        <p style={{ color: "#fff", fontWeight: 700, fontSize: "0.9rem", margin: 0, lineHeight: 1.4 }}>
+        <div style={{ background: "#fbbf24", color: "#1e293b", padding: "8px 18px", borderRadius: "8px", fontWeight: 900, fontSize: "0.85rem", flexShrink: 0, letterSpacing: "1px" }}>REKOMENDASI</div>
+        <p style={{ color: "#fff", fontWeight: 700, fontSize: "1.05rem", margin: 0, lineHeight: 1.4 }}>
           Mulai dengan <strong style={{ color: "#fbbf24" }}>quarterly review</strong> untuk membangun fondasi, budaya, dan kapabilitas digital. Transisi ke monthly review setelah sistem APMS 2.0 matang dan manajer memiliki kapabilitas coaching yang memadai.
         </p>
       </motion.div>
