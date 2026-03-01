@@ -5013,7 +5013,7 @@ function SlideReviewCycleStrategy() {
     {
       phase: "FASE 1",
       label: "Triwulanan (Quarterly)",
-      period: "2026 – 2027",
+      period: "Tahun 2026",
       color: "#0e6655",
       accent: "#10b981",
       status: "RECOMMENDED",
@@ -5033,11 +5033,12 @@ function SlideReviewCycleStrategy() {
     {
       phase: "FASE 2",
       label: "Bulanan (Monthly)",
-      period: "2028+",
+      period: "Mulai 2027+",
       color: "#1a5276",
       accent: "#3b82f6",
       status: "TARGET MATURITY",
       pros: [
+        "Scope entitas penuh untuk seluruh PTPN Group",
         "Early warning system — deviasi terdeteksi dalam 30 hari",
         "Continuous feedback meningkatkan employee engagement",
         "Koreksi cepat sebelum masalah membesar",
@@ -5045,10 +5046,10 @@ function SlideReviewCycleStrategy() {
         "Data-driven decision making lebih granular"
       ],
       cons: [
-        "Beban administratif tinggi — butuh sistem digital matang (APMS 2.0)",
+        "Beban administratif tinggi — butuh sistem digital matang (APMS 2.0 full deployment)",
         "Risiko review fatigue jika budaya belum siap",
         "Membutuhkan kapabilitas manajer sebagai coach, bukan hanya evaluator",
-        "Kompleksitas agregasi data dari 4 entitas + ratusan unit setiap bulan"
+        "Kompleksitas agregasi data untuk seluruh entitas PTPN Group setiap bulan"
       ]
     }
   ];
@@ -5068,7 +5069,7 @@ function SlideReviewCycleStrategy() {
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
           style={{ background: "#0e6655", color: "#fff", padding: "14px 35px", borderRadius: "12px 0 0 12px", fontWeight: 900, fontSize: "1.15rem", display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <Calendar size={20} /> Quarterly Review (2026-2027)
+          <Calendar size={20} /> Quarterly Review (2026)
         </motion.div>
         <div style={{ width: 0, height: 0, borderTop: "27px solid transparent", borderBottom: "27px solid transparent", borderLeft: "22px solid #0e6655" }} />
         <div style={{ width: "60px", height: "5px", background: "linear-gradient(90deg, #10b981, #3b82f6)" }} />
@@ -5076,7 +5077,7 @@ function SlideReviewCycleStrategy() {
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
           style={{ background: "#1a5276", color: "#fff", padding: "14px 35px", borderRadius: "0 12px 12px 0", fontWeight: 900, fontSize: "1.15rem", display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <TrendingUp size={20} /> Monthly Review (2028+)
+          <TrendingUp size={20} /> Monthly Review (2027+)
         </motion.div>
       </div>
 
@@ -5148,7 +5149,7 @@ function SlideReviewCycleStrategy() {
       >
         <div style={{ background: "#fbbf24", color: "#1e293b", padding: "8px 18px", borderRadius: "8px", fontWeight: 900, fontSize: "0.85rem", flexShrink: 0, letterSpacing: "1px" }}>REKOMENDASI</div>
         <p style={{ color: "#fff", fontWeight: 700, fontSize: "1.05rem", margin: 0, lineHeight: 1.4 }}>
-          Mulai dengan <strong style={{ color: "#fbbf24" }}>quarterly review</strong> untuk membangun fondasi, budaya, dan kapabilitas digital. Transisi ke monthly review setelah sistem APMS 2.0 matang dan manajer memiliki kapabilitas coaching yang memadai.
+          Mulai dengan <strong style={{ color: "#fbbf24" }}>quarterly review</strong> di tahun 2026. Transisi penuh ke <strong style={{ color: "#fbbf24" }}>monthly review</strong> untuk <strong>seluruh PTPN Group di tahun 2027</strong> setelah sistem APMS 2.0 siap mendukug kapasitas data skala besar.
         </p>
       </motion.div>
       <SlideFooter />
